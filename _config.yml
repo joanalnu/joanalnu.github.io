@@ -1,12 +1,12 @@
-name: Kylie Ying
+name: Joan AlNu
 # permalink: /:title/
-# baseurl: https://kylieying.com
+# baseurl: https://joanalnu.com
 # baseurl: ""
 permalink: /blog/:title
 
 # seo tag
-plugins:
-  - jekyll-seo-tag
+# plugins:
+#  - jekyll-seo-tag
 
 # Google Analytics
-google_analytics: G-TEEDE1GB8S
+# google_analytics: G-TEEDE1GB8S
