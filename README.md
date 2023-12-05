@@ -1,2 +1,2 @@
 # joanalnu.github.io
-Home website
+Personal website
