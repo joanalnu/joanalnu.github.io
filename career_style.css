@@ -1,0 +1,125 @@
+html {
+    height: 100%;
+    width: 99%;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+specialTitle {
+    text-align: center;
+    font-size: 50px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #000000;
+}
+
+.button{
+    float: center;
+    border: 1px solid blue;
+}
+
+.buttonpage{
+    padding: 5px 15px;
+    border: 2px solid #CABFBF;
+    border-radius: 4px;
+    font-size: 28px;
+    color: #CABFBF;
+    text-align: center;
+    display: inline-block;
+    background-color: #000000;
+    transition-duration: 0.5s;
+    margin: 5px;
+}
+
+.buttonpage:hover{
+    color: #E9E9E9;
+    background-color: #4949A4;
+    border: 2px solid #2C298D;
+}
+
+.menu-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: solid #000000;
+    z-index: 1px;
+    padding: 10px;
+}
+
+.buttonpage2{
+    padding: 5px 15px;
+    border: 2px solid #CABFBF;
+    border-radius: 4px;
+    font-size: 17px;
+    color: #CABFBF;
+    text-align: center;
+    display: inline-block;
+    background-color: #000000;
+    transition-duration: 0.5s;
+    margin: 5px;
+}
+
+.buttonpage2:hover {
+    color: #E9E9E9;
+    background-color: #000000;
+    border: 2px solid #4949A4;
+}
+
+.buttonpage3{
+    padding: 5px 15px;
+    border: 2px solid #CABFBF;
+    border-radius: 4px;
+    font-size: 64px;
+    color: #CABFBF;
+    text-align: center;
+    display: inline-block;
+    background-color: #000000;
+    transition-duration: 0.5s;
+    margin: 5px;
+}
+
+.buttonpage3:hover {
+    color: #E9E9E9;
+    background-color: #4949A4;
+    border: 2px solid #202020;
+}
+
+p {
+    position: relative; /* Position text relative to the container */
+    top: 25%; /* Adjust vertical position */
+    left: 50%; /* Adjust horizontal position */
+    transform: translate(-45%, -1000%); /* Center the text within the container */
+    background: rgba(0, 0, 0, 0); /* Optional background color for better text readability */
+    padding: 10px; /* Optional padding for better text readability */
+    font-size: 50px;
+    font: Arial, sans-serif;
+}
+
+  /*{
+    box-sizing: border-box;
+  }*/
+
+.column {
+    float: left;
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}

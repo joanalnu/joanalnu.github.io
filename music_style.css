@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    width: 99%;
+}
+  
+body {
+    background-color: #222222
+}
+
+div {
+    background-color: #000000;
+    cursor: auto;
+}
+
+.button {
+    float: center;
+    border: 1px solid blue;
+    cursor: auto;
+}
+
+.buttonpage {
+    padding: 5px 10px;
+    border: 2px solid #D4AC0D;
+    border-radius: 4px;
+    font-size: 17px;
+    color: #D4AC0D;
+    text-align: center;
+    display: inline-block;
+    cursor: auto;
+    background-color: #000000;
+    transition-duration: 0.5s;
+    margin: 3px;
+}
+
+.buttonpage:hover {
+    color: #B7950B;
+    background-color: #283747;
+    border: 2px solid #B7950B;
+}
