@@ -1,6 +1,6 @@
 html {
     height: 100%;
-    width: 100%;
+    width: 99%;
 }
 
 body {
@@ -9,6 +9,17 @@ body {
 
 div {
     background-color: #C0C0C0;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #FFFFFF;
+    }
+    div {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
 }
 
 .menu-bar {
@@ -20,11 +31,6 @@ div {
     z-index: 1px;
     padding-top: 5px;
     padding-bottom: 5px;
-}
-
-.button {
-    float: center;
-    border: 1px solid #266EEB;
 }
 
 .buttonpage {

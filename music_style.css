@@ -1,20 +1,20 @@
-html, body {
+html {
     height: 100%;
     width: 99%;
 }
-  
+
 body {
-    background-color: #222222
+    background-color: #222222;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+    }
 }
 
 div {
     background-color: #000000;
-    cursor: auto;
-}
-
-.button {
-    float: center;
-    border: 1px solid blue;
     cursor: auto;
 }
 

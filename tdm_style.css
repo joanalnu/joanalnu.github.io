@@ -1,0 +1,214 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e0e0e0;
+}
+
+h2 {
+  padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 35px;
+}
+
+.download-button-1 {
+  padding: 30px 50px;
+  border: 5px solid #CC6600;
+  border-radius: 4px;
+  color: #CC6600;
+  font-size: 15px;
+  text-align: center;
+  display: inline-block;
+  background-color: #C0C0C0;
+  transition-duration: 0.75s;
+  margin: 3%;
+}
+
+.download-button-1:hover {
+  color: #ffffff;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+}
+
+.download-button-2 {
+  padding: 30px 50px;
+  border: 5px solid #266EEB;
+  border-radius: 4px;
+  color: #266EEB;
+  font-size: 15px;
+  text-align: center;
+  display: inline-block;
+  background-color: #C0C0C0;
+  transition-duration: 0.75s;
+  margin: 3%;
+}
+
+.download-button-2:hover {
+  color: #ffffff;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+}
+
+.download-button-3 {
+  padding: 30px 50px;
+  border: 5px solid #66CC00;
+  border-radius: 4px;
+  color: #66CC00;
+  font-size: 15px;
+  text-align: center;
+  display: inline-block;
+  background-color: #C0C0C0;
+  transition-duration: 0.75s;
+  margin: 3%;
+}
+
+.download-button-3:hover {
+  color: #ffffff;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+}
+
+.download-button-4 {
+  padding: 30px 50px;
+  border: 5px solid #6600CC;
+  border-radius: 4px;
+  color: #6600CC;
+  font-size: 15px;
+  text-align: center;
+  display: inline-block;
+  background-color: #C0C0C0;
+  transition-duration: 0.75s;
+  margin: 3%;
+}
+
+.download-button-4:hover {
+  color: #ffffff;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+}
+
+.buttonpage{
+  padding: 5px 15px;
+  border: 2px solid #CABFBF;
+  border-radius: 4px;
+  font-size: 28px;
+  color: #CABFBF;
+  text-align: center;
+  display: inline-block;
+  background-color: #000000;
+  transition-duration: 0.5s;
+  margin: 5px;
+}
+
+.buttonpage:hover{
+  color: #E9E9E9;
+  background-color: #4949A4;
+  border: 2px solid #2C298D;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #FFFFFF;
+    }
+
+    .download-button-1 {
+        padding: 30px 50px;
+        border: 5px solid #CC6600;
+        border-radius: 4px;
+        color: #CC6600;
+        font-size: 15px;
+        text-align: center;
+        display: inline-block;
+        background-color: #121212;
+        transition-duration: 0.5s;
+        margin: 3%;
+      }
+      
+      .download-button-1:hover {
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #CC6600;
+      }
+      
+      .download-button-2 {
+        padding: 30px 50px;
+        border: 5px solid #266EEB;
+        border-radius: 4px;
+        color: #266EEB;
+        font-size: 15px;
+        text-align: center;
+        display: inline-block;
+        background-color: #121212;
+        transition-duration: 0.5s;
+        margin: 3%;
+      }
+      
+      .download-button-2:hover {
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #266EEB;
+      }
+      
+      .download-button-3 {
+        padding: 30px 50px;
+        border: 5px solid #66CC00;
+        border-radius: 4px;
+        color: #66CC00;
+        font-size: 15px;
+        text-align: center;
+        display: inline-block;
+        background-color: #121212;
+        transition-duration: 0.5s;
+        margin: 3%;
+      }
+      
+      .download-button-3:hover {
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #66CC00;
+      }
+      
+      .download-button-4 {
+        padding: 30px 50px;
+        border: 5px solid #6600CC;
+        border-radius: 4px;
+        color: #6600CC;
+        font-size: 15px;
+        text-align: center;
+        display: inline-block;
+        background-color: #121212;
+        transition-duration: 0.5s;
+        margin: 3%;
+      }
+      
+      .download-button-4:hover {
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #6600CC;
+      }
+      
+      .buttonpage{
+        padding: 5px 15px;
+        border: 2px solid #CABFBF;
+        border-radius: 4px;
+        font-size: 28px;
+        color: #CABFBF;
+        text-align: center;
+        display: inline-block;
+        background-color: #000000;
+        transition-duration: 0.5s;
+        margin: 5px;
+      }
+      
+      .buttonpage:hover{
+        color: #E9E9E9;
+        background-color: #4949A4;
+        border: 2px solid #2C298D;
+      }
+  }

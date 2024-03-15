@@ -2,9 +2,7 @@ html, body {
     height: 100%;
     width: 99%;
 }
-  /*background-color: #C6C6FF;
-  background-color: #000000;
-  background-image:url("");*/
+
 div{
     background-color: #000000;
     cursor: none;
@@ -33,11 +31,7 @@ p {
     padding-bottom: 10px;
     cursor: none;
 }
-.button{
-    float: center;
-    border: 1px solid blue;
-    cursor: auto;
-}
+
 .buttonpage{
     padding: 5px 10px;
     border: 2px solid #2C298D;
