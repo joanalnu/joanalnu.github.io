@@ -7,12 +7,6 @@ body {
     background-color: #222222;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #000000;
-    }
-}
-
 div {
     background-color: #000000;
     cursor: auto;
@@ -36,4 +30,46 @@ div {
     color: #B7950B;
     background-color: #283747;
     border: 2px solid #B7950B;
+}
+
+.menu-bar{
+    position: fixed;
+    top: 1%;
+    left: 10%;
+    right: 10%;
+    z-index: 1px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+    }
+    
+    .menu-bar{
+        position: fixed;
+        top: 1%;
+        left: 10%;
+        right: 10%;
+        z-index: 1px;
+        padding: 10px;
+        background: rgba(34, 34, 34, 0.8);
+        backdrop-filter: blur(50px);
+        border-radius: 50px;
+    }
+}
+
+.column {
+    float: left;
+    width: 48%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

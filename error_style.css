@@ -14,3 +14,15 @@ body {
         color: #FFFFFF;
     }
 }
+
+.column {
+    float: left;
+    width: 48%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

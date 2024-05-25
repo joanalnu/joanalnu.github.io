@@ -3,33 +3,30 @@ html, body {
     width: 99%;
 }
 
-div{
-    background-color: #000000;
-    cursor: none;
-}
 body {
     /*background: -webkit-linear-gradient(bottom, #252525, #000000, #252525);
     background: -o-linear-gradient(bottom, #000000, #252525, #000000);
     background: -moz-linear-gradient(bottom, #000000, #252525, #000000); 
     background: linear-gradient(to bottom, #000000, #252525, #000000); */
-    background-color: #000000;
     cursor: auto;
 }
+
 p {
     margin-right: 15%;
     margin-left: 15%;
     color: #D0D3D4;
 }
+
 .menu-bar{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: solid #000000;
+    top: 1%;
+    left: 10%;
+    right: 10%;
     z-index: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: none;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
 }
 
 .buttonpage{
@@ -67,4 +64,16 @@ p {
     color: #4949A4;
     background-color: #252525;
     border: 2px solid #4949A4;
+}
+
+.column {
+    float: left;
+    width: 48%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

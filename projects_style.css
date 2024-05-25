@@ -9,26 +9,19 @@ body {
 }
 
 .list {
-    margin-left: 15%;
-}
-
-div {
-    background-color: #FFFFFF;
-    color: #000000;
-    cursor: default;
+    margin-left: 10%;
 }
 
 .menu-bar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: solid #FFFFFF;
+    top: 1%;
+    left: 10%;
+    right: 10%;
     z-index: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: auto;
-    color: #000000;
+    padding: 10px;
+    background: rgba(225, 225, 225, 0.8);
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
 }
 
 button {
@@ -53,29 +46,39 @@ button:hover {
     font-weight: bold;
 }
 
+.column {
+    float: left;
+    width: 48%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bottom-section {
+    background: rgba(225, 225, 225, 0.8);
+    color: #000000;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #000000;
         color: #FFFFFF;
     }
-
-    div {
-        background-color: #000000;
-        color: white;
-        cursor: default;
-    }
     
     .menu-bar {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: solid #000000;
+        top: 1%;
+        left: 10%;
+        right: 10%;
         z-index: 1px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        cursor: auto;
-        color: white;
+        padding: 10px;
+        background: rgba(34, 34, 34, 0.8);
+        backdrop-filter: blur(50px);
+        border-radius: 50px;
     }
     
     button {
@@ -92,12 +95,15 @@ button:hover {
         margin: 3px;
     }
     
-    
     button:hover {
         color: #FFFFFF;
         background-color: #000099;
         border: 2px solid #000000;
         font-weight: bold;
     }
-}
 
+    .bottom-section {
+        background: rgba(34, 34, 34, 0.8);
+        color: #FFFFFF;
+    }
+}

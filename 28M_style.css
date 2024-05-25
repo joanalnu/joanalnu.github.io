@@ -11,7 +11,7 @@ div {
     background-color: #C0C0C0;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
         color: #FFFFFF;
@@ -20,7 +20,7 @@ div {
         background-color: #000000;
         color: #FFFFFF;
     }
-}
+}*/
 
 .menu-bar {
     position: fixed;
@@ -50,4 +50,16 @@ div {
     color: #E9E9E9;
     background-color: #266EEB;
     border: 2px solid #C0C0C0;
+}
+
+.column {
+    float: left;
+    width: 48%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

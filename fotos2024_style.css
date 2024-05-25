@@ -7,7 +7,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #66B2FF;
 }
 
 .button1 {
@@ -143,4 +142,18 @@ button.delete-button {
 .comment p {
     /*margin-right: 10px; /* Adjust space between text and button */
     text-align: center;
+}
+
+.column {
+    float: left;
+    width: 48%;
+    padding: 10px;
+    backdrop-filter: blur(50px);
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    backdrop-filter: blur(50px);
 }
