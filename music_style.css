@@ -12,6 +12,10 @@ div {
     cursor: auto;
 }
 
+a {
+    color: #FFFFFF;
+}
+
 .buttonpage {
     padding: 5px 10px;
     border: 2px solid #D4AC0D;
