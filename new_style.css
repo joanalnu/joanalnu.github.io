@@ -243,7 +243,7 @@ footer {
 }
 
 footer a {
-    color: var(--primary-color);
+    color: #fff;
     margin: 0 5px;
 }
 
