@@ -16,7 +16,7 @@ body {
 }
 
 h2 {
-    position: center;
+    text-align: center;
     font-size: 2rem;
     color: #FFFFFF;
     margin-bottom: 1rem;
@@ -26,12 +26,12 @@ a {
     color: var(--accent-color);
     text-decoration: none;
 }
+
 a:hover {
     color: var(--primary-color);
 }
 
 /* Header Navigation */
-/* Header Styling */
 header {
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     position: sticky;
@@ -43,7 +43,7 @@ header {
 /* Main Menu Styling */
 .menu {
     list-style: none;
-    padding: 10px; /* Consistent padding */
+    padding: 10px;
     margin: 0;
     display: flex;
     justify-content: center; /* Centers the menu items horizontally */
@@ -51,79 +51,111 @@ header {
 
 /* Menu Items */
 .menu > li {
-    position: relative; /* Enables positioning for dropdowns */
-    margin: 0 15px; /* Space between menu items */
+    position: relative;
+    margin: 0 15px;
 }
 
 .menu > li a {
-    font-size: 18px; /* Consistent font size */
-    padding: 8px 12px; /* Padding around links */
-    border-radius: 5px; /* Rounded corners for hover effect */
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
     text-decoration: none;
-    color: white; /* White text color */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 .menu > li a:hover {
-    background-color: var(--primary-color); /* Custom primary color */
-    color: #fff; /* Ensures text stays white on hover */
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 /* Dropdown Menu */
 .dropdown .dropdown-content {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
-    top: 100%; /* Positioned below the parent menu item */
+    top: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Dropdown background */
+    background-color: rgba(0, 0, 0, 0.9);
     min-width: 200px;
     border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adds depth to dropdown */
-    z-index: 10; /* Ensures it appears above other content */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
 .dropdown .dropdown-content a {
-    font-size: 16px; /* Slightly smaller font for dropdown links */
-    padding: 8px 12px; /* Inner spacing */
+    font-size: 16px;
+    padding: 8px 12px;
     text-decoration: none;
     color: white;
-    display: block; /* Ensures links stack vertically */
+    display: block;
     transition: background-color 0.3s ease;
 }
 
 .dropdown .dropdown-content a:hover {
-    background-color: var(--primary-color); /* Matches hover effect */
+    background-color: var(--primary-color);
     color: #fff;
 }
 
-/* Show Dropdown on Hover */
 .dropdown:hover .dropdown-content {
-    display: block; /* Reveals the dropdown when hovering */
+    display: block;
 }
 
 /* Responsive Menu Styling */
 @media (max-width: 768px) {
     .menu {
-        flex-direction: column; /* Stacks menu items vertically */
-        align-items: center; /* Centers the items */
+        flex-direction: column;
+        align-items: center;
     }
     .menu > li {
-        margin: 10px 0; /* Space between items when stacked */
+        margin: 10px 0;
     }
 }
 
 /* Hero Section */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg') no-repeat center/cover;
-    color: #fff;
+.hero-section {
+    background-image: url('images/IMG_9862.JPG');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 95vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ensures vertical layout */
+    text-align: center; /* Centers text */
+    padding: 20px; /* Adds some space around the content */
 }
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
-.hero .cta {
+
+.hero-section h1 {
+    position: relative;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    margin: 0; /* Removes any default margins */
+}
+
+.hero-section p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 20px 0; /* Adds space between the caption and the button */
+}
+
+.hero-section .cta {
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--primary-color);
@@ -131,113 +163,109 @@ header {
     border-radius: 5px;
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
-}
-.hero .cta:hover {
-    background-color: var(--accent-color);
-}
-
-/* Projects Section */
-.project-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem;
-}
-.card {
-    background-color: #1A1A1A;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-}
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-.card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-bottom: 3px solid var(--accent-color);
-}
-.card h3 {
-    color: #FFFFFF;
-    margin: 10px 0;
+    z-index: 2;
+    margin-top: 20px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #111111;
-    color: var(--text-color);
-}
-footer a {
-    color: var(--accent-color);
-}
-footer a:hover {
-    color: var(--primary-color);
-}
-
-/* Back to Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    padding: 10px 15px;
-    cursor: pointer;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-#back-to-top:hover {
+.hero-section .cta:hover {
     background-color: var(--accent-color);
 }
 
 /* Music Section */
 .music-section {
-    padding: 40px 20px;
-    background-color: #1A1A1A;
-    text-align: center;
-    color: var(--text-color);
-}
-.music-section h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-.track {
-    margin: 20px 0;
-}
-.track h3, .track h4 {
-    margin: 5px 0;
+    padding: 50px 0;
+    background-color: #1c1c1c;
 }
 
-/* Important Projects Section */
-.important-projects {
-    padding: 40px 20px;
-    background-color: #252525;
-    color: var(--text-color);
+.track {
+    margin-bottom: 30px;
+    text-align: center;
 }
-.important-projects h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
+
+.track h3, .track h4 {
+    margin: 0;
+    font-size: 1.5rem;
 }
-.important-projects ul {
-    list-style-type: disc;
-    margin: 0 auto;
-    padding: 0;
-    width: 80%;
-    text-align: left;
+
+audio, video {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
 }
-.important-projects ul li {
-    margin-bottom: 10px;
-    line-height: 1.5;
+
+/* Projects Section */
+.project-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 50px 0;
 }
-.important-projects ul a {
+
+.card {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card h3 {
     color: var(--accent-color);
-    text-decoration: underline;
+    margin-top: 15px;
+}
+
+.card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px 0;
+    background-color: #1c1c1c;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: var(--primary-color);
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Back-to-top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: var(--accent-color);
 }
