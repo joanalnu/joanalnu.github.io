@@ -1,0 +1,85 @@
+/* General body and container styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+  
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+  
+/* Error and support section layout */
+#error-section, #support-section {
+    margin-bottom: 40px;
+}
+  
+/* 2-column layout for larger screens */
+@media (min-width: 768px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  
+    #error-section, #support-section {
+      flex: 1;
+      padding: 20px;
+    }
+}
+  
+/* Footer */
+footer {
+    background-color: #2b2b2b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+  
+footer a {
+    color: #e86c0b;
+}
+  
+footer a:hover {
+    color: #5b0c8a;
+}
+  
+/* Restrict iframe width */
+iframe {
+    max-width: 90%;
+    width: 100%; /* Ensures responsiveness */
+    height: 600px;
+    border: none;
+    margin: 20px auto;
+    display: block;
+}
+  
+/* Footer Columns */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.footer-column {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-column a {
+    color: #e86c0b;
+    display: block;
+    margin: 5px 0;
+}
+  
+.footer-column a:hover {
+    color: #5b0c8a;
+}
