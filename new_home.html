@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joan's Website</title>
+    <link rel="stylesheet" href="new_style.css">
+    <link rel="shortcut icon" href="images/logo.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li class="dropdown">
+                    <a href="projects.html" class="dropbtn">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="https://capibara3.github.io">CAPIBARA Mission</a>
+                        <a href="https://capibara3.githhub.io/grb_cosmology.html">Cosmology Research</a> <!--Hubble with Cepheids, Ia Sne, and GRB, as well as theoretical work-->
+                        <a href="genetics10.html">Genetics10</a>
+                        <a hreF="https://github.com/joanalnu/gen_api">GEN API</a>
+                        <a href="https://github.com/joanalnu/ztf_api">ZTF API</a>
+                        <a href="projects.html#presentations">Conferences</a>
+                        <!-- Add more project links as needed-->
+                        <!--Small projects:
+                         WM Berechnung
+                         DNA Bio
+                         TdM
+                         SoAS -->
+                    </div>
+                </li>
+                <li><a href="mailto:joanalnu5@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Joan's Space</h1>
+        <p>Discover my projects, music, and passion for science and coding.</p>
+        <a href="#projects" class="cta">View Projects</a>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="music-section">
+        <h2>My Music</h2>
+        <div class="track">
+            <h3>Mia & Sebastian's Theme (La La Land) - 05/2024</h3>
+            <h4>By Justin Hurwitz - 2016</h4>
+            <audio controls>
+                <source src="audio_folder/JAN-Version2MiaSebastiansTheme-5-2024.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="track">
+            <h3>Golden Hour at Firenze Palazzo Vecchio - 04/2024</h3>
+            <h4>By JVKE - 2022</h4>
+            <video width="75%" controls>
+                <source src="audio_folder/GoldenHourFirenze.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <center><h2>My Projects</h2></center>
+    <section class="project-cards" id="projects">
+        <div class="card">
+            <img src="images/logo.jpg" alt="CAPIBARA">
+            <h3>CAPIBARA Mission</h3>
+            <p>Leading a team of students to launch a satellite for the research of the high-energy cosmos.</p>
+            <a href="https://capibara3.github.io/">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="images/logo.jpg" alt="Genetics10">
+            <h3>Genetics10</h3>
+            <p>A web-based educational software on genomics.</p>
+            <a href="genetics10.html">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="images/logo.jpg" alt="TDM">
+            <h3>Cosmology Research</h3>
+            <p>Understanding the working of the Universe as a whole.</p>
+            <a href="https://capibara3.github.io/grb_cosmology.html">Learn More</a>
+        </div>
+        <!-- Add more project cards as needed -->
+    </section>
+
+    <!-- Most Important Projects Section -->
+    
+    <!-- <section class="important-projects">
+        <h2>Most Important Projects</h2>
+        <ul>
+            <li>Group leader of the CAPIBARA team, aiming to launch a satellite for cosmic ray research.</li>
+            <li>Research stay working on Type Ia Supernovae photometry as cosmological distance indicators at <a href="https://ice.csic.es/">ICE-CSIC-IEEC</a>.</li>
+            <li>Project on recomputing the local Hubble-Lemaître Constant with Cepheids.</li>
+            <li><a href="https://github.com/joanalnu/genetics10">Genetics10</a>: an educational software on genomics.</li>
+        </ul>
+    </section> -->
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Joan Alcaide Núñez, All rights reserved.</p>
+        <a href="mailto:joanalnu5@gmail.com">Contact Me</a>
+        <div>
+            <a href="/career.html">Career</a> | 
+            <a href="https://github.com/joanalnu">GitHub</a> | 
+            <a href="/projects.html">Projects</a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Scroll to Top Functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
