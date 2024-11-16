@@ -35,20 +35,20 @@
     <!-- Projects Section -->
     <h2>My Most Important Projects:</h2>
     <section id="projects" class="project-cards">
-      <div class="card">
-        <img src="images/logo.jpg">
+      <div class="card" onclick="openModal('capibara-modal')">
+        <img src="images/capibara.png">
         <h3>CAPIBARA Team</h3>
         <p>Leading the satellite launch for cosmic ray research.</p>
         <a href="https://capibara3.github.io/">Learn More</a>
       </div>
-      <div class="card">
+      <div class="card" onclick="openModal('genetics-modal')">
         <img src="images/genetics.png">
         <h3>Genetics10</h3>
         <p>An educational software on genomics for biology students.</p>
         <a href="https://joanalnu.github.io/genetics10">Learn More</a>
       </div>
-      <div class="card">
-        <img src="images/logo.jpg">
+      <div class="card" onclick="openModal('cosmo-modal')">
+        <img src="images/cosmology.png">
         <h3>Cosmology Research</h3>
         <p>GRB Cosmology</p>
         <p>Research stay on Type Ia Supernova photometry at <a href="https://ice.csic.es">ICE-CSIC-IEEC</a></p>
@@ -80,7 +80,7 @@
         <li>🔭 Erweiterung der Physikunterricht, über Relativitätstheorie</li>
         <li>🧮 Bridges of Caliningrad Presentation</li>
         <li>🔭 Calculations on a voyage to Proxima Centauri and Trappist-1</li>
-        <li>⚛️ Fragen zur Physikunterricht (Thema:Ladungen)</li>
+        <li>⚛️ Fragen zur Physikunterricht (Thema: Ladungen)</li>
     </div>
     
     
@@ -104,6 +104,65 @@
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+
+      // Modal features
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+      }
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+      }
+      window.onclick = function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let modal of modals) {
+          if (event.target == modal) {
+            modal.style.display = 'none';
+          }
+        }
+      }
     </script>
+
+    <div id="capibara-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>CAPIBARA Mission</h2>
+          <span class="close" onclick="closeModal('capibara-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p><a href="https://capibara3.github.io/">The CAPIBARA Project</a> aims to develop and launch a satellite for the observation and research of the high-energy cosmos. We seek to measure both primary cosmic rays (charged particles) as well as X-ray and 𝛾-ray emissions.</p>
+          <p>By exploring high-energy radiation we will to advance our understading of astrophysical phenomena, quantum physics, and Earth's physics. Furthermore, we will make our data public with the goal of boosting this fields with additional data and inspiring other young researchers.</p>
+          <p>We are a group of high-school students united by our passion to conduct this project. As a student-led project, we are very grateful to the <a href="https://spark-program.pldspace.com/en/"></a>SPARK program by <a href="https://pldspace.com/en/">PLD Space</a>, which gives us the opportunity to launch our mission with their <a href="https://pldspace.com/en/miura-5">Miura 5</a> rocket, for the opportunity and our teachers for their support.</p>
+        </div>
+      </div>
+    </div>
+    <div id="genetics-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Genetics10 & GEN-API</h2>
+          <span class="close" onclick="closeModal('genetics-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p><a href="genetics10.html">Genetics10</a> is a free, web-based, educational software for teaching biology and genetics. It's a Python Notebook, where students can easily play and make their code using the pre-established functions. Furthermore, advanced students can write more complex code and create other functions. The possibilities are endless! Additionally it is web-based and does not require any installation at all, making it very easy to use and perfect for school-managed devices.</p>
+          <p><a href="https://github.com/joanalnu/gen_api">GEN-API</a> is an open-source API for genetic data analysis. It features the same functions as the original gen10 class in all the available languages, but it can be installed in your computer using pip and used system-wide. This enables a smoother integration for external projects, more complex data analysis and integration with other tools. It is also very easy to use and can be installed in a few seconds.</p>
+        </div>
+      </div>
+    </div>
+    <div id="cosmo-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Cosmological Research - Addressing the Hubble Tension</h2>
+          <span class="close" onclick="closeModal('cosmo-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p>Since my participation in the Youth and Science program (<a href="https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science">Joves i Ciència by Fundació Catalnuya La Pedrera</a>) I got very interested in Cosmology, that is the study of the Universe as a whole, comprehending it's origin, evolution, and fate. philosophical questions + links to other areas such as galatic evolution, high-energy universe, dark matter and dark energy</p>
+          <p>One of the most pressing question in Cosmology is the Hubble Tension. Since the first calculation of the Hubble-Lemaître constant (the expansion rate of the Universe) multiple methods have been developed to recompute it. However, different techniques also differ in their results, where methods based on the early Universe give lower values and the ones relying on the local Universe result in higher values. A Hundred years after the discovery of the expansion of the Universe, we still don't know the exact value of it's rate. Furthermore, as instrumentation and the methods have gained in accuracy, the values for the Hubble constant have been diverging.</p>
+          <p>In 2023, I conducted a <a href="https://github.com/joanalnu/article_hubble_jic">project</a> on recomputing the Hubble-Lemaître constant using the same methods as Hubble and Lemaître, but using modern data from NASA IPAC database for redshift and the Konkoly Observatory Cepheid magnitudes.</p>
+          <p>In summer 2024, I completed a 2-month research stay with the <a href="">Supernovae and Stellar Transients group</a> at the <a href="https://ice.csic.es/">Institute of Space Sciences (ICE-CSIC-IEEC)</a>, where I conducted a project on Type Ia SNe as cosmological distance indicators under the tutoring of <a href="https://lgalbany.github.io">Dr. Lluís Galbany</a>. This second phase not only enabled me to learn more about the science itself, but I gained insight on real research standards and skills as data communicating weekly progress and data access and analysis. Furthermore, I got the opportunity to fully integrate in the group, participating in group meetings and journal clubs, as well as getting to know many researchers from various areas at the institute.</p>
+          <p>This research is possible thanks to the Youth and Science program and the support of all my tutors and mentors in the different phases of the program.</p>
+        </div>
+      </div>
+    </div>
+
+
   </body>
 </html>
