@@ -150,7 +150,7 @@ header {
 .hero-section p {
     position: relative;
     z-index: 2;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     padding: 10px 20px;
     margin: 20px 0; /* Adds space between the caption and the button */
 }

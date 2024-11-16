@@ -113,7 +113,7 @@ header {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('images/IMG_9862.JPG');
+    background-image: url('images/sky.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -218,12 +218,20 @@ audio, video {
 
 .card img {
     width: 100%;
+    max-width: 300px; /* You can adjust this value */
+    max-height: 200px; /* You can adjust this value */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 8px;
+    object-fit: cover; /* Optional: ensures the image fills the box without stretching */
 }
 
 .card h3 {
     color: var(--accent-color);
     margin-top: 15px;
+    font-size: 30px;
+}
+.card p {
+    font-size: 18px;
 }
 
 .card a {
