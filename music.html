@@ -17,11 +17,16 @@
   <body>
     <header>
         <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="career.html">Career</a></li>
-                <li><a href="mailto:joanalnu5@gmail.com">Contact</a></li>
-            </ul>
+            <div class="menu-container">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="mailto:joanalnu5@gmail.com">Contact</a></li>
+                </ul>
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    &#9776;
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -169,5 +174,13 @@
             <a href="/projects.html">Projects</a>
         </div>
     </footer>
+
+    <script>
+        // Toggle the mobile menu visibility
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
   </body>
 </html>

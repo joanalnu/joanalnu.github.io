@@ -17,15 +17,21 @@
     <!-- Header -->
     <header>
       <nav>
-        <ul class="menu">
-          <li><a href="https://joanalnu.github.io">Home</a></li>
-          <li><a href="career.html">Career</a></li>
-          <li><a href="https://capibara3.github.io">CAPIBARA</a></li>
-          <li><a href="https://joanalnu.github.io/genetics10">Genetics10</a></li>
-          <li><a href="https://github.com/joanalnu/article_hubble_jic">Cosmology 2023</a></li>
-          <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/">LinkedIn</a></li>
-          <li><a href="mailto:joanalnu5@gmail.com">Contact</a></li>
-        </ul>
+        <div class="menu-container">
+          <ul class="menu">
+            <li><a href="https://joanalnu.github.io">Home</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="https://capibara3.github.io">CAPIBARA</a></li>
+            <li><a href="https://joanalnu.github.io/genetics10">Genetics10</a></li>
+            <li><a href="https://github.com/joanalnu/article_hubble_jic">Cosmology 2023</a></li>
+            <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/">LinkedIn</a></li>
+            <li><a href="mailto:joanalnu5@gmail.com">Contact</a></li>
+          </ul>
+          <!-- hamburger Icon -->
+           <div class="hamburger-icon" onclick="toggleMenu()">
+              &#9776;
+           </div>
+        </div>
       </nav>
     </header>
 
@@ -174,6 +180,13 @@
       </div>
     </div>
 
+    <script>
+      // Toggle the mobile menu visibility
+      function toggleMenu() {
+          const menu = document.querySelector('.menu');
+          menu.classList.toggle('active');
+      }
+    </script>
 
   </body>
 </html>

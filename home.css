@@ -107,14 +107,6 @@ header {
     cursor: pointer;
 }
 
-/* Mobile Menu Styling
-.menu-container {
-    display: flex; /* from flex
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-} */
-
 @media (max-width: 768px) {
     /* Hide the regular menu items on mobile */
     .menu {

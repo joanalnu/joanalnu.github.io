@@ -13,6 +13,7 @@
     <!-- Header Section -->
     <header>
       <nav>
+        <div>
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="music.html">Music</a></li>
@@ -32,6 +33,10 @@
           <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/">LinkedIn</a></li>
           <li><a href="mailto:joanalnu@outlook.com">Contact</a></li>
         </ul>
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          &#9776;
+        </div>
+      </div>
       </nav>
     </header>
 
@@ -142,5 +147,13 @@
     <button id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
       ↑
     </button>
+
+    <script>
+      // Toggle the mobile menu visibility
+      function toggleMenu() {
+          const menu = document.querySelector('.menu');
+          menu.classList.toggle('active');
+      }
+    </script>
   </body>
 </html>
