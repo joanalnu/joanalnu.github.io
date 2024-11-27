@@ -149,4 +149,47 @@ header {
 footer {
     background-color: #333;
     color: #fff;
-    padd
+    padding: 20px;
+    text-align: center;
+    /* position: fixed; */
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: #ff6f00; /* Example hover color */
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links, .footer-social {
+        margin-bottom: 15px;
+    }
+}
