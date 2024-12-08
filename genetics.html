@@ -4,167 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genetics10 - Interactive Biology Tool</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #eef9f0;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #8BC34A 0%, #558B2F 100%);
-            padding: 50px 20px;
-            text-align: center;
-            color: white;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #6FBF73;
-            padding: 10px 0;
-            border-radius: 30px;
-            margin: 20px auto;
-            width: 90%;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 20px;
-            transition: background-color 0.3s ease;
-            vertical-align: middle; /* Ensure links align vertically */
-        }
-
-        nav a:hover {
-            background-color: #388E3C;
-        }
-
-        /* Main Section */
-        main {
-            padding: 30px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        section {
-            background-color: #fff;
-            padding: 30px;
-            margin-bottom: 50px;
-            border-radius: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        h2 {
-            color: #4CAF50;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        p, ul {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            padding-left: 20px;
-            position: relative;
-            margin-bottom: 10px;
-        }
-
-        ul li::before {
-            content: "✔";
-            color: #66BB6A;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Call to Action */
-        .cta {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .cta a {
-            padding: 18px 36px;
-            background-color: #558B2F;
-            color: white;
-            text-decoration: none;
-            border-radius: 40px;
-            font-size: 1.3em;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .cta a:hover {
-            background-color: #33691E;
-            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-            position: relative;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-
-            nav {
-                flex-direction: column;
-                padding: 20px;
-            }
-
-            nav a {
-                margin: 10px 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="genetics.css">
 </head>
 <body>
 
@@ -180,14 +20,14 @@
     <a href="#students">For Students</a>
     <a href="#educators">For Educators</a>
     <a href="https://github.com/joanalnu/genetics10">GitHub</a>
-    <a href="projects.html">Other projects</a>
+    <a href="projects.html">Other Projects</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <main>
     <section id="overview">
         <h2>About Genetics10</h2>
-        <p><b>Genetics10</b> is a Python-based tool designed for students to explore biology and genetics concepts such as <b>DNA transcription</b>, <b>mutations</b>, <b>protein structures</b>, and <b>gene editing</b>. Built using <b>Jupyter Notebook</b>, the software is <b>open-source</b> and web-accessible without requiring any installation, making it ideal for classroom use. It is also designed to be flexible and adapt to different students, with or without prior knowledge of coding.</p>
+        <p><b>Genetics10</b> is a Python-based tool designed for students and educators to explore genetics and biology concepts, including <b>DNA transcription</b>, <b>mutations</b>, <b>protein structures</b>, and <b>gene editing</b>. It is built using <b>Jupyter Notebook</b> and requires no installation, making it accessible and classroom-friendly. The tool is open-source and customizable to fit varying levels of expertise.</p>
     </section>
 
     <section id="features">
@@ -198,39 +38,35 @@
             <li><b>Compare DNA sequences</b></li>
             <li><b>Visualize protein structures</b> using AlphaFold API integration</li>
             <li><b>Gene editing with CRISPR-Cas9</b></li>
-            <li><b>Open-source</b> and easily scalable and customizable</li>
+            <li><b>Open-source</b>, scalable, and easily customizable</li>
         </ul>
         <div class="cta">
-            <a href="https://github.com/joanalnu/genetics10" target="_blank">Explore on GitHub</a>
+            <a href="https://github.com/joanalnu/genetics10" target="_blank">Explore Genetics10 on GitHub</a>
         </div>
     </section>
 
     <section id="api">
-        <h2>API Integration</h2>
-        <p>We are excited to introduce the <b>Genetics10 API</b>, a powerful tool that brings all the features of our notebook directly into your own code. Whether you're building web apps, conducting advanced research, or teaching at high school, the API provides seamless integration of the mentioned functionalities right where you need them. This API enables developers, researchers, and educators to integrate the genetics10 module seamlessly with their own and tailored needs.</p>
+        <h2>Genetics10 API</h2>
+        <p>The <b>Genetics10 API</b> provides programmatic access to the tool's core functionalities, enabling integration into web apps, research, or educational workflows. Features like DNA transcription, mutation simulation, and sequence comparison are available directly through the API for enhanced versatility.</p>
         <div class="cta">
             <a href="https://github.com/joanalnu/gen_api" target="_blank">Explore the API on GitHub</a>
         </div>
     </section>
 
     <section id="students">
-        <h2>Info for Students</h2>
-        <p>If it's your <b>first time</b> with coding, check out this guide <a href="https://github.com/joanalnu/Genetics10/blob/main/README.md"><b>here</b></a>, which will help you <b>get started</b> with this tool.</p>
-        <p>If you are wanting to <b>exploit the potential</b> of the tool, <b>scale your coding skills</b>, <b>explore new possibilities</b>, or simply <b>chat about the software</b>, feel free to reach out to me via <b>mail</b>.</p>
+        <h2>For Students</h2>
+        <p>New to coding? Start with the comprehensive <b>Beginner's Guide</b> available <a href="https://github.com/joanalnu/Genetics10/blob/main/README.md"><b>here</b></a>. Learn at your pace and unlock the potential of genetics through hands-on exploration.</p>
     </section>
 
     <section id="educators">
-        <h2>Info for Educators</h2>
-        <p>Teachers can use <b>Genetics10</b> to enhance biology lessons by creating assignments and problem-solving activities that require students to explore real-world biological processes like <b>genetic mutations</b> and <b>transcription</b>. This tool is fully aligned with general education guidelines.</p>
-        <p>For instance, you can implement the <b>flipped classroom method</b>, assigning tutorials for homework and using class time for interactive activities. Additionally, group projects can be designed to encourage collaboration and achieve great milestones.</p>
-        <p><b>Genetics10</b> is now available in <b>English, Spanish, German, and Catalan</b>. Further translations are in the works, and other languages can be made on demand.</p>
+        <h2>For Educators</h2>
+        <p><b>Genetics10</b> is a perfect classroom tool to teach genetics interactively. It supports group activities, flipped classrooms, and curriculum-aligned projects. Available in multiple languages: English, Spanish, German, and Catalan, with additional languages on request.</p>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you have any <b>questions</b>, <b>suggestions</b>, or <b>feedback</b>, feel free to reach out via email. I'm also open to scheduling meetings to discuss potential applications of <b>Genetics10</b> in your curriculum.</p>
-        <a href="mailto:joanalnu5@gmail.com?subject=Genetics10%20User%20Feedback&body=Hi%2C%20I%27m%20happy%20to%20connect%20with%20you%21%0A%0ABefore%20sharing%20your%20feedback%2C%20comment%2C%20or%20question%2C%20could%20you%20please%20introduce%20yourself%20with%20your%20name%2C%20age%2C%20role%20%28e.g.%2C%20teacher%2C%20student%2C%20etc.%29%2C%20affiliation%2C%20and%20any%20other%20details%20you%20feel%20comfortable%20sharing%3F%0A%0AThank%20you%20very%20much%21%0A">
-            Email Genetics10 Feedback</a>
+        <p>Have questions or feedback? Feel free to email me at:</p>
+        <a href="mailto:joanalnu5@gmail.com?subject=Genetics10%20User%20Feedback&body=Hi%2C%20I%27m%20happy%20to%20connect%20with%20you%21%0A%0A">Email Genetics10 Feedback</a>
     </section>
 </main>
 
