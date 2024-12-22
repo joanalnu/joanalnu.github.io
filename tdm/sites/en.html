@@ -8,28 +8,52 @@
     <link rel="stylesheet" href="styles/tdm_styles.css">
 </head>
 <body>
-    <img src="images/tdm_IMG_0001.png" alt="TdM Logo" style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0; z-index: -1;">
+    <img src="images/tdm_IMG_0001.png" alt="TdM Logo - A program for practicing multiplication tables" style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0; z-index: -1;">
     <div class="container">
         <div class="content">
             <div class="header">
                 <h1 class="title" style="text-align: center;">TdM - Tablas de Multiplicar</h1>
             </div>
-            <p class="description">Hello! Welcome to the TdM's official website. TdM is a program that helps you practice maths and makes learning fun. This is a python-based code that anyone can use and works on Windows and MacOS. You only have to download it free and follow the instructions in the README file. I hope you enjoy it!</p>
+            <p class="description">Hello! Welcome to TdM's official website. TdM is a program that helps you practice math and makes learning fun. It's a web-based code that anyone can use on the browser, you only have to click the "PLAY" button below.</p>
+            <p class="description">Additionally, TdM is an open-source project and is always getting better. We encourage you to contribute either by reporting issues or sending pull requests on the project's GitHub repository. I hope you enjoy it!</p>
             <div class="buttons">
-                <a href="https://replit.com/@JoanAN/TdMcode" class="button button1">See Replit</a>
-                <a href="https://github.com/joanalnu/TdM" class="button button2">View on GitHub</a>
-                <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213367&authkey=!AIv5UGMc1C3TYnE" class="button button3">Download</a>
-                <a href="mailto:joanalnu@outlook.com" class="button button4">Contact Us</a>
+                <a href="https://github.com/joanalnu/TdM" class="button button1">View on GitHub</a>
+                <a href="https://github.com/joanalnu/TdM/blob/main/README.md" class="button button2">Access README</a>
+                <a href="https://joanalnu.github.io/tdm/game.html" class="button button3">PLAY</a>
+                <a href="mailto:joanalnu@outlook.com" class="button button4">Contact me</a>
             </div>
-            <div class="language">
-                <a href="es.html" class="language-link">Español</a>
-                <a href="ca.html" class="language-link">Català</a>
-            </div>
+            <select class="language-select" aria-label="Select Language">
+                <option value="sites/en.html" selected>English</option>
+                <option value="sites/es.html">Español</option>
+                <option value="sites/ca.html">Català</option>
+                <option value="sites/de.html">Deutsch</option>
+                <option value="sites/fr.html">Français</option>
+                <option value="sites/it.html">Italiano</option>
+                <option value="sites/pt.html">Português</option>
+                <option value="sites/zh.html">中文</option>
+                <option value="sites/ja.html">日语</option>
+                <option value="sites/ko.html">한국어</option>
+            </select>
         </div>
     </div>
     <div class="footer">
         <div class="copyright">© 2024 TdM. All rights reserved.</div>
-        <a href="index.html" class="https://joanalnu.github.io/index.html">Back to Home</a>
+        <a href="https://joanalnu.github.io/index.html">Back to Home</a>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select the language dropdown
+            const languageSelect = document.querySelector('.language-select');
+
+            // Add an event listener for the change event
+            languageSelect.addEventListener('change', function() {
+                // Redirect to the selected language page
+                const selectedValue = this.value;
+                if (selectedValue) {
+                    window.location.href = selectedValue;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
