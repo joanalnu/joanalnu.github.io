@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Calculation Trainer</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <div id="main-title" class="title">Mental Calculation Trainer</div>
+        <button class="login-btn" onclick="openModal('log-in-modal')">Log In</button>
+    </header>
+    <main class="background-image">
+        <div class="container">
+            <!-- Language Selection -->
+            <div id="language-selection" class="section">
+                <h1>Select Language</h1>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="zh">中文</option>
+                    <option value="ja">日语</option>
+                    <option value="ko">한국어</option>
+                </select>
+                <button class="primary-btn" onclick="startGame()">Start</button>
+            </div>
+
+            <!-- Welcome & selection area -->
+            <div id="welcome" class="section" style="display: none">
+                <div id="welcome-section">
+                    <h2 id="welcome-message"></h2>
+                    <button id="continue-button" class="primary-btn" onclick="quitWelcomeMessage(language)">Continue</button>
+                </div>
+                <div id="mode-selection" style="display: none">
+                    <h2 id="mode-selection-title"></h2>
+                    <button id="mode-1-button" class="mode-btn" onclick="modeSelection(0)">Training Mode</button>
+                    <button id="mode-2-button" class="mode-btn" onclick="modeSelection(1)">Gaming Mode</button>
+                </div>
+                <div id="calculation-selection" style="display: none">
+                    <h2 id="calc-selection-title">Select Calculation Type</h2>
+                    <button id="calc-1-button" class="mode-btn" onclick="selectCalculationType(0)">Addition</button>
+                    <button id="calc-2-button" class="mode-btn" onclick="selectCalculationType(1)">Subtraction</button>
+                    <button id="calc-3-button" class="mode-btn" onclick="selectCalculationType(2)">Multiplication</button>
+                    <button id="calc-4-button" class="mode-btn" onclick="selectCalculationType(3)">Division</button>
+                </div>
+            </div>
+
+            <!-- Game Area -->
+            <div id="game-area" class="section" style="display: none;">
+                <!-- Calculation Area -->
+                <div id="calculation-area" style="display: none;">
+                    <h3 id="calculation"></h3>
+                    <input type="number" id="player-answer" placeholder="Your answer">
+                    <div class="button-group">
+                        <button id="submit-button" class="primary-btn" onclick="submitAnswer(language)">Submit</button>
+                        <button id="quit-button" class="secondary-btn" onclick="quitGame(language)">Quit</button>
+                    </div>
+                </div>
+                <!-- Result Message -->
+                <div id="result-message"></div>
+            </div>
+
+            <!-- Goodbye message -->
+             <div id="goodbye-section" class="section" style="display: none">
+                <h3 id="goodbye-message"></h3>
+                <a href="https://github.com/tdm/game.html"><button id="restart" class="mode-btn">Restart</button></a>
+             </div>
+        </div>
+    </main>
+    <footer>
+        <p id="footer">© 2024 All Rights Reserved | <a href="https://github.com/joanalnu/TdM/blob/main/README.md">Instructions</a></p>
+    </footer>
+
+    <div id="log-in-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('log-in-modal')">&times;</span>
+            <h2 id="log-in-title">Log In</h2>
+            <h4 id="log-in-content" style="color:cadetblue"></h4>
+            <form id="login-form">
+                <input type="text" id="username" name="username" required aria-label="Username">
+                <input type="password" id="password" name="password" required aria-label="Username">
+                <button id="log-in-button" class="primary-btn" onclick="login()">Log In</button>
+            </form>
+            <p id="login-error"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
