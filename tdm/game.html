@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Calculation Trainer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sites/styles/styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">LOGO</div>
+        <div class="logo"></div>
         <div id="main-title" class="title">Mental Calculation Trainer</div>
-        <button class="login-btn">Log In</button>
+        <button class="login-btn" onclick="openModal('log-in-modal')">Log In</button>
     </header>
     <main class="background-image">
         <div class="container">
@@ -59,8 +59,8 @@
                     <h3 id="calculation"></h3>
                     <input type="number" id="player-answer" placeholder="Your answer">
                     <div class="button-group">
-                        <button class="primary-btn" onclick="submitAnswer(language)">Submit</button>
-                        <button class="secondary-btn" onclick="quitGame(language)">Quit</button>
+                        <button id="submit-button" class="primary-btn" onclick="submitAnswer(language)">Submit</button>
+                        <button id="quit-button" class="secondary-btn" onclick="quitGame(language)">Quit</button>
                     </div>
                 </div>
                 <!-- Result Message -->
@@ -68,14 +68,29 @@
             </div>
 
             <!-- Goodbye message -->
-             <div id="goodbye-section" class="section">
+             <div id="goodbye-section" class="section" style="display: none">
                 <h3 id="goodbye-message"></h3>
+                <a href="https://github.com/tdm/game.html"><button id="restart" class="mode-btn">Restart</button></a>
              </div>
         </div>
     </main>
     <footer>
-        <p>© 2024 All Rights Reserved | <a href="#">Instructions</a></p>
+        <p id="footer">© 2024 All Rights Reserved | <a href="https://github.com/joanalnu/TdM/blob/main/README.md">Instructions</a></p>
     </footer>
+
+    <div id="log-in-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('log-in-modal')">&times;</span>
+            <h2 id="log-in-title">Log In</h2>
+            <h4 id="log-in-content" style="color:cadetblue"></h4>
+            <form id="login-form">
+                <input type="text" id="username" name="username" required aria-label="Username">
+                <input type="password" id="password" name="password" required aria-label="Username">
+                <button id="log-in-button" class="primary-btn" onclick="login()">Log In</button>
+            </form>
+            <p id="login-error"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TdM - Tablas de Multiplicar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/tdm_styles.css">
+</head>
+<body>
+    <img src="images/tdm_IMG_0001.png" alt="TdM Logo - Un programa para practicar tablas de multiplicar" style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0; z-index: -1;">
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <h1 class="title" style="text-align: center;">TdM - Tablas de Multiplicar</h1>
+            </div>
+            <p class="description">¡Hola! Bienvenido al sitio web oficial de TdM. TdM es un programa que te ayuda a practicar matemáticas y hacer que el aprendizaje sea divertido. Es un código basado en web que cualquier persona puede usar en el navegador, solo tienes que hacer clic en el botón "JUGAR" a continuación.</p>
+            <p class="description">Además, TdM es un proyecto de código abierto y siempre está mejorando. Te animamos a contribuir informando problemas o enviando solicitudes de extracción en el repositorio de GitHub del proyecto. ¡Espero que lo disfrutes!</p>
+            <div class="buttons">
+                <a href="https://github.com/joanalnu/TdM" class="button button1">Ver en GitHub</a>
+                <a href="https://github.com/joanalnu/TdM/blob/main/README.md" class="button button2">Acceder a README</a>
+                <a href="https://joanalnu.github.io/tdm/game.html" class="button button3">JUGAR</a>
+                <a href="mailto:joanalnu@outlook.com" class="button button4">Contactarme</a>
+            </div>
+            <select class="language-select" aria-label="Select Language">
+                <option value="sites/es.html" selected>Español</option>
+                <option value="sites/en.html">English</option>
+                <option value="sites/ca.html">Català</option>
+                <option value="sites/de.html">Deutsch</option>
+                <option value="sites/fr.html">Français</option>
+                <option value="sites/it.html">Italiano</option>
+                <option value="sites/pt.html">Português</option>
+                <option value="sites/zh.html">中文</option>
+                <option value="sites/ja.html">日语</option>
+                <option value="sites/ko.html">한국어</option>
+            </select>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">TdM 2024. Todos los derechos reservados.</div>
+        <a href="https://joanalnu.github.io/index.html">Volver a inicio</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleccionar el menú desplegable de idiomas
+            const languageSelect = document.querySelector('.language-select');
+
+            // Agregar un evento de escucha para el evento de cambio
+            languageSelect.addEventListener('change', function() {
+                // Redireccionar a la página del idioma seleccionado
+                const selectedValue = this.value;
+                if (selectedValue) {
+                    window.location.href = selectedValue;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
