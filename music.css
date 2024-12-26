@@ -37,6 +37,15 @@ header {
     justify-content: center; /* Centers the menu items horizontally */
 }
 
+/* Main Menu Styling */
+.menu {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centers the menu items horizontally */
+}
+
 /* Menu Items */
 .menu > li {
     position: relative;
@@ -49,12 +58,43 @@ header {
     border-radius: 5px;
     text-decoration: none;
     color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .menu > li a:hover {
-    background-color: #f1c40f; /* Change hover background to yellow */
-    color: #222; /* Change the text color on hover */
+    background-color: #f1c40f;
+    color: #222;
+}
+
+/* Dropdown Menu */
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 200px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.dropdown .dropdown-content a {
+    font-size: 16px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown .dropdown-content a:hover {
+    background-color: #f1c40f;
+    color: #222;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Hamburger Menu Icon */
@@ -92,6 +132,14 @@ header {
     /* Show hamburger icon only on mobile */
     .hamburger-icon {
         display: block;
+    }
+
+    /* Dropdown menu on mobile */
+    .dropdown .dropdown-content {
+        position: static;
+        background-color: rgba(0, 0, 0, 0.9);
+        min-width: 100%;
+        box-shadow: none;
     }
 }
 
