@@ -6,6 +6,7 @@
     <title>Joan's Website</title>
     <link rel="stylesheet" href="home.css">
     <link rel="shortcut icon" href="images/logo.jpg">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -104,20 +105,5 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top" onclick="scrollToTop()">↑</button>
-
-    <script>
-        // Scroll to Top Functionality
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-
-    <script>
-        // Toggle the mobile menu visibility
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
