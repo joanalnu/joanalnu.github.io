@@ -156,6 +156,11 @@ footer p {
     nav a {
         margin: 10px 0;
     }
+
+    .cta {
+        margin-top: 20px;
+        font-size: small;
+    }
 }
 
 /* Two-Column Layout for Students & Educators Section */
