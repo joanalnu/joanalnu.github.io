@@ -339,6 +339,8 @@ footer a:hover {
     max-width: 900px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow for emphasis */
+    max-height: 80%;  /* Allow content to fit inside the modal */
+    overflow-y: auto; /* Enable scrolling within modal */
 }
 
 .modal-header h2 {
@@ -348,9 +350,13 @@ footer a:hover {
 }
 
 .modal-header {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1.5rem;  /* Added margin to separate header from content */
 }
 
 .close {
@@ -373,6 +379,8 @@ footer a:hover {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 0.5rem;
+    overflow-y: auto;  /* Ensures scrolling for large text content */
+    max-height: calc(100vh - 200px);  /* Adjust the height to fit within the screen */
 }
 
 /* Modal Animation */
@@ -388,5 +396,14 @@ footer a:hover {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-header h2 {
+        color: var(--accent-color); /* Accent color for modal title */
+        margin: 0;
+        margin-bottom: 1rem;
+        font-size: 20px;
     }
 }
