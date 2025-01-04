@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TdM - 乘法表</title>
+    <title>TdM - Mga Talahanayan ng Pag-multiply</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/tdm_styles.css">
 </head>
 <body>
-    <img src="images/tdm_IMG_0001.png" alt="TdM Logo - A program for practicing multiplication tables" style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0; z-index: -1;">
+    <img src="images/tdm_IMG_0001.png" alt="Logo ng TdM - Isang programa para magpraktis ng mga talahanayan ng pag-multiply" style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0; z-index: -1;">
     <div class="container">
         <div class="content">
             <div class="header">
-                <h1 class="title" style="text-align: center;">TdM - 乘法表</h1>
+                <h1 class="title" style="text-align: center;">TdM - Mga Talahanayan ng Pag-multiply</h1>
             </div>
-            <p class="description">你好！欢迎来到TdM的官方网站。TdM是一个帮助您练习数学并使学习变得有趣的程序。它是一个基于Web的代码，任何人都可以在浏览器上使用，只需点击下面的“PLAY”按钮。</p>
-            <p class="description">此外，TdM是一个开源项目，正在不断改进。我们鼓励您通过报告问题或在项目的GitHub仓库中发送拉取请求来贡献。希望您喜欢它！</p>
+            <p class="description">Kamusta! Maligayang pagdating sa opisyal na website ng TdM. Ang TdM ay isang programa na tumutulong sa iyo na magpraktis ng matematika at ginagawang masaya ang pagkatuto. Isa itong web-based na code na maaaring gamitin ng sinuman sa browser, kailangan mo lang i-click ang "PLAY" na button sa ibaba.</p>
+            <p class="description">Bukod pa rito, ang TdM ay isang open-source na proyekto at patuloy na pinapabuti. Inaanyayahan ka naming mag-ambag sa pamamagitan ng pag-uulat ng mga isyu o pagpapadala ng pull requests sa GitHub repository ng proyekto. Sana'y magustuhan mo ito!</p>
             <div class="buttons">
-                <a href="https://github.com/joanalnu/TdM" class="button button1">查看GitHub</a>
-                <a href="https://github.com/joanalnu/TdM/blob/main/README.md" class="button button2">查看README</a>
-                <a href="https://joanalnu.github.io/tdm/game.html" class="button button3">开始游戏</a>
-                <a href="mailto:joanalnu@outlook.com" class="button button4">联系我</a>
+                <a href="https://github.com/joanalnu/TdM" class="button button1">Tingnan sa GitHub</a>
+                <a href="https://github.com/joanalnu/TdM/blob/main/README.md" class="button button2">I-access ang README</a>
+                <a href="https://joanalnu.github.io/tdm/game.html" class="button button3">PLAY</a>
+                <a href="mailto:joanalnu@outlook.com" class="button button4">Makipag-ugnayan sa akin</a>
             </div>
-            <select class="language-select" aria-label="Select Language">
-                <option value="sites/en.html" selected>English</option>
+            <select class="language-select" aria-label="Piliin ang Wika">
+                <option value="sites/en.html">English</option>
                 <option value="sites/es.html">Español</option>
                 <option value="sites/ca.html">Català</option>
                 <option value="sites/de.html">Deutsch</option>
@@ -31,7 +31,7 @@
                 <option value="sites/it.html">Italiano</option>
                 <option value="sites/pt.html">Português</option>
                 <option value="sites/zh.html">中文</option>
-                <option value="sites/ja.html">日语</option>
+                <option value="sites/ja.html">日本語</option>
                 <option value="sites/ko.html">한국어</option>
                 <option value="sites/ar.html">العربية</option>
                 <option value="sites/ru.html">русский</option>
@@ -42,7 +42,7 @@
                 <option value="sites/th.html">ไทย</option>
                 <option value="sites/fa.html">فارسی</option>
                 <option value="sites/ms.html">Bahasa Melayu</option>
-                <option value="sites/tl.html">Filipino</option>
+                <option value="sites/tl.html" selected>Filipino</option>
                 <option value="sites/sw.html">Kiswahili</option>
                 <option value="sites/pl.html">Polski</option>
                 <option value="sites/uk.html">Українська</option>
@@ -50,17 +50,17 @@
         </div>
     </div>
     <div class="footer">
-        <div class="copyright">© 2024 TdM. All rights reserved.</div>
-        <a href="https://joanalnu.github.io/index.html">返回首页</a>
+        <div class="copyright">© 2024 TdM. Lahat ng karapatan ay nakalaan.</div>
+        <a href="https://joanalnu.github.io/index.html">Bumalik sa Home</a>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Select the language dropdown
+            // Piliin ang dropdown ng wika
             const languageSelect = document.querySelector('.language-select');
 
-            // Add an event listener for the change event
+            // Magdagdag ng event listener para sa pagbabago ng wika
             languageSelect.addEventListener('change', function() {
-                // Redirect to the selected language page
+                // I-redirect sa napiling pahina ng wika
                 const selectedValue = this.value;
                 if (selectedValue) {
                     window.location.href = selectedValue;
