@@ -17,6 +17,8 @@ body {
 /* Error and support section layout */
 #error-section, #support-section {
     margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
 }
   
 /* 2-column layout for larger screens */
