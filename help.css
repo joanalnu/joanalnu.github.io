@@ -15,7 +15,7 @@ body {
 }
   
 /* Error and support section layout */
-#error-section, #support-section {
+#error-section, #support-section, #help-documents {
     margin-bottom: 40px;
     justify-content: center;
     align-items: center;
@@ -54,7 +54,7 @@ footer a:hover {
   
 /* Restrict iframe width */
 iframe {
-    max-width: 90%;
+    max-width: 100%;
     width: 100%; /* Ensures responsiveness */
     height: 600px;
     border: none;
