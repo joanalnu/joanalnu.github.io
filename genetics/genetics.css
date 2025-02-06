@@ -1,0 +1,252 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eef9f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #8BC34A 0%, #558B2F 100%);
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #6FBF73;
+    padding: 10px 0;
+    border-radius: 30px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    vertical-align: middle; /* Ensure links align vertically */
+}
+
+nav a:hover {
+    background-color: #388E3C;
+}
+
+nav > li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav > li a {
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: #388e3c 0.3s ease;
+}
+
+nav > li a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+/* Dropdown Menu */
+nav .dropdown {
+    display: flex;
+    list-style: none;
+}
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #6FBF73;
+    min-width: 200px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px #388E3C;
+    z-index: 10;
+}
+
+.dropdown .dropdown-content a {
+    font-size: 16px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown .dropdown-content a:hover {
+    background-color: #388E3C;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Main Section */
+main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #4CAF50;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    content: "✔";
+    color: #66BB6A;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Call to Action */
+.cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta a {
+    padding: 18px 36px;
+    background-color: #558B2F;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cta a:hover {
+    background-color: #33691E;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Two-Column Layout for Students & Educators Section */
+.two-column {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.column {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .cta {
+        margin-top: 20px;
+        font-size: 10px;
+    }
+    .two-column {
+        flex-direction: column;
+    }
+
+    /* Dropdown menu on mobile */
+    .dropdown .dropdown-content {
+        position: static;
+        background-color: rgba(0, 0, 0, 0.9);
+        min-width: 100%;
+        box-shadow: none;
+    }
+}
