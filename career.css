@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
     --primary-color: #2C298D;
-    --accent-color: #4949A4;
+    --accent-color: #7777C2; /*original 4949A4*/
     --background-color: #000000;
     --text-color: #D0D3D4;
     --font-family: 'Poppins', sans-serif;
@@ -207,7 +207,7 @@ header {
 }
 
 .about-section h2 {
-    color: var(--accent-color);
+    color: #FFFFFF;
     font-size: 36px;
     margin-bottom: 20px;
     line-height: 1.6;
@@ -290,7 +290,12 @@ footer {
 }
 
 .card h3 {
+    font-size: 1.9rem;
     margin-top: 10px;
+}
+
+.card p{
+    font-size: 1.0rem;
 }
 
 /* Back to Top Button */
