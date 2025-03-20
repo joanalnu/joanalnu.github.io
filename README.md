@@ -31,10 +31,7 @@ To the fullest extent permitted by law, I will not be liable for any damages ari
 I reserve the right to update or modify these Terms of Use at any time without prior notice. Changes will be effective immediately upon posting on the Website. Your continued use of the Website constitutes acceptance of the updated Terms.
 
 #### 8. **Governing Law**
-These Terms are governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law principles.
-
-#### 9. **Contact Information**
-If you have any questions about these Terms of Use, please contact me at [joanalnu@outlook.com](mailto:joanalnu@outlook.com).
+These Terms are governed by and construed in accordance with the laws of the Reign of Spain and the European Union, without regard to its conflict of law principles.
 
 ---
 Thank you for visiting my Website!

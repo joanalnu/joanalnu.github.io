@@ -1,5 +1,9 @@
-deprecated/
-gen-10_dev/
-.idea/
+# essentials
 .DS_Store
-tdm/.DS_Store
+images/.DS_Store
+
+# fotos pages
+fotos/
+
+# old sites
+deprecated/
