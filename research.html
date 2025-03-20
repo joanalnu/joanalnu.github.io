@@ -40,21 +40,20 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <!--<h1>Welcome to Joan's Space</h1>-->
-        <h1><span class="auto-type-title"></span></h1>
-        <p>Discover my projects, music, and passion for science and coding.</p>
-        <a href="#about" class="cta">Learn More</a> <!--TODO: add soft scrolling-->
-    </section>
+    <div class="hero-section" style="background-image: url('images/z_cosmology.jpg');">
+      <h1>Joan Alcaide Núñez</h1>
+      <p>Your guide to my academic and professional journey in science, technology, and beyond.</p>
+      <h1>I'm <span class="auto-type"></span></h1>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-        const typed = new Typed(".auto-type-title", {
-          strings: ["Welcome to Joan's Space"],
-          typeSpeed: 100,
-          backSpeed: 10,
-          loop: true
-        });
+      const typed = new Typed(".auto-type", {
+        strings: ["Joan", "a student", "an astrophysics researcher", "the CAPIBARA group lead", "a Python coder", "a science enthusiast!"],
+        typeSpeed: 120,
+        backSpeed: 30,
+        loop: true
+      });
     </script>
 
     <!-- About Section -->
@@ -79,34 +78,44 @@
           <img src="images/capibara.png">
           <h3>CAPIBARA Team</h3>
           <p>Leading the satellite launch for cosmic ray research.</p>
-          <a href="https://capibara3.github.io/">Learn More</a>
+          <a onclick="openModal('capibara-modal')">Learn More</a>
         </div>
-        <div class="card" onclick="openModal('genetics-modal')">
-          <img src="images/genetics.png">
-          <h3>Genetics10</h3>
-          <p>An educational software on genomics for biology students.</p>
-          <a href="https://joanalnu.github.io/genetics10">Learn More</a>
-        </div>
+        <!--<div class="card" onclick="openModal('genetics-modal')">-->
+        <!--  <img src="images/genetics.png">-->
+        <!--  <h3>Genetics10</h3>-->
+        <!--  <p>An educational software on genomics for biology students.</p>-->
+        <!--  <a href="https://joanalnu.github.io/genetics10">Learn More</a>-->
+        <!--</div>-->
         <div class="card" onclick="openModal('cosmo-modal')">
             <img src="images/cosmology.png" alt="Cosmology">
             <h3>Cosmology Research</h3>
             <p>Understanding the working of the Universe as a whole.</p>
-            <a href="https://capibara3.github.io/research/GRB_cosmology.html">Learn More</a>
+            <a onclick="openModal('cosmo-modal')">Learn More</a>
         </div>
     </section>
 
 
-    <h2>Presentations</h2>
-    <div class="list" id="presentations">
-        <ul>
-        <li><i>De l'aula a l'espai: joves, ions i fotons per entendre l'univers d'altes energies</i> about the CAPIBARA Collaboration and the role of young students in research as part of the CosmoXarxa program by the Explainers Community at <a href="https://cosmocaixa.org/es/cosmocaixa-barcelona">CosmoCaixa Science Museum</a></li>
-        <li><i>L'Exploració espacial</i> at <a href="https://www.escolacanigosantjust.cat">Escola Canigó</a></li>
-        <li><i>Introducción de Astrofísica</i>, <a href="https://dsbarcelona.com/es/preparacion-universitaria/">Cursos de Preparación Universitaria</a> de Física at <a href="https://dsbarcelona.com">Deutsche Schule Barcelona</a></li>
+    <h2>Talks</h2>
+    <div class="project-cards" id="talks">
+        <div class="card">
+            <a href="documents/pdfCAPIBARA_CosmoXarxa.pdf"><img src="images/cosmoxarxaPoster.jpeg" alt="CosmoXarxa Poster"></a>
+            <h4><i>De l'aula a l'espai: joves, ions i fotons per entendre l'univers d'altes energies</i> at <a href="https://cosmocaixa.org">CosmoCaixa Science Museum</a></h4>
+            <p>CosmoXarxa is an initiative by and for the <a href="https://explainerscosmocaixa.org">Explainers Community</a> of the science science museum. I presented the CAPIBARA Collaboration, its objectives and status, both technical, scientific, and educative; inviting the public to join the efforts.</p>
+        </div>
+        <div class="card">
+            <a href="documents/Exploració%20espacial.pdf"><img src="images/exploracioEspacial.jpeg" alt="Exploració Espacial Workshop"</a>
+            <h4><i>L'Exploració Espacial</i> at <a href="https://www.escolacanigosantjust.cat">Escola Canigó</a></h4>
+            <p>I conducted a 1.5h hour activity with 4th grade students at a local school in which I explained space exploration from the begining (apollo and space shuttle) to today (day in the life onboard the ISS and solar system exploration). With model rockets and modules I brought I managed to engage the children and create an inspiring ambience.</p>
+        </div>
+        <div class="card">
+            <a href="documents/ClaseUniversoPu.pdf"><img src="images/claseUniversoFirstPage.png" alt="IntroAstro"></a>
+            <h4><i>Intrducción de Astrofísica</i> at <a href="https://dsbarcelona.com/es/preparacion-universitaria/">Cursos de Preparación Universitaria</a> de Física at <a href="https://dsbarcelona.com">Deutsche Schule Barcelona</a></h4>
+            <p>For my Physics University Preparation class, I gave to classes (1.5h each) about the foundations of astrophysics, introducing the most important topics to high schoolers. The opportunity was great to channel and reflect on what I'd been learning for the past years, as well as to share my curiosity and excitement with fellow classmates.</p>
             <ul>
-                <li>Part 1: Origin of the Universe, Cosmic Microwave Background, Star Evolution</li>
-                <li>Part 2: Galaxies, Neutron Stars, and Black Holes</li>
+                <li>Part 1: Origin of the Universe, CMB, and Stellar Evolution</li>
+                <li>Part 2: Galaxies, Neutron Stars, and Black holes</li>
             </ul>
-        </ul>
+        </div>
     </div>
 
     <br>
@@ -141,7 +150,7 @@
             <p><a href="https://capibara3.github.io/">The CAPIBARA Project</a> is a student-led initiative aiming to launch a satellite dedicated to observing and researching the high-energy cosmos. Our mission focuses on measuring primary cosmic rays (charged particles) as well as X-ray and 𝛾-ray emissions, providing valuable insights into the Universe's most energetic phenomena.</p>
             <p>By studying high-energy radiation, we aim to deepen our understanding of astrophysical processes, quantum physics, and the interactions between cosmic phenomena and Earth's space environment. Our collected data will be made publicly accessible in its totality, fostering further research and collaboration in these fields and inspiring the next generation of young scientists and engineers.</p>
             <p>We are a diverse team of high-school students passionate about both science and engineering, working together to bring this vision to life. Therefore, we are grateful for our teachers, mentors, families, and everybody supporting us in this adventure.</p>
-            <p>My role in this collaboration involves leading the CAPIBARA project, coordinating the efforts and [...]. Furthermore, I work to advancing research on using the 𝛾-ray and X-ray observatories to employ Gamma-Ray Bursts (GRBs) as cosmological distance indicators, with the aim of refining the Hubble constant and testing the \(\Lambda\)CDM model.</p>
+            <p>My role in this collaboration involves leading the CAPIBARA project, coordinating the efforts. Furthermore, I work to advancing research on using the 𝛾-ray and X-ray observatories to employ Gamma-Ray Bursts (GRBs) as cosmological distance indicators, with the aim of refining the Hubble constant and testing the $\Lambda$CDM model.</p>
             <center><a href="https://capibara3.github.io">Learn More</a></center>
           </div>
         </div>
