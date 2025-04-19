@@ -452,4 +452,15 @@ footer a:hover {
         margin-bottom: 1rem;
         font-size: 25px;
     }
+
+    .project-cards {
+        display: grid;
+    /*    justify-content: center;*/
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* normally is 400px, here 300px for narrower screens*/
+    }
 }
