@@ -80,12 +80,12 @@
           <p>Leading the satellite launch for cosmic ray research.</p>
           <a onclick="openModal('capibara-modal')">Learn More</a>
         </div>
-        <!--<div class="card" onclick="openModal('genetics-modal')">-->
-        <!--  <img src="images/genetics.png">-->
-        <!--  <h3>Genetics10</h3>-->
-        <!--  <p>An educational software on genomics for biology students.</p>-->
-        <!--  <a href="https://joanalnu.github.io/genetics10">Learn More</a>-->
-        <!--</div>-->
+        <div class="card" onclick="openModal('gen10-modal')">
+          <img src="images/genetics.png">
+          <h3>Gen10</h3>
+          <p>An educational Python Package for genomics and bioinformatics.</p>
+          <a href="https://joanalnu.github.io/genetics10">Learn More</a>
+        </div>
         <div class="card" onclick="openModal('cosmo-modal')">
             <img src="images/cosmology.png" alt="Cosmology">
             <h3>Cosmology Research</h3>
@@ -119,7 +119,7 @@
     </div>
 
     <br>
-    <h2>Other Projects</h2>
+    <h2>Other Minor Projects</h2>
     <div class="list" id="others">
         <li>🔭 <a href="https://github.com/joanalnu/ztf_api" style="color: #D0D3D4; text-decoration: underline;">ZTF-API</></li>
         <li>🌍 <a href="https://github.com/joanalnu/thermal_analysis" style="color: #D0D3D4; text-decoration: underline;">Thermal Analysis</a> (internship at <a href="https://dlr.de" style="color: #D0D3D4; text-decoration: underline;">DLR</a> Institute of Remote Sensing in September 2024)</li>
@@ -155,15 +155,16 @@
           </div>
         </div>
       </div>
-      <div id="genetics-modal" class="modal">
+      <div id="gen10-modal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
-            <h2>Genetics10 & GEN-API</h2>
-            <span class="close" onclick="closeModal('genetics-modal')">&times;</span>
+            <h2>Gen10</h2>
+            <span class="close" onclick="closeModal('gen10-modal')">&times;</span>
           </div>
           <div class="modal-body">
-            <p><a href="gen10/index.html">Genetics10</a> is a free, web-based, educational software for teaching biology and genetics. It's a Python Notebook, where students can easily play and make their code using the pre-established functions. Furthermore, advanced students can write more complex code and create other functions. The possibilities are endless! Additionally, it is web-based and does not require any installation at all, making it very easy to use and perfect for school-managed devices.</p>
-            <p><a href="https://github.com/joanalnu/gen_api">GEN-API</a> is an open-source API for genetic data analysis. It features the same functions as the original gen10 class in all the available languages, but it can be installed in your computer using pip and used system-wide. This enables a smoother integration for external projects, more complex data analysis and integration with other tools. It is also very easy to use and can be installed in a few seconds.</p>
+            <p><a href="gen10/index.html">Gen10</a> is a package for genomics data analysis and visualization, providing the right tools integrated into your Python code. The original goal of this package is to provide support and tools for education in high school or college, but it can be used for any applicable purpose.</p>
+            <p>The gen10 package allows to you perform a great and increasing variety of tasks from translating DNA into RNA or protein sequences, to retrieving alphafold structure predictions, simulating mutations and much more! gen10 is a powerful tool and at the same time easy-to-use for students to experiment with, learn from and create their own code. it doesn't need any software installation and can be used directly from a web browser.</p>
+            <p>I have developed notebook tutorials for coding beginners (zero coding experience required) to help students understand the basics of using the package and jump straight to learning.</p>
             <center><a href="gen10/index.html">Learn More</a></center>
           </div>
         </div>
