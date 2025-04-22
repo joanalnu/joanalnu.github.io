@@ -19,19 +19,76 @@ body {
     margin-bottom: 40px;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
   
+/* Support section specific styles */
+#support-section h1 {
+    color: #e86c0b;
+    margin-bottom: 10px;
+}
+
+#support-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#support-section a {
+    color: #5b0c8a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#support-section a:hover {
+    text-decoration: underline;
+}
+
+/* Help documents section */
+#help-documents {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#help-documents h2 {
+    color: #2b2b2b;
+    margin-bottom: 10px;
+}
+
+#help-documents a {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #e86c0b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#help-documents a:hover {
+    color: #5b0c8a;
+    text-decoration: underline;
+}
+
 /* 2-column layout for larger screens */
 @media (min-width: 768px) {
     .container {
       display: flex;
       justify-content: space-between;
       gap: 30px;
+      flex-wrap: wrap;
     }
   
     #error-section, #support-section {
-      flex: 1;
+      flex: 1 1 45%;
       padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    #help-documents {
+      flex: 1 1 100%;
+      margin-top: 40px;
     }
 }
   
