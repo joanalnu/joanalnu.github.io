@@ -142,3 +142,97 @@ iframe {
 .footer-column a:hover {
     color: #5b0c8a;
 }
+
+/* Dark mode overrides using prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        background-color: transparent;
+    }
+
+    #error-section, #support-section, #help-documents {
+        background-color: #1e1e2f;
+        color: #e0e0e0;
+        box-shadow: 0 2px 8px rgba(74, 144, 226, 0.5);
+    }
+
+    #support-section h1 {
+        color: #4a90e2;
+    }
+
+    #support-section p {
+        color: #cfd8dc;
+    }
+
+    #support-section a {
+        color: #7ea7e0;
+    }
+
+    #support-section a:hover {
+        color: #4a90e2;
+        text-decoration: underline;
+    }
+
+    #help-documents h2 {
+        color: #a0a0a0;
+    }
+
+    #help-documents a {
+        color: #4a90e2;
+    }
+
+    #help-documents a:hover {
+        color: #7ea7e0;
+        text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            background-color: transparent;
+        }
+
+        #error-section, #support-section {
+            background-color: #1e1e2f;
+            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.5);
+        }
+
+        #help-documents {
+            background-color: transparent;
+        }
+    }
+
+    footer {
+        background-color: #1e1e2f;
+        color: #ccc;
+    }
+
+    footer a {
+        color: #7ea7e0;
+    }
+
+    footer a:hover {
+        color: #4a90e2;
+    }
+
+    iframe {
+        border: none;
+    }
+
+    .footer-container {
+        background-color: transparent;
+    }
+
+    .footer-column a {
+        color: #7ea7e0;
+    }
+
+    .footer-column a:hover {
+        color: #4a90e2;
+    }
+}
