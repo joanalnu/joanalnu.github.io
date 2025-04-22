@@ -6,6 +6,7 @@
     <title>Joan's Website</title>
     <link rel="stylesheet" href="home.css">
     <link rel="shortcut icon" href="images/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -13,26 +14,26 @@
     <header>
         <nav>
             <div class="menu-container">
-                <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="research.html" class="dropbtn">Research ></a>
-                        <div class="dropdown-content">
-                            <a href="https://capibara3.github.io/unavailable.html">Distance Ladder</a>
-                            <a href="https://capibara3.github.io">CAPIBARA Mission</a>
-                            <a href="https://capibara3.github.io/research/GRB_cosmology.html">GRB Cosmography</a>
-                            <a href="https://github.com/joanalnu/ztf_api">ZTF API</a>
-                            <a href="research.html#talks">Talks</a>
+                <ul class="menu" role="menubar" aria-label="Main navigation">
+                    <li role="none"><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
+                    <li class="dropdown" role="none">
+                        <a href="research.html" class="dropbtn" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Research ></a>
+                        <div class="dropdown-content" role="menu" aria-label="Research submenu">
+                            <a href="https://capibara3.github.io/unavailable.html" role="menuitem" tabindex="-1">Distance Ladder</a>
+                            <a href="https://capibara3.github.io" role="menuitem" tabindex="-1">CAPIBARA Mission</a>
+                            <a href="https://capibara3.github.io/research/GRB_cosmology.html" role="menuitem" tabindex="-1">GRB Cosmography</a>
+                            <a href="https://github.com/joanalnu/ztf_api" role="menuitem" tabindex="-1">ZTF API</a>
+                            <a href="research.html#talks" role="menuitem" tabindex="-1">Talks</a>
                         </div>
                     </li>
-                    <li><a href="music.html">Music</a></li>
+                    <li role="none"><a href="music.html" role="menuitem" tabindex="0">Music</a></li>
                     |
-                    <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/">LinkedIn</a></li>
-                    <li><a href="https://github.com/joanalnu">GitHub</a></li>
-                    <li><a href="mailto:joanalnu@outlook.com">Contact</a></li>
+                    <li role="none"><a href="https://www.linkedin.com/in/joan-alcaide-núñez/" role="menuitem" tabindex="0">LinkedIn</a></li>
+                    <li role="none"><a href="https://github.com/joanalnu" role="menuitem" tabindex="0">GitHub</a></li>
+                    <li role="none"><a href="mailto:joanalnu@outlook.com" role="menuitem" tabindex="0">Contact</a></li>
                 </ul>
                 <!-- Hamburger Icon -->
-                <div class="hamburger-icon" onclick="toggleMenu()">
+                <div class="hamburger-icon" onclick="toggleMenu()" aria-label="Toggle menu" role="button" tabindex="0" onkeypress="if(event.key==='Enter'){toggleMenu();}">
                     &#9776; <!-- Hamburger symbol -->
                 </div>
             </div>
@@ -44,7 +45,7 @@
         <!--<h1>Welcome to Joan's Space</h1>-->
         <h1><span class="auto-type-title"></span></h1>
         <p>Discover my projects, music, and passion for science and coding.</p>
-        <a href="#about" class="cta">Learn More</a> <!--TODO: add soft scrolling-->
+        <a href="#about" class="cta" id="learn-more-btn">Learn More</a>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -54,6 +55,12 @@
           typeSpeed: 100,
           backSpeed: 10,
           loop: true
+        });
+
+        // Smooth scroll for Learn More button
+        document.getElementById('learn-more-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 
