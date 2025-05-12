@@ -376,14 +376,14 @@ main {
 
 /* Hero Section and social icons */
 .hero-section {
-    background-image: url('images/sky.jpg');
+    background-color: #FFF;
+    color: #000;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
     height: 100%;
     display: flex;
-    color: white;
     justify-content: center;
     align-items: center;
     flex-direction: column;
