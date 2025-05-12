@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joan's Website</title>
+    <title>Joan's Research</title>
     <link rel="stylesheet" href="research.css">
     <link rel="shortcut icon" href="images/logo.jpg">
     <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <!--TODO: learn to make dropdown submenu with new styles--<header>
         <nav>
             <div class="menu-container">
                 <ul class="menu">
@@ -31,34 +31,62 @@
                     <li><a href="https://github.com/joanalnu">GitHub</a></li>
                     <li><a href="mailto:joanalnu@outlook.com">Contact</a></li>
                 </ul>
-                <!-- Hamburger Icon -->
+                <!-- Hamburger Icon --
                 <div class="hamburger-icon" onclick="toggleMenu()">
-                    &#9776; <!-- Hamburger symbol -->
+                    &#9776; <!-- Hamburger symbol --
                 </div>
             </div>
         </nav>
-    </header>
+    </header>-->
+
+    <div class="burger__container">
+    <div class="burger" aria-controls="navigation" aria-label="Menu">
+      <div class="burger__meat burger__meat--1"></div>
+      <div class="burger__meat burger__meat--2"></div>
+      <div class="burger__meat burger__meat--3"></div>
+    </div>
+  </div>
+
+  <nav class="nav" id="navigation">
+    <ul class="nav__list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/" role="menuitem" tabindex="0">LinkedIn</a></li>
+      <li><a href="https://github.com/joanalnu">GitHub</a></li>
+      <li><a href="mailto:joanalnu@outlook.com">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
 
     <!-- Hero Section -->
-    <div class="hero-section" style="background-image: url('images/z_cosmology.jpg');">
-      <h1>Joan Alcaide Núñez</h1>
-      <p>Your guide to my academic and professional journey in science, technology, and beyond.</p>
-      <h1>I'm <span class="auto-type"></span></h1>
-    </div>
+    <section class="hero-section">
+        <h1>Hi! I'm <span class="auto-type-title"></span></h1>
+        <p>Your guide to my academic and professional journey in science, technology, and beyond.</p>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-      const typed = new Typed(".auto-type", {
-        strings: ["Joan", "a student", "an astrophysics researcher", "the CAPIBARA group lead", "a Python coder", "a science enthusiast!"],
-        typeSpeed: 120,
-        backSpeed: 30,
-        loop: true
-      });
+        const typed = new Typed(".auto-type-title", {
+          strings: ["Joan", "a student", "an astrophysics researcher", "the CAPIBARA group lead", "a Python coder", "a science enthusiast!"],
+          typeSpeed: 120,
+          backSpeed: 30,
+          loop: true
+        });
+
+        // Smooth scroll for Learn More button
+        document.getElementById('learn-more-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
+          
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <h2>About Me</h2>
+        <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
+          About Me
+        </h2>
         <p>
             Scientific research has always been at the heart of my work, with coding and computer science as key tools to drive my projects. Participating in the Youth and Science program by Fundació Catalunya La Pedrera has been one of the most transformative experiences in my journey. It opened doors to the world of research and allowed me to gain first-hand experience in a professional scientific environment.
             <br><br>
@@ -72,7 +100,9 @@
 
 
     <!-- Projects Section -->
-    <h2>My Projects</h2>
+    <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
+      My Projects
+    </h2>
     <section id="projects" class="project-cards">
         <div class="card" onclick="openModal('capibara-modal')">
           <img src="images/capibara.png">
@@ -95,7 +125,9 @@
     </section>
 
 
-    <h2>Talks</h2>
+    <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
+      Talks
+    </h2>
     <div class="project-cards" id="talks">
         <div class="card">
             <a href="documents/pdfCAPIBARA_CosmoXarxa.pdf"><img src="images/cosmoxarxaPoster.jpeg" alt="CosmoXarxa Poster"></a>
@@ -119,7 +151,9 @@
     </div>
 
     <br>
-    <h2>Other Minor Projects</h2>
+    <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
+      Other Minor Projects
+    </h2>
     <div class="list" id="others">
         <li>🔭 <a href="https://github.com/joanalnu/ztf_api">ZTF-API</li>
         <li>🌍 <a href="https://github.com/joanalnu/thermal_analysis">Thermal Analysis</a> (internship at <a href="https://dlr.de">DLR</a> Institute of Remote Sensing in September 2024)</li>
@@ -186,5 +220,6 @@
           </div>
         </div>
       </div>
+    </main>
 </body>
 </html>
