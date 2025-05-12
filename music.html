@@ -15,186 +15,177 @@
   </head>
   
   <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="menu-container">
-                <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="research.html" class="dropbtn">Research ></a>
-                        <div class="dropdown-content">
-                            <a href="https://capibara3.github.io/unavailable.html">Distance Ladder</a>
-                            <a href="https://capibara3.github.io">CAPIBARA Mission</a>
-                            <a href="https://capibara3.github.io/research/GRB_cosmology.html">GRB Cosmography</a>
-                            <a href="https://github.com/joanalnu/ztf_api">ZTF API</a>
-                            <a href="research.html#talks">Talks</a>
-                        </div>
-                    </li>
-                    <li><a href="music.html">Music</a></li>
-                    |
-                    <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/">LinkedIn</a></li>
-                    <li><a href="https://github.com/joanalnu">GitHub</a></li>
-                    <li><a href="mailto:joanalnu@outlook.com">Contact</a></li>
-                </ul>
-                <!-- Hamburger Icon -->
-                <div class="hamburger-icon" onclick="toggleMenu()">
-                    &#9776; <!-- Hamburger symbol -->
+    <div class="burger__container">
+        <div class="burger" aria-controls="navigation" aria-label="Menu">
+        <div class="burger__meat burger__meat--1"></div>
+        <div class="burger__meat burger__meat--2"></div>
+        <div class="burger__meat burger__meat--3"></div>
+        </div>
+    </div>
+
+    <nav class="nav" id="navigation">
+        <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/" role="menuitem" tabindex="0">LinkedIn</a></li>
+        <li><a href="https://github.com/joanalnu">GitHub</a></li>
+        <li><a href="mailto:joanalnu@outlook.com">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="hero-section">
+        <div class="music-info">
+            <h2>Played with <a href="https://es.yamaha.com/es/products/musical_instruments/pianos/p_series/p-45/index.html">Yamaha Digital Piano P-45</a> and recorded with <a href="https://www.apple.com/mac/garageband/">Garageband</a></h2>
+            <div class="tracks">
+                <div class="track">
+                    <h1>Dune Part One - 07/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%214614&authkey=!ABLoMtCaW86Xf_4">download</a></h1>
+                    <h2>Hans Zimmer - 2021</h2>
+                    <audio controls>
+                        <source src="audio_folder/Dune - 31:7:24.mp3">
+                    </audio>
+                    <h4>Recorded with <a href="https://www.akaipro.com/mpk-mini-mk3">Akai MPK mini</a> and <a href="https://apple.com/mac/garageband/">GarageBand</a>.</h4>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Can You Hear the Music? - Oppenheimer - 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213866&authkey=!AIuiTSQruvq-GBg">download</a></h1>
+                    <h2>Ludwig Göransson - 2023</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-Version2CanYouHearTheMusic_Oppenheimer-5-2024.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Just The Two Of Us (version 2) - 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213867&authkey=!ADl96DijJJjfFt8">download</a></h1>
+                    <h2>Bill Withers & Grover Washington, Jr. - 1980</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-Version2JustTheTwoOfUs-5-2024.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Mia & Sebastian's Theme (version 2)- 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213865&authkey=!AFA2rtqpJzmUrqA">download</a></h1>
+                    <h2>Justin Hurwitz - 2016</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-Version2MiaSebastiansTheme-5-2024.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Golden Hour at Firenze - 04/2024</h1>
+                    <h2>JVKE - 2022</h2>
+                    <video width="75%" height="75%" controls>
+                        <source src="audio_folder/GoldenHourFirenze.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Mamma Mia - 07/2023 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213282&authkey=!AFhGjQF2KupMxnA">download</a></h1>
+                    <h2>ABBA - 1975</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-MammaMia-7-2023.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Girl of Ipanema - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213262&authkey=AIluurfwhfW8Wys">download</a></h1>
+                    <h2>Antônio Carlos Jobim - 1964</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-GirlOfIpanema-5-2023.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Hit the Road Jack arrangement- 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213265&authkey=AGGPmc4dbISmNTs">download</a></h1>
+                    <h2>Ray Charles - 1961</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-HitTheRoadJack-5-2023.mp3">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Take the "A" Train - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213264&authkey=AJ1WBB8r6mcoEDo">download</a></h1>
+                    <h2>Duke Elligton - 1939</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-TakeTheATrain-5-2023.mp3">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Fly arrangement - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213255&authkey=AO0LYKBRICTnohs">download</a></h1>
+                    <h2>Ludovico Einaudi - 2006</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-Fly-5-2023.mp3">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Havana - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213263&authkey=ALyMhLgtQryAZbg">download</a></h1>
+                    <h2>Camila Cabello - 2018</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-Habana-5-2023.mp3">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>La La Land Medley - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213258&authkey=AO-RfVzwLbw9yOQ">download</a></h1>
+                    <h2>Justin Hurwitz - 2016</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-LaLaLand-5-2023.mp3">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Take Five - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213257&authkey=ABySuoZwA1YhllI">download</a></h1>
+                    <h2>Dave Brubeck Quartet - 1959</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-TakeFive-5-2023.mp3">
+                    </audio>
+                </div>
+                <br><br><br>
+                
+                <div class="track">
+                    <h1>Interstellar arrangement - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213256&authkey=AKNARaN2vwraIAc">download</a></h1>
+                    <h2>Hans Zimmer - 2014</h2>
+                    <audio controls>
+                        <source src="audio_folder/JAN-Interstellar-5-2023.mp3">
+                    </audio>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <div class="hero-section">
-      <div class="music-info">
-        <h2>Played with <a href="https://es.yamaha.com/es/products/musical_instruments/pianos/p_series/p-45/index.html">Yamaha Digital Piano P-45</a> and recorded with <a href="https://www.apple.com/mac/garageband/">Garageband</a></h2>
-        <div class="tracks">
-            <div class="track">
-                <h1>Dune Part One - 07/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%214614&authkey=!ABLoMtCaW86Xf_4">download</a></h1>
-                <h2>Hans Zimmer - 2021</h2>
-                <audio controls>
-                    <source src="audio_folder/Dune - 31:7:24.mp3">
-                </audio>
-                <h4>Recorded with <a href="https://www.akaipro.com/mpk-mini-mk3">Akai MPK mini</a> and <a href="https://apple.com/mac/garageband/">GarageBand</a>.</h4>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Can You Hear the Music? - Oppenheimer - 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213866&authkey=!AIuiTSQruvq-GBg">download</a></h1>
-                <h2>Ludwig Göransson - 2023</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-Version2CanYouHearTheMusic_Oppenheimer-5-2024.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Just The Two Of Us (version 2) - 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213867&authkey=!ADl96DijJJjfFt8">download</a></h1>
-                <h2>Bill Withers & Grover Washington, Jr. - 1980</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-Version2JustTheTwoOfUs-5-2024.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Mia & Sebastian's Theme (version 2)- 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213865&authkey=!AFA2rtqpJzmUrqA">download</a></h1>
-                <h2>Justin Hurwitz - 2016</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-Version2MiaSebastiansTheme-5-2024.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Golden Hour at Firenze - 04/2024</h1>
-                <h2>JVKE - 2022</h2>
-                <video width="75%" height="75%" controls>
-                    <source src="audio_folder/GoldenHourFirenze.mp4" type="video/mp4">
-                </video>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Mamma Mia - 07/2023 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213282&authkey=!AFhGjQF2KupMxnA">download</a></h1>
-                <h2>ABBA - 1975</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-MammaMia-7-2023.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Girl of Ipanema - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213262&authkey=AIluurfwhfW8Wys">download</a></h1>
-                <h2>Antônio Carlos Jobim - 1964</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-GirlOfIpanema-5-2023.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Hit the Road Jack arrangement- 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213265&authkey=AGGPmc4dbISmNTs">download</a></h1>
-                <h2>Ray Charles - 1961</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-HitTheRoadJack-5-2023.mp3">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Take the "A" Train - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213264&authkey=AJ1WBB8r6mcoEDo">download</a></h1>
-                <h2>Duke Elligton - 1939</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-TakeTheATrain-5-2023.mp3">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Fly arrangement - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213255&authkey=AO0LYKBRICTnohs">download</a></h1>
-                <h2>Ludovico Einaudi - 2006</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-Fly-5-2023.mp3">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Havana - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213263&authkey=ALyMhLgtQryAZbg">download</a></h1>
-                <h2>Camila Cabello - 2018</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-Habana-5-2023.mp3">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>La La Land Medley - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213258&authkey=AO-RfVzwLbw9yOQ">download</a></h1>
-                <h2>Justin Hurwitz - 2016</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-LaLaLand-5-2023.mp3">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Take Five - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213257&authkey=ABySuoZwA1YhllI">download</a></h1>
-                <h2>Dave Brubeck Quartet - 1959</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-TakeFive-5-2023.mp3">
-                </audio>
-            </div>
-            <br><br><br>
-            
-            <div class="track">
-                <h1>Interstellar arrangement - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213256&authkey=AKNARaN2vwraIAc">download</a></h1>
-                <h2>Hans Zimmer - 2014</h2>
-                <audio controls>
-                    <source src="audio_folder/JAN-Interstellar-5-2023.mp3">
-                </audio>
-            </div>
         </div>
-      </div>
-    </div>
-    <br><br><br><br>
-
-    <!-- Footer -->
-    <footer>
-        <p>Copyright © 2025 Joan Alcaide Núñez, All rights reserved.</p>
-        <div>
-            <a href="mailto:joanalnu@outlook.com">Contact Me</a> |
-            <a href="https://github.com/joanalnu">GitHub</a> |
-            <a href="https://www.linkedin.com/in/joan-alcaide-núñez/">LinkedIn</a> |
         </div>
-    </footer>
+        <br><br><br><br>
 
-    <script>
-        // Toggle the mobile menu visibility
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+        <!-- Footer -->
+        <footer>
+            <p>Copyright © 2025 Joan Alcaide Núñez, All rights reserved.</p>
+            <div>
+                <a href="mailto:joanalnu@outlook.com">Contact Me</a> |
+                <a href="https://github.com/joanalnu">GitHub</a> |
+                <a href="https://www.linkedin.com/in/joan-alcaide-núñez/">LinkedIn</a> |
+            </div>
+        </footer>
+
+        <script>
+            // Toggle the mobile menu visibility
+            function toggleMenu() {
+                const menu = document.querySelector('.menu');
+                menu.classList.toggle('active');
+            }
+        </script>
+    </main>
   </body>
 </html>
