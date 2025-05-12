@@ -376,7 +376,7 @@ main {
 
 /* Hero Section and social icons */
 .hero-section {
-    background-color: #FFF;
+    background-image: url('images/sky.jpg');
     color: #000;
     background-size: cover;
     background-position: center center;
@@ -400,7 +400,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.2), rgba(53, 122, 189, 0.2));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(219, 236, 255, 0.4));
     z-index: 1;
     backdrop-filter: blur(4px);
 }
@@ -728,7 +728,7 @@ main {
 
     /* Hero Section */
     .hero-section {
-        background-image: url('images/sky-dark.jpg'); /* Suggest a dark background variant */
+        background-image: url('images/sky.jpg');
         color: #fff;
     }
 
