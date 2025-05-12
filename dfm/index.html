@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-  <title>Dan Foreman-Mackey</title>
+	<meta name="generator" content="Hugo 0.89.0" />
+  <title>Joan's Space</title>
   <meta charset="UTF-8">
   <meta name="language" content="en">
   <meta name="description" content="Dan Foreman-Mackey is an Associate Research Scientist at the Center for Computational Astrophysics in the Flatiron Institute at the Simons Foundation.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="shortcut icon" type="image/png" href="../images/logo.jpg" />
-  <link type="text/css" rel="stylesheet" href="styles.css" />
-
-  <!-- <script type="application/ld+json">
-    { 
-      "@context": "http://schema.org", 
-      "@type": "WebSite", 
-      "url": "https:\/\/dfm.io\/",
-      "name": "Dan Foreman-Mackey",
-      "author": {
-        "@type": "Person",
-        "name": ""
-      },
-      "description": "Dan Foreman-Mackey is an Associate Research Scientist at the Center for Computational Astrophysics in the Flatiron Institute at the Simons Foundation."
-    }
-  </script> -->
+  <link type="text/css" rel="stylesheet" href="../replacement_styles.css" />
 </head>
-<body>
-  <script src="srcript_dfm.js"></script>
 
+<body>
   <div class="burger__container">
     <div class="burger" aria-controls="navigation" aria-label="Menu">
       <div class="burger__meat burger__meat--1"></div>
@@ -34,43 +21,95 @@
       <div class="burger__meat burger__meat--3"></div>
     </div>
   </div>
- 
+
   <nav class="nav" id="navigation">
     <ul class="nav__list">
-      <li role="none"><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
-      <li role="none"><a href="research.html" role="menuitem" tabindex="0">Research</a></li>
-        <li role="none"><a href="music.html" role="menuitem" tabindex="0">Music</a></li>
-        <li role="none"><a href="https://www.linkedin.com/in/joan-alcaide-núñez/" role="menuitem" tabindex="0">LinkedIn</a></li>
-        <li role="none"><a href="https://github.com/joanalnu" role="menuitem" tabindex="0">GitHub</a></li>
-        <li role="none"><a href="mailto:joanalnu@outlook.com" role="menuitem" tabindex="0">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="https://www.linkedin.com/in/joan-alcaide-núñez/" role="menuitem" tabindex="0">LinkedIn</a></li>
+      <li><a href="https://github.com/joanalnu">GitHub</a></li>
+      <li><a href="mailto:joanalnu@outlook.com">Contact</a></li>
     </ul>
   </nav>
 
+
   <main>
-    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1><span class="auto-type-title"></span></h1>
+        <h2>Discover my <a href="research.html#projects">projects</a>, <a href="music.html">music</a>, and <a href="research.html">passion for astrophysics</a><span class="fancy">.</span></h2>
+        <a href="#about" class="cta" id="learn-more-btn">Learn More</a>
+    </section>
 
-  <div class="splash-container">
-    <div class="splash">
-      <h1>Hi, I'm <a href="./about">Joan</a><span class="fancy">.</span></h1>
-      <h2>A raising Astrophyscist from Barcelona.</h2>
-    
-      <div class="social-icons">
-        <a class="social-icons__link" title="GitHub" href="https://github.com/joanalnu" target="_blank" rel="me noopener" >
-          <div class="social-icons__icon" style="background-image: url('./svg/github.svg')"></div>
-        </a>  
-        <a class="social-icons__link" title="Email" href="mailto:joanalnu@outlook.com" target="_blank" rel="me noopener" >
-          <div class="social-icons__icon" style="background-image: url('./svg/email.svg')"></div>
-        </a>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        const typed = new Typed(".auto-type-title", {
+          strings: ["Welcome to Joan's Space"],
+          typeSpeed: 100,
+          backSpeed: 10,
+          loop: true
+        });
+
+        // Smooth scroll for Learn More button
+        document.getElementById('learn-more-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate student researcher leading innovative projects like the CAPIBARA Collaboration, a high school initiative to explore the high-energy cosmos, both its ionic and photonic sides. My research focuses on cosmology, particularly addressing the Hubble Tension, a long-standing challenge in the field, and studying dark energy, the mysterious force accelerating the expansion of the Universe. I am also a skilled programmer and data analyst, demonstrated through work such as the Gen10 project, the TdM game, and this website, which I coded from scratch. Beyond research, I enjoy playing the piano, both solo and collaboratively, as well as volunteering at Barcelona’s Science Museum CosmoCaixa and with the NGO Cycling Without Age.
+        <br><br>
+        This is my general website, read more about my research <a href="research.html">here</a>.
+      </p>
+    </section>
+
+    <!-- CV Section -->
+    <section class="cv-section">
+      <h2>Curriculum Vitae</h2>
+      <div class="cv-buttons">
+          <div class="cv-button">
+              <a href="https://github.com/joanalnu/joanalnu.github.io/blob/main/documents/JoanAlcaide_CV_April2025.pdf" class="btn">Download</a>
+            </div>
       </div>
-    </div>
-  </div>
+      <div class="cv-buttons">
+        <div class="cv-image">
+          <a href="https://github.com/joanalnu/joanalnu.github.io/blob/main/documents/JoanAlcaide_CV_April2025.pdf"><img src="images/cv_first_page.jpg" alt="CV Image"></a>
+        </div>
+      </div>
 
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2025 Joan Alcaide Núñez, All rights reserved.</p>
+        <div class="social-icons">
+          <a class="social-icons__link" title="GitHub" href="https://github.com/joanalnu" target="_blank" rel="me noopener">
+            <div class="social-icons__icon" style="background-image: url('images/github.svg')"></div>
+          </a>
+      
+          <a class="social-icons__link" title="Email" href="mailto:joanalnu@outlook.com" target="_blank" rel="me noopener">
+            <div class="social-icons__icon" style="background-image: url('images/email.svg')"></div>
+          </a>
+          <a class="social-icons__link" title="LinkedIn" href="https://www.linkedin.com/in/joan-alcaide-núñez/" target="_blank" rel="me noopener">
+            <div class="social-icons__icon" style="background-image: url('images/linkedin.svg')"></div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
 
   </main>
 
+   
 
   
-  
+  <script src="../replacement_script.js"></script>
    
 </body>
+
 </html>
