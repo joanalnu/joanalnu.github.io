@@ -494,9 +494,11 @@ main {
 /* About Section */
 .about-section {
     text-align: center;
-    padding: 60px 20px;
+    padding: 0px 5%;
+    padding-top: 1px;
+    padding-bottom: 50px;
     background-color: var(--background-color);
-    margin: 50px 12%;
+    margin: 35px 5%;
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(74, 144, 226, 0.15);
     transition: box-shadow 0.3s ease;
