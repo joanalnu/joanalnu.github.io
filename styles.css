@@ -579,9 +579,11 @@ main {
 /* CV Section - Merged Light Mode */
 .cv-section {
     background-color: #ffffff;
-    padding: 60px 20px;
+    padding: 0px 5%;
+    padding-top: 1px;
+    padding-bottom: 50px;
     border-radius: 20px;
-    margin: 3rem 12%;
+    margin: 35px 5%;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: box-shadow 0.3s ease;
@@ -648,34 +650,44 @@ main {
     box-shadow: 0 6px 20px rgba(53, 122, 189, 0.4);
 }
 
-    /* Footer Section - Light Mode */
-    footer {
-        background-color: #ffffff;
-        color: #333;
-        border-top: 1px solid rgba(74, 144, 226, 0.1);
+@media(max-width: 799px) {
+    .cv-section {
+        padding: 0px 2%;
+        margin: 35px 2%;
     }
+    .cv-section img {
+        width: 80%;
+    }
+}
 
-    footer a {
-        color: var(--accent-color);
-    }
+/* Footer Section - Light Mode */
+footer {
+    background-color: #ffffff;
+    color: #333;
+    border-top: 1px solid rgba(74, 144, 226, 0.1);
+}
 
-    footer a:hover,
-    footer a:focus {
-        color: var(--primary-color);
-    }
+footer a {
+    color: var(--accent-color);
+}
 
-    /* Back-to-top Button - Light Mode */
-    #back-to-top {
-        background-color: var(--primary-color);
-        color: white;
-        box-shadow: 0 6px 15px rgba(74, 144, 226, 0.2);
-    }
+footer a:hover,
+footer a:focus {
+    color: var(--primary-color);
+}
 
-    #back-to-top:hover,
-    #back-to-top:focus {
-        background-color: var(--accent-color);
-        transform: scale(1.1);
-    }
+/* Back-to-top Button - Light Mode */
+#back-to-top {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 6px 15px rgba(74, 144, 226, 0.2);
+}
+
+#back-to-top:hover,
+#back-to-top:focus {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
 
 
 @media (prefers-color-scheme: dark) {
