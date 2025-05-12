@@ -648,3 +648,131 @@ main {
     outline: none;
     box-shadow: 0 6px 20px rgba(53, 122, 189, 0.4);
 }
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #111;
+        color: #eee;
+    }
+
+    .burger__container {
+        background: #1a1a1a;
+    }
+
+    .burger__meat {
+        background: #eee;
+    }
+
+    .nav {
+        background: rgba(20, 20, 20, 0.99);
+    }
+
+    .nav__list a {
+        color: #aaa;
+    }
+
+    .nav__list a.active,
+    .nav__list a:hover {
+        color: #fff;
+    }
+
+    blockquote {
+        color: #ddd;
+    }
+
+    blockquote::before {
+        color: #333;
+    }
+
+    blockquote cite {
+        color: #999;
+    }
+
+    pre {
+        background-color: #1e1e1e;
+    }
+
+    code {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background-image: url('images/sky-dark.jpg'); /* Suggest a dark background variant */
+        color: #fff;
+    }
+
+    .hero-section::before {
+        background: linear-gradient(135deg, rgba(53, 122, 189, 0.4), rgba(74, 144, 226, 0.4));
+    }
+
+    /* About Section */
+    .about-section {
+        background-color: #1a1a2e;
+        box-shadow: 0 12px 30px rgba(74, 144, 226, 0.15);
+    }
+
+    .about-section h2 {
+        color: var(--primary-color);
+    }
+
+    .about-section p {
+        color: #ccc;
+    }
+
+    /* Highlights Section */
+    .card {
+        background-color: #1e1e1e;
+        color: #ddd;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+        color: #fff;
+    }
+
+    .card p {
+        color: #bbb;
+    }
+
+    /* CV Section */
+    .cv-section {
+        background-color: #1a1a2e;
+        box-shadow: 0 12px 30px rgba(74, 144, 226, 0.15);
+    }
+
+    .cv-section:hover {
+        box-shadow: 0 16px 40px rgba(74, 144, 226, 0.3);
+    }
+
+    .cv-section img {
+        box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
+    }
+
+    .cv-section h2 {
+        color: #fff;
+    }
+
+    .cv-section p {
+        color: #ddd;
+    }
+
+    /* Buttons */
+    .cv-button .btn,
+    .cv-section .cta,
+    .hero-section .cta {
+        background-color: var(--primary-color);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+    }
+
+    .cv-button .btn:hover,
+    .cv-button .btn:focus,
+    .cv-section .cta:hover,
+    .cv-section .cta:focus,
+    .hero-section .cta:hover,
+    .hero-section .cta:focus {
+        background-color: var(--accent-color);
+        box-shadow: 0 6px 20px rgba(53, 122, 189, 0.6);
+    }
+}
