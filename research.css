@@ -376,7 +376,7 @@ main {
 
 /* Hero Section and social icons */
 .hero-section {
-    background-image: url('images/ebse.png');
+    background-image: url('images/z_cosmology.jpg');
     color: #000;
     background-size: cover;
     background-position: center center;
@@ -763,7 +763,7 @@ footer a:focus {
 
     /* Hero Section */
     .hero-section {
-        background-image: url('images/sky.jpg');
+        background-image: url('images/z_cosmology.jpg');
         color: #fff;
     }
 
