@@ -1,9 +1,4 @@
 # essentials
 .DS_Store
 images/.DS_Store
-
-# fotos pages
-fotos/
-
-# old sites
-# deprecated/
+.idea/
