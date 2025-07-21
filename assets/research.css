@@ -1,0 +1,120 @@
+/* Inherit all styles from the main styles.css */
+@import url('assets/styles.css');
+
+/* Additional specific styles for research page */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: var(--white);
+    color: var(--text-color);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close {
+    color: var(--dark-gray);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close:hover {
+    color: var(--primary-color);
+}
+
+.modal-body {
+    line-height: 1.8;
+}
+
+.modal-body p {
+    margin-bottom: 1.5rem;
+}
+
+/* List styles */
+.list {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.list li {
+    margin-bottom: 1rem;
+    list-style-type: none;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* MathJax styles */
+.MathJax {
+    font-size: 1.1em !important;
+    color: var(--primary-color) !important;
+}
+
+/* Card enhancements for research page */
+#projects .card {
+    cursor: pointer;
+}
+
+#projects .card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+#talks .card {
+    text-align: center;
+}
+
+#talks .card h4 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+#talks .card ul {
+    text-align: left;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+#talks .card ul li {
+    margin-bottom: 0.5rem;
+}
