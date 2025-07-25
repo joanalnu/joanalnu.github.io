@@ -1,0 +1,88 @@
+.contact-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-intro {
+    margin-bottom: 2rem;
+    color: var(--dark-gray);
+    font-size: 1.1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(var(--secondary-color), 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-status {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+/* Success message */
+.success-message {
+    display: none;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Error message */
+.error-message {
+    display: none;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    border-radius: 5px;
+    border-left: 4px solid #f44336;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+}
