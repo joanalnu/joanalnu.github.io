@@ -60,20 +60,6 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Form submission
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        console.log({ name, email, message });
-        alert('Message sent successfully!');
-        contactForm.reset();
-    });
-}
 
 // Translation functions
 async function loadTranslations(lang) {
