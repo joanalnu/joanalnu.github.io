@@ -62,12 +62,14 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', upd
 // Horizontal scrolling for highlights
 document.addEventListener('DOMContentLoaded', function() {
     const scroller = document.querySelector('.highlights-scroller');
+    const container = document.querySelector('.highlights-container');
     const scrollLeftBtn = document.querySelector('.scroll-left');
     const scrollRightBtn = document.querySelector('.scroll-right');
 
     if (scroller && scrollLeftBtn && scrollRightBtn) {
         const cardWidth = document.querySelector('.card').offsetWidth + 32; // card width + gap
 
+        // Scroll button click handlers
         scrollLeftBtn.addEventListener('click', () => {
             scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' });
         });
@@ -76,19 +78,20 @@ document.addEventListener('DOMContentLoaded', function() {
             scroller.scrollBy({ left: cardWidth, behavior: 'smooth' });
         });
 
-        // Hide/show buttons based on scroll position
+        // Scroll event handler
         scroller.addEventListener('scroll', () => {
             const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+            const currentScroll = scroller.scrollLeft;
 
-            if (scroller.scrollLeft <= 10) {
-                scrollLeftBtn.style.opacity = '0.3';
-                scrollLeftBtn.style.pointerEvents = 'none';
+            // Show/hide left button based on scroll position
+            if (currentScroll > 10) {
+                container.classList.add('scrolled');
             } else {
-                scrollLeftBtn.style.opacity = '0.8';
-                scrollLeftBtn.style.pointerEvents = 'auto';
+                container.classList.remove('scrolled');
             }
 
-            if (scroller.scrollLeft >= maxScroll - 10) {
+            // Hide right button when at end
+            if (currentScroll >= maxScroll - 10) {
                 scrollRightBtn.style.opacity = '0.3';
                 scrollRightBtn.style.pointerEvents = 'none';
             } else {
@@ -96,6 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 scrollRightBtn.style.pointerEvents = 'auto';
             }
         });
+
+        // Initial check
+        scroller.dispatchEvent(new Event('scroll'));
     }
 });
 

@@ -385,24 +385,15 @@ section.in-view .card { animation-delay: 0.4s; }
     overflow: hidden;
 }
 
-.highlights-container::before,
 .highlights-container::after {
     content: '';
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     width: 60px;
     pointer-events: none;
     z-index: 2;
-}
-
-.highlights-container::before {
-    left: 0;
-    background: linear-gradient(90deg, var(--background-color) 20%, transparent);
-}
-
-.highlights-container::after {
-    right: 0;
     background: linear-gradient(270deg, var(--background-color) 20%, transparent);
 }
 
@@ -431,6 +422,20 @@ section.in-view .card { animation-delay: 0.4s; }
 }
 
 /* Scroll buttons */
+/* Hide left scroll button by default */
+.scroll-button.scroll-left {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Show left button when scrolled */
+.highlights-container.scrolled .scroll-button.scroll-left {
+    opacity: 0.8;
+    pointer-events: auto;
+}
+
+/* Scroll button styling */
 .scroll-button {
     position: absolute;
     top: 50%;
