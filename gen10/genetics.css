@@ -523,12 +523,16 @@ footer {
     body {
         background-color: var(--dark-color);
     }
-
+    .feature-grid,
     .feature-card,
     .column,
     .contact-form {
         background-color: #1e2a1e;
         color: var(--text-light);
+    }
+
+    .feature-card {
+        border-color: var(--primary-light);
     }
 
     .form-group input,
