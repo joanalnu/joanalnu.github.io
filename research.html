@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joan's Research</title>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/research.css">
     <link rel="shortcut icon" href="images/logos/logo.jpg">
     <script src="assets/script.js" defer></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <!--for latex expressions-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -21,162 +22,207 @@
 
 <!-- Navigation placeholder -->
 <div id="nav-container"></div>
+
 <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1><span class="auto-type-title"></span></h1>
+                <p class="hero-subtitle">Your guide to my academic and professional journey in science, technology, and beyond.</p>
+            </div>
+        </div>
+        <a href="#about" class="btn cta" id="learn-more-btn">Explore My Research</a>
+    </section>
 
-<!-- Hero Section -->
-<section class="hero-section">
-    <h1>Hi! I'm <span class="auto-type-title"></span></h1>
-    <p>Your guide to my academic and professional journey in science, technology, and beyond.</p>
-</section>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        const typed = new Typed(".auto-type-title", {
+            strings: ["Research Portfolio", "Cosmology Projects", "Academic Journey", "Scientific Presentations"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-    const typed = new Typed(".auto-type-title", {
-      strings: ["Joan", "a student", "an astrophysics researcher", "the CAPIBARA group lead", "a Python coder", "a science enthusiast!"],
-      typeSpeed: 120,
-      backSpeed: 30,
-      loop: true
-    });
+        document.getElementById('learn-more-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 
-    // Smooth scroll for Learn More button
-    document.getElementById('learn-more-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
-    });
-</script>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About My Journey So Far</h2>
+        <p>Curiosity has always been the driver of my scientific adventure, with coding and computers as key tools to accomplish my projects. Participating in the <a href="">Youth and Science</a> program by <i>Fundació Catalunya La Pedrera</i> has been one of the most transformative experiences in my journey. It opened doors to the world of research and allowed me to gain first-hand experience in a professional research environment.</p>
+        <br>
+        <p>For as long as I can remember, I've been fascinated by the biggest, most energetic, and exotic phenomena in the Universe. My interest in cosmology stems from this curiosity to understand how the Universe works on the largest scales. I've focused on measuring the Hubble–Lemaître constant <i>H<sub>0</sub></i> — the expansion rate of the Universe — whose exact value is still unknown. I began in 2023 by recomputing <i>H<sub>0</sub></i> using <a href="https://github.com/joanalnu/article_hubble_jic">Cepheid luminosity data</a>, and in 2024 I used Type Ia Supernovae (Ia SNe) for this purpose during a research stay at the <a href="https://ice.csic.es">ICE-CSIC-IEEC</a> under the guidance of Dr. Lluís Galbany.</p>
+        <br>
+        <p>In summer 2025, I completed my Youth and Science scholarship with a research stay at the <a href="https://sites.google.com/inaf.it/hea-merate/gamma-ray-bursts">Osservatorio Astronomico di Brera-Merate (INAF-OAB)</a>. There, I focused on the study of Gamma-ray Bursts (GRBs) as cosmological probes, extending our capabilities to observe the high-redshift Universe in the search for constraints on cosmological parameters.</p>
+        <br>
+        <p>Outside "the office," I love to share my enthusiasm for science with others by volunteering in science outreach activities, such as the <a href="https://explainerscosmocaixa.com">CosmoCaixa Explainers</a> by CosmoCaixa. Additionally, I graduated in May 2025 with a <a href="https://degreeola.com/wp-content/uploads/2022/02/german-grading-system-at-a-glance.jpg">1.0/1.0 Abitur</a> and 13.334/14 Selectividad (German and Spanish high school diplomas) from the <a href="https://dsbarcelona.com">German School of Barcelona</a>, along with a distinction in physics from the <a href="https://dpg-physik.de">Deutsche Physikalische Gesellschaft</a>.</p>
+    </section>
 
+    <!-- Projects Section -->
+    <section class="highlights-section" id="projects">
+        <h2>Research Projects</h2>
+        <div class="highlights-container">
+            <div class="highlights-scroller">
+                <div class="card" onclick="openModal('multimessenger-modal')">
+                    <img src="images/career_001.jpeg">
+                    <h3>Multi-Messeger Cosmology</h3>
+                    <p>Understanding the working of the Universe as a whole.</p>
+                    <a onclick="openModal('multimessenger-modal')">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card" onclick="openModal('capibara-modal')">
+                    <img src="images/capibara.png">
+                    <h3>CAPIBARA Team</h3>
+                    <p>Leading the satellite launch for cosmic ray research.</p>
+                    <a onclick="openModal('capibara-modal')">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card" onclick="openModal('cosmo-modal')">
+                    <img src="images/cosmology.png" alt="Cosmology">
+                    <h3>Distance Ladder Cosmology</h3>
+                    <p>Measuring Distances and the Hubble Constant</p>
+                    <a onclick="openModal('cosmo-modal')">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+<!--                <div class="card" onclick="openModal('gen10-modal')">-->
+<!--                    <img src="images/genetics.png">-->
+<!--                    <h3>Gen10</h3>-->
+<!--                    <p>An educational Python Package for genomics and bioinformatics.</p>-->
+<!--                    <a href="https://joanalnu.github.io/gen10">Learn More</a>-->
+<!--                </div>-->
+            </div>
+            <button class="scroll-button scroll-left" aria-label="Scroll left">❮</button>
+            <button class="scroll-button scroll-right" aria-label="Scroll right">❯</button>
+        </div>
+    </section>
 
-<!-- About Section -->
-<section id="about" class="about-section">
-    <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
-    About Me
-    </h2>
-    <p>Curiosity has always been the driver of my scientific adventure, with coding and computers as key tools to accomplish my projects. Participating in the <a href="">Youth and Science</a> program by <i>Fundació Catalunya La Pedrera</i> has been one of the most transformative experiences in my journey. It opened doors to the world of research and allowed me to gain first-hand experience in a professional research environment.</p>
+    <!-- Talks Section -->
+    <section class="highlights-section" id="talks">
+        <h2>Presentations & Talks</h2>
+        <div class="highlights-container">
+            <div class="highlights-scroller">
+                <div class="card">
+                    <a href="documents/pdfCAPIBARA_CosmoXarxa.pdf"><img src="images/cosmoxarxaPoster.jpeg" alt="CosmoXarxa Poster"></a>
+                    <h4><i>De l'aula a l'espai: joves, ions i fotons per entendre l'univers d'altes energies</i> at <a href="https://cosmocaixa.org">CosmoCaixa Science Museum</a></h4>
+                    <p>Presented the CAPIBARA Collaboration to the Explainers community, explaining our objectives and inviting public participation.</p>
+                </div>
+                <div class="card">
+                    <a href="documents/ExploracioEspacial.pdf"><img src="images/exploracioEspacial.jpeg" alt="Exploració Espacial Workshop"></a>
+                    <h4><i>L'Exploració Espacial</i> at <a href="https://www.escolacanigosantjust.cat">Escola Canigó</a></h4>
+                    <p>Conducted a 1.5h activity with 4th grade students about space exploration from Apollo to today's ISS missions.</p>
+                </div>
+                <div class="card">
+                    <a href="documents/ClaseUniversoPu.pdf"><img src="images/claseUniversoFirstPage.png" alt="IntroAstro"></a>
+                    <h4><i>Intrducción de Astrofísica</i> at <a href="https://dsbarcelona.com">Deutsche Schule Barcelona</a></h4>
+                    <p>Gave two classes introducing astrophysics fundamentals to high schoolers.</p>
+                </div>
+            </div>
+            <button class="scroll-button scroll-left" aria-label="Scroll left">❮</button>
+            <button class="scroll-button scroll-right" aria-label="Scroll right">❯</button>
+        </div>
+    </section>
 
-    <p>For as long as I can remember, I’ve been fascinated by the biggest, most energetic, and exotic phenomena in the Universe. My interest in cosmology stems from this curiosity to understand how the Universe works on the largest scales. I’ve focused on measuring the Hubble–Lemaître constant <i>H<sub>0</sub></i> — the expansion rate of the Universe — whose exact value is still unknown. I began in 2023 by recomputing <i>H<sub>0</sub></i> using <a href="https://github.com/joanalnu/article_hubble_jic">Cepheid luminosity data</a>, and in 2024 I used Type Ia Supernovae (Ia SNe) for this purpose during a research stay at the <a href="https://ice.csic.es">ICE-CSIC-IEEC</a> under the guidance of Dr. Lluís Galbany.</p>
-
-    <p>In summer 2025, I completed my Youth and Science scholarship with a research stay at the <a href="https://sites.google.com/inaf.it/hea-merate/gamma-ray-bursts">Osservatorio Astronomico di Brera-Merate (INAF-OAB)</a>. There, I focused on the study of Gamma-ray Bursts (GRBs) as cosmological probes, extending our capabilities to observe the high-redshift Universe in the search for constraints on cosmological parameters.</p>
-
-    <p>Outside “the office,” I love to share my enthusiasm for science with others by volunteering in science outreach activities, such as the <a href="https://explainerscosmocaixa.com">CosmoCaixa Explainers</a> by CosmoCaixa. Additionally, I graduated in May 2025 with a <a href="https://degreeola.com/wp-content/uploads/2022/02/german-grading-system-at-a-glance.jpg">1.0/1.0 Abitur</a> and 13.334/14 Selectividad (German and Spanish high school diplomas) from the <a href="https://dsbarcelona.com">German School of Barcelona</a>, along with a distinction in physics from the <a href="https://dpg-physik.de">Deutsche Physikalische Gesellschaft</a>.</p>
-
-</section>
-
-
-<!-- Projects Section -->
-<h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
-  My Projects
-</h2>
-<section id="projects" class="project-cards">
-    <div class="card" onclick="openModal('capibara-modal')">
-      <img src="images/capibara.png">
-      <h3>CAPIBARA Team</h3>
-      <p>Leading the satellite launch for cosmic ray research.</p>
-      <a onclick="openModal('capibara-modal')">Learn More</a>
-    </div>
-    <div class="card" onclick="openModal('gen10-modal')">
-      <img src="images/genetics.png">
-      <h3>Gen10</h3>
-      <p>An educational Python Package for genomics and bioinformatics.</p>
-      <a href="https://joanalnu.github.io/gen10">Learn More</a>
-    </div>
-    <div class="card" onclick="openModal('cosmo-modal')">
-        <img src="images/cosmology.png" alt="Cosmology">
-        <h3>Cosmology Research</h3>
-        <p>Understanding the working of the Universe as a whole.</p>
-        <a onclick="openModal('cosmo-modal')">Learn More</a>
-    </div>
-</section>
-
-
-<h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
-  Talks
-</h2>
-<div class="project-cards" id="talks">
-    <div class="card">
-        <a href="documents/pdfCAPIBARA_CosmoXarxa.pdf"><img src="images/cosmoxarxaPoster.jpeg" alt="CosmoXarxa Poster"></a>
-        <h4><i>De l'aula a l'espai: joves, ions i fotons per entendre l'univers d'altes energies</i> at <a href="https://cosmocaixa.org">CosmoCaixa Science Museum</a></h4>
-        <p>CosmoXarxa is an initiative by and for the <a href="https://explainerscosmocaixa.org">Explainers Community</a> of the science science museum. I presented the CAPIBARA Collaboration, its objectives and status, both technical, scientific, and educative; inviting the public to join the efforts.</p>
-    </div>
-    <div class="card">
-        <a href="documents/ExploracioEspacial.pdf"><img src="images/exploracioEspacial.jpeg" alt="Exploració Espacial Workshop"</a>
-        <h4><i>L'Exploració Espacial</i> at <a href="https://www.escolacanigosantjust.cat">Escola Canigó</a></h4>
-        <p>I conducted a 1.5h hour activity with 4th grade students at a local school in which I explained space exploration from the begining (apollo and space shuttle) to today (day in the life onboard the ISS and solar system exploration). With model rockets and modules I brought I managed to engage the children and create an inspiring ambience.</p>
-    </div>
-    <div class="card">
-        <a href="documents/ClaseUniversoPu.pdf"><img src="images/claseUniversoFirstPage.png" alt="IntroAstro"></a>
-        <h4><i>Intrducción de Astrofísica</i> at <a href="https://dsbarcelona.com/es/preparacion-universitaria/">Cursos de Preparación Universitaria</a> de Física at <a href="https://dsbarcelona.com">Deutsche Schule Barcelona</a></h4>
-        <p>For my Physics University Preparation class, I gave to classes (1.5h each) about the foundations of astrophysics, introducing the most important topics to high schoolers. The opportunity was great to channel and reflect on what I'd been learning for the past years, as well as to share my curiosity and excitement with fellow classmates.</p>
-        <ul>
-            <li>Part 1: Origin of the Universe, CMB, and Stellar Evolution</li>
-            <li>Part 2: Galaxies, Neutron Stars, and Black holes</li>
+    <!-- Other Projects Section -->
+    <section id="others" class="about-section">
+        <h2>Other Projects</h2>
+        <ul class="project-list">
+            <li><span class="project-icon">🔭</span> <a href="https://github.com/joanalnu/ztf_api">ZTF-API</a> - API for accessing Zwicky Transient Facility data</li>
+            <li><span class="project-icon">🌍</span> <a href="https://github.com/joanalnu/thermal_analysis">Thermal Analysis</a> - DLR internship project on remote sensing</li>
+            <li><span class="project-icon">🧮</span> <a href="https://joanalnu.github.io/tdm/">TdM</a> - Mathematical tools collection</li>
+            <li><span class="project-icon">🧮</span> <a href="https://github.com/joanalnu/wmergeb">WM Berechnung</a> - Watermark calculation tool</li>
         </ul>
-    </div>
-</div>
+    </section>
 
-<br>
-<h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 1.5px; margin-top: 100px">
-  Other Minor Projects
-</h2>
-<div class="list" id="others">
-    <li>🔭 <a href="https://github.com/joanalnu/ztf_api">ZTF-API</li>
-    <li>🌍 <a href="https://github.com/joanalnu/thermal_analysis">Thermal Analysis</a> (internship at <a href="https://dlr.de">DLR</a> Institute of Remote Sensing in September 2024)</li>
-    <li>🧮 <a href="https://joanalnu.github.io/tdm/">TdM</a></li>
-    <li>🧮 <a href="https://github.com/joanalnu/wmergeb">WM Berechnung</a></li>
-</div>
-
-<!-- Footer -->
-<div id="footer-container"></div>
-<script src="./components/loadComponents.js"></script>
+    <!-- Footer placeholder -->
+    <div id="footer-container"></div>
+</main>
 
 <!-- Back to Top Button -->
 <button id="back-to-top" onclick="scrollToTop()">↑</button>
 
+<!-- Modal Windows -->
 <div id="capibara-modal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
-        <h2>CAPIBARA Mission</h2>
-        <span class="close" onclick="closeModal('capibara-modal')">&times;</span>
-      </div>
-      <div class="modal-body">
-          <p><a href="https://capibara3.github.io/">The CAPIBARA Collaboration</a> is a student-led initiative aiming to launch a satellite dedicated to observing and researching the high-energy cosmos. Our mission focuses on measuring primary cosmic rays (charged particles) as well as X-ray and γ-ray emissions, providing valuable insights into the Universe's most energetic phenomena.</p>
-          <p>By studying high-energy radiation, we aim to deepen our understanding of astrophysical processes, quantum physics, and the interactions between cosmic phenomena and Earth's space environment. Our collected data will be made publicly accessible in its totality, fostering further research and collaboration in these fields and inspiring the next generation of young scientists and engineers.</p>
-          <p>We are a diverse team of high-school students passionate about both science and engineering, working together to bring this vision to life. Therefore, we are grateful for our teachers, mentors, families, and everybody supporting us in this adventure.</p>
-          <p>My role in this collaboration involves leading the CAPIBARA project, coordinating the efforts. Furthermore, I work to advance research on using the γ-ray and X-ray observatories to employ Gamma-Ray Bursts (GRBs) as cosmological distance indicators, with the aim of refining the Hubble constant and testing the ΛCDM model.</p>
-          <center><a href="https://capibara3.github.io">Learn More</a></center>
-      </div>
+        <div class="modal-header">
+            <h2>CAPIBARA Mission</h2>
+            <span class="close" onclick="closeModal('capibara-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p><a href="https://capibara3.github.io/">The CAPIBARA Collaboration</a> is a student-led initiative aiming to launch a satellite dedicated to observing and researching the high-energy cosmos. Our mission focuses on measuring primary cosmic rays (charged particles) as well as X-ray and γ-ray emissions, providing valuable insights into the Universe's most energetic phenomena.</p>
+            <p>By studying high-energy radiation, we aim to deepen our understanding of astrophysical processes, quantum physics, and the interactions between cosmic phenomena and Earth's space environment. Our collected data will be made publicly accessible in its totality, fostering further research and collaboration in these fields and inspiring the next generation of young scientists and engineers.</p>
+            <p>We are a diverse team of high-school students passionate about both science and engineering, working together to bring this vision to life. Therefore, we are grateful for our teachers, mentors, families, and everybody supporting us in this adventure.</p>
+            <p>My role in this collaboration involves leading the CAPIBARA project, coordinating the efforts. Furthermore, I work to advance research on using the γ-ray and X-ray observatories to employ Gamma-Ray Bursts (GRBs) as cosmological distance indicators, with the aim of refining the Hubble constant and testing the ΛCDM model.</p>
+            <div class="cta">
+                <a href="https://capibara3.github.io" class="btn">Visit Project</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="gen10-modal" class="modal">
+</div>
+
+<div id="gen10-modal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
-        <h2>Gen10</h2>
-        <span class="close" onclick="closeModal('gen10-modal')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p><a href="gen10/index.html">Gen10</a> is a package for genomics data analysis and visualization, providing the right tools integrated into your Python code. The original goal of this package is to provide support and tools for education in high school or college, but it can be used for any applicable purpose.</p>
-        <p>The gen10 package allows to you perform a great and increasing variety of tasks from translating DNA into RNA or protein sequences, to retrieving alphafold structure predictions, simulating mutations and much more! gen10 is a powerful tool and at the same time easy-to-use for students to experiment with, learn from and create their own code. it doesn't need any software installation and can be used directly from a web browser.</p>
-        <p>I have developed notebook tutorials for coding beginners (zero coding experience required) to help students understand the basics of using the package and jump straight to learning.</p>
-        <center><a href="gen10/index.html">Learn More</a></center>
-      </div>
+        <div class="modal-header">
+            <h2>Gen10</h2>
+            <span class="close" onclick="closeModal('gen10-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p><a href="gen10/index.html">Gen10</a> is a package for genomics data analysis and visualization, providing the right tools integrated into your Python code. The original goal of this package is to provide support and tools for education in high school or college, but it can be used for any applicable purpose.</p>
+            <p>The gen10 package allows to you perform a great and increasing variety of tasks from translating DNA into RNA or protein sequences, to retrieving alphafold structure predictions, simulating mutations and much more! gen10 is a powerful tool and at the same time easy-to-use for students to experiment with, learn from and create their own code. it doesn't need any software installation and can be used directly from a web browser.</p>
+            <p>I have developed notebook tutorials for coding beginners (zero coding experience required) to help students understand the basics of using the package and jump straight to learning.</p>
+            <div class="cta">
+                <a href="gen10/index.html" class="btn">Visit Project</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="cosmo-modal" class="modal">
+</div>
+
+<div id="cosmo-modal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
-        <h2>Cosmological Research - Addressing the Hubble Tension</h2>
-        <span class="close" onclick="closeModal('cosmo-modal')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p>Since my participation in the <a href="https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science">Youth and Science program</a> by Fundació Catalunya La Pedrera, I became deeply interested in cosmology—the study of the Universe as a whole, including its origin, evolution, and fate. This field raises profound philosophical questions: where do we come from? where are we going to? Is the Universe (in)finite?Is time infinite? Additionally, it connects to other areas, such as galactic evolution, the high-energy universe, dark matter, and dark energy.</p>
-        <p>One of the most pressing questions in cosmology is the Hubble Tension. Since the first calculation of the Hubble-Lemaître constant (the expansion rate of the Universe), multiple methods have been developed to refine its value. However, as instrumentation and methods have improved, the results for the Hubble constant have diverged further. This constant has profound implications for the age, fate, and composition of the Universe, yet, a hundred years after its discovery, we still do not know its exact value.</p>
-        <p>In 2023, I conducted a <a href="https://github.com/joanalnu/article_hubble_jic">project</a> on recomputing the Hubble-Lemaître constant using the same methods as Hubble and Lemaître, but with modern data from the NASA IPAC NED database for redshift and the Konkonly Observatory for Cepheid magnitudes. With about 50 galaxies and nearly 4000 Cepheid stars, I recovered a value of $$72.104\pm0.065\ km s^{-1} Mpc^{-1}$$.</p>
-        <p>In the summer of 2024, I completed a two-month <a href="https://www.ieec.cat/en/the-ieec-hosts-two-high-school-students-through-the-youth-and-science-programme/">research stay</a> with the <a href="https://www.ice.csic.es/research/theory-observations?view=article&id=208&catid=2">Supernovae and Stellar Transients group</a> at the <a href="https://ice.csic.es/">Institute of Space Sciences (ICE-CSIC-IEEC)</a>, conducting a project on Type Ia supernovae (SNe) as cosmological distance indicators under the guidance of <a href="https://lgalbany.github.io">Dr. Lluís Galbany</a>. This experience deepened my understanding of the science, enabled me to contribute to the Hostflows project, and helped me develop research skills while connecting with researchers from various fields at the institute. At this point I improved my understanding of the current status in cosmology and enhanced my coding skills exponentially.</p>
-        <p>For the last fellowship year, in summer 2025 I will be researching the potential use of Gamma-ray Bursts (GRBs), extremely powerful explosions, as standard candles up to very high redshifts (z~8) with Dr. Giancarlo Ghirlanda and Dr. Om Sharan Salafia at the Osservatorio Astronomico di Brera-Merate (INAF-Brera-Merate).</p>
-        <p>I would also like to kindly appreciate the support and enabling of all my tutors, mentors, family, and friends.</p>
-        <!-- <center><a href="">Learn More</a></center> -->
-      </div>
+        <div class="modal-header">
+            <h2>Cosmological Research - Addressing the Hubble Tension</h2>
+            <span class="close" onclick="closeModal('cosmo-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>Since my participation in the <a href="https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science">Youth and Science program</a> by Fundació Catalunya La Pedrera, I became deeply interested in cosmology—the study of the Universe as a whole, including its origin, evolution, and fate. This field raises profound philosophical questions: where do we come from? where are we going to? Is the Universe (in)finite?Is time infinite? Additionally, it connects to other areas, such as galactic evolution, the high-energy universe, dark matter, and dark energy.</p>
+            <p>One of the most pressing questions in cosmology is the Hubble Tension. Since the first calculation of the Hubble-Lemaître constant (the expansion rate of the Universe), multiple methods have been developed to refine its value. However, as instrumentation and methods have improved, the results for the Hubble constant have diverged further. This constant has profound implications for the age, fate, and composition of the Universe, yet, a hundred years after its discovery, we still do not know its exact value.</p>
+            <p>In 2023, I conducted a <a href="https://github.com/joanalnu/article_hubble_jic">project</a> on recomputing the Hubble-Lemaître constant using the same methods as Hubble and Lemaître, but with modern data from the NASA IPAC NED database for redshift and the Konkonly Observatory for Cepheid magnitudes. With about 50 galaxies and nearly 4000 Cepheid stars, I recovered a value of $$72.104\pm0.065\ km s^{-1} Mpc^{-1}$$.</p>
+            <p>In the summer of 2024, I completed a two-month <a href="https://www.ieec.cat/en/the-ieec-hosts-two-high-school-students-through-the-youth-and-science-programme/">research stay</a> with the <a href="https://www.ice.csic.es/research/theory-observations?view=article&id=208&catid=2">Supernovae and Stellar Transients group</a> at the <a href="https://ice.csic.es/">Institute of Space Sciences (ICE-CSIC-IEEC)</a>, conducting a project on Type Ia supernovae (SNe) as cosmological distance indicators under the guidance of <a href="https://lgalbany.github.io">Dr. Lluís Galbany</a>. This experience deepened my understanding of the science, enabled me to contribute to the Hostflows project, and helped me develop research skills while connecting with researchers from various fields at the institute. At this point I improved my understanding of the current status in cosmology and enhanced my coding skills exponentially.</p>
+            <p>For the last fellowship year, in summer 2025 I will be researching the potential use of Gamma-ray Bursts (GRBs), extremely powerful explosions, as standard candles up to very high redshifts (z~8) with Dr. Giancarlo Ghirlanda and Dr. Om Sharan Salafia at the Osservatorio Astronomico di Brera-Merate (INAF-Brera-Merate).</p>
+            <p>I would also like to kindly appreciate the support and enabling of all my tutors, mentors, family, and friends.</p>
+        </div>
     </div>
-  </div>
-</main>
+</div>
+
+<script>
+    // Modal functions
+    function openModal(id) {
+        document.getElementById(id).style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside content
+    window.onclick = function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+<!-- Load components -->
+<script src="components/loadComponents.js"></script>
 </body>
 </html>

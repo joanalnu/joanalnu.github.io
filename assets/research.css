@@ -1,7 +1,50 @@
-/* Inherit all styles from the main styles.css */
-@import url('assets/styles.css');
+/* Research Page Specific Styles */
+.about-section {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    margin: 4rem auto;
+    max-width: 1000px;
+    width: 90%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* Additional specific styles for research page */
+.about-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.project-list li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.project-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Modal styles */
 .modal {
     display: none;
     position: fixed;
@@ -12,37 +55,40 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
 }
 
 .modal-content {
     background-color: var(--white);
     color: var(--text-color);
     margin: 5% auto;
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 2.5rem;
+    border-radius: 15px;
     max-width: 800px;
     width: 90%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     position: relative;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: slideIn 0.4s ease-out;
 }
 
 .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 2px solid var(--light-gray);
 }
 
 .modal-header h2 {
     margin: 0;
+    color: var(--primary-color);
 }
 
 .close {
     color: var(--dark-gray);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     cursor: pointer;
     transition: var(--transition);
@@ -50,6 +96,7 @@
 
 .close:hover {
     color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 .modal-body {
@@ -58,63 +105,41 @@
 
 .modal-body p {
     margin-bottom: 1.5rem;
-}
-
-/* List styles */
-.list {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-}
-
-.list li {
-    margin-bottom: 1rem;
-    list-style-type: none;
-    padding-left: 1.5rem;
-    position: relative;
     font-size: 1.1rem;
 }
 
-.list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
+/* Keyframe animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* MathJax styles */
-.MathJax {
-    font-size: 1.1em !important;
-    color: var(--primary-color) !important;
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Card enhancements for research page */
-#projects .card {
-    cursor: pointer;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 2rem;
+    }
 
-#projects .card a {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--secondary-color);
-    font-weight: 600;
-}
+    .modal-content {
+        padding: 1.5rem;
+    }
 
-#talks .card {
-    text-align: center;
-}
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
 
-#talks .card h4 {
-    margin: 1rem 0;
-    font-size: 1.2rem;
-}
-
-#talks .card ul {
-    text-align: left;
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-}
-
-#talks .card ul li {
-    margin-bottom: 0.5rem;
+    .close {
+        font-size: 2rem;
+    }
 }
