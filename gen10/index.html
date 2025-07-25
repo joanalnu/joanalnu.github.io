@@ -3,86 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive biology tool for genetics education">
     <title>Genetics10 - Interactive Biology Tool</title>
     <link rel="stylesheet" href="genetics.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+<div class="loading-screen" id="loadingScreen">
+    <div class="dna-loader">
+        <div class="helix"></div>
+        <div class="helix"></div>
+        <div class="helix"></div>
+    </div>
+</div>
 
-<header>
-    <h1>Genetics10</h1>
-    <p>The <b>Interactive</b> and <b>Ready-to-Use Biology Tool</b> for <b>Students and Teachers</b></p>
-</header>
+<nav id="mainNav">
+    <div class="nav-container">
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#overview" data-i18n="nav.overview">Overview</a></li>
+            <li><a href="#features" data-i18n="nav.features">Features</a></li>
+            <li><a href="../index.html" data-i18n="nav.projects">Other Projects</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            <li class="language-selector">
+                <select id="languageSelect" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ca">Català</option>
+                </select>
+            </li>
+        </ul>
 
-
-<nav>
-    <a href="#overview">Overview</a>
-    <a href="#features">Features</a>
-    <li class="dropdown">
-        <a href="">Other languages</a>
-        <div class="dropdown-content">
-            <a href="es.html">Español</a>
-            <a href="de.html">Deutsch</a>
-            <a href="ca.html">Català</a>
-        </div>
-    </li>
-    <a href="../index.html">Other Projects</a>
-    <a href="#contact">Contact</a>
+    </div>
 </nav>
 
+<header class="header-animation">
+    <div class="header-content">
+        <h1 data-i18n="title">Genetics10</h1>
+        <p data-i18n="subtitle">The <b>Interactive</b> and <b>Ready-to-Use Biology Tool</b> for <b>Students and Teachers</b></p>
+    </div>
+    <div class="dna-background"></div>
+</header>
+
 <main>
-    <section id="overview">
-        <h2>About Genetics10</h2>
-        <p><b>Gen10</b> is a Python package designed for students to explore genetics and biology concepts. This package provides useful functions ready-to-use for students to focus on the learning. Gen10 is an open-source, scalable, and customizable tool to fit all students and level of expertise.</p>
-        <p>It requires any software or app installation, making it accessible and classroom-friendly, perfect for school managed devices. It can be imported in any Python code (scripts and notebooks) and used seamlessly with already existing code or used to create new programs.</p>
-        <p><b>In short, Gen10 provides the genomics functions you need right at your fingertips.</b></p>
+    <section id="overview" class="fade-in">
+        <h2 data-i18n="overview.title">About Genetics10</h2>
+        <p data-i18n="overview.paragraph1"><b>Gen10</b> is a Python package designed for students to explore genetics and biology concepts. This package provides useful functions ready-to-use for students to focus on the learning.</p>
+        <p data-i18n="overview.paragraph2">It requires any software or app installation, making it accessible and classroom-friendly, perfect for school managed devices.</p>
+        <p data-i18n="overview.paragraph3"><b>In short, Gen10 provides the genomics functions you need right at your fingertips.</b></p>
         <div class="cta">
-            <a href="https://github.com/joanalnu/gen10" target="_blank">Explore Gen10 on GitHub</a>
+            <a href="https://github.com/joanalnu/gen10" target="_blank" data-i18n="overview.cta">Explore Gen10 on GitHub</a>
         </div>
     </section>
 
-    <section id="features">
-        <h2>Key Features</h2>
-        <ul>
-            <li><b>DNA to RNA transcription</b> and <b>amino acid sequencing</b></li>
-            <li><b>Simulate genetic mutations randomly or specific site mutations</b></li>
-            <li><b>Compare DNA sequences</b></li>
-            <li><b>Finding complementaries and GC content</b></li>
-            <li><b>Easy iteration through datasets</b></li>
-            <li><b>Visualize protein structures</b> using AlphaFold API integration</li>
-            <li><b>Gene editing simulating CRISPR-Cas9</b></li>
-            <li><b>Simulate a PCR</b></li>
-            <li><b>Read and Write FASTA and GenBank files</b></li>
-            <li><b>Estimate melting temperatures (for <14 bases)</b></li>
-        </ul>
+    <section id="features" class="feature-grid">
+        <h2 data-i18n="features.title">Key Features</h2>
+        <div class="features-container">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-dna"></i>
+                <h3 data-i18n="features.dna">DNA/RNA Transcription</h3>
+                <p data-i18n="features.dna_desc">Convert between DNA and RNA with amino acid sequencing</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-bolt"></i>
+                <h3 data-i18n="features.mutations">Genetic Mutations</h3>
+                <p data-i18n="features.mutations_desc">Simulate random or specific site mutations</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-code-branch"></i>
+                <h3 data-i18n="features.compare">Sequence Comparison</h3>
+                <p data-i18n="features.compare_desc">Compare DNA sequences and find complementaries</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-chart-pie"></i>
+                <h3 data-i18n="features.gc">GC Content</h3>
+                <p data-i18n="features.gc_desc">Calculate GC content and melting temperatures</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-eye"></i>
+                <h3 data-i18n="features.visualize">Protein Visualization</h3>
+                <p data-i18n="features.visualize_desc">Visualize protein structures with AlphaFold</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-cut"></i>
+                <h3 data-i18n="features.crispr">CRISPR Simulation</h3>
+                <p data-i18n="features.crispr_desc">Simulate gene editing with CRISPR-Cas9</p>
+            </div>
+        </div>
         <div class="cta">
-            <a href="https://github.com/joanalnu/gen10/blob/main/README.md" target="_blank">Read the README</a>
+            <a href="https://github.com/joanalnu/gen10/blob/main/README.md" target="_blank" data-i18n="features.cta">Read the README</a>
         </div>
     </section>
 
-    <section id="students-educators">
-        <div class="two-column">
-            <div class="column">
-                <h2>For Students</h2>
-                <p>New to Python? Or new to coding at all? Start with the comprehensive Beginner’s Guide in this <a href="https://colab.research.google.com/drive/1L5vzkVWZcBbWgSU9thaLny3ddg2Vogy6?usp=sharing">Notebook</a> written by a students like you. Learn at your own pace and unlock the potential of Gen10`s methods through hands-on bioinformatics exploration. Remember this tool is designed for you, so mistakes do not exist!</p>
-            </div>
-            <div class="column">
-                <h2>For Educators</h2>
-                <p><b>Gen10</b> is the perfect classroom tool to teach genetics interactively and engaging. It supports group activities, flipped classrooms, and is curriculum aligned (at least began so before adding more methods!) It is available in multiple languages (English, Spanish, German, Catalan) with additional languages feasible on request. Check out the <a href="https://github.com/joanalnu/gen10/blob/main/README.md#info-for-educators">Info For Educators</a> in the GitHub documentation.</p>
-            </div>
+    <section id="students-educators" class="two-column">
+        <div class="column" data-aos="fade-right">
+            <h2 data-i18n="audience.students.title">For Students</h2>
+            <p data-i18n="audience.students.desc">New to Python? Start with our comprehensive Beginner's Guide designed specifically for students.</p>
+            <a href="https://colab.research.google.com/drive/1L5vzkVWZcBbWgSU9thaLny3ddg2Vogy6?usp=sharing" class="btn-secondary" data-i18n="audience.students.cta">Student Notebook</a>
+        </div>
+        <div class="column" data-aos="fade-left">
+            <h2 data-i18n="audience.teachers.title">For Educators</h2>
+            <p data-i18n="audience.teachers.desc">Perfect classroom tool for interactive genetics education with curriculum-aligned resources.</p>
+            <a href="https://github.com/joanalnu/gen10/blob/main/README.md#info-for-educators" class="btn-secondary" data-i18n="audience.teachers.cta">Educator Resources</a>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Have questions or feedback? Feel free to email me at
-        <a href="mailto:joanalnu@outlook.com?subject=Genetics10%20User%20Feedback&body=Hi%2C%20I%27m%20happy%20to%20connect%20with%20you%21%0A%0A">my email</a> or directly contribute to the <a href="https://github.com/joanalnu/gen10">project's GitHub repository.</a>
-        </p>
+    <section id="contact" class="contact-section">
+        <h2 data-i18n="contact.title">Contact</h2>
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="name" data-i18n="contact.name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" data-i18n="contact.email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message" data-i18n="contact.message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" data-i18n="contact.submit">Send Message</button>
+        </form>
     </section>
 </main>
 
 <footer>
-    <p>© 2024 <b>Genetics10 Project</b> | Created by Joanalnu</p>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#overview" data-i18n="footer.overview">Overview</a>
+            <a href="#features" data-i18n="footer.features">Features</a>
+            <a href="#contact" data-i18n="footer.contact">Contact</a>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/joanalnu/gen10" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:joanalnu@outlook.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copyright" data-i18n="footer.copyright">© 2024 <b>Genetics10 Project</b> | Created by Joanalnu</p>
+    </div>
 </footer>
 
+<script src="script.js" type="module"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+</script>
 </body>
 </html>
