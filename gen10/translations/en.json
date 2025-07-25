@@ -1,0 +1,68 @@
+{
+  "title": "Genetics10",
+  "subtitle": "The <b>Interactive</b> and <b>Ready-to-Use Biology Tool</b> for <b>Students and Teachers</b>",
+  "nav": {
+    "overview": "Overview",
+    "features": "Features",
+    "languages": "Other languages",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "catalan": "Català",
+    "projects": "Other Projects",
+    "contact": "Contact"
+  },
+  "overview": {
+    "title": "About Genetics10",
+    "paragraph1": "<b>Gen10</b> is a Python package designed for students to explore genetics and biology concepts. This package provides useful functions ready-to-use for students to focus on the learning.",
+    "paragraph2": "It requires any software or app installation, making it accessible and classroom-friendly, perfect for school managed devices.",
+    "paragraph3": "<b>In short, Gen10 provides the genomics functions you need right at your fingertips.</b>",
+    "cta": "Explore Gen10 on GitHub"
+  },
+  "features": {
+    "title": "Key Features",
+    "dna": "DNA/RNA Transcription",
+    "dna_desc": "Convert between DNA and RNA with amino acid sequencing",
+    "mutations": "Genetic Mutations",
+    "mutations_desc": "Simulate random or specific site mutations",
+    "compare": "Sequence Comparison",
+    "compare_desc": "Compare DNA sequences and find complementaries",
+    "gc": "GC Content",
+    "gc_desc": "Calculate GC content and melting temperatures",
+    "visualize": "Protein Visualization",
+    "visualize_desc": "Visualize protein structures with AlphaFold",
+    "crispr": "CRISPR Simulation",
+    "crispr_desc": "Simulate gene editing with CRISPR-Cas9",
+    "cta": "Read the README"
+  },
+  "audience": {
+    "students": {
+      "title": "For Students",
+      "desc": "New to Python? Start with our comprehensive Beginner's Guide designed specifically for students.",
+      "cta": "Student Notebook"
+    },
+    "teachers": {
+      "title": "For Educators",
+      "desc": "Perfect classroom tool for interactive genetics education with curriculum-aligned resources.",
+      "cta": "Educator Resources"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send Message"
+  },
+  "footer": {
+    "overview": "Overview",
+    "features": "Features",
+    "contact": "Contact",
+    "copyright": "© 2024 <b>Genetics10 Project</b> | Created by Joanalnu"
+  },
+  "language_names": {
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "ca": "Català"
+  }
+}
