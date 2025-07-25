@@ -5,6 +5,7 @@ const hamburger = document.querySelector('.hamburger');
 const dropdowns = document.querySelectorAll('.dropdown');
 const sections = document.querySelectorAll('section');
 const contactForm = document.getElementById('contactForm');
+const languageSelect = document.getElementById('languageSelect');
 
 // Loading screen
 window.addEventListener('load', () => {
@@ -68,27 +69,26 @@ if (contactForm) {
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        // Here you would typically send the form data to a server
         console.log({ name, email, message });
-
-        // Show success message
         alert('Message sent successfully!');
         contactForm.reset();
     });
 }
 
-// Internationalization
-document.addEventListener('DOMContentLoaded', () => {
-    loadTranslations('en');
-});
-
+// Translation functions
 async function loadTranslations(lang) {
     try {
-        const response = await fetch(`../translations/${lang}.json`);
+        const response = await fetch(`./translations/${lang}.json`);
+        if (!response.ok) {
+            throw new Error('Failed to load translations');
+        }
         const translations = await response.json();
         applyTranslations(translations);
     } catch (error) {
         console.error('Error loading translations:', error);
+        if (lang !== 'en') {
+            await loadTranslations('en');
+        }
     }
 }
 
@@ -107,17 +107,13 @@ function applyTranslations(translations) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = value;
             } else {
-                element.textContent = value;
+                element.innerHTML = value;
             }
         }
     });
 }
 
-
 // Language selector functionality
-const languageSelect = document.getElementById('languageSelect');
-
-// Set current language in selector
 function setCurrentLanguage() {
     const currentLang = document.documentElement.lang;
     if (languageSelect) {
@@ -125,19 +121,6 @@ function setCurrentLanguage() {
     }
 }
 
-// Change language
-if (languageSelect) {
-    languageSelect.addEventListener('change', (e) => {
-        const newLang = e.target.value;
-        loadTranslations(newLang);
-        document.documentElement.lang = newLang;
-
-        // Save preference to localStorage
-        localStorage.setItem('preferredLanguage', newLang);
-    });
-}
-
-// Check for saved language preference
 function checkLanguagePreference() {
     const savedLang = localStorage.getItem('preferredLanguage');
     if (savedLang && languageSelect) {
@@ -149,15 +132,32 @@ function checkLanguagePreference() {
     }
 }
 
-// Initialize
+// Initialize language system
 document.addEventListener('DOMContentLoaded', () => {
-    checkLanguagePreference();
+    // Set up language selector event
+    if (languageSelect) {
+        languageSelect.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            loadTranslations(newLang);
+            document.documentElement.lang = newLang;
+            localStorage.setItem('preferredLanguage', newLang);
+        });
 
-    // automatically detect browser language
-    const userLang = navigator.language.split('-')[0];
-    if (['en', 'es', 'de', 'ca'].includes(userLang) && !localStorage.getItem('preferredLanguage')) {
-        languageSelect.value = userLang;
-        loadTranslations(userLang);
-        document.documentElement.lang = userLang;
+        // Check for saved preference or browser language
+        const savedLang = localStorage.getItem('preferredLanguage');
+        const browserLang = navigator.language.split('-')[0];
+        const supportedLangs = ['en', 'es', 'de', 'ca'];
+
+        if (savedLang && supportedLangs.includes(savedLang)) {
+            loadTranslations(savedLang);
+        } else if (supportedLangs.includes(browserLang)) {
+            languageSelect.value = browserLang;
+            loadTranslations(browserLang);
+            document.documentElement.lang = browserLang;
+        } else {
+            loadTranslations('en');
+        }
+    } else {
+        loadTranslations('en');
     }
 });
