@@ -53,20 +53,6 @@
         <div class="copyright">© 2024 TdM. جميع الحقوق محفوظة.</div>
         <a href="https://joanalnu.github.io/index.html">العودة إلى الصفحة الرئيسية</a>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Select the language dropdown
-            const languageSelect = document.querySelector('.language-select');
-
-            // Add an event listener for the change event
-            languageSelect.addEventListener('change', function() {
-                // Redirect to the selected language page
-                const selectedValue = this.value;
-                if (selectedValue) {
-                    window.location.href = selectedValue;
-                }
-            });
-        });
-    </script>
+    <script src="../loadContent.js"></script>
 </body>
 </html>
