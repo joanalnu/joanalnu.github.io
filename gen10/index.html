@@ -137,6 +137,11 @@
         <h2 data-i18n="contact.title">Contact</h2>
         <!-- modify this form HTML and place wherever you want your form -->
         <form action="https://formspree.io/f/mnnzddzy" method="POST" id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
             <div  class="form-group">
                 <label for="email" data-i18n="contact.email">Email</label>
                 <input type="email" name="email" id="email" required>
