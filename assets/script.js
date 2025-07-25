@@ -48,7 +48,7 @@ function updateCVImageBasedOnTheme() {
     if (prefersDark) {
         cvImage.src = 'images/cv_first_page_dark.png';
     } else {
-        cvImage.src = 'images/cv_first_page.jpg';
+        cvImage.src = 'images/cv_first_page.png';
     }
 }
 
