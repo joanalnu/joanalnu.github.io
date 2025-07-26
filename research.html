@@ -125,7 +125,7 @@
 
     <!-- Other Projects Section -->
     <section id="others" class="about-section">
-        <h2>Other Projects</h2>
+        <h2>Side Projects</h2>
         <ul class="project-list">
             <li><span class="project-icon">🔭</span> <a href="https://github.com/joanalnu/ztf_api">ZTF-API</a> - API for accessing Zwicky Transient Facility data</li>
             <li><span class="project-icon">🌍</span> <a href="https://github.com/joanalnu/thermal_analysis">Thermal Analysis</a> - DLR internship project on remote sensing</li>
@@ -142,6 +142,26 @@
 <button id="back-to-top" onclick="scrollToTop()">↑</button>
 
 <!-- Modal Windows -->
+<div id="multimessenger-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Multi-Messenger Cosmology – GRB + GW</h2>
+            <span class="close" onclick="closeModal('multimessenger-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>Building up on my interest in Cosmology and high energy physics, I began to extend my work on distance ladder cosmology to higher energies and redshifts.</p>
+            <p>The first project I've done related to this research line was using the $$E_\text{peak}-E_\text{iso}$$ relation (Amati relation) of both Long and Short Gamma-Ray Bursts (S/LGRBs) together with luminosity distance-redshift data from a simulated population of binary neutron star (BNS) mergers, representative of 1-year of Einstein Telescope observations, by <i>Alberto Colombo et al. 2025</i>.</p>
+            <p>I was able to start this project during my international research stay at the Osservatorio Astronomico di Brera (OAB-INAF) within the high energy astrophysics group (HEA-OAB) under the supervision of Dr. Giancarlo Ghirlanda and Dr. Om Sharan Salafia.</p>
+            <p>During this research stay, I was able to learn a lot about GRB and relativistic plasma physics all the way to always working with logarithmic scaling and mathematical-statistical tools, such as the barycenter correction for fitting or the $chi^2$ test.</p>
+            <p>Further work includes using the collimation corrected energy of GRBs instead of the isotropic equivalent and studying how the sample size and characteristics modify our constraints for $$\Omega_m-\Omega_\text{DE}$$ and other cosmological parameters. Moreover, I intend to continue with this type of research with the CAPIBARA Gamma-/X-ray mission, which will be monitoring the high energy sky for EM counterparts.</p>
+            <div class="cta">
+                <a href="https://capibara3.github.io/capigx/multi-messenger-cosmology" class="btn">Visit Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="capibara-modal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -160,22 +180,22 @@
     </div>
 </div>
 
-<div id="gen10-modal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Gen10</h2>
-            <span class="close" onclick="closeModal('gen10-modal')">&times;</span>
-        </div>
-        <div class="modal-body">
-            <p><a href="gen10/index.html">Gen10</a> is a package for genomics data analysis and visualization, providing the right tools integrated into your Python code. The original goal of this package is to provide support and tools for education in high school or college, but it can be used for any applicable purpose.</p>
-            <p>The gen10 package allows to you perform a great and increasing variety of tasks from translating DNA into RNA or protein sequences, to retrieving alphafold structure predictions, simulating mutations and much more! gen10 is a powerful tool and at the same time easy-to-use for students to experiment with, learn from and create their own code. it doesn't need any software installation and can be used directly from a web browser.</p>
-            <p>I have developed notebook tutorials for coding beginners (zero coding experience required) to help students understand the basics of using the package and jump straight to learning.</p>
-            <div class="cta">
-                <a href="gen10/index.html" class="btn">Visit Project</a>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div id="gen10-modal" class="modal">-->
+<!--    <div class="modal-content">-->
+<!--        <div class="modal-header">-->
+<!--            <h2>Gen10</h2>-->
+<!--            <span class="close" onclick="closeModal('gen10-modal')">&times;</span>-->
+<!--        </div>-->
+<!--        <div class="modal-body">-->
+<!--            <p><a href="gen10/index.html">Gen10</a> is a package for genomics data analysis and visualization, providing the right tools integrated into your Python code. The original goal of this package is to provide support and tools for education in high school or college, but it can be used for any applicable purpose.</p>-->
+<!--            <p>The gen10 package allows to you perform a great and increasing variety of tasks from translating DNA into RNA or protein sequences, to retrieving alphafold structure predictions, simulating mutations and much more! gen10 is a powerful tool and at the same time easy-to-use for students to experiment with, learn from and create their own code. it doesn't need any software installation and can be used directly from a web browser.</p>-->
+<!--            <p>I have developed notebook tutorials for coding beginners (zero coding experience required) to help students understand the basics of using the package and jump straight to learning.</p>-->
+<!--            <div class="cta">-->
+<!--                <a href="gen10/index.html" class="btn">Visit Project</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div id="cosmo-modal" class="modal">
     <div class="modal-content">
