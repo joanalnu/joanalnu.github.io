@@ -3,6 +3,7 @@
 /* ====================== */
 :root {
     --color-primary: #0a84ff; /* Apple-inspired blue */
+    --color-primary-dark: #0069d9; /* Apple-inspired blue */
     --color-secondary: #1c1c1e; /* Deep neutral */
     --color-accent: #34c759; /* Accent green */
     --color-bg-light: #f5f5f7;
@@ -162,7 +163,49 @@ body {
 }
 
 .hero-section .btn:hover {
-    background: var(--color-accent);
+    background: var(--color-primary-dark);
+}
+
+.hero-subtitle a {
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-subtitle a:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+/* ====================== */
+/* Enhanced Typography and Links */
+/* ====================== */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    position: relative;
+    transition: var(--transition);
+}
+
+a:not(.nav__list a):not(.btn):not(.cta):not(.social-icons__link):hover {
+    color: var(--primary-color);
+}
+
+/* Underline animation for regular links */
+a:not(.nav__list a):not(.btn):not(.cta):not(.social-icons__link)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+a:not(.nav__list a):not(.btn):not(.cta):not(.social-icons__link):hover::after {
+    width: 100%;
 }
 
 /* ====================== */
@@ -206,6 +249,7 @@ body {
     max-height: var(--card-img-max-height);
     height: auto;
     object-fit: cover;
+    aspect-ratio: 16/9;
     display: block;
     transition: transform 0.5s ease;
 }
@@ -510,31 +554,6 @@ body {
 @keyframes floatIn {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* ====================== */
-/* Scroll Animations */
-/* ====================== */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 /* ====================== */
