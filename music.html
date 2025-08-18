@@ -1,177 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Joan Alcaide's Music Portfolio">
-    <meta name="author" content="joanalnu">
-    <meta property="og.site_name" content="joanalnu Music">
-    <meta property="og.title" content="joanalnu Music">
-    <title>Music</title>
-    <meta property="og.url" content="https://joanalnu.github.io/"/>
+    <meta name="author" content="Joan Alcaide">
+    <meta property="og:site_name" content="joanalnu Music">
+    <meta property="og:title" content="joanalnu Music">
+    <meta property="og:url" content="https://joanalnu.github.io/music.html"/>
     <link rel="canonical" href="https://joanalnu.github.io/music.html"/>
     <link rel="shortcut icon" href="images/logos/logo.jpg">
     <link href="assets/music.css" rel="stylesheet" type="text/css" />
-  </head>
-  
-  <body>
-    <div class="burger__container">
-        <div class="burger" aria-controls="navigation" aria-label="Menu">
-        <div class="burger__meat burger__meat--1"></div>
-        <div class="burger__meat burger__meat--2"></div>
-        <div class="burger__meat burger__meat--3"></div>
-        </div>
-    </div>
+    <title>Joan Alcaide Music Portfolio</title>
+</head>
+<body>
+<header class="nav-container">
+    <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
 
-    <div id="nav-container"></div>
-    <script src="components/loadComponents.js"></script>
+    <nav class="nav" id="main-nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="/music.html" class="nav__link active">Music</a></li>
+            <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <div class="hero-section">
-        <div class="music-info">
-            <h3>Audios played with <a href="https://es.yamaha.com/es/products/musical_instruments/pianos/p_series/p-45/index.html">Yamaha Digital Piano P-45</a> and recorded with <a href="https://www.apple.com/mac/garageband/">Garageband</a></h3>
-            <h3>Videos played at the German School of Barcelona.</h3>
-            <div class="tracks">
-                <div class="track">
-                    <h1>Girl of Ipanema - 09/2024 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213262&authkey=AIluurfwhfW8Wys">download</a></h1>
-                    <h2>Antonio Jobim - 1964</h2>
-                    <video width="75%" height="75%" controls>
-                        <source src="audio_folder/Ipanema_JAN_05112024.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <br><br><br>
+<main>
+    <section class="music-info">
+        <h1 class="fancy">Music Portfolio</h1>
+        <p>
+            Audios played with
+            <a href="https://es.yamaha.com/es/products/musical_instruments/pianos/p_series/p-45/index.html" target="_blank" rel="noopener">Yamaha Digital Piano P-45</a>
+            and recorded with
+            <a href="https://www.apple.com/mac/garageband/" target="_blank" rel="noopener">Garageband</a>.
+        </p>
+        <p>
+            Videos played at the German School of Barcelona.
+        </p>
+    </section>
 
-                <div class="track">
-                    <h1>Hit the Road Jack - 09/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213265&authkey=AGGPmc4dbISmNTs">download</a></h1>
-                    <h2>Ray Charles - 1961</h2>
-                    <video width="75%" height="75%" controls>
-                        <source src="audio_folder/HitTheRoad_JAN_05112024.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <br><br><br>
+    <section class="tracks" aria-label="Track list">
+        <!-- Track Start -->
+        <article class="track" tabindex="0">
+            <h2>
+                Girl of Ipanema - 09/2024
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213262&authkey=AIluurfwhfW8Wys" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Antonio Jobim - 1964</h3>
+            <video controls poster="images/music_poster.jpg">
+                <source src="audio_folder/Ipanema_JAN_05112024.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </article>
 
-                <div class="track">
-                    <h1>Take Five - 09/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213257&authkey=ABySuoZwA1YhllI">download</a></h1>
-                    <h2>Dave Brubeck Quartet - 1959</h2>
-                    <video width="75%" height="75%" controls>
-                        <source src="audio_folder/TakeFive_JAN_05112024.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <br><br><br>
+        <article class="track" tabindex="0">
+            <h2>
+                Hit the Road Jack - 09/2023
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213265&authkey=AGGPmc4dbISmNTs" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Ray Charles - 1961</h3>
+            <video controls poster="images/music_poster.jpg">
+                <source src="audio_folder/HitTheRoad_JAN_05112024.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </article>
 
-                <div class="track">
-                    <h1>Fly arrangement - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213255&authkey=AO0LYKBRICTnohs">download</a></h1>
-                    <h2>Ludovico Einaudi - 2006</h2>
-                    <video width="75%" height="75%" controls>
-                        <source src="audio_folder/Fly_JAN_05112024.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <br><br><br>
+        <article class="track" tabindex="0">
+            <h2>
+                Take Five - 09/2023
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213257&authkey=ABySuoZwA1YhllI" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Dave Brubeck Quartet - 1959</h3>
+            <video controls poster="images/music_poster.jpg">
+                <source src="audio_folder/TakeFive_JAN_05112024.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </article>
 
-                <div class="track">
-                    <h1>Dune Part One - 07/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%214614&authkey=!ABLoMtCaW86Xf_4">download</a></h1>
-                    <h2>Hans Zimmer - 2021</h2>
-                    <audio controls>
-                        <source src="audio_folder/Dune - 31:7:24.mp3">
-                    </audio>
-                    <h4>Recorded with <a href="https://www.akaipro.com/mpk-mini-mk3">Akai MPK mini</a> and <a href="https://apple.com/mac/garageband/">GarageBand</a>.</h4>
-                </div>
-                <br><br><br>
+        <article class="track" tabindex="0">
+            <h2>
+                Fly arrangement - 05/2023
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213255&authkey=AO0LYKBRICTnohs" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Ludovico Einaudi - 2006</h3>
+            <video controls poster="images/music_poster.jpg">
+                <source src="audio_folder/Fly_JAN_05112024.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </article>
 
-                <div class="track">
-                    <h1>Can You Hear the Music? - Oppenheimer - 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213866&authkey=!AIuiTSQruvq-GBg">download</a></h1>
-                    <h2>Ludwig Göransson - 2023</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-Version2CanYouHearTheMusic_Oppenheimer-5-2024.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>Just The Two Of Us (version 2) - 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213867&authkey=!ADl96DijJJjfFt8">download</a></h1>
-                    <h2>Bill Withers & Grover Washington, Jr. - 1980</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-Version2JustTheTwoOfUs-5-2024.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>Mia & Sebastian's Theme (version 2)- 05/2024 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213865&authkey=!AFA2rtqpJzmUrqA">download</a></h1>
-                    <h2>Justin Hurwitz - 2016</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-Version2MiaSebastiansTheme-5-2024.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>Golden Hour at Firenze - 04/2024</h1>
-                    <h2>JVKE - 2022</h2>
-                    <video width="75%" height="75%" controls>
-                        <source src="audio_folder/GoldenHourFirenze.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>Mamma Mia - 07/2023 <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213282&authkey=!AFhGjQF2KupMxnA">download</a></h1>
-                    <h2>ABBA - 1975</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-MammaMia-7-2023.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>Take the "A" Train - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213264&authkey=AJ1WBB8r6mcoEDo">download</a></h1>
-                    <h2>Duke Elligton - 1939</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-TakeTheATrain-5-2023.mp3">
-                    </audio>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>Havana - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213263&authkey=ALyMhLgtQryAZbg">download</a></h1>
-                    <h2>Camila Cabello - 2018</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-Habana-5-2023.mp3">
-                    </audio>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>La La Land Medley - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213258&authkey=AO-RfVzwLbw9yOQ">download</a></h1>
-                    <h2>Justin Hurwitz - 2016</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-LaLaLand-5-2023.mp3">
-                    </audio>
-                </div>
-                <br><br><br>
-                
-                <div class="track">
-                    <h1>Interstellar arrangement - 05/2023 <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&resid=3F20BE7BD62B5968%213256&authkey=AKNARaN2vwraIAc">download</a></h1>
-                    <h2>Hans Zimmer - 2014</h2>
-                    <audio controls>
-                        <source src="audio_folder/JAN-Interstellar-5-2023.mp3">
-                    </audio>
-                </div>
-            </div>
-        </div>
-        </div>
-        <br><br><br><br>
+        <article class="track" tabindex="0">
+            <h2>
+                Dune Part One - 07/2024
+                <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%214614&authkey=!ABLoMtCaW86Xf_4" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Hans Zimmer - 2021</h3>
+            <audio controls>
+                <source src="audio_folder/Dune - 31:7:24.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>
+                <small>
+                    Recorded with
+                    <a href="https://www.akaipro.com/mpk-mini-mk3" target="_blank" rel="noopener">Akai MPK mini</a>
+                    and
+                    <a href="https://apple.com/mac/garageband/" target="_blank" rel="noopener">GarageBand</a>.
+                </small>
+            </p>
+        </article>
 
-        <!-- Footer -->
-        <div id="footer-container"></div>
+        <article class="track" tabindex="0">
+            <h2>
+                Can You Hear the Music? - Oppenheimer - 05/2024
+                <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213866&authkey=!AIuiTSQruvq-GBg" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Ludwig Göransson - 2023</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-Version2CanYouHearTheMusic_Oppenheimer-5-2024.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
 
-        <script>
-            // Toggle the mobile menu visibility
-            function toggleMenu() {
-                const menu = document.querySelector('.menu');
-                menu.classList.toggle('active');
-            }
-        </script>
-    </main>
-  </body>
+        <article class="track" tabindex="0">
+            <h2>
+                Just The Two Of Us (version 2) - 05/2024
+                <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213867&authkey=!ADl96DijJJjfFt8" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Bill Withers &amp; Grover Washington, Jr. - 1980</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-Version2JustTheTwoOfUs-5-2024.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
+
+        <article class="track" tabindex="0">
+            <h2>
+                Mia &amp; Sebastian's Theme (version 2) - 05/2024
+                <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213865&authkey=!AFA2rtqpJzmUrqA" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Justin Hurwitz - 2016</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-Version2MiaSebastiansTheme-5-2024.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
+
+        <article class="track" tabindex="0">
+            <h2>
+                Golden Hour at Firenze - 04/2024
+            </h2>
+            <h3>JVKE - 2022</h3>
+            <video controls poster="images/music_poster.jpg">
+                <source src="audio_folder/GoldenHourFirenze.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </article>
+
+        <article class="track" tabindex="0">
+            <h2>
+                Mamma Mia - 07/2023
+                <a href="https://onedrive.live.com/embed?resid=3F20BE7BD62B5968%213282&authkey=!AFhGjQF2KupMxnA" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>ABBA - 1975</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-MammaMia-7-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
+
+        <article class="track" tabindex="0">
+            <h2>
+                Take the "A" Train - 05/2023
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&amp;resid=3F20BE7BD62B5968%213264&amp;authkey=AJ1WBB8r6mcoEDo" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Duke Ellington - 1939</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-TakeTheATrain-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
+
+        <article class="track" tabindex="0">
+            <h2>
+                Havana - 05/2023
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&amp;resid=3F20BE7BD62B5968%213263&amp;authkey=ALyMhLgtQryAZbg" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Camila Cabello - 2018</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-Habana-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
+
+        <article class="track" tabindex="0">
+            <h2>
+                La La Land Medley - 05/2023
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&amp;resid=3F20BE7BD62B5968%213258&amp;authkey=AO-RfVzwLbw9yOQ" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Justin Hurwitz - 2016</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-LaLaLand-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
+
+        <article class="track" tabindex="0">
+            <h2>
+                Interstellar arrangement - 05/2023
+                <a href="https://onedrive.live.com/embed?cid=3F20BE7BD62B5968&amp;resid=3F20BE7BD62B5968%213256&amp;authkey=AKNARaN2vwraIAc" target="_blank" rel="noopener">download  <i class="fas fa-download"></i></a>
+            </h2>
+            <h3>Hans Zimmer - 2014</h3>
+            <audio controls>
+                <source src="audio_folder/JAN-Interstellar-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </article>
+    </section>
+
+    <footer id="footer-container"></footer>
+</main>
+
+<script src="components/loadComponents.js"></script>
+<script>
+    // Accessible mobile menu interaction
+    const burger = document.querySelector('.burger');
+    burger.addEventListener('click', () => {
+        document.body.classList.toggle('nav--active');
+        burger.setAttribute('aria-expanded', document.body.classList.contains('nav--active'));
+    });
+    burger.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            burger.click();
+            event.preventDefault();
+        }
+    });
+</script>
+</body>
 </html>
