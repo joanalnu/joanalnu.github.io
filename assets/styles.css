@@ -288,7 +288,7 @@ a:not(.nav__list a):not(.btn):not(.cta):not(.social-icons__link):hover::after {
 }
 
 .about-section p {
-    font-size: 1.125rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     color: var(--color-text-dark);
     margin-bottom: 1.5rem;
