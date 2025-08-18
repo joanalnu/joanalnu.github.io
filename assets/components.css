@@ -1,0 +1,311 @@
+@import url("styles.css");
+
+/* ====================== */
+/* Enhanced Navigation Bar */
+/* ====================== */
+.nav {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-150%);
+    width: auto;
+    min-width: 320px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    border-radius: 48px;
+    box-shadow: 0 8px 32px rgba(52, 82, 173, 0.10);
+    z-index: 1000;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+    padding: 0.9rem 2.2rem;
+    border: 1px solid rgba(255,255,255,0.18);
+    opacity: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .nav {
+        background: rgba(30,30,30,0.85);
+        border: 1px solid rgba(0,0,0,0.18);
+    }
+}
+
+.nav.active {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__list li {
+    margin: 0;
+    position: relative;
+}
+
+.nav__list a {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+}
+
+.nav__list a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    z-index: -1;
+    border-radius: 50px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.nav__list a:hover {
+    color: var(--white);
+}
+
+.nav__list a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav__list a i {
+    transition: transform 0.3s;
+}
+
+.nav__list a:hover i {
+    transform: scale(1.2);
+}
+
+/* Enhanced Burger Menu */
+.burger__container {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1100;
+    cursor: pointer;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(24px) saturate(1.2);
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(52, 82, 173, 0.10);
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: all 0.3s;
+    opacity: 0;
+    animation: fadeIn 0.5s 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-color-scheme: dark) {
+    .burger__container {
+        background: rgba(30,30,30,0.85);
+        border: 1px solid rgba(0,0,0,0.18);
+    }
+}
+
+.burger__container:hover {
+    transform: scale(1.08);
+}
+
+.burger {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+
+.burger__meat {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+}
+
+.burger__meat--1 {
+    top: 0;
+}
+
+.burger__meat--2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger__meat--3 {
+    bottom: 0;
+}
+
+.burger.active .burger__meat--1 {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger.active .burger__meat--2 {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.burger.active .burger__meat--3 {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============== */
+/* Modern Footer */
+/* ============== */
+footer {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem 2.5rem 2rem;
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px 32px 0 0;
+    box-shadow: 0 -8px 32px rgba(52, 82, 173, 0.10);
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/clean_cosmology.jpg') center/cover no-repeat;
+    opacity: 0.07;
+    z-index: 0;
+}
+
+footer p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icons__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(52, 82, 173, 0.10);
+}
+
+.social-icons__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.22);
+    transform: scale(0);
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.social-icons__link:hover {
+    background: rgba(255,255,255,0.22);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 32px rgba(118, 75, 162, 0.18);
+}
+
+.social-icons__link:hover::before {
+    transform: scale(1);
+}
+
+.social-icons__icon {
+    width: 28px;
+    height: 28px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s;
+}
+
+.social-icons__link:hover .social-icons__icon {
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 8px var(--white));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav {
+        top: 1rem;
+        padding: 0.5rem 1rem;
+        min-width: 280px;
+    }
+
+    .nav__list a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .burger__container {
+        width: 44px;
+        height: 44px;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icons__link {
+        width: 40px;
+        height: 40px;
+    }
+}
