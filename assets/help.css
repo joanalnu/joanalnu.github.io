@@ -1,238 +1,66 @@
-/* General body and container styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
     color: #333;
-}
-  
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-  
-/* Error and support section layout */
-#error-section, #support-section, #help-documents {
-    margin-bottom: 40px;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container {
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-  
-/* Support section specific styles */
-#support-section h1 {
-    color: #e86c0b;
-    margin-bottom: 10px;
+    padding: 2rem;
+    max-width: 600px;
 }
 
-#support-section p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
+.error-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    color: #dc3545;
+    margin-bottom: 1rem;
 }
 
-#support-section a {
-    color: #5b0c8a;
-    text-decoration: none;
-    font-weight: bold;
+.error-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #343a40;
 }
 
-#support-section a:hover {
-    text-decoration: underline;
+.error-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #6c757d;
 }
 
-/* Help documents section */
-#help-documents {
-    margin-top: 20px;
-    text-align: left;
-}
-
-#help-documents h2 {
-    color: #2b2b2b;
-    margin-bottom: 10px;
-}
-
-#help-documents a {
+.home-btn {
     display: inline-block;
-    margin-bottom: 10px;
-    color: #e86c0b;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#help-documents a:hover {
-    color: #5b0c8a;
-    text-decoration: underline;
-}
-
-/* 2-column layout for larger screens */
-@media (min-width: 768px) {
-    .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-  
-    #error-section, #support-section {
-      flex: 1 1 45%;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    #help-documents {
-      flex: 1 1 100%;
-      margin-top: 40px;
-    }
-}
-  
-/* Footer */
-footer {
-    background-color: #2b2b2b;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
     color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-  
-footer a {
-    color: #e86c0b;
-}
-  
-footer a:hover {
-    color: #5b0c8a;
-}
-  
-/* Restrict iframe width */
-iframe {
-    max-width: 100%;
-    width: 100%; /* Ensures responsiveness */
-    height: 600px;
-    border: none;
-    margin: 20px auto;
-    display: block;
-}
-  
-/* Footer Columns */
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-  
-.footer-column {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.footer-column a {
-    color: #e86c0b;
-    display: block;
-    margin: 5px 0;
-}
-  
-.footer-column a:hover {
-    color: #5b0c8a;
+.home-btn:hover {
+    background-color: #0056b3;
 }
 
-/* Dark mode overrides using prefers-color-scheme */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #e0e0e0;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        font-family: Arial, sans-serif;
+/* Responsive design */
+@media (max-width: 768px) {
+    .error-content h1 {
+        font-size: 4rem;
     }
 
-    .container {
-        background-color: transparent;
-    }
-
-    #error-section, #support-section, #help-documents {
-        background-color: #1e1e2f;
-        color: #e0e0e0;
-        box-shadow: 0 2px 8px rgba(74, 144, 226, 0.5);
-    }
-
-    #support-section h1 {
-        color: #4a90e2;
-    }
-
-    #support-section p {
-        color: #cfd8dc;
-    }
-
-    #support-section a {
-        color: #7ea7e0;
-    }
-
-    #support-section a:hover {
-        color: #4a90e2;
-        text-decoration: underline;
-    }
-
-    #help-documents h2 {
-        color: #a0a0a0;
-    }
-
-    #help-documents a {
-        color: #4a90e2;
-    }
-
-    #help-documents a:hover {
-        color: #7ea7e0;
-        text-decoration: underline;
-    }
-
-    @media (min-width: 768px) {
-        .container {
-            background-color: transparent;
-        }
-
-        #error-section, #support-section {
-            background-color: #1e1e2f;
-            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.5);
-        }
-
-        #help-documents {
-            background-color: transparent;
-        }
-    }
-
-    footer {
-        background-color: #1e1e2f;
-        color: #ccc;
-    }
-
-    footer a {
-        color: #7ea7e0;
-    }
-
-    footer a:hover {
-        color: #4a90e2;
-    }
-
-    iframe {
-        border: none;
-    }
-
-    .footer-container {
-        background-color: transparent;
-    }
-
-    .footer-column a {
-        color: #7ea7e0;
-    }
-
-    .footer-column a:hover {
-        color: #4a90e2;
+    .error-content h2 {
+        font-size: 1.5rem;
     }
 }
