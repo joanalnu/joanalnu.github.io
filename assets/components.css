@@ -13,13 +13,18 @@
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: transparent;
+    /*background-color: transparent;*/
     border-radius: 50px; /* Fully rounded pill */
     padding: 0.5rem 1rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     z-index: 1000;
     transition: all 0.3s ease;
-    color: var(--light-color);
+    color: var(--dark-color);
+
+    /* Glassmorphism / blur effect */
+    background-color: rgba(255, 255, 255, 0.1); /* semi-transparent */
+    backdrop-filter: blur(10px); /* blur behind the navbar */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
 }
 
 /* Container flex for layout */
@@ -29,13 +34,31 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
+
+}
+
+/* Burger animation */
+.burger.open .burger__meat:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open .burger__meat:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open .burger__meat:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.burger__meat {
+    transition: all 0.3s ease;
 }
 
 /* Logo styling */
 .navbar-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--light-color);
+    color: var(--dark-color);
     text-decoration: none;
     mix-blend-mode: difference;
 }
@@ -50,7 +73,7 @@
 .nav-btn {
     padding: 0.4rem 1rem;
     background-color: transparent;
-    color: var(--light-color);
+    color: var(--dark-color);
     border: none;
     border-radius: 30px; /* Rounded button */
     text-decoration: none;
@@ -79,7 +102,7 @@
 .burger__meat {
     height: 3px;
     width: 100%;
-    background-color: var(--light-color);
+    background-color: var(--dark-color);
     border-radius: 2px;
 }
 

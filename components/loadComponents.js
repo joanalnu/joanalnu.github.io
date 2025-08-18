@@ -36,20 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Select the burger button and the navbar links container
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.navbar-links');
 
+// Toggle 'active' class on click
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 
-
-const navbarLogo = document.querySelector(".navbar-logo");
-
-function updateLogoColor() {
-    const bgColor = window.getComputedStyle(document.body).backgroundColor;
-    // Simple brightness detection
-    const rgb = bgColor.match(/\d+/g).map(Number);
-    const brightness = (rgb[0]*299 + rgb[1]*587 + rgb[2]*114) / 1000;
-
-    navbarLogo.style.color = brightness > 125 ? "black" : "white";
-}
-
-window.addEventListener("scroll", updateLogoColor);
-window.addEventListener("resize", updateLogoColor);
-updateLogoColor();
+    // Optional: animate burger lines
+    burger.classList.toggle('open');
+});
