@@ -59,7 +59,7 @@ body {
 }
 
 .nav__brand {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--color-primary);
 }
@@ -260,7 +260,7 @@ a:not(.nav__list a):not(.btn):not(.cta):not(.social-icons__link):hover::after {
 
 .card h3 {
     margin: 1rem;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
@@ -418,7 +418,7 @@ a:not(.nav__list a):not(.btn):not(.cta):not(.social-icons__link):hover::after {
     background-color: var(--color-bg-light);
     color: var(--primary-color);
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     box-shadow: var(--shadow);
     z-index: 10;
@@ -431,7 +431,7 @@ a:not(.nav__list a):not(.btn):not(.cta):not(.social-icons__link):hover::after {
 
 .scroll-button:hover {
     opacity: 1;
-    background-color: var(--secondary-color);
+    background-color: var(--color-muted);
     color: var(--color-bg-light);
 }
 
