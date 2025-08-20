@@ -1172,6 +1172,17 @@
             });
         }
 
+        // Helper to escape HTML special characters
+        function escapeHTML(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;')
+                .replace(/`/g, '&#96;');
+        }
+
         function switchToRandomDevice() {
             const devices = document.querySelectorAll('.network-device');
             const randomDevice = devices[Math.floor(Math.random() * devices.length)];
@@ -1180,7 +1191,7 @@
             activateDevice(randomDevice, deviceName);
             
             const statusElement = document.getElementById('demo-status');
-            statusElement.innerHTML = `<span style="color: #667eea;">🔄 Automatically switched to ${deviceName}</span>`;
+            statusElement.innerHTML = `<span style="color: #667eea;">🔄 Automatically switched to ${escapeHTML(deviceName)}</span>`;
         }
 
         // Create floating particles
