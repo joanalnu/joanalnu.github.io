@@ -4,7 +4,6 @@
     top: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    /*background: rgba(26, 26, 46, 0.8);*/
     background: transparent;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
