@@ -359,3 +359,120 @@ document.addEventListener('mousemove', (e) => {
 if (window.innerWidth <= 768) {
     cursor.style.display = 'none';
 }
+
+
+// Horizontal scrolling for highlights
+function setupHighlightsScroller() {
+    const scroller = document.querySelector('.highlights-scroller');
+    const container = document.querySelector('.highlights-container');
+    const scrollLeftBtn = document.querySelector('.scroll-left');
+    const scrollRightBtn = document.querySelector('.scroll-right');
+    let cardWidth = 0;
+
+    function updateCardWidth() {
+        const card = document.querySelector('.highlights-scroller .card');
+        if (card) {
+            cardWidth = card.offsetWidth + 32; // card width + gap
+        }
+    }
+
+    function handleScroll() {
+        const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+        const currentScroll = scroller.scrollLeft;
+        if (currentScroll > 10) {
+            container.classList.add('scrolled');
+        } else {
+            container.classList.remove('scrolled');
+        }
+        if (currentScroll >= maxScroll - 10) {
+            scrollRightBtn.style.opacity = '0.3';
+            scrollRightBtn.style.pointerEvents = 'none';
+        } else {
+            scrollRightBtn.style.opacity = '0.8';
+            scrollRightBtn.style.pointerEvents = 'auto';
+        }
+    }
+
+    if (scroller && scrollLeftBtn && scrollRightBtn) {
+        updateCardWidth();
+        scrollLeftBtn.addEventListener('click', () => {
+            updateCardWidth();
+            scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+        scrollRightBtn.addEventListener('click', () => {
+            updateCardWidth();
+            scroller.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+        scroller.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', () => {
+            updateCardWidth();
+            handleScroll();
+        });
+        // Recalculate after all images load
+        const images = scroller.querySelectorAll('img');
+        let loaded = 0;
+        images.forEach(img => {
+            if (img.complete) loaded++;
+            else img.addEventListener('load', () => {
+                loaded++;
+                if (loaded === images.length) {
+                    updateCardWidth();
+                    handleScroll();
+                }
+            });
+        });
+        if (loaded === images.length) {
+            updateCardWidth();
+            handleScroll();
+        }
+        // Initial check
+        setTimeout(() => {
+            updateCardWidth();
+            handleScroll();
+        }, 100);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', setupHighlightsScroller);
+
+// adding keyboard navigation of horizontal scrolls for accessibility
+document.addEventListener('keydown', (e) => {
+    const scroller = document.querySelector('.highlights-scroller');
+    if (!scroller) return;
+
+    const cardWidth = document.querySelector('.card').offsetWidth + 32;
+
+    if (e.key === 'ArrowLeft') {
+        scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        scroller.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        e.preventDefault();
+    }
+});
+
+// Add touch event handlers
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.querySelector('.highlights-scroller').addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, {passive: true});
+
+document.querySelector('.highlights-scroller').addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, {passive: true});
+
+function handleSwipe() {
+    const scroller = document.querySelector('.highlights-scroller');
+    if (Math.abs(touchEndX - touchStartX) < 50) return; // Ignore small movements
+
+    if (touchEndX < touchStartX) {
+        // Swipe left
+        scroller.scrollBy({ left: 300, behavior: 'smooth' });
+    } else {
+        // Swipe right
+        scroller.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+}
