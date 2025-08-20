@@ -17,7 +17,6 @@
 
 .navbar.scrolled {
     transform: translateX(-50%) translateY(-5px);
-    /*background: rgba(26, 26, 46, 0.95);*/
     background: transparent;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
     scale: 0.95;
