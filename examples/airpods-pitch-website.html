@@ -1084,6 +1084,16 @@
             });
         }
 
+        // Helper to escape HTML special characters
+        function escapeHTML(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
         // Interactive demo functionality
         let activeDevice = null;
 
@@ -1099,7 +1109,7 @@
             
             // Update status text
             const statusElement = document.getElementById('demo-status');
-            statusElement.innerHTML = `<span style="color: #06d6a0;">🎵 Now playing audio from ${deviceName}</span>`;
+            statusElement.innerHTML = `<span style="color: #06d6a0;">🎵 Now playing audio from ${escapeHTML(deviceName)}</span>`;
             
             // Create connection line animation
             createConnectionLine(element);
