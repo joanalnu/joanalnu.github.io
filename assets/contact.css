@@ -46,7 +46,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
+        /* Dark mode colors */
         --bg-primary: rgba(26, 26, 46, 0.3);
         --bg-secondary: rgba(26, 26, 46, 0.8);
         --bg-focus: rgba(26, 26, 46, 0.9);
