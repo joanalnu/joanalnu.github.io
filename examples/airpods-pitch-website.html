@@ -1182,6 +1182,17 @@
             });
         }
 
+        // Helper to escape HTML special characters
+        function escapeHTML(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;')
+                .replace(/`/g, '&#96;');
+        }
+
         function switchToRandomDevice() {
             const devices = document.querySelectorAll('.network-device');
             const randomDevice = devices[Math.floor(Math.random() * devices.length)];
