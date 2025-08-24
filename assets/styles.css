@@ -29,11 +29,50 @@
 
     --danger: #ef4444;
     --danger-light: rgba(239, 68, 68, 0.15);
+
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #1a1a1a;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --radius: 10px;
 }
 
 /* Dark theme */
+[data-theme="dark"] {
+    --primary: #0a0a0f;
+    --secondary: #1a1a2e;
+
+    --accent: #6366f1;
+    --accent-light: #818cf8;
+
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+
+    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-hover: linear-gradient(135deg, #818cf8 0%, #8b5fbf 100%);
+    --cosmic-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+
+    --border: rgba(255, 255, 255, 0.15);
+    --border-light: rgba(255, 255, 255, 0.1);
+
+    --overlay: rgba(15, 15, 25, 0.6);
+    --overlay-light: rgba(15, 15, 25, 0.4);
+
+    --modal-bg: rgba(26, 26, 46, 0.95);
+
+    --danger: #ef4444;
+    --danger-light: rgba(239, 68, 68, 0.2);
+
+    --color-bg-light: #1a1a2e;
+    --color-bg-dark: #ffffff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Auto dark theme based on system preference */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --primary: #0a0a0f;
         --secondary: #1a1a2e;
 
@@ -57,6 +96,11 @@
 
         --danger: #ef4444;
         --danger-light: rgba(239, 68, 68, 0.2);
+
+        --color-bg-light: #1a1a2e;
+        --color-bg-dark: #ffffff;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -219,6 +263,66 @@ a:hover {
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* Social Engagement Section */
+.social-engagement {
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+.social-engagement h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--accent-light);
+    text-align: center;
+}
+
+.engagement-items {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.engagement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--overlay);
+    border-radius: 15px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.engagement-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background: var(--overlay-light);
+}
+
+.engagement-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    padding: 0.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.engagement-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--accent-light);
+}
+
+.engagement-content p {
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-secondary);
 }
 
@@ -1129,6 +1233,56 @@ a:hover {
     box-shadow: 0 0 20px var(--accent);
 }
 
+/* Timeline Toggle */
+.timeline-toggle-container {
+    text-align: center;
+    margin: 2rem 0;
+    display: none; /* Hidden by default, shown only on mobile */
+}
+
+.timeline-toggle {
+    background: var(--gradient);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.timeline-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.timeline-toggle:active {
+    transform: translateY(0);
+}
+
+#timeline-toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.timeline-toggle.expanded #timeline-toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Timeline container for collapsible functionality */
+.timeline-container {
+    position: relative;
+}
+
+#timeline-content {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
 /* Skills Section */
 .skills-grid {
     display: grid;
@@ -1248,6 +1402,57 @@ a:hover {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Show timeline toggle on mobile */
+    .timeline-toggle-container {
+        display: block;
+    }
+
+    /* Make timeline collapsible on mobile */
+    #timeline-content {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    #timeline-content.expanded {
+        max-height: 2000px; /* Generous max height for smooth animation */
+        opacity: 1;
+    }
+
+    /* Compact timeline spacing on mobile */
+    .timeline-item {
+        margin: 1.5rem 0;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Social engagement mobile styles */
+    .engagement-items {
+        gap: 1rem;
+    }
+
+    .engagement-item {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .engagement-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .social-engagement h3 {
+        font-size: 1.3rem;
     }
 }
 

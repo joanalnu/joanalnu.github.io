@@ -5,6 +5,68 @@ window.addEventListener('load', () => {
     }, 1000);
 });
 
+// Theme toggle functionality
+class ThemeManager {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        // Get saved theme from localStorage or default to 'auto'
+        this.currentTheme = localStorage.getItem('theme') || 'auto';
+        this.applyTheme();
+        this.setupToggleButton();
+    }
+
+    applyTheme() {
+        const html = document.documentElement;
+        const themeIcon = document.getElementById('theme-icon');
+        
+        if (this.currentTheme === 'auto') {
+            // Remove any explicit theme attribute to use system preference
+            html.removeAttribute('data-theme');
+            if (themeIcon) {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    themeIcon.className = 'fas fa-moon';
+                } else {
+                    themeIcon.className = 'fas fa-sun';
+                }
+            }
+        } else {
+            html.setAttribute('data-theme', this.currentTheme);
+            if (themeIcon) {
+                themeIcon.className = this.currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            }
+        }
+    }
+
+    toggleTheme() {
+        const themes = ['auto', 'light', 'dark'];
+        const currentIndex = themes.indexOf(this.currentTheme);
+        this.currentTheme = themes[(currentIndex + 1) % themes.length];
+        
+        localStorage.setItem('theme', this.currentTheme);
+        this.applyTheme();
+    }
+
+    setupToggleButton() {
+        const toggleButton = document.getElementById('theme-toggle');
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => this.toggleTheme());
+        }
+
+        // Listen for system theme changes when in auto mode
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (this.currentTheme === 'auto') {
+                this.applyTheme();
+            }
+        });
+    }
+}
+
+// Initialize theme manager
+const themeManager = new ThemeManager();
+
 // Enhanced navbar scroll effects
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
@@ -45,40 +107,42 @@ const mobileToggle = document.getElementById('mobile-toggle');
 const navLinksContainer = document.getElementById('nav-links');
 let isMenuOpen = false;
 
-mobileToggle.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    navLinksContainer.classList.toggle('active');
+if (mobileToggle && navLinksContainer) {
+    mobileToggle.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        navLinksContainer.classList.toggle('active');
 
-    // Animate hamburger menu
-    mobileToggle.style.transform = isMenuOpen
-        ? 'rotate(90deg)'
-        : 'rotate(0deg)';
+        // Animate hamburger menu
+        mobileToggle.style.transform = isMenuOpen
+            ? 'rotate(90deg)'
+            : 'rotate(0deg)';
 
-    // Change hamburger to X when open
-    mobileToggle.innerHTML = isMenuOpen ? '✕' : '☰';
-});
+        // Change hamburger to X when open
+        mobileToggle.innerHTML = isMenuOpen ? '✕' : '☰';
+    });
 
-// Close mobile menu when clicking a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (isMenuOpen) {
+    // Close mobile menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                navLinksContainer.classList.remove('active');
+                mobileToggle.style.transform = 'rotate(0deg)';
+                mobileToggle.innerHTML = '☰';
+                isMenuOpen = false;
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isMenuOpen && !e.target.closest('.navbar')) {
             navLinksContainer.classList.remove('active');
             mobileToggle.style.transform = 'rotate(0deg)';
             mobileToggle.innerHTML = '☰';
             isMenuOpen = false;
         }
     });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (isMenuOpen && !e.target.closest('.navbar')) {
-        navLinksContainer.classList.remove('active');
-        mobileToggle.style.transform = 'rotate(0deg)';
-        mobileToggle.innerHTML = '☰';
-        isMenuOpen = false;
-    }
-});
+}
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -455,14 +519,17 @@ document.addEventListener('keydown', (e) => {
 let touchStartX = 0;
 let touchEndX = 0;
 
-document.querySelector('.highlights-scroller').addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, {passive: true});
+const touchScroller = document.querySelector('.highlights-scroller');
+if (touchScroller) {
+    touchScroller.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
 
-document.querySelector('.highlights-scroller').addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, {passive: true});
+    touchScroller.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, {passive: true});
+}
 
 function handleSwipe() {
     const scroller = document.querySelector('.highlights-scroller');
@@ -476,3 +543,64 @@ function handleSwipe() {
         scroller.scrollBy({ left: -300, behavior: 'smooth' });
     }
 }
+
+// Timeline toggle functionality for mobile
+class TimelineToggle {
+    constructor() {
+        this.timelineToggle = document.getElementById('timeline-toggle');
+        this.timelineContent = document.getElementById('timeline-content');
+        this.timelineToggleIcon = document.getElementById('timeline-toggle-icon');
+        this.timelineToggleText = document.querySelector('.timeline-toggle-text');
+        this.isExpanded = false;
+        this.init();
+    }
+
+    init() {
+        if (this.timelineToggle && this.timelineContent) {
+            this.timelineToggle.addEventListener('click', () => this.toggle());
+            
+            // Set initial state based on screen size
+            this.updateVisibility();
+            
+            // Listen for window resize to update visibility
+            window.addEventListener('resize', () => this.updateVisibility());
+        }
+    }
+
+    toggle() {
+        this.isExpanded = !this.isExpanded;
+        
+        if (this.isExpanded) {
+            this.timelineContent.classList.add('expanded');
+            this.timelineToggle.classList.add('expanded');
+            this.timelineToggleText.textContent = 'Hide Timeline';
+        } else {
+            this.timelineContent.classList.remove('expanded');
+            this.timelineToggle.classList.remove('expanded');
+            this.timelineToggleText.textContent = 'View Timeline';
+        }
+    }
+
+    updateVisibility() {
+        // On larger screens, always show timeline and hide toggle
+        if (window.innerWidth > 768) {
+            this.timelineContent.classList.add('expanded');
+            this.timelineContent.style.maxHeight = 'none';
+            this.timelineContent.style.opacity = '1';
+        } else {
+            // On mobile, respect the toggle state
+            this.timelineContent.style.maxHeight = '';
+            this.timelineContent.style.opacity = '';
+            if (this.isExpanded) {
+                this.timelineContent.classList.add('expanded');
+            } else {
+                this.timelineContent.classList.remove('expanded');
+            }
+        }
+    }
+}
+
+// Initialize timeline toggle when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new TimelineToggle();
+});

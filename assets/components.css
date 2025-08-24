@@ -29,6 +29,41 @@
     width: 100%;
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 0.6rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--accent-light);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
 .logo {
     font-size: 1.3rem;
     font-weight: 700;
@@ -173,6 +208,17 @@
 
     .mobile-menu-toggle {
         display: block;
+    }
+
+    .nav-controls {
+        gap: 0.75rem;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        padding: 0.5rem;
+        font-size: 0.9rem;
     }
 
     .logo {
