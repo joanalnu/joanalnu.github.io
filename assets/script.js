@@ -5,6 +5,64 @@ window.addEventListener('load', () => {
     }, 1000);
 });
 
+// Theme toggle functionality
+class ThemeManager {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        // Get saved theme from localStorage or default to 'auto'
+        this.currentTheme = localStorage.getItem('theme') || 'auto';
+        this.applyTheme();
+        this.setupToggleButton();
+    }
+
+    applyTheme() {
+        const html = document.documentElement;
+        const themeIcon = document.getElementById('theme-icon');
+        
+        if (this.currentTheme === 'auto') {
+            // Remove any explicit theme attribute to use system preference
+            html.removeAttribute('data-theme');
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+            }
+        } else {
+            html.setAttribute('data-theme', this.currentTheme);
+            themeIcon.className = this.currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+    }
+
+    toggleTheme() {
+        const themes = ['auto', 'light', 'dark'];
+        const currentIndex = themes.indexOf(this.currentTheme);
+        this.currentTheme = themes[(currentIndex + 1) % themes.length];
+        
+        localStorage.setItem('theme', this.currentTheme);
+        this.applyTheme();
+    }
+
+    setupToggleButton() {
+        const toggleButton = document.getElementById('theme-toggle');
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => this.toggleTheme());
+        }
+
+        // Listen for system theme changes when in auto mode
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (this.currentTheme === 'auto') {
+                this.applyTheme();
+            }
+        });
+    }
+}
+
+// Initialize theme manager
+const themeManager = new ThemeManager();
+
 // Enhanced navbar scroll effects
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
@@ -476,3 +534,62 @@ function handleSwipe() {
         scroller.scrollBy({ left: -300, behavior: 'smooth' });
     }
 }
+
+// Timeline toggle functionality for mobile
+class TimelineToggle {
+    constructor() {
+        this.timelineToggle = document.getElementById('timeline-toggle');
+        this.timelineContent = document.getElementById('timeline-content');
+        this.timelineToggleIcon = document.getElementById('timeline-toggle-icon');
+        this.timelineToggleText = document.querySelector('.timeline-toggle-text');
+        this.isExpanded = false;
+        this.init();
+    }
+
+    init() {
+        if (this.timelineToggle && this.timelineContent) {
+            this.timelineToggle.addEventListener('click', () => this.toggle());
+            
+            // Set initial state based on screen size
+            this.updateVisibility();
+            
+            // Listen for window resize to update visibility
+            window.addEventListener('resize', () => this.updateVisibility());
+        }
+    }
+
+    toggle() {
+        this.isExpanded = !this.isExpanded;
+        
+        if (this.isExpanded) {
+            this.timelineContent.classList.add('expanded');
+            this.timelineToggle.classList.add('expanded');
+            this.timelineToggleText.textContent = 'Hide Timeline';
+        } else {
+            this.timelineContent.classList.remove('expanded');
+            this.timelineToggle.classList.remove('expanded');
+            this.timelineToggleText.textContent = 'View Timeline';
+        }
+    }
+
+    updateVisibility() {
+        // On larger screens, always show timeline and hide toggle
+        if (window.innerWidth > 768) {
+            this.timelineContent.classList.add('expanded');
+            this.timelineContent.style.maxHeight = 'none';
+            this.timelineContent.style.opacity = '1';
+        } else {
+            // On mobile, respect the toggle state
+            this.timelineContent.style.maxHeight = '';
+            this.timelineContent.style.opacity = '';
+            if (!this.isExpanded) {
+                this.timelineContent.classList.remove('expanded');
+            }
+        }
+    }
+}
+
+// Initialize timeline toggle when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new TimelineToggle();
+});
