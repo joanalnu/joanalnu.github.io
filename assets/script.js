@@ -25,14 +25,18 @@ class ThemeManager {
         if (this.currentTheme === 'auto') {
             // Remove any explicit theme attribute to use system preference
             html.removeAttribute('data-theme');
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                themeIcon.className = 'fas fa-moon';
-            } else {
-                themeIcon.className = 'fas fa-sun';
+            if (themeIcon) {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    themeIcon.className = 'fas fa-moon';
+                } else {
+                    themeIcon.className = 'fas fa-sun';
+                }
             }
         } else {
             html.setAttribute('data-theme', this.currentTheme);
-            themeIcon.className = this.currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            if (themeIcon) {
+                themeIcon.className = this.currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            }
         }
     }
 
@@ -103,40 +107,42 @@ const mobileToggle = document.getElementById('mobile-toggle');
 const navLinksContainer = document.getElementById('nav-links');
 let isMenuOpen = false;
 
-mobileToggle.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    navLinksContainer.classList.toggle('active');
+if (mobileToggle && navLinksContainer) {
+    mobileToggle.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        navLinksContainer.classList.toggle('active');
 
-    // Animate hamburger menu
-    mobileToggle.style.transform = isMenuOpen
-        ? 'rotate(90deg)'
-        : 'rotate(0deg)';
+        // Animate hamburger menu
+        mobileToggle.style.transform = isMenuOpen
+            ? 'rotate(90deg)'
+            : 'rotate(0deg)';
 
-    // Change hamburger to X when open
-    mobileToggle.innerHTML = isMenuOpen ? '✕' : '☰';
-});
+        // Change hamburger to X when open
+        mobileToggle.innerHTML = isMenuOpen ? '✕' : '☰';
+    });
 
-// Close mobile menu when clicking a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (isMenuOpen) {
+    // Close mobile menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                navLinksContainer.classList.remove('active');
+                mobileToggle.style.transform = 'rotate(0deg)';
+                mobileToggle.innerHTML = '☰';
+                isMenuOpen = false;
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isMenuOpen && !e.target.closest('.navbar')) {
             navLinksContainer.classList.remove('active');
             mobileToggle.style.transform = 'rotate(0deg)';
             mobileToggle.innerHTML = '☰';
             isMenuOpen = false;
         }
     });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (isMenuOpen && !e.target.closest('.navbar')) {
-        navLinksContainer.classList.remove('active');
-        mobileToggle.style.transform = 'rotate(0deg)';
-        mobileToggle.innerHTML = '☰';
-        isMenuOpen = false;
-    }
-});
+}
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -513,14 +519,17 @@ document.addEventListener('keydown', (e) => {
 let touchStartX = 0;
 let touchEndX = 0;
 
-document.querySelector('.highlights-scroller').addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, {passive: true});
+const touchScroller = document.querySelector('.highlights-scroller');
+if (touchScroller) {
+    touchScroller.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
 
-document.querySelector('.highlights-scroller').addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, {passive: true});
+    touchScroller.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, {passive: true});
+}
 
 function handleSwipe() {
     const scroller = document.querySelector('.highlights-scroller');
@@ -582,7 +591,9 @@ class TimelineToggle {
             // On mobile, respect the toggle state
             this.timelineContent.style.maxHeight = '';
             this.timelineContent.style.opacity = '';
-            if (!this.isExpanded) {
+            if (this.isExpanded) {
+                this.timelineContent.classList.add('expanded');
+            } else {
                 this.timelineContent.classList.remove('expanded');
             }
         }
