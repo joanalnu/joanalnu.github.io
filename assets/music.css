@@ -336,7 +336,7 @@ code {
 /* Footer */
 /* ============= */
 footer {
-    background: rgba(18, 18, 18, 0.9);
+    background: transparent;
     padding: 2rem;
     text-align: center;
     border-top: 1px solid rgba(212, 172, 13, 0.1);
