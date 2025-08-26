@@ -161,13 +161,13 @@ if (timelineToggle) {
     });
 }
 
-// Horizontal scrolling for highlights
+// Horizontal scrolling for news
 function setupHighlightsScroller() {
-    const scroller = document.querySelector('.highlights-scroller');
+    const scroller = document.querySelector('.news-scroller');
     if (scroller) {
         // Add keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.target.closest('.highlights-scroller')) {
+            if (e.target.closest('.news-scroller')) {
                 const cardWidth = 320; // approximate card width + gap
 
                 if (e.key === 'ArrowLeft') {
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme manager
     new ThemeManager();
 
-    // Setup highlights scroller
+    // Setup news scroller
     setupHighlightsScroller();
 
     // Initial highlight of nav links
