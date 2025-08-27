@@ -7,45 +7,37 @@
     <link rel="shortcut icon" type="image/png" href="images/logos/logo.jpg" />
 
     <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="stylesheet" href="/assets/contact.css">
-    <link rel="stylesheet" href="/assets/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script src="/assets/script.js"></script>
     <script src="/assets/modal.js"></script>
 </head>
 <body>
-<div class="loading" id="loading">
-    <div class="spinner"></div>
-</div>
 
 <div class="cosmic-bg"></div>
 
-<!-- Floating Round Navbar -->
+<!-- Enhanced Navbar with Theme Toggle -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <ul class="nav-links" id="nav-links">
-            <li><a href="/index.html"><div class="logo">Home</div></a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#highlights" class="nav-link">Highlights</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#career" class="nav-link">Career</a></li>
-            <li><a href="/music/index.html" class="nav-link">Piano</a></li>
-            <li><a href="/gen10/index.html" class="nav-link">Gen10</a></li>
+            <li><a href="/index.html#home"><div class="logo">Joanalnu</div></a></li>
+            <li><a href="#news" class="nav-link">News</a></li>
+            <li><a href="/cv/index.html" class="nav-link">CV</a></li>
+            <li><a href="/music/index.html" class="nav-link">Music</a></li>
             <li><a href="https://capibara3.github.io" class="nav-link">CAPIBARA</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="/gen10/index.html" class="nav-link">GEN10</a></li>
+            <li><a href="/contact.html" class="nav-link">Contact</a></li>
         </ul>
-        <div class="nav-controls">
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
-                <i class="fas fa-sun" id="theme-icon"></i>
-            </button>
-            <button class="mobile-menu-toggle" id="mobile-toggle">☰</button>
-        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-sun" id="theme-icon"></i>
+            <span id="theme-text">Auto</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-toggle">☰</button>
     </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" id="home">
     <div class="floating-element"><i class="fas fa-atom"></i></div>
     <div class="floating-element"><i class="fas fa-moon"></i></div>
     <div class="floating-element"><i class="fas fa-user-astronaut"></i></div>
@@ -63,402 +55,206 @@
     <h2 class="section-title">About Me</h2>
     <div class="about-grid">
         <div class="about-text">
-            <p>I’m a Physics BSc student at <a href="https://physik.lmu.de">LMU Munich</a> and a passionate student researcher. I’m particularly interested in cosmology and the challenge of dark energy, the mysterious force accelerating the expansion of the Universe. In 2024, I created the <a href="https://capibara3.github.io">CAPIBARA Collaboration</a>, a group of high school students aiming to launch CubeSats to study the high-energy cosmos in its particle and light states. Additionally, I'm also a skilled programmer, demonstrated through work such as the <a href="/gen10/index.html">Gen10</a> project and this website, which I coded from scratch. Beyond research, I enjoy playing the <a href="/music/index.html">piano</a>, both solo and collaboratively, as well as volunteering at Barcelona's Science Museum CosmoCaixa and with the NGO Cycling Without Age.</p>
-            
-            <p>Additionally, I'm also a skilled programmer, demonstrated through work such as the <a href="/gen10/index.html">Gen10</a> project and this website, which I coded from scratch. Beyond research, I enjoy playing the <a href="/music/index.html">piano</a>, both solo and collaboratively.</p>
-            
-            <div class="social-engagement">
-                <h3>Social Engagement</h3>
-                <div class="engagement-items">
-                    <div class="engagement-item">
-                        <div class="engagement-icon">🔬</div>
-                        <div class="engagement-content">
-                            <h4>Science Museum Explainer</h4>
-                            <p>Active volunteer at Barcelona's <a href="https://cosmocaixa.org/es/cosmocaixa-barcelona">CosmoCaixa Science Museum</a> as an Explainer, conducting presentations and engaging the public in scientific demonstrations and interactive activities.</p>
-                        </div>
-                    </div>
-                    <div class="engagement-item">
-                        <div class="engagement-icon">🚴</div>
-                        <div class="engagement-content">
-                            <h4>Cycling Without Age</h4>
-                            <p>Volunteer with the <a href="https://cyclingwithoutage.org/">Cycling Without Age</a> NGO, bringing joy and mobility to elderly residents through cycling experiences, fostering intergenerational connections and community engagement.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p>I'm a Physics BSc student at <a href="https://physik.lmu.de">LMU Munich</a> and a passionate student researcher. I'm particularly interested in cosmology and the challenge of dark energy, the mysterious force accelerating the expansion of the Universe. In 2024, I created the <a href="https://capibara3.github.io">CAPIBARA Collaboration</a>, a group of high school students aiming to launch CubeSats to study the high-energy cosmos in its particle and light states. Additionally, I'm also a skilled programmer, demonstrated through work such as the Gen10 project and this website, which I coded from scratch.</p>
         </div>
-        <div class="about-visual">
-            <div class="orbital-system">
-                <div class="orbit">
-                    <div class="planet"></div>
-                </div>
-                <div class="orbit">
-                    <div class="planet"></div>
-                </div>
-                <div class="orbit">
-                    <div class="planet"></div>
-                </div>
-            </div>
-        </div>
+        <img src="/images/news/JuFoHamburg.jpeg">
+<!--        <div class="about-visual">-->
+<!--            <div class="orbital-system">-->
+<!--                <div class="orbit">-->
+<!--                    <div class="planet"></div>-->
+<!--                </div>-->
+<!--                <div class="orbit">-->
+<!--                    <div class="planet"></div>-->
+<!--                </div>-->
+<!--                <div class="orbit">-->
+<!--                    <div class="planet"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </section>
 
-<!-- Highlights Section -->
-<section class="section highlights-section" id="highlights">
-    <h2 class="section-title">
-        Highlights
-    </h2>
-    <div class="highlights-container">
-        <div class="highlights-scroller">
+<!-- News Section -->
+<section class="section news-section" id="news">
+    <h2 class="section-title">News</h2>
+    <div class="news-container">
+        <div class="news-scroller">
             <div class="card">
-                <img src="/images/highlights/GoPhysicsWorkshop.jpg" alt="Cover image of GoPhysics! Website">
+                <img src="/images/news/GoPhysicsWorkshop.jpg" alt="Cover image of GoPhysics! Website">
                 <h3>Participated in GoPhysics! Workshop by Perimeter Institute</h3>
                 <p>A series of asynchronous materials and two online discussions on gravity (general relativity) and black holes. We also got to chat with PI researchers and ask them questions about their job! Image by Perimeter Institute.</p>
             </div>
 
             <div class="card">
-                <img src="/images/highlights/OABINAF.heic" alt="Me at the telescope domes at Astronomic Observatory of Merate, Italy">
+                <img src="/images/news/OABINAF.png" alt="Me at the telescope domes at Astronomic Observatory of Merate, Italy">
                 <h3>International Research Stay on Multi-Messenger Cosmology</h3>
-                <p>Completed a <a href="https://github.com/joanalnu/OAB-INAF">5-week research</a> stay at the <a href="https://brera.inaf.it/en">Osservatorio Astronomico di Brera</a>, Sede di Merate (OAB-INAF) within the <a href="https://sites.google.com/inaf.it/hea-merate/gamma-ray-bursts">High Energy Astrophysics Group</a> (HEA) on multi-messenger cosmology with the Epeak-Eiso relation and distance moduli from a simulated populations BNS mergers detectable by Einstein Telescope.</p>
+                <p>Completed a 5-week research stay at the Osservatorio Astronomico di Brera, Sede di Merate (OAB-INAF) within the High Energy Astrophysics Group (HEA) on multi-messenger cosmology with the Epeak-Eiso relation and distance moduli from a simulated populations BNS mergers detectable by Einstein Telescope.</p>
             </div>
 
             <div class="card">
-                <img src="/images/highlights/HighSchoolGraduation.png" alt="Virtually present at the graduation ceremony">
+                <img src="/images/news/HighSchoolGraduation.png" alt="Virtually present at the graduation ceremony">
                 <h3>Graduated top-of-the class from Deutsche Schule Barcelona</h3>
                 <p>Graduated with 1.0/1.0 Abitur obtaining both German and Spanish High School Diplomas. Attended virtually the graduation ceremony since I was in Hamburg at the time.</p>
             </div>
 
             <div class="card">
-                <img src="/images/highlights/JuFoHamburg.jpeg" alt="Portrait photo by Jugend Forscht">
+                <img src="/images/news/JuFoHamburg.jpeg" alt="Portrait photo by Jugend Forscht">
                 <h3>Participant at Bundeswettbewerb Jugend Forscht in Hamburg</h3>
                 <p>Participated in the final round of the Jugend Forscht science Competition. Over 10,000 young people participate, but only around 200 reach the final round, where I was amazed to learn about so many interesting projects and people!</p>
             </div>
 
             <div class="card">
-                <a href="https://www.linkedin.com/posts/joan-alcaide-n%C3%BA%C3%B1ez_lapalma-fundaciaejnstarlight-activity-7324391317134794752-hHPj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE_ExSkB_7bDaNMCCFUfMdGjE1h1WgAGNW0">
-                    <img src="/images/highlights/starmus-lapalma.jpeg" alt="Talking with Jane Goodall"></a>
+                <img src="/images/news/starmus-lapalma.jpeg" alt="Talking with Jane Goodall">
                 <h3>Attended STARMUS La Palma 2025</h3>
-                <p>Attended the <a href="https://starmus.com">STARMUS</a> Festival in La Palma, featuring lectures from Nobel Prize winners, astronauts, renowned scientists and the iconic Jane Goodall. The event was inspiring, highlighting the importance of pursuing one's passions.</p>
+                <p>Attended the STARMUS Festival in La Palma, featuring lectures from Nobel Prize winners, astronauts, renowned scientists and the iconic Jane Goodall. The event was inspiring, highlighting the importance of pursuing one's passions.</p>
             </div>
 
             <div class="card">
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7315309683831959552/">
-                    <img src="/images/highlights/jufo-landes-2025.jpeg" alt="Jugend Forscht NRW 2025"></a>
+                <img src="/images/news/jufo-landes-2025.jpeg" alt="Jugend Forscht NRW 2025">
                 <h3>1st Prize at JuFo Landeswettbewerb NRW</h3>
-                <p>Won the <a href="https://www.linkedin.com/feed/update/urn:li:activity:7315309683831959552/">first prize and a special prize of scientific photography</a> at <a href="https://www.bayer.com/de/gesellschaftliches-engagement/jugend-forscht-2025">Jugend Forscht Nordrhein-Westfalen 2025</a>, presenting my project on SNIa for cosmological distance measurements and the Hubble-Lemaître constant. Looking forward to participate in the final round (Bundeswettbewerb) in Hamburg!</p>
+                <p>Won the first prize and a special prize of scientific photography at Jugend Forscht Nordrhein-Westfalen 2025, presenting my project on SNIa for cosmological distance measurements and the Hubble-Lemaître constant. Looking forward to participate in the final round (Bundeswettbewerb) in Hamburg!</p>
             </div>
+
             <div class="card">
-                <a href="https://www.linkedin.com/posts/joan-alcaide-n%C3%BA%C3%B1ez_cosmoxarxa-cosmocaixa-scienceoutreach-activity-7304219179908280320-pVcL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE_ExSkB_7bDaNMCCFUfMdGjE1h1WgAGNW0">
-                    <img src="/images/highlights/cosmoxarxaPoster.jpeg" alt="CosmoXarxa Promo Poster"></a>
+                <img src="/images/news/cosmoxarxaPoster.jpeg" alt="CosmoXarxa Promo Poster">
                 <h3>Presentation at CosmoCaixa Science Museum</h3>
-                <p>Gave a <a href="/documents/pdfCAPIBARA_CosmoXarxa.pdf">talk</a> to the Explainers community (comprehending a diversity of age and interests) the CAPIBARA Collabotion, explaning our ambitious goals and encouraging young people to take an active role in research.</p>
+                <p>Gave a talk to the Explainers community (comprehending a diversity of age and interests) the CAPIBARA Collabotion, explaning our ambitious goals and encouraging young people to take an active role in research.</p>
             </div>
+
             <div class="card">
-                <a href="https://www.linkedin.com/posts/joan-alcaide-n%C3%BA%C3%B1ez_jugendforschtiberia-jugendforscht-sciencecompetition-activity-7299167593918025729-IltE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE_ExSkB_7bDaNMCCFUfMdGjE1h1WgAGNW0">
-                    <img src="/images/highlights/jufoIberia2025.jpeg" alt="Jugend Forscht Iberia Gala"></a>
+                <img src="/images/news/jufoIberia2025.jpeg" alt="Jugend Forscht Iberia Gala">
                 <h3>1st Prize at JuFo Iberia 2025</h3>
                 <p>Won the first prize at Jugend Forscht Iberia 2025, Spain-Portugal international level, presenting a project on SNIa measurement of the Hubble-Lemaître constant.</p>
             </div>
-            <div class="card">
-                <a href="https://www.instagram.com/p/DF0XhzAs9E-/">
-                    <img src="/images/highlights/coneguemnos_horitzontal.png" alt="explainers logo"></a>
-                <h3>Interview by CosmoCaixa Science Museum Explainers</h3>
-                <p><a href="https://www.instagram.com/p/DF0XhzAs9E-/">Featured</a> in the <i>Explainers Coneguem-nos</i> ("Let's get to know") interviewing project among the CosmoCaixa's Explainers community, where I discussed current and future academic projects as well as some museum curiosities.</p>
-            </div>
-            <div class="card">
-                <a href="https://www.linkedin.com/posts/joan-alcaide-n%C3%BA%C3%B1ez_lieec-acull-dos-estudiants-de-batxillerat-activity-7257415657888083968-e8n4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE_ExSkB_7bDaNMCCFUfMdGjE1h1WgAGNW0">
-                    <img src="/images/highlights/Joan-Alcaide_32-1280x854.jpeg.webp" alt="IEEC News Article"></a>
-                <h3>News Article by IEEC</h3>
-                <p>The Institut d'Estudies Espacials de Catalunya featured in this <a href="https://www.ieec.cat/en/the-ieec-hosts-two-high-school-students-through-the-youth-and-science-programme/">news article</a> my research stay at the <a href="https://ice.csic.es">Institute of Space Sciences (ICE-CSIC)</a> during summer 2024, where I worked with the <a href="https://www.ice.csic.es/research/theory-observations?view=article&id=208&catid=2">supernova group (SN-ICE)</a> on a project about Type Ia SNe as cosmological distance indicators.</p>
-            </div>
-            <div class="card">
-                <a href="https://www.ds-iberien.de/jugend-forscht-iberia-auch-erfolgreich-in-nrw/">
-                    <img src="/images/highlights/IMG_1761.jpeg" alt="Jugend Forscht"></a>
-                <h3>News Article on Jugend Forscht Participation</h3>
-                <p><a href="https://www.ds-iberien.de/jugend-forscht-iberia-auch-erfolgreich-in-nrw/">News article</a> by <i>Deutsche Schulen Iberien</i> on my successful participation in the <a href="https://www.jugend-forscht.de">Jugend Forscht</a> science competition in the state-level at Nordrhein-Westfalen.</p>
-            </div>
-            <div class="card">
-                <img src="/images/highlights/dlr-internship.jpeg" alt="Munich internship">
-                <h3>Internship at the Institute for Remote Sensing (DLR)</h3>
-                <p>I received advanced training in computational image analysis, focusing on processing Landsat 8 thermal images, some of the work being accessible <a href="https://github.com/joanalnu/thermal_analysis">here</a>. During this time, I also visited major facilities, including the German Space Operations Center (GSOC) and got to know about some of the current and future projects and missions developed in situ.</p>
-            </div>
-            <div class="card">
-                <img src="/images/highlights/explainers.png" alt="Explainers Photo">
-                <h3>Explainer Volunteer</h3>
-                <p>Participated in the <a href="https://www.explainerscosmocaixa.com/es/"></a>Explainers program at <a href="https://cosmocaixa.org/es/cosmocaixa-barcelona">Barcelona's Science Museum CosmoCaixa</a>, where I engaged visitors in hands-on scientific demonstrations and interactive activities. This role involved communicating complex scientific concepts in an accessible and engaging way, fostering curiosity and promoting science education among people of all ages.</p>
-            </div>
-            <div class="card">
-                <a href="https://www.radiodesvern.com/embed/podcast?id=radiodesvern_podcast_31522&mid=radiodesvern_podcast_31522_podcastmarker_6">
-                    <img src="/images/highlights/cover.jpg" alt="Radio Interview"></a>
-                <h3>Radio Interview</h3>
-                <p>Featured on <i>Ràdio Desvern</i> for completing an internship developing a <a href="https://github.com/joanalnu/28M">code</a> to count and publish the local election results and future prospects participating in the Youth and Science program. Hear it <a href="https://www.radiodesvern.com/embed/podcast?id=radiodesvern_podcast_31522&mid=radiodesvern_podcast_31522_podcastmarker_6">here</a>!</p>
-            </div>
-        </div>
-        <button class="scroll-button scroll-left" aria-label="Scroll left">❮</button>
-        <button class="scroll-button scroll-right" aria-label="Scroll right">❯</button>
-    </div>
-</section>
-
-<!-- Research Section -->
-<section id="projects" class="section">
-    <h2 class="section-title">Research Projects</h2>
-    <div class="projects-grid">
-        <div class="project-card" onclick="openModal('mm-cosmo-modal')">
-            <h3 class="project-title">Multi-Messenger Cosmology</h3>
-            <p class="project-description">
-                Using the E_peak-E_iso relation of Gamma-Ray Bursts together with luminosity distance-redshift data from simulated binary neutron star mergers, representative of 1-year of Einstein Telescope observations.
-            </p>
-            <div class="project-tags">
-                <span class="tag">GRBs</span>
-                <span class="tag">Einstein Telescope</span>
-                <span class="tag">Cosmology</span>
-                <span class="tag">High-Energy Physics</span>
-            </div>
-            <p><strong>Research Stay:</strong> Osservatorio Astronomico di Brera (OAB-INAF)</p>
-        </div>
-
-        <div class="project-card" onclick="openModal('capibara-modal')">
-            <h3 class="project-title">CAPIBARA Mission</h3>
-            <p class="project-description">
-                Student-led satellite mission dedicated to observing and researching the high-energy cosmos, measuring primary cosmic rays and X-ray/γ-ray emissions.
-            </p>
-            <div class="project-tags">
-                <span class="tag">Satellite</span>
-                <span class="tag">Cosmic Rays</span>
-                <span class="tag">X-ray</span>
-                <span class="tag">Student-led</span>
-            </div>
-            <p><strong>Role:</strong> Project Leader & Research Coordinator</p>
-        </div>
-
-        <div class="project-card" onclick="openModal('distance-ladder-modal')">
-            <h3 class="project-title">Distance Ladder Cosmology</h3>
-            <p class="project-description">
-                Measuring the Hubble-Lemaître constant using Type Ia Supernovae as cosmological distance indicators, contributing to the understanding of the Hubble Tension.
-            </p>
-            <div class="project-tags">
-                <span class="tag">Supernovae</span>
-                <span class="tag">Hubble Constant</span>
-                <span class="tag">Distance Ladder</span>
-                <span class="tag">Cosmology</span>
-            </div>
-            <p><strong>Collaboration:</strong> ICE-CSIC-IEEC with Dr. Lluís Galbany</p>
-        </div>
-
-        <div class="project-card" onclick="openModal('gen10-modal')">
-            <h3 class="project-title">Gen10 - Genomics Package</h3>
-            <p class="project-description">
-                Python package for genomics data analysis and visualization, providing educational tools for high school and college students to explore genetics and bioinformatics.
-            </p>
-            <div class="project-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Genomics</span>
-                <span class="tag">Education</span>
-                <span class="tag">Bioinformatics</span>
-            </div>
-            <p><strong>Impact:</strong> Educational tool for coding beginners</p>
-        </div>
-        <div class="project-card">
-            <h3 class="project-title">Minor Projects</h3>
-            <p class="project-description">
-                <ul>
-                    <!-- add world cup 2026 and other recent projects -->
-                    <li>🔭 <a href="https://github.com/joanalnu/ztf_api">ZTF-API</a> - API for accessing Zwicky Transient Facility data</li>
-                    <li>🌍 <a href="https://github.com/joanalnu/thermal_analysis">Thermal Analysis</a> - DLR internship project on remote sensing</li>
-                    <li>🧮 <a href="https://joanalnu.github.io/tdm/">TdM</a> - Mathematical tools collection</li>
-                    <li>🧮 <a href="https://github.com/joanalnu/wmergeb">WM Berechnung</a> - Simulating World Cup 2022 Results</li>
-                </ul>
-            </p>
         </div>
     </div>
 </section>
 
-<!-- Career Timeline -->
-<section id="career" class="section">
-    <h2 class="section-title">Career</h2>
-    <div class="cv-section">
-        <a href="/documents/CV.pdf"><div class="cta-button">View Full CV</div></a>
-    </div>
-    <div class="timeline-container">
-        <div class="timeline-toggle-container">
-            <button class="timeline-toggle" id="timeline-toggle" aria-label="Toggle timeline visibility">
-                <span class="timeline-toggle-text">View Timeline</span>
-                <i class="fas fa-chevron-down" id="timeline-toggle-icon"></i>
-            </button>
-        </div>
-        <div class="timeline" id="timeline-content">
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Cambridge-LMU Cosmology Meeting</h4>
-                <p>Participant at the bi-annual meeting on cosmology and LSS.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!-- Enhanced Career Timeline with Mobile Toggle -->
+<!--<section id="career" class="section timeline-section">-->
+<!--    <h2 class="cv-section-title">Career</h2>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Started Physics B.Sc. Studies</h4>
-                <p>Began the B.Sc. studies in physics at LMU Munich University.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Research Stay at HEA-OAB</h4>
-                <p>1-month international research stay learning about multi-messenger cosmology at the High Energy Astrophysics group at the INAF Brera.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--    &lt;!&ndash; Mobile Timeline Toggle &ndash;&gt;-->
+<!--    <button class="timeline-toggle" id="timeline-toggle">-->
+<!--        <span>View Timeline</span>-->
+<!--        <i class="fas fa-chevron-down"></i>-->
+<!--    </button>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Graduated Top of Class - Deutsche Schule Barcelona</h4>
-                <p>Graduated with 1.0/1.0 Abitur and 13.334/14 Selectividad, obtaining both German and Spanish High School Diplomas with distinction in physics.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--    <div class="timeline" id="timeline">-->
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Cambridge-LMU Cosmology Meeting</h4>-->
+<!--                <p>Participant at the bi-annual meeting on cosmology and LSS.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>1st Prize - Jugend Forscht Competitions</h4>
-                <p>Won first prizes at both JuFo Iberia 2025 and Landeswettbewerb NRW 2025, plus a special prize in scientific photography for SNIa cosmological distance measurements.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Started Physics B.Sc. Studies</h4>-->
+<!--                <p>Began the B.Sc. studies in physics at LMU Munich University.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>STARMUS La Palma 2025</h4>
-                <p>Attended lectures from Nobel Prize winners, astronauts, and renowned scientists including Jane Goodall. An inspiring event highlighting the importance of pursuing scientific passions.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Research Stay at HEA-OAB</h4>-->
+<!--                <p>1-month international research stay learning about multi-messenger cosmology at the High Energy Astrophysics group at the INAF Brera.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Presented CAPIBARA at CosmoCaixa Science Museum</h4>
-                <p>Held a <a href="/documents/pdfCAPIBARA_CosmoXarxa.pdf">presentation</a> at a science museum for a public of science communicators.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Graduated Top of Class - Deutsche Schule Barcelona</h4>-->
+<!--                <p>Graduated with 1.0/1.0 Abitur and 13.334/14 Selectividad, obtaining both German and Spanish High School Diplomas with distinction in physics.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Local Research Stay on Ia SNe distance measurement</h4>
-                <p>Completed a research stay at the Institute of Space Sciences (ICE-CSIC-IEEC), working on measuring distances to Ia SNe host galaxies.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>1st Prize - Jugend Forscht Competitions</h4>-->
+<!--                <p>Won first prizes at both JuFo Iberia 2025 and Landeswettbewerb NRW 2025, plus a special prize in scientific photography for SNIa cosmological distance measurements.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Lectured "<i>Introducción a la Astrofísica</i>"</h4>
-                <p>Lectured two 1.5h sessions <a href="/documents/ClaseUniversoPu.pdf">introducing astrophysics</a> fundamentals to high schoolers (11th grade), from the expansion of the Universe, to compact objects through stellar formation, galaxy properties and gravitational waves.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>STARMUS La Palma 2025</h4>-->
+<!--                <p>Attended lectures from Nobel Prize winners, astronauts, and renowned scientists including Jane Goodall. An inspiring event highlighting the importance of pursuing scientific passions.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>1st Prize - Jugend Forscht Competitions</h4>
-                <p>Won first prize at JuFo Iberia 2025 and a special mention at the Landeswettbewerb NRW 2024 in Düsseldorf with the project entitled "Recomputing the Hubble Constant."</p>
-                <ul class="project-list">
-                    <li><span class="project-icon"><img src="/images/logos/jugend-forscht.png" height="25px" width="25px"></span> <a href="https://www.jugend-forscht.de/virtuelle-ausstellung/detailseite/Kosmologische_Entfernungsberechnung_mit_Supernovae.html">Jugend Forscht 2025 Projektbeschreibung Bundeswettbewerb 2025</a></li>
-                    <li><span class="project-icon"><img src="/images/logos/bayer.png" height="25px" width="25px"></span> <a href="https://www.bayer.com/media/landeswettbewerb-nrw-2025--landessieger/#:~:text=lassen.%C2%A0-,1.%20Preis%20und%C2%A0Sonderpreis,Expansion%20des%20Universums%20gemessen.,-Geo">1. Prizes of Landeswettbewerb NRW 2025</a></li>
-                    <li><span class="project-icon"><img src="/images/logos/dgph.png" height="25px" width="25px"></span> <a href="https://www.dgph.de/aktuelles/jugend-forscht-2025-sonderpreis-der-dgph-wissenschaftliche-fotografie#:~:text=Um%20die%20Berechnung,des%20Universums%20messen">Article by DGPH following to Sonderpreis of Wissenschaftliche Photographie in JuFo Landeswettbewerb NRW 2025</a></li>
-                    <li><span class="project-icon"><i class="fab fa-instagram"></i></span> <a href="https://www.instagram.com/p/DILe0Q6Ic90/?img_index=1">Post by Deutsche Schule Barcelona after Landeswettbewerb NRW 2025</a></li>
-                    <li><span class="project-icon"><i class="fab fa-facebook"></i></span> <a href="https://www.facebook.com/deutscheschulebarcelona/posts/-zweifacher-erfolg-bei-jugend-forscht-joan-alcaide-n%C3%BA%C3%B1ez-12d-holt-den-1-platz-be/641691235404336/">Post by Deutsche Schule Barcelona after Landeswettbewerb NRW 2025</a></li>
-                </ul>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Presented CAPIBARA at CosmoCaixa Science Museum</h4>-->
+<!--                <p>Held a presentation at a science museum for a public of science communicators.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Activity about Space Exploration</h4>
-                <p>Hosted a hands-on 1.5h <a href="/documents/ExploracioEspacial.pdf">activity with 4th graders</a> about space exploration.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Local Research Stay on Ia SNe distance measurement</h4>-->
+<!--                <p>Completed a research stay at the Institute of Space Sciences (ICE-CSIC-IEEC), working on measuring distances to Ia SNe host galaxies.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h4>Science Communication</h4>
-                <p>Active volunteer at CosmoCaixa Science Museum as an Explainer, conducting presentations and engaging the public in scientific demonstrations and interactive activities.</p>
-            </div>
-            <div class="timeline-dot"></div>
-        </div>
-        </div>
-    </div>
-</section>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Lectured "Introducción a la Astrofísica"</h4>-->
+<!--                <p>Lectured two 1.5h sessions introducing astrophysics fundamentals to high schoolers (11th grade), from the expansion of the Universe, to compact objects through stellar formation, galaxy properties and gravitational waves.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
 
-<!-- Skills Section -->
-<section id="skills" class="section">
-    <h2 class="section-title">Skills & Expertise</h2>
-    <div class="skills-grid">
-        <div class="skill-category">
-            <span class="skill-icon">🔬</span>
-            <h3>Research</h3>
-            <p>Cosmology, Astrophysics, Data Analysis, Statistical Methods</p>
-        </div>
-        <div class="skill-category">
-            <span class="skill-icon">💻</span>
-            <h3>Programming</h3>
-            <p>Python, Data Visualization, Web Development</p>
-        </div>
-        <div class="skill-category">
-            <span class="skill-icon">🎓</span>
-            <h3>Education</h3>
-            <p>Science Communication, Teaching, Public Speaking, Outreach</p>
-        </div>
-        <div class="skill-category" onclick="openModal('demo-modal-overlay')">
-            <span class="skill-icon">🚀</span>
-            <h3>Innovation</h3>
-            <p>Project Leadership, Collaboration, Satellite Missions, Problem-Solving</p>
-        </div>
-    </div>
-</section>
+<!--        <div class="timeline-item">-->
+<!--            <div class="timeline-content">-->
+<!--                <h4>Science Communication</h4>-->
+<!--                <p>Active volunteer at CosmoCaixa Science Museum as an Explainer, conducting presentations and engaging the public in scientific demonstrations and interactive activities.</p>-->
+<!--            </div>-->
+<!--            <div class="timeline-dot"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <!-- Contact Section -->
 <section id="contact" class="section">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-grid">
         <div class="contact-info">
-            <a href="/contact.html">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;"><i class="fas fa-envelope"></i></span>
-                    <div>
-                        <h4>Email</h4>
-                        <p>Drop me a message and I’ll get back to you soon.</p>
-                    </div>
+            <a href="/contact.html" class="contact-item">
+                <span style="font-size: 1.5rem;"><i class="fas fa-envelope"></i></span>
+                <div>
+                    <h4>Email</h4>
+                    <p>Drop me a message and I'll get back to you soon.</p>
                 </div>
             </a>
-            <a href="https://www.linkedin.com/in/joan-alcaide-núñez">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;"><i class="fab fa-linkedin"></i></span>
-                    <div>
-                        <h4>LinkedIn</h4>
-                        <p>Let’s connect and grow our professional network.</p>
-                    </div>
+            <a href="https://www.linkedin.com/in/joan-alcaide-núñez" class="contact-item">
+                <span style="font-size: 1.5rem;"><i class="fab fa-linkedin"></i></span>
+                <div>
+                    <h4>LinkedIn</h4>
+                    <p>Let's connect and grow our professional network.</p>
                 </div>
             </a>
-            <a href="https://github.com/joanalnu">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;"><i class="fab fa-github"></i></span>
-                    <div>
-                        <h4>GitHub</h4>
-                        <p>Check out my projects and contributions in action.</p>
-                    </div>
+            <a href="https://github.com/joanalnu" class="contact-item">
+                <span style="font-size: 1.5rem;"><i class="fab fa-github"></i></span>
+                <div>
+                    <h4>GitHub</h4>
+                    <p>Check out my projects and contributions in action.</p>
                 </div>
             </a>
-            <a href="https://calendly.com/joanalnu/30min-meeting">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;"><i class="fas fa-video"></i></span>
-                    <div>
-                        <h4>Virtual Meeting</h4>
-                        <p>Book a time to chat face-to-face online.</p>
-                    </div>
+            <a href="https://calendly.com/joanalnu/30min-meeting" class="contact-item">
+                <span style="font-size: 1.5rem;"><i class="fas fa-video"></i></span>
+                <div>
+                    <h4>Virtual Meeting</h4>
+                    <p>Book a time to chat face-to-face online.</p>
                 </div>
             </a>
         </div>
@@ -474,191 +270,7 @@
 
 <!-- Footer -->
 <footer class="footer">
-    <p>&copy; 2025 Research Portfolio. Exploring the cosmos, one discovery at a time.</p>
+    <p>&copy; 2025 Joan Alcaide Núñez. Exploring the cosmos, one discovery at a time.</p>
 </footer>
-
-
-<!--Media Appareances -->
-<section id="media" class="about-section">
-    <h2>JuFo-related Links</h2>
-    <ul class="project-list">
-        <li><span class="project-icon"><img src="/images/logos/jugend-forscht.png" height="25px" width="25px"></span> <a href="https://www.jugend-forscht.de/virtuelle-ausstellung/detailseite/Kosmologische_Entfernungsberechnung_mit_Supernovae.html">Jugend Forscht 2025 Projektbeschreibung Bundeswettbewerb 2025</a></li>
-        <li><span class="project-icon"><img src="/images/logos/bayer.png" height="25px" width="25px"></span> <a href="https://www.bayer.com/media/landeswettbewerb-nrw-2025--landessieger/#:~:text=lassen.%C2%A0-,1.%20Preis%20und%C2%A0Sonderpreis,Expansion%20des%20Universums%20gemessen.,-Geo">1. Prizes of Landeswettbewerb NRW 2025</a></li>
-        <li><span class="project-icon"><img src="/images/logos/dgph.png" height="25px" width="25px"></span> <a href="https://www.dgph.de/aktuelles/jugend-forscht-2025-sonderpreis-der-dgph-wissenschaftliche-fotografie#:~:text=Um%20die%20Berechnung,des%20Universums%20messen">Article by DGPH following to Sonderpreis of Wissenschaftliche Photographie in JuFo Landeswettbewerb NRW 2025</a></li>
-        <li><span class="project-icon"><i class="fab fa-instagram"></i></span> <a href="https://www.instagram.com/p/DILe0Q6Ic90/?img_index=1">Post by Deutsche Schule Barcelona after Landeswettbewerb NRW 2025</a></li>
-        <li><span class="project-icon"><i class="fab fa-facebook"></i></span> <a href="https://www.facebook.com/deutscheschulebarcelona/posts/-zweifacher-erfolg-bei-jugend-forscht-joan-alcaide-n%C3%BA%C3%B1ez-12d-holt-den-1-platz-be/641691235404336/">Post by Deutsche Schule Barcelona after Landeswettbewerb NRW 2025</a></li>
-    </ul>
-</section>
-
-
-
-
-<!-- MODALS -->
-
-<!-- Sample Modal Markup (hidden by default, styled via styles.css) -->
-<!--<div class="modal-overlay" id="demo-modal-overlay" tabindex="-1" aria-modal="true" style="z-index:10000;">-->
-<!--    <div class="modal slide-in" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-desc">-->
-<!--        <div class="modal-header">-->
-<!--            <span class="modal-title">Hello from the Cosmos!</span>-->
-<!--            <span class="modal-subtitle" id="modal-desc">This is a sample modal using the cosmic/modern UI from styles.css</span>-->
-<!--            <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>-->
-<!--        </div>-->
-<!--        <div class="modal-body">-->
-<!--            <p style="margin-bottom:1.3rem;">-->
-<!--                Modals are used to overlay content and grab user attention for critical information, actions, or rich details—such as displaying research highlights, project details, or onboarding instructions.-->
-<!--            </p>-->
-
-<!--            <div class="modal-tags">-->
-<!--                <span class="modal-tag">Sample</span>-->
-<!--                <span class="modal-tag">Cosmic UI</span>-->
-<!--                <span class="modal-tag">Accessible</span>-->
-<!--            </div>-->
-
-<!--            <div class="modal-actions">-->
-<!--                <button class="modal-btn" id="confirm-modal-btn">-->
-<!--                    <i class="fas fa-check"></i> Accept-->
-<!--                </button>-->
-<!--                <button class="modal-btn secondary" id="close-modal-btn-2">-->
-<!--                    <i class="fas fa-times"></i> Cancel-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-
-
-
-<!-- Sample Modal Markup (hidden by default, styled via styles.css) -->
-<div class="modal-overlay" id="mm-cosmo-modal" tabindex="-1" aria-modal="true" style="z-index:10000;">
-    <div class="modal slide-in" role="dialog" aria-labelledby="modal-title-1" aria-describedby="modal-desc">
-        <div class="modal-header">
-            <span class="modal-title" id="modal-title-1">Multi-Messenger Cosmology</span>
-            <span class="modal-subtitle"></span>
-            <button class="modal-close" id="close-modal-btn-1" aria-label="Close modal">&times;</button>
-        </div>
-        <div class="modal-body">
-            <p style="margin-bottom:1.3rem;">Building up on my interest in Cosmology and high energy physics, I began to extend my work on distance ladder cosmology to higher energies and redshifts.</p>
-            <p style="margin-bottom:1.3rem;">The first <a href="https://github.com/joanalnu/OAB-INAF">project</a> I've done related to this research line was using the $$E_\text{peak}-E_\text{iso}$$ relation (Amati relation) of both Long and Short Gamma-Ray Bursts (S/LGRBs) together with luminosity distance-redshift data from a simulated population of binary neutron star (BNS) mergers, representative of 1-year of Einstein Telescope observations, by <i>Alberto Colombo et al. 2025</i>.</p>
-            <p style="margin-bottom:1.3rem;">I was able to start this project during my international research stay at the <a href="https://brera.inaf.it/en">Osservatorio Astronomico di Brera (OAB-INAF)</a> within the <a href="https://sites.google.com/inaf.it/hea-merate/gamma-ray-bursts">High Energy Astrophysics group</a> (HEA-OAB) under the supervision of Dr. Giancarlo Ghirlanda and Dr. Om Sharan Salafia.</p>
-            <p style="margin-bottom:1.3rem;">During this research stay, I was able to learn a lot about GRB and relativistic plasma physics all the way to always working with logarithmic scaling and mathematical-statistical tools, such as the barycenter correction for fitting or the $chi^2$ test.</p>
-            <p style="margin-bottom:1.3rem;">Further work includes using the collimation corrected energy of GRBs instead of the isotropic equivalent and studying how the sample size and characteristics modify our constraints for $$\Omega_m-\Omega_\text{DE}$$ and other cosmological parameters. Moreover, I intend to continue with this type of research with the CAPIBARA Gamma-/X-ray mission, which will be monitoring the high energy sky for EM counterparts.</p>
-
-            <div class="modal-tags">
-                <span class="modal-tag">Sample</span>
-                <span class="modal-tag">Cosmic UI</span>
-                <span class="modal-tag">Accessible</span>
-            </div>
-
-            <div class="modal-actions">
-                <a href="https://capibara3.github.io/capigx/multi-messenger-cosmology">
-                    <button class="modal-btn">
-                        <i class="fas fa-share-from-square"></i> Visit Project
-                    </button>
-                </a>
-                <button class="modal-btn secondary" id="close-modal-btn-2">
-                    <i class="fas fa-times"></i> Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal-overlay" id="capibara-modal" tabindex="-1" aria-modal="true" style="z-index:10000;">
-    <div class="modal slide-in" role="dialog" aria-labelledby="modal-title-2" aria-describedby="modal-desc">
-        <div class="modal-header">
-            <span class="modal-title" id="modal-title-2">CAPIBARA Collaboration</span>
-            <span class="modal-subtitle"></span>
-            <button class="modal-close" id="close-modal-btn-3" aria-label="Close modal">&times;</button>
-        </div>
-        <div class="modal-body">
-            <p style="margin-bottom:1.3rem;"><a href="https://capibara3.github.io/">The CAPIBARA Collaboration</a> is a student-led initiative aiming to launch a satellite dedicated to observing and researching the high-energy cosmos. Our mission focuses on measuring primary cosmic rays (charged particles) as well as X-ray and γ-ray emissions, providing valuable insights into the Universe's most energetic phenomena.</p>
-            <p style="margin-bottom:1.3rem;">By studying high-energy radiation, we aim to deepen our understanding of astrophysical processes, quantum physics, and the interactions between cosmic phenomena and Earth's space environment. Our collected data will be made publicly accessible in its totality, fostering further research and collaboration in these fields and inspiring the next generation of young scientists and engineers.</p>
-            <p style="margin-bottom:1.3rem;">We are a diverse team of high-school students passionate about both science and engineering, working together to bring this vision to life. Therefore, we are grateful for our teachers, mentors, families, and everybody supporting us in this adventure.</p>
-            <p style="margin-bottom:1.3rem;">My role in this collaboration involves leading the CAPIBARA project, coordinating the efforts. Furthermore, I work to advance research on using the γ-ray and X-ray observatories to employ Gamma-Ray Bursts (GRBs) as cosmological distance indicators, with the aim of refining the Hubble constant and testing the ΛCDM model.</p>
-
-            <div class="modal-tags">
-                <span class="modal-tag">Sample</span>
-                <span class="modal-tag">Cosmic UI</span>
-                <span class="modal-tag">Accessible</span>
-            </div>
-
-            <div class="modal-actions">
-                <a href="https://capibara3.github.io">
-                    <button class="modal-btn">
-                        <i class="fas fa-share-from-square"></i> Visit Project
-                    </button>
-                </a>
-                <button class="modal-btn secondary modal-close" id="close-modal-btn-4">
-                    <i class="fas fa-times"></i> Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal-overlay" id="distance-ladder-modal" tabindex="-1" aria-modal="true" style="z-index:10000;">
-    <div class="modal slide-in" role="dialog" aria-labelledby="modal-title-3" aria-describedby="modal-desc">
-        <div class="modal-header">
-            <span class="modal-title" id="modal-title-3">Distance Ladder Cosmology</span>
-            <span class="modal-subtitle"></span>
-            <button class="modal-close" id="close-modal-btn-5" aria-label="Close modal">&times;</button>
-        </div>
-        <div class="modal-body">
-            <p style="margin-bottom:1.3rem;">Since my participation in the <a href="https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science">Youth and Science program</a> by Fundació Catalunya La Pedrera, I became deeply interested in cosmology—the study of the Universe as a whole, including its origin, evolution, and fate. This field raises profound philosophical questions: where do we come from? where are we going to? Is the Universe (in)finite?Is time infinite? Additionally, it connects to other areas, such as galactic evolution, the high-energy universe, dark matter, and dark energy.</p>
-            <p style="margin-bottom:1.3rem;">One of the most pressing questions in cosmology is the Hubble Tension. Since the first calculation of the Hubble-Lemaître constant (the expansion rate of the Universe), multiple methods have been developed to refine its value. However, as instrumentation and methods have improved, the results for the Hubble constant have diverged further. This constant has profound implications for the age, fate, and composition of the Universe, yet, a hundred years after its discovery, we still do not know its exact value.</p>
-            <p style="margin-bottom:1.3rem;">In 2023, I conducted a <a href="https://github.com/joanalnu/article_hubble_jic">project</a> on recomputing the Hubble-Lemaître constant using the same methods as Hubble and Lemaître, but with modern data from the NASA IPAC NED database for redshift and the Konkonly Observatory for Cepheid magnitudes. With about 50 galaxies and nearly 4000 Cepheid stars, I recovered a value of $$72.104\pm0.065\ km s^{-1} Mpc^{-1}$$.</p>
-            <p style="margin-bottom:1.3rem;">In the summer of 2024, I completed a two-month <a href="https://www.ieec.cat/en/the-ieec-hosts-two-high-school-students-through-the-youth-and-science-programme/">research stay</a> with the <a href="https://www.ice.csic.es/research/theory-observations?view=article&id=208&catid=2">Supernovae and Stellar Transients group</a> at the <a href="https://ice.csic.es/">Institute of Space Sciences (ICE-CSIC-IEEC)</a>, conducting a project on Type Ia supernovae (SNe) as cosmological distance indicators under the guidance of <a href="https://lgalbany.github.io">Dr. Lluís Galbany</a>. This experience deepened my understanding of the science, enabled me to contribute to the Hostflows project, and helped me develop research skills while connecting with researchers from various fields at the institute. At this point I improved my understanding of the current status in cosmology and enhanced my coding skills exponentially.</p>
-            <p style="margin-bottom:1.3rem;">For the last fellowship year, in summer 2025 I will be researching the potential use of Gamma-ray Bursts (GRBs), extremely powerful explosions, as standard candles up to very high redshifts (z~8) with Dr. Giancarlo Ghirlanda and Dr. Om Sharan Salafia at the Osservatorio Astronomico di Brera-Merate (INAF-Brera-Merate).</p>
-            <p style="margin-bottom:1.3rem;">I would also like to kindly appreciate the support and enabling of all my tutors, mentors, family, and friends.</p>
-
-            <div class="modal-tags">
-                <span class="modal-tag">Sample</span>
-                <span class="modal-tag">Cosmic UI</span>
-                <span class="modal-tag">Accessible</span>
-            </div>
-
-            <div class="modal-actions">
-                <button class="modal-btn secondary modal-close" id="close-modal-btn-6">
-                    <i class="fas fa-times"></i> Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal-overlay" id="gen10-modal" tabindex="-1" aria-modal="true" style="z-index:10000;">
-    <div class="modal slide-in" role="dialog" aria-labelledby="modal-title-4" aria-describedby="modal-desc">
-        <div class="modal-header">
-            <span class="modal-title" id="modal-title-4">Gen10 Project</span>
-            <span class="modal-subtitle"></span>
-            <button class="modal-close" id="close-modal-btn-7" aria-label="Close modal">&times;</button>
-        </div>
-        <div class="modal-body">
-            <p style="margin-bottom:1.3rem;"><a href="/gen10/index.html">Gen10</a> is a package for genomics data analysis and visualization, providing the right tools integrated into your Python code. The original goal of this package is to provide support and tools for education in high school or college, but it can be used for any applicable purpose.</p>
-            <p style="margin-bottom:1.3rem;">The gen10 package allows you to perform a great and increasing variety of tasks from translating DNA into RNA or protein sequences, to retrieving alphafold structure predictions, simulating mutations, and much more! gen10 is a powerful tool and at the same time easy-to-use for students to experiment with, learn from, and create their own code. it doesn't need any software installation and can be used directly from a web browser.</p>
-            <p style="margin-bottom:1.3rem;">I have developed notebook tutorials for coding beginners (zero coding experience required) to help students understand the basics of using the package and jump straight to learning.</p>
-
-            <div class="modal-tags">
-                <span class="modal-tag">Sample</span>
-                <span class="modal-tag">Cosmic UI</span>
-                <span class="modal-tag">Accessible</span>
-            </div>
-
-            <div class="modal-actions">
-                <a href="/gen10/index.html">
-                    <button class="modal-btn">
-                        <i class="fas fa-share-from-square"></i> Visit Project
-                    </button>
-                </a>
-                <button class="modal-btn secondary modal-close" id="close-modal-btn-8">
-                    <i class="fas fa-times"></i> Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
