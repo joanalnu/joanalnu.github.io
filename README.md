@@ -6,7 +6,7 @@
 Welcome to my personal website hosted on GitHub Pages ("the Website"). By accessing or using this Website, you agree to comply with and be bound by these Terms of Use. If you do not agree, please refrain from using the Website.
 
 #### 1. **Purpose of the Website**
-This Website is a personal project intended for sharing information, showcasing work, and providing resources. The content is for informational and personal use only and should not be considered professional advice.
+This Website is a personal project intended for sharing information, showcasing work as a personal portfolio, and providing resources. The content is for informational and personal use only and should not be considered professional advice.
 
 #### 2. **Content Ownership**
 All content on the Website, including text, images, code, and other materials ("Content"), unless otherwise stated, is owned by me, the Website owner. Unauthorized reproduction, distribution, or modification of the Content is prohibited without prior written permission.
