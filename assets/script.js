@@ -1,4 +1,3 @@
-
 // Enhanced Theme System with 3-state cycling
 class ThemeManager {
     constructor() {
