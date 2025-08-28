@@ -97,41 +97,7 @@ const highlightNavLink = () => {
 window.addEventListener('scroll', highlightNavLink);
 highlightNavLink(); // Initial call
 
-// Enhanced mobile menu functionality
-const mobileToggle = document.getElementById('mobile-toggle');
-const navLinksContainer = document.getElementById('nav-links');
-let isMenuOpen = false;
-
-mobileToggle.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    navLinksContainer.classList.toggle('active');
-
-    // Animate hamburger menu
-    mobileToggle.style.transform = isMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
-    mobileToggle.innerHTML = isMenuOpen ? '✕' : '☰';
-});
-
-// Close mobile menu when clicking a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (isMenuOpen) {
-            navLinksContainer.classList.remove('active');
-            mobileToggle.style.transform = 'rotate(0deg)';
-            mobileToggle.innerHTML = '☰';
-            isMenuOpen = false;
-        }
-    });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (isMenuOpen && !e.target.closest('.navbar')) {
-        navLinksContainer.classList.remove('active');
-        mobileToggle.style.transform = 'rotate(0deg)';
-        mobileToggle.innerHTML = '☰';
-        isMenuOpen = false;
-    }
-});
+// Enhanced mobile menu functionality will be initialized in DOMContentLoaded
 
 // Mobile Timeline Toggle Functionality
 const timelineToggle = document.getElementById('timeline-toggle');
@@ -246,4 +212,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial highlight of nav links
     highlightNavLink();
+
+    // Enhanced mobile menu functionality
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinksContainer = document.getElementById('nav-links');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let isMenuOpen = false;
+
+    if (mobileToggle && navLinksContainer) {
+        mobileToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            navLinksContainer.classList.toggle('active');
+
+            // Animate hamburger menu
+            mobileToggle.style.transform = isMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+            mobileToggle.innerHTML = isMenuOpen ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    navLinksContainer.classList.remove('active');
+                    mobileToggle.style.transform = 'rotate(0deg)';
+                    mobileToggle.innerHTML = '☰';
+                    isMenuOpen = false;
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !e.target.closest('.navbar')) {
+                navLinksContainer.classList.remove('active');
+                mobileToggle.style.transform = 'rotate(0deg)';
+                mobileToggle.innerHTML = '☰';
+                isMenuOpen = false;
+            }
+        });
+    }
 });
