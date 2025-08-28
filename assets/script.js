@@ -156,44 +156,118 @@ if (timelineToggle && timeline) {
 // Horizontal scrolling for news
 function setupHighlightsScroller() {
     const scroller = document.querySelector('.news-scroller');
-    if (scroller) {
-        // Add keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.target.closest('.news-scroller')) {
-                const cardWidth = 320; // approximate card width + gap
+    const leftArrow = document.querySelector('.news-arrow-left');
+    const rightArrow = document.querySelector('.news-arrow-right');
 
-                if (e.key === 'ArrowLeft') {
-                    scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-                    e.preventDefault();
-                } else if (e.key === 'ArrowRight') {
-                    scroller.scrollBy({ left: cardWidth, behavior: 'smooth' });
-                    e.preventDefault();
-                }
+    if (scroller && leftArrow && rightArrow) {
+
+        // Function to update arrow visibility based on scroll position
+        function updateArrowVisibility() {
+            const scrollLeft = scroller.scrollLeft;
+            const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+            // Show/hide left arrow based on scroll position
+            if (scrollLeft > 10) { // Small threshold to account for floating point precision
+                leftArrow.classList.add('visible');
+            } else {
+                leftArrow.classList.remove('visible');
+            }
+
+            // Show/hide right arrow based on scroll position
+            if (scrollLeft >= maxScroll - 10) {
+                rightArrow.classList.add('hidden');
+            } else {
+                rightArrow.classList.remove('hidden');
+            }
+        }
+
+        // Initial arrow visibility check
+        updateArrowVisibility();
+
+        // Listen for scroll events to update arrow visibility
+        scroller.addEventListener('scroll', updateArrowVisibility);
+
+        // Enhanced arrow button scroll with smooth animation
+        leftArrow.addEventListener('click', () => {
+            const cardWidth = 340; // card width + gap
+            scroller.scrollBy({
+                left: -cardWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        rightArrow.addEventListener('click', () => {
+            const cardWidth = 340; // card width + gap
+            scroller.scrollBy({
+                left: cardWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        // Update arrow visibility on window resize
+        window.addEventListener('resize', () => {
+            setTimeout(updateArrowVisibility, 100); // Small delay to ensure layout is complete
+        });
+
+        // Add keyboard navigation
+        scroller.addEventListener('keydown', (e) => {
+            const cardWidth = 340; // approximate card width + gap
+
+            if (e.key === 'ArrowLeft') {
+                scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                e.preventDefault();
+            } else if (e.key === 'ArrowRight') {
+                scroller.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                e.preventDefault();
             }
         });
 
-        // Touch swipe support
+        // Enhanced touch swipe support
         let touchStartX = 0;
         let touchEndX = 0;
+        let isDragging = false;
 
         scroller.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+        }, { passive: true });
+
+        scroller.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                touchEndX = e.changedTouches[0].screenX;
+            }
         }, { passive: true });
 
         scroller.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
+            if (isDragging) {
+                handleSwipe();
+                isDragging = false;
+            }
         }, { passive: true });
 
         function handleSwipe() {
-            if (Math.abs(touchEndX - touchStartX) < 50) return;
+            const swipeThreshold = 80;
+            const swipeDistance = touchEndX - touchStartX;
 
-            if (touchEndX < touchStartX) {
-                scroller.scrollBy({ left: 300, behavior: 'smooth' });
+            if (Math.abs(swipeDistance) < swipeThreshold) return;
+
+            if (swipeDistance < 0) {
+                // Swipe left - scroll right
+                scroller.scrollBy({ left: 340, behavior: 'smooth' });
             } else {
-                scroller.scrollBy({ left: -300, behavior: 'smooth' });
+                // Swipe right - scroll left
+                scroller.scrollBy({ left: -340, behavior: 'smooth' });
             }
         }
+
+        // Add focus management for accessibility
+        leftArrow.addEventListener('focus', () => {
+            leftArrow.style.outline = '2px solid var(--accent-light)';
+        });
+
+        rightArrow.addEventListener('focus', () => {
+            rightArrow.style.outline = '2px solid var(--accent-light)';
+        });
     }
 }
 
