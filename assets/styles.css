@@ -73,6 +73,25 @@
     }
 }
 
+/* Add to assets/styles.css */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.section {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+img, .about-grid, .news-scroller, .projects-grid, .skills-grid, .engagement-grid, .contact-grid {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: var(--primary);
@@ -164,7 +183,7 @@ body {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-links {
         position: fixed;
         top: 80px;
@@ -283,6 +302,7 @@ body {
     padding: 5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .section-title {
@@ -645,7 +665,7 @@ body {
 }
 
 /* Mobile Timeline Enhancements */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .timeline-toggle {
         display: flex;
     }
@@ -773,7 +793,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .hero h1 {
         font-size: 2.5rem;
     }
