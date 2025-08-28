@@ -62,13 +62,6 @@ class ThemeManager {
     }
 }
 
-// Loading animation
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.getElementById('loading').classList.add('fade-out');
-    }, 1000);
-});
-
 // Enhanced navbar scroll effects
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
@@ -145,7 +138,7 @@ const timelineToggle = document.getElementById('timeline-toggle');
 const timeline = document.getElementById('timeline');
 let timelineExpanded = false;
 
-if (timelineToggle) {
+if (timelineToggle && timeline) {
     timelineToggle.addEventListener('click', () => {
         timelineExpanded = !timelineExpanded;
 
