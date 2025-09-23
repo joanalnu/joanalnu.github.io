@@ -5,3 +5,7 @@ images/.DS_Store
 
 deprecated/
 dev/
+
+cv/*aux
+cv/*log
+cv/*out
