@@ -1,0 +1,126 @@
+\documentclass[a4paper,11pt]{article}
+
+% ----------------------------------------------------------------
+% Packages
+% ----------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{roboto} % clean sans-serif font
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ----------------------------------------------------------------
+% Styling
+% ----------------------------------------------------------------
+\definecolor{linkblue}{HTML}{003366}
+\hypersetup{colorlinks=true,urlcolor=linkblue,linkcolor=linkblue}
+
+% Section format
+\titleformat{\section}{\large\bfseries\scshape\color{linkblue}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+% Commands
+\newcommand{\dated}[1]{\textcolor{gray}{\textit{#1}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\textbf{#1} \hfill \dated{#2} \\
+  \textit{#3} --- #4 \vspace{2pt}
+}
+\newenvironment{resumeItemList}{\begin{itemize}[leftmargin=*]}{\end{itemize}}
+
+% Spacing
+\renewcommand{\baselinestretch}{1.05}
+
+% ----------------------------------------------------------------
+% Document
+% ----------------------------------------------------------------
+\begin{document}
+
+% ----------------------------------------------------------------
+% Header
+% ----------------------------------------------------------------
+\begin{center}
+  {\Huge \textbf{Your Name}} \\[4pt]
+  \href{mailto:you@email.com}{you@email.com} \,|\, 
+  +1 234 567 890 \,|\, 
+  \href{https://linkedin.com/in/username}{LinkedIn} \,|\, 
+  \href{https://github.com/username}{GitHub} \\
+\end{center}
+
+% ----------------------------------------------------------------
+\section{Education}
+\resumeSubheading{M.Sc. in Physics}{2022--2024}{University of Example}{City, Country}
+\begin{resumeItemList}
+  \item Thesis: \emph{Machine Learning for Cosmological Simulations}.
+\end{resumeItemList}
+
+\resumeSubheading{B.Sc. in Physics}{2018--2022}{Institute of Technology}{City, Country}
+\begin{resumeItemList}
+  \item Graduated with First Class Honors.
+\end{resumeItemList}
+
+% ----------------------------------------------------------------
+\section{Research Experience}
+\resumeSubheading{Research Stay}{Jun--Jul 2025}{Osservatorio Astrofisico di Brera}{Merate, Italy}
+\begin{resumeItemList}
+  \item Combined GRB and simulated BNS data to constrain cosmological parameters.
+  \item Applied $\chi^2$ statistical methods to assess data-model agreement.
+\end{resumeItemList}
+
+\resumeSubheading{Research Intern}{2024}{Institute of Astrophysics}{City, Country}
+\begin{resumeItemList}
+  \item Implemented Bayesian inference pipelines for gravitational wave parameter estimation.
+  \item Presented results at weekly journal clubs and group meetings.
+\end{resumeItemList}
+
+% ----------------------------------------------------------------
+\section{Experience}
+\resumeSubheading{Software Developer}{2023--Present}{TechCorp Inc.}{City, Country}
+\begin{resumeItemList}
+  \item Built and deployed scalable microservices with Python and Go (1M+ requests/day).
+  \item Migrated infrastructure to Kubernetes, cutting deployment time by 60\%.
+\end{resumeItemList}
+
+% ----------------------------------------------------------------
+\section{Skills}
+\textbf{Programming:} Python, Go, C++, JavaScript, SQL \\
+\textbf{Tools:} Docker, Kubernetes, Git, Linux, AWS, GCP \\
+\textbf{Languages:} English (native), Spanish (fluent) \\
+
+% ----------------------------------------------------------------
+\section{Awards}
+\begin{resumeItemList}
+  \item Recipient of XYZ Scholarship for Academic Excellence (2024).
+  \item Best Poster Presentation, Astrophysics Student Conference (2023).
+\end{resumeItemList}
+
+% ----------------------------------------------------------------
+\section{Publications}
+\begin{resumeItemList}
+  \item Doe, J., Smith, A. (2021). \emph{Deep Learning for X-ray Analysis}, IEEE Trans. Med. Imaging.
+\end{resumeItemList}
+
+% ----------------------------------------------------------------
+\section{Additional Activities}
+\begin{multicols}{2}
+\textbf{Talks} \\
+\faIcon{microphone} Invited Talk, Student Physics Conference (2024) \\
+\faIcon{microphone} Seminar Speaker, Astrophysics Group (2023) \\
+
+\vfill\null
+\columnbreak
+
+\textbf{Coding Projects} \\
+\faIcon{code} Maintainer of \emph{DataTools}, Python package (2000+ GitHub stars) \\
+\faIcon{globe} Portfolio website built with Next.js and Tailwind CSS \\
+\end{multicols}
+
+% ----------------------------------------------------------------
+\section{Interests}
+Astrophysics, Artificial Intelligence, Open Source, Hiking, Piano
+
+\end{document}
