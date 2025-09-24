@@ -638,6 +638,7 @@
         .update-card {
             min-width: 320px;
             max-width: 340px;
+            max-height: 420px;
             background: var(--card-bg);
             border-radius: 18px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.10);
@@ -659,10 +660,25 @@
             margin: 0.5rem 0 0.3rem 0;
             font-weight: 600;
         }
+        .update-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-light);
+            width: 100%;
+        }
         .update-card p {
             font-size: 0.98rem;
             color: var(--text-secondary, #b0b3c6);
             margin-bottom: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
         }
         .updates-arrow {
             position: absolute;
@@ -693,10 +709,34 @@
             .update-card {
                 min-width: 80vw;
                 max-width: 90vw;
+                max-height: 380px;
             }
             .updates-section {
                 margin: 2rem 0;
                 padding: 0;
+            }
+        }
+        
+        /* Cards with longer content expand horizontally */
+        .update-card.long-content {
+            max-width: 420px;
+            max-height: none;
+            min-width: 380px;
+        }
+        
+        .update-card.long-content p {
+            -webkit-line-clamp: none;
+            line-clamp: none;
+            display: block;
+            overflow: visible;
+            text-overflow: initial;
+        }
+        
+        @media (max-width: 600px) {
+            .update-card.long-content {
+                max-width: 95vw;
+                max-height: none;
+                min-width: 90vw;
             }
         }
         /* Optional: Hide arrows if not needed */

@@ -89,3 +89,35 @@ if (updatesScroller && leftArrow && rightArrow) {
         updatesScroller.scrollBy({ left: 340, behavior: 'smooth' });
     });
 }
+
+// Handle long content in update cards
+document.addEventListener('DOMContentLoaded', () => {
+    const updateCards = document.querySelectorAll('.update-card');
+    
+    updateCards.forEach(card => {
+        const paragraph = card.querySelector('p');
+        if (paragraph) {
+            // Check if content is being truncated by measuring scroll height vs client height
+            const isOverflowing = paragraph.scrollHeight > paragraph.clientHeight;
+            
+            // Also check text length as a fallback
+            const hasLongText = paragraph.textContent.length > 180;
+            
+            if (isOverflowing || hasLongText) {
+                card.classList.add('long-content');
+            }
+        }
+    });
+    
+    // Re-check after a short delay to account for any dynamic content loading
+    setTimeout(() => {
+        updateCards.forEach(card => {
+            if (!card.classList.contains('long-content')) {
+                const paragraph = card.querySelector('p');
+                if (paragraph && paragraph.scrollHeight > paragraph.clientHeight) {
+                    card.classList.add('long-content');
+                }
+            }
+        });
+    }, 100);
+});
