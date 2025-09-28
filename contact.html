@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <meta name="description" content="Contact Joan Alcaide-Núñez - Astrophysics researcher and physics student">
+    <meta name="keywords" content="contact, Joan Alcaide, physics, astrophysics, research">
+    <title>Contact | Joan Alcaide-Núñez</title>
+    <link rel="shortcut icon" type="image/png" href="/images/logo.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles.css">
     <link rel="stylesheet" href="/assets/contact.css">
     <!-- Leaflet CSS for map integration -->
@@ -11,128 +18,417 @@
 </head>
 <body>
 
-<!-- Enhanced Navbar with Theme Toggle -->
-<nav class="navbar" id="navbar">
+<div class="cosmic-bg"></div>
+<div class="hero-particles"></div>
+
+<!-- Enhanced Navbar -->
+<nav class="glass-nav" id="navbar">
     <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/new-index.html#home" class="brand-link">
+                <div class="logo-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <span class="logo-text">Joanalnu</span>
+            </a>
+        </div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="/index.html#home"><div class="logo">Joanalnu</div></a></li>
-            <li><a href="#news" class="nav-link">News</a></li>
-            <li><a href="/cv/index.html" class="nav-link">CV</a></li>
-            <li><a href="/music/index.html" class="nav-link">Music</a></li>
-            <li><a href="https://capibara3.github.io" class="nav-link">CAPIBARA</a></li>
-            <li><a href="/gen10/index.html" class="nav-link">GEN10</a></li>
-            <li><a href="/contact.html" class="nav-link">Contact</a></li>
+            <li><a href="/new-index.html#home" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="/new-index.html#updates" class="nav-link"><i class="fas fa-newspaper"></i>Updates</a></li>
+            <li><a href="/new-index.html#experience" class="nav-link"><i class="fas fa-rocket"></i>Experience</a></li>
+            <li><a href="/new-index.html#education" class="nav-link"><i class="fas fa-graduation-cap"></i>Education</a></li>
+            <li><a href="/new-index.html#awards" class="nav-link"><i class="fas fa-trophy"></i>Awards</a></li>
+            <li><a href="/new-index.html#work" class="nav-link"><i class="fas fa-file-alt"></i>Work</a></li>
+            <li><a href="/music/index.html" class="nav-link"><i class="fas fa-music"></i>Music</a></li>
+            <li><a href="#contact" class="nav-link active"><i class="fas fa-envelope"></i>Contact</a></li>
         </ul>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <i class="fas fa-sun" id="theme-icon"></i>
+            <div class="theme-icon-wrapper">
+                <i class="fas fa-adjust" id="theme-icon"></i>
+            </div>
             <span id="theme-text">Auto</span>
         </button>
-        <button class="mobile-menu-toggle" id="mobile-toggle">☰</button>
     </div>
 </nav>
 
 <!-- Main Content -->
-<main>
-    <section class="contact-section">
-        <h2>Get In Touch</h2>
-        <p class="contact-intro">Please, fill out the form below and I'll get back to you as soon as possible.</p>
-
-        <form id="contact-form" action="https://formspree.io/f/mnnzddzy" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+<main class="contact-main">
+    <div class="container">
+        <!-- Contact Hero Section -->
+        <section class="contact-hero">
+            <div class="section-badge">
+                <i class="fas fa-envelope"></i>
+                <span>Get In Touch</span>
             </div>
+            <h1 class="contact-title">Let's Connect</h1>
+            <p class="contact-subtitle">
+                Interested in collaboration, research opportunities, or just want to discuss something exciting? 
+                I'd love to hear from you.
+            </p>
+        </section>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <section class="contact-form-section">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h2>Send a Message</h2>
+                        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+                    </div>
+
+                    <form id="contact-form" action="https://formspree.io/f/mnnzddzy" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i>
+                                    Name
+                                </label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-message"></i>
+                                Message
+                            </label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Share your thoughts, questions, or collaboration ideas..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="cta-primary">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                                <div class="cta-glow"></div>
+                            </button>
+                            
+                            <a href="/new-index.html" class="btn-secondary">
+                                <i class="fas fa-arrow-left"></i>
+                                Back to Home
+                            </a>
+                        </div>
+
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Contact Information -->
+            <section class="contact-info-section">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h2>Contact Information</h2>
+                        <p>Various ways to reach me and connect</p>
+                    </div>
+
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/joan-alcaide-núñez" target="_blank" rel="noopener">
+                                    Professional Profile
+                                </a>
+                                <small>Connect professionally</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/joanalnu" target="_blank" rel="noopener">
+                                    @joanalnu
+                                </a>
+                                <small>View my code and projects</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Munich, Germany</p>
+                                <small>Currently based at LMU Munich</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>CAPIBARA Collaboration</h4>
+                                <a href="https://capibara3.github.io" target="_blank" rel="noopener">
+                                    Visit Project Site
+                                </a>
+                                <small>Student-led research initiative</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="response-time">
+                        <div class="response-indicator">
+                            <div class="status-dot active"></div>
+                            <span>Typically responds within 24-48 hours</span>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Quick Links -->
+                <div class="glass-card quick-links-card">
+                    <div class="card-header">
+                        <h3>Quick Links</h3>
+                    </div>
+                    
+                    <div class="quick-links">
+                        <a href="/cv/cv.pdf" target="_blank" class="quick-link">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Download CV</span>
+                        </a>
+                        
+                        <a href="/new-index.html#work" class="quick-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Research Papers</span>
+                        </a>
+                        
+                        <a href="/music/index.html" class="quick-link">
+                            <i class="fas fa-music"></i>
+                            <span>Music Compositions</span>
+                        </a>
+                        
+                        <a href="https://capibara3.github.io" target="_blank" class="quick-link">
+                            <i class="fas fa-users"></i>
+                            <span>CAPIBARA Project</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Location Section (Optional) -->
+        <!-- <section class="location-section" id="location">
+            <div class="glass-card location-card">
+                <div class="card-header">
+                    <h2>Current Location</h2>
+                    <p>Find me in Munich, Germany</p>
+                </div>
+                <div id="map" class="location-map"></div>
+                <div class="location-info">
+                    <div class="location-details">
+                        <h4>Ludwig Maximilian University of Munich</h4>
+                        <p>Faculty of Physics - Theoretical Astrophysics</p>
+                        <p>Geschwister-Scholl-Platz 1, 80539 München, Germany</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-            </div>
-
-            <button type="submit" class="btn">Send Message</button>
-
-            <div class="btn" onclick="window.open('https://joanalnu.github.io', '_blank')">Return to Home</div>
-
-            <div id="form-status" class="form-status"></div>
-        </form>
-    </section>
-
-<!--    <section class="localization-section">-->
-<!--        <h2>Localization</h2>-->
-<!--        <p class="localization-intro">Based in Barcelona, Spain. Find my location on the map below.</p>-->
-<!--        <div id="map"></div>-->
-<!--    </section>-->
+        </section> -->
+    </div>
 </main>
 
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Joan Alcaide Núñez. Exploring the cosmos, one discovery at a time.</p>
+    </div>
+</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<!-- Scripts -->
+<script src="/assets/scripts-modern.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <script>
-    // Form submission handling
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
-
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-
-        status.innerHTML = 'Sending...';
-        status.style.color = 'var(--primary-color)';
-
-        try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                status.innerHTML = 'Thanks for your message! I\'ll get back to you soon.';
-                status.style.color = 'var(--secondary-color)';
-                form.reset();
-            } else {
-                const errorData = await response.json();
-                if (errorData.errors) {
-                    status.innerHTML = errorData.errors.map(error => error.message).join(', ');
-                } else {
-                    status.innerHTML = 'Oops! There was a problem submitting your form.';
-                }
-                status.style.color = '#ff4444';
-            }
-        } catch (error) {
-            status.innerHTML = 'Oops! There was a problem submitting your form.';
-            status.style.color = '#ff4444';
+    // Enhanced form handling with modern features
+    class ContactFormHandler {
+        constructor() {
+            this.form = document.getElementById('contact-form');
+            this.status = document.getElementById('form-status');
+            this.submitButton = this.form.querySelector('.cta-primary');
+            this.init();
         }
 
-        setTimeout(() => {
-            status.innerHTML = '';
-        }, 5000);
+        init() {
+            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            this.setupFormValidation();
+            this.setupMap();
+        }
+
+        async handleSubmit(event) {
+            event.preventDefault();
+            
+            this.setSubmittingState(true);
+            this.showStatus('Sending your message...', 'sending');
+
+            const formData = new FormData(this.form);
+
+            try {
+                const response = await fetch(this.form.action, {
+                    method: this.form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    this.showStatus('Thanks for your message! I\'ll get back to you soon.', 'success');
+                    this.form.reset();
+                    this.createSuccessAnimation();
+                } else {
+                    const errorData = await response.json();
+                    if (errorData.errors) {
+                        this.showStatus(errorData.errors.map(error => error.message).join(', '), 'error');
+                    } else {
+                        this.showStatus('Oops! There was a problem submitting your form.', 'error');
+                    }
+                }
+            } catch (error) {
+                this.showStatus('Oops! There was a problem submitting your form.', 'error');
+            } finally {
+                this.setSubmittingState(false);
+                setTimeout(() => this.clearStatus(), 5000);
+            }
+        }
+
+        setSubmittingState(isSubmitting) {
+            this.submitButton.disabled = isSubmitting;
+            this.submitButton.classList.toggle('submitting', isSubmitting);
+            
+            const buttonText = this.submitButton.querySelector('span');
+            const buttonIcon = this.submitButton.querySelector('i');
+            
+            if (isSubmitting) {
+                buttonText.textContent = 'Sending...';
+                buttonIcon.className = 'fas fa-spinner fa-spin';
+            } else {
+                buttonText.textContent = 'Send Message';
+                buttonIcon.className = 'fas fa-paper-plane';
+            }
+        }
+
+        showStatus(message, type) {
+            this.status.textContent = message;
+            this.status.className = `form-status ${type}`;
+            this.status.style.opacity = '1';
+        }
+
+        clearStatus() {
+            this.status.style.opacity = '0';
+            setTimeout(() => {
+                this.status.textContent = '';
+                this.status.className = 'form-status';
+            }, 300);
+        }
+
+        createSuccessAnimation() {
+            // Create confetti-like particles
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'success-particle';
+                particle.style.cssText = `
+                    position: fixed;
+                    width: 6px;
+                    height: 6px;
+                    background: var(--accent-primary);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 10000;
+                    left: 50%;
+                    top: 50%;
+                    animation: successParticle 2s ease-out forwards;
+                    animation-delay: ${Math.random() * 0.5}s;
+                `;
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 2500);
+            }
+        }
+
+        setupFormValidation() {
+            const inputs = this.form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('blur', () => this.validateField(input));
+                input.addEventListener('input', () => this.clearFieldError(input));
+            });
+        }
+
+        validateField(field) {
+            const isValid = field.checkValidity();
+            field.classList.toggle('invalid', !isValid);
+            field.classList.toggle('valid', isValid && field.value);
+        }
+
+        clearFieldError(field) {
+            field.classList.remove('invalid');
+        }
+
+        setupMap() {
+            if (document.getElementById('map')) {
+                // Munich coordinates (LMU)
+                const map = L.map('map').setView([48.1486, 11.5804], 13);
+                
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                const customIcon = L.divIcon({
+                    className: 'custom-marker',
+                    html: '<i class="fas fa-map-marker-alt"></i>',
+                    iconSize: [25, 25],
+                    iconAnchor: [12, 25]
+                });
+                
+                L.marker([48.1486, 11.5804], { icon: customIcon })
+                    .addTo(map)
+                    .bindPopup('<strong>Joan Alcaide-Núñez</strong><br>LMU Munich - Physics Faculty')
+                    .openPopup();
+            }
+        }
     }
 
-    form.addEventListener('submit', handleSubmit);
-
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Localization map initialization
-    document.addEventListener('DOMContentLoaded', function () {
-        if (document.getElementById('map')) {
-            var map = L.map('map').setView([41.3874, 2.1686], 12); // Barcelona coords
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            L.marker([41.3874, 2.1686]).addTo(map)
-                .bindPopup('Joanalnu - Barcelona, Spain')
-                .openPopup();
-        }
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        new ContactFormHandler();
     });
+
+    // Add success particle animation styles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes successParticle {
+            0% {
+                transform: translate(-50%, -50%) scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(-50% + ${Math.random() * 200 - 100}px), 
+                           calc(-50% - ${Math.random() * 200 + 100}px)) 
+                           scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .custom-marker {
+            color: var(--accent-primary);
+            font-size: 20px;
+            text-align: center;
+            line-height: 25px;
+        }
+    `;
+    document.head.appendChild(style);
 </script>
-<!-- Leaflet JS for map integration -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 </body>
 </html>
