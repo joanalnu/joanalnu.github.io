@@ -218,6 +218,226 @@ class ModernPortfolio {
             themeText.textContent = 'Auto';
         }
     }
+// Modern Academic Portfolio - Enhanced Interactivity
+class ModernPortfolio {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupScrollEffects();
+        this.setupUpdateCards();
+        this.setupThemeToggle();
+        this.setupNavigation();
+        this.setupParticles();
+        this.setupModals();
+        this.setupObserver();
+        this.setupUpdatesSlider();
+        
+        // Initialize theme
+        this.loadTheme();
+        
+        // Setup event listeners
+        window.addEventListener('resize', () => this.handleResize());
+        window.addEventListener('scroll', () => this.handleScroll(), { passive: true });
+    }
+
+    setupScrollEffects() {
+        let ticking = false;
+        
+        const updateScrollEffects = () => {
+            const scrollY = window.scrollY;
+            
+            // Navigation effects
+            const nav = document.querySelector('.glass-nav');
+            if (nav) {
+                if (scrollY > 100) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.8)';
+                    nav.style.boxShadow = '0 0 50px rgba(99, 102, 241, 0.3)';
+                }
+            }
+            
+            // Parallax effects
+            this.updateParallaxElements(scrollY);
+            
+            ticking = false;
+        };
+        
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
+        };
+        
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    updateParallaxElements(scrollY) {
+        // Animate hero particles
+        const particles = document.querySelector('.hero-particles');
+        if (particles) {
+            particles.style.transform = `translateY(${scrollY * 0.5}px)`;
+        }
+        
+        // Animate cosmic background
+        const cosmicBg = document.querySelector('.cosmic-bg');
+        if (cosmicBg) {
+            cosmicBg.style.transform = `translateY(${scrollY * 0.3}px) rotate(${scrollY * 0.05}deg)`;
+        }
+    }
+
+    setupUpdateCards() {
+        const cards = document.querySelectorAll('.update-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => this.handleCardHover(card, true));
+            card.addEventListener('mouseleave', () => this.handleCardHover(card, false));
+            card.addEventListener('click', () => this.handleCardClick(card));
+        });
+    }
+
+    handleCardHover(card, isEntering) {
+        const image = card.querySelector('.card-image');
+        const overlay = card.querySelector('.card-overlay');
+        const badge = card.querySelector('.card-badge');
+        
+        if (isEntering) {
+            if (image) image.style.transform = 'scale(1.05)';
+            if (overlay) overlay.style.background = 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%)';
+            if (badge) badge.style.transform = 'scale(1.1)';
+            
+            // Create floating particles
+            this.createFloatingParticles(card);
+        } else {
+            if (image) image.style.transform = 'scale(1)';
+            if (overlay) overlay.style.background = 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%)';
+            if (badge) badge.style.transform = 'scale(1)';
+        }
+    }
+
+    handleCardClick(card) {
+        // Add ripple effect
+        const ripple = document.createElement('div');
+        ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.3);
+            width: 20px;
+            height: 20px;
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+            transform: scale(0);
+            left: 50%;
+            top: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+        `;
+        
+        card.style.position = 'relative';
+        card.appendChild(ripple);
+        
+        // Animate ripple
+        setTimeout(() => {
+            ripple.style.transform = 'scale(20)';
+            ripple.style.opacity = '0';
+        }, 10);
+        
+        setTimeout(() => ripple.remove(), 600);
+        
+        // Subtle card animation
+        card.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+            card.style.transform = '';
+        }, 150);
+    }
+
+    createFloatingParticles(card) {
+        for (let i = 0; i < 3; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--accent-primary);
+                border-radius: 50%;
+                pointer-events: none;
+                opacity: 0.7;
+                animation: floatParticle 2s ease-out forwards;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+            `;
+            
+            card.style.position = 'relative';
+            card.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 2000);
+        }
+    }
+
+    setupThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+        
+        if (!themeToggle) return;
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme;
+            
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+                themeIcon.className = 'fas fa-sun';
+                themeText.textContent = 'Light';
+            } else if (currentTheme === 'light') {
+                newTheme = null; // Auto
+                themeIcon.className = 'fas fa-adjust';
+                themeText.textContent = 'Auto';
+            } else {
+                newTheme = 'dark';
+                themeIcon.className = 'fas fa-moon';
+                themeText.textContent = 'Dark';
+            }
+            
+            if (newTheme) {
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.removeItem('theme');
+            }
+            
+            // Animate theme transition
+            document.body.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                document.body.style.transition = '';
+            }, 300);
+        });
+    }
+
+    loadTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+        
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'dark') {
+                themeIcon.className = 'fas fa-moon';
+                themeText.textContent = 'Dark';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+                themeText.textContent = 'Light';
+            }
+        } else {
+            themeIcon.className = 'fas fa-adjust';
+            themeText.textContent = 'Auto';
+        }
+    }
 
     setupNavigation() {
         const navLinks = document.querySelectorAll('.nav-link');
