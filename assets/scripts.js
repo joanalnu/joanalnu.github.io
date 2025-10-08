@@ -221,6 +221,40 @@ class ModernPortfolio {
 
     setupNavigation() {
         const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinksContainer = document.getElementById('nav-links');
+        
+        // Mobile menu toggle functionality
+        if (mobileMenuToggle && navLinksContainer) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                navLinksContainer.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a nav link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuToggle.contains(e.target) && !navLinksContainer.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu on window resize to larger screen
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                }
+            });
+        }
         
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
