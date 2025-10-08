@@ -254,6 +254,30 @@ class ModernPortfolio {
                     navLinksContainer.classList.remove('active');
                 }
             });
+        }, { passive: true });
+    }
+
+    setupParticles() {
+        const heroParticles = document.querySelector('.hero-particles');
+        if (!heroParticles) return;
+        
+        // Create animated particles
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(99, 102, 241, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: floatUp ${5 + Math.random() * 10}s infinite linear;
+                animation-delay: ${Math.random() * 5}s;
+            `;
+            
+            heroParticles.appendChild(particle);
         }
         
         navLinks.forEach(link => {
