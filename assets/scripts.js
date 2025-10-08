@@ -221,6 +221,64 @@ class ModernPortfolio {
 
     setupNavigation() {
         const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinksContainer = document.getElementById('nav-links');
+        
+        // Mobile menu toggle functionality
+        if (mobileMenuToggle && navLinksContainer) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                navLinksContainer.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a nav link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuToggle.contains(e.target) && !navLinksContainer.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu on window resize to larger screen
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                }
+            });
+        }, { passive: true });
+    }
+
+    setupParticles() {
+        const heroParticles = document.querySelector('.hero-particles');
+        if (!heroParticles) return;
+        
+        // Create animated particles
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(99, 102, 241, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: floatUp ${5 + Math.random() * 10}s infinite linear;
+                animation-delay: ${Math.random() * 5}s;
+            `;
+            
+            heroParticles.appendChild(particle);
+        }
         
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
