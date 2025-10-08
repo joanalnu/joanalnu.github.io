@@ -163,7 +163,10 @@ class ModernPortfolio {
         const themeIcon = document.getElementById('theme-icon');
         const themeText = document.getElementById('theme-text');
         
-        if (!themeToggle) return;
+        if (!themeToggle || !themeIcon || !themeText) {
+            console.warn('Theme toggle elements not found');
+            return;
+        }
         
         themeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -173,22 +176,23 @@ class ModernPortfolio {
                 newTheme = 'light';
                 themeIcon.className = 'fas fa-sun';
                 themeText.textContent = 'Light';
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
             } else if (currentTheme === 'light') {
                 newTheme = null; // Auto
                 themeIcon.className = 'fas fa-adjust';
                 themeText.textContent = 'Auto';
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.removeItem('theme');
+                // Apply system preference
+                this.applySystemTheme();
             } else {
+                // Currently auto or no theme set, switch to dark
                 newTheme = 'dark';
                 themeIcon.className = 'fas fa-moon';
                 themeText.textContent = 'Dark';
-            }
-            
-            if (newTheme) {
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.removeItem('theme');
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
             }
             
             // Animate theme transition
@@ -199,23 +203,48 @@ class ModernPortfolio {
         });
     }
 
+    applySystemTheme() {
+        // Apply system preference when in auto mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+    }
+
     loadTheme() {
         const savedTheme = localStorage.getItem('theme');
         const themeIcon = document.getElementById('theme-icon');
         const themeText = document.getElementById('theme-text');
+        
+        if (!themeIcon || !themeText) {
+            console.warn('Theme toggle elements not found');
+            return;
+        }
         
         if (savedTheme) {
             document.documentElement.setAttribute('data-theme', savedTheme);
             if (savedTheme === 'dark') {
                 themeIcon.className = 'fas fa-moon';
                 themeText.textContent = 'Dark';
-            } else {
+            } else if (savedTheme === 'light') {
                 themeIcon.className = 'fas fa-sun';
                 themeText.textContent = 'Light';
             }
         } else {
+            // Auto mode - use system preference
             themeIcon.className = 'fas fa-adjust';
             themeText.textContent = 'Auto';
+            this.applySystemTheme();
+            
+            // Listen for system theme changes
+            if (window.matchMedia) {
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                    if (!localStorage.getItem('theme')) { // Only if in auto mode
+                        this.applySystemTheme();
+                    }
+                });
+            }
         }
     }
 // Modern Academic Portfolio - Enhanced Interactivity
@@ -446,9 +475,19 @@ class ModernPortfolio {
         
         // Mobile menu toggle functionality
         if (mobileMenuToggle && navLinksContainer) {
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenuToggle.classList.toggle('active');
+            // Handle mobile menu toggle
+            mobileMenuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event bubbling
+                const isActive = mobileMenuToggle.classList.toggle('active');
                 navLinksContainer.classList.toggle('active');
+                
+                // Update aria attributes for accessibility
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                
+                // Prevent body scroll when menu is open on mobile
+                if (window.innerWidth <= 768) {
+                    document.body.style.overflow = isActive ? 'hidden' : '';
+                }
             });
 
             // Close mobile menu when clicking on a nav link
@@ -456,14 +495,21 @@ class ModernPortfolio {
                 link.addEventListener('click', () => {
                     mobileMenuToggle.classList.remove('active');
                     navLinksContainer.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = ''; // Restore scroll
                 });
             });
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', (e) => {
-                if (!mobileMenuToggle.contains(e.target) && !navLinksContainer.contains(e.target)) {
+                const isClickInsideNav = navLinksContainer.contains(e.target) || 
+                                       mobileMenuToggle.contains(e.target);
+                
+                if (!isClickInsideNav && navLinksContainer.classList.contains('active')) {
                     mobileMenuToggle.classList.remove('active');
                     navLinksContainer.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = ''; // Restore scroll
                 }
             });
 
@@ -472,6 +518,19 @@ class ModernPortfolio {
                 if (window.innerWidth > 768) {
                     mobileMenuToggle.classList.remove('active');
                     navLinksContainer.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = ''; // Restore scroll
+                }
+            });
+
+            // Handle escape key to close menu
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navLinksContainer.classList.contains('active')) {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenuToggle.focus(); // Return focus to toggle button
+                    document.body.style.overflow = ''; // Restore scroll
                 }
             });
         }
