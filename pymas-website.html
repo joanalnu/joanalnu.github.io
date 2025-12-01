@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYMAS - Python Holiday Projects for Beginners</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #0a3d29;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 61, 41, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #165a3e 0%, #0f7d57 50%, #c41e3a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 5em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 30px;
+            font-weight: 500;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-description {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #ffd700;
+            color: #0a3d29;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5);
+            background: #ffed4e;
+        }
+
+        .section {
+            background: #f5f0e8;
+            padding: 100px 30px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #0a3d29;
+            margin-bottom: 15px;
+            letter-spacing: -1.5px;
+        }
+
+        .section-subtitle {
+            font-size: 1.4em;
+            color: #5c6f5a;
+            font-weight: 400;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 50px 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid #e8dcc8;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c41e3a, #0f7d57);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(196, 30, 58, 0.15);
+            border-color: #c41e3a;
+        }
+
+        .project-number {
+            font-size: 0.9em;
+            color: #c41e3a;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-icon {
+            font-size: 4em;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .project-card h3 {
+            font-size: 1.8em;
+            color: #0a3d29;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .project-card p {
+            color: #5c6f5a;
+            font-size: 1.05em;
+            line-height: 1.5;
+        }
+
+        .guide-section {
+            background: #0a3d29;
+            color: #fff;
+            padding: 100px 30px;
+            display: none;
+            min-height: 100vh;
+        }
+
+        .guide-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .guide-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.95em;
+            transition: all 0.3s;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-5px);
+        }
+
+        .guide-header {
+            margin-bottom: 60px;
+        }
+
+        .guide-title {
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .guide-content h3 {
+            font-size: 2em;
+            margin: 50px 0 20px 0;
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .guide-content p, .guide-content li {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .guide-content ul, .guide-content ol {
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        .guide-content strong {
+            color: #fff;
+        }
+
+        .code-block {
+            background: #051f15;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            overflow-x: auto;
+            font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+            font-size: 0.95em;
+            color: #e8f5e9;
+            line-height: 1.6;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        code {
+            background: rgba(255, 215, 0, 0.15);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: 'SF Mono', 'Monaco', monospace;
+            color: #ffd700;
+            font-size: 0.9em;
+        }
+
+        .info-box {
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 4px solid;
+        }
+
+        .challenges {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #ffd700;
+        }
+
+        .challenges h3 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+
+        .advanced-tip {
+            background: rgba(196, 30, 58, 0.15);
+            border-color: #ff6b7a;
+        }
+
+        .advanced-tip h3 {
+            color: #ff6b7a;
+            margin-top: 0;
+        }
+
+        .completion-message {
+            background: linear-gradient(135deg, #165a3e, #c41e3a);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-top: 60px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .completion-message strong {
+            font-size: 1.8em;
+            display: block;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .getting-started {
+            background: #f5f0e8;
+        }
+
+        .step-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 2px solid #e8dcc8;
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 15px 40px rgba(196, 30, 58, 0.1);
+            border-color: #c41e3a;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c41e3a, #0f7d57);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.8em;
+            color: #0a3d29;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step-card p {
+            color: #5c6f5a;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .step-card .code-block {
+            background: #0a3d29;
+            color: #e8f5e9;
+            border-color: rgba(15, 125, 87, 0.3);
+        }
+
+        .snowflake {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5em;
+            pointer-events: none;
+            z-index: 999;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3em; }
+            .hero-subtitle { font-size: 1.3em; }
+            .section-title { font-size: 2.5em; }
+            .guide-title { font-size: 2.5em; }
+            .nav-links { display: none; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">🎄 PYMAS</div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="showSection('hero')">Home</a>
+                <a class="nav-link" onclick="showSection('projects')">Projects</a>
+                <a class="nav-link" onclick="showSection('start')">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero active">
+        <div class="hero-content">
+            <h1>Learn Python<br>this holiday season.</h1>
+            <p class="hero-subtitle">Five fun projects designed for beginners</p>
+            <p class="hero-description">PYMAS is a collection of Python projects that make learning to code relaxed, playful, and festive. Perfect for weekends, classrooms, or quality time at home.</p>
+            <a href="#" class="cta-button" onclick="showSection('projects'); return false;">Explore Projects</a>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Five projects.<br>Endless possibilities.</h2>
+                <p class="section-subtitle">Each project teaches fundamental Python concepts through hands-on coding</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card" onclick="showGuide('project1')">
+                    <div class="project-number">Project 01</div>
+                    <span class="project-icon">🎅</span>
+                    <h3>Christmas Greeting Generator</h3>
+                    <p>Master Python lists and random selection while creating personalized festive messages</p>
+                </div>
+
+                <div class="project-card" onclick="showGuide('project2')">
+                    <div class="project-number">Project 02</div>
+                    <span class="project-icon">🌲</span>
+                    <h3>ASCII Christmas Tree</h3>
+                    <p>Learn loops and pattern building by creating beautiful text-based art</p>
+                </div>
+
+                <div class="project-card" onclick="showGuide('project3')">
+                    <div class="project-number">Project 03</div>
+                    <span class="project-icon">☕</span>
+                    <h3>Hot Chocolate Recipe</h3>
+                    <p>Explore dictionaries through an interactive recipe calculator</p>
+                </div>
+
+                <div class="project-card" onclick="showGuide('project4')">
+                    <div class="project-number">Project 04</div>
+                    <span class="project-icon">🎉</span>
+                    <h3>New Year Countdown</h3>
+                    <p>Work with dates and time to build a dynamic countdown timer</p>
+                </div>
+
+                <div class="project-card" onclick="showGuide('project5')">
+                    <div class="project-number">Project 05</div>
+                    <span class="project-icon">❄️</span>
+                    <h3>Snowball Gift</h3>
+                    <p>Apply geometry and mathematical formulas in Python</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="start" class="section getting-started">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Getting started<br>is simple.</h2>
+                <p class="section-subtitle">Just a few steps and you're ready to code</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Install Python</h3>
+                <p>Download Python from python.org if you don't already have it installed on your computer</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Clone the repository</h3>
+                <div class="code-block">git clone https://github.com/joanalnu/pymas.git
+cd pymas</div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Choose your project</h3>
+                <div class="code-block">cd 1_christmas_greeting_generator</div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Start coding</h3>
+                <p>Open the guide, run the examples, and make them your own. Every project is self-contained and ready to explore.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Guides -->
+    <section id="project1" class="guide-section">
+        <div class="guide-container">
+            <a class="back-button" onclick="showSection('projects')">← Back to Projects</a>
+            
+            <div class="guide-header">
+                <h2 class="guide-title">Christmas Greeting Generator</h2>
+            </div>
+
+            <div class="guide-content">
+                <h3>What You Will Learn</h3>
+                <ul>
+                    <li>How to store messages in Python lists</li>
+                    <li>How to pick elements randomly</li>
+                    <li>How to print variables</li>
+                </ul>
+
+                <h3>Step 1: Create a File</h3>
+                <p>Call it <code>greeting_generator.py</code>.</p>
+
+                <h3>Step 2: Create a List with Holiday Greetings</h3>
+                <div class="code-block">greetings = [
+    "Merry Christmas!",
+    "Happy Holidays!",
+    "Warm winter wishes!",
+    "Have a magical Christmas season!",
+    "May your day be merry and bright!"
+]</div>
+                <p><strong>Remember!</strong> Python lists are groups of elements separated by commas and written between <code>[]</code>. They can contain repeated elements and mixed variable types.</p>
+
+                <h3>Step 3: Use random.choice() to Pick a Greeting</h3>
+                <div class="code-block">import random
+
+message = random.choice(greetings)
+print(message)</div>
+
+                <h3>Step 4: Run It!</h3>
+                <p>Each time you run the program, a new greeting appears!</p>
+
+                <div class="info-box challenges">
+                    <h3>🎯 Challenges</h3>
+                    <ul>
+                        <li>Add more greetings</li>
+                        <li>Ask the user for their name and include it in the message</li>
+                    </ul>
+                </div>
+
+                <div class="info-box advanced-tip">
+                    <h3>💡 Advanced Tip</h3>
+                    <p>Test whether your computer can generate true randomness by comparing coin flips or dice rolls with expected frequencies!</p>
+                    <div class="code-block">import random
+
+# Coin flip example
+frequency = 0
+flips = 100
+for i in range(flips):
+    coin = random.choice([0, 1])
+    frequency += coin
+
+print(f'Heads: {frequency}, Tails: {flips-frequency}')</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project2" class="guide-section">
+        <div class="guide-container">
+            <a class="back-button" onclick="showSection('projects')">← Back to Projects</a>
+            
+            <div class="guide-header">
+                <h2 class="guide-title">ASCII Christmas Tree</h2>
+            </div>
+
+            <div class="guide-content">
+                <h3>What You Will Learn</h3>
+                <ul>
+                    <li>How to use loops</li>
+                    <li>How to build shapes with text</li>
+                </ul>
+
+                <h3>Step 1: Create the File</h3>
+                <p>Call it <code>ascii_tree.py</code>.</p>
+
+                <h3>Step 2: Ask for Tree Height</h3>
+                <div class="code-block">height = int(input("How tall should your tree be? "))</div>
+                <p>This takes input from the user and converts it to an integer. The default type from <code>input()</code> is a string!</p>
+
+                <h3>Step 3: Build the Tree with a Loop</h3>
+                <div class="code-block">for i in range(1, height + 1):
+    spaces = " " * (height - i)
+    stars = "*" * (2 * i - 1)
+    print(spaces + stars)</div>
+                <p>Can you work out how many characters are printed in this loop?</p>
+
+                <h3>Step 4: Add a Trunk</h3>
+                <div class="code-block">print(" " * (height - 1) + "|")</div>
+
+                <h3>Step 5: Run It!</h3>
+                <p>Try different heights: 3, 5, 10...</p>
+
+                <div class="info-box challenges">
+                    <h3>🎯 Challenges</h3>
+                    <ul>
+                        <li>Use <code>#</code> instead of <code>*</code></li>
+                        <li>Add ornaments as random characters</li>
+                        <li>Add color using ANSI codes</li>
+                    </ul>
+                </div>
+
+                <div class="info-box advanced-tip">
+                    <h3>💡 Advanced Tip: Create a Snowflake!</h3>
+                    <div class="code-block">height = int(input("How big should your snowflake be? "))
+
+for i in range(-height, height + 1):
+    line = ""
+    for j in range(-height, height + 1):
+        if abs(i) == abs(j) or i == 0 or j == 0:
+            line += "*"
+        else:
+            line += " "
+    print(line)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project3" class="guide-section">
+        <div class="guide-container">
+            <a class="back-button" onclick="showSection('projects')">← Back to Projects</a>
+            
+            <div class="guide-header">
+                <h2 class="guide-title">Hot Chocolate Recipe</h2>
+            </div>
+
+            <div class="guide-content">
+                <h3>What You Will Learn</h3>
+                <ul>
+                    <li>Dictionaries in Python</li>
+                </ul>
+
+                <h3>What You Will NOT Learn</h3>
+                <p><strong>This is not a real recipe, don't try to prepare it!!</strong></p>
+
+                <h3>Step 1: Create the File</h3>
+                <p>Call it <code>hot_chocolate_recipe.py</code>.</p>
+
+                <h3>Step 2: Create the Recipe Information</h3>
+                <div class="code-block">ingredients = {
+    'chocolate powder': 30,
+    'sugar': 5,
+    'milk': 200,
+}</div>
+                <p>A dictionary enables you to create paired values: keys and values.</p>
+
+                <h3>Step 3: Ask for the Number of People</h3>
+                <div class="code-block">people = int(input("How many people are going to drink? "))</div>
+
+                <h3>Step 4: Calculate Amounts</h3>
+                <div class="code-block">print('You are going to need...')
+
+for ingredient in ingredients.keys():
+    amount = people * ingredients[ingredient]
+    print(f'{amount} weight units of {ingredient}')</div>
+                <p>Use dictionaries like <code>value = dict_name[key]</code> to access values.</p>
+
+                <h3>Step 5: Run It!</h3>
+                <p>Try different group sizes!</p>
+
+                <div class="info-box challenges">
+                    <h3>🎯 Challenges</h3>
+                    <ul>
+                        <li>How much hot chocolate is each person getting?</li>
+                        <li>Add different recipes with a recipe selector</li>
+                        <li>What if not everybody wants the same thing?</li>
+                    </ul>
+                </div>
+
+                <div class="info-box advanced-tip">
+                    <h3>💡 Advanced Tip</h3>
+                    <p>What if instead of ingredients and quantities, these were presents and names? Get creative!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project4" class="guide-section">
+        <div class="guide-container">
+            <a class="back-button" onclick="showSection('projects')">← Back to Projects</a>
+            
+            <div class="guide-header">
+                <h2 class="guide-title">New Year Countdown</h2>
+            </div>
+
+            <div class="guide-content">
+                <h3>What You Will Learn</h3>
+                <ul>
+                    <li>How to use the <code>datetime</code> module</li>
+                    <li>How to subtract dates</li>
+                    <li>How to format time differences</li>
+                </ul>
+
+                <h3>Step 1: Create the File</h3>
+                <p>Call it <code>new_year_countdown.py</code>.</p>
+
+                <h3>Step 2: Get Today's Date</h3>
+                <div class="code-block">from datetime import datetime
+
+today = datetime.now()</div>
+
+                <h3>Step 3: Create New Year Date</h3>
+                <div class="code-block">year = today.year
+new_year = datetime(year + 1, 1, 1)</div>
+
+                <h3>Step 4: Show the Difference</h3>
+                <div class="code-block">time_left = new_year - today
+
+days = time_left.days
+seconds = time_left.seconds
+hours = seconds // 3600
+minutes = (seconds % 3600) // 60
+
+print(f"🎄 {year+1} is in {days} days, {hours} hours, and {minutes} minutes!")</div>
+
+                <div class="info-box challenges">
+                    <h3>🎯 Challenges</h3>
+                    <ul>
+                        <li>Count down to Christmas too</li>
+                        <li>Write the remaining time in ASCII art</li>
+                        <li>Turn it into a live countdown that updates every second</li>
+                    </ul>
+                </div>
+
+                <div class="info-box advanced-tip">
+                    <h3>💡 Advanced Tip</h3>
+                    <p>Can you create code to input any date and output the remaining time in years, months, days, and seconds?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project5" class="guide-section">
+        <div class="guide-container">
+            <a class="back-button" onclick="showSection('projects')">← Back to Projects</a>
+            
+            <div class="guide-header">
+                <h2 class="guide-title">Snowball Gift</h2>
+            </div>
+
+            <div class="guide-content">
+                <h3>What You Will Learn</h3>
+                <ul>
+                    <li>Basic geometry</li>
+                    <li>Formulas with Python</li>
+                </ul>
+
+                <h3>Step 1: Create the File</h3>
+                <p>Call it <code>snowball_gift.py</code>.</p>
+
+                <h3>Step 2: Ask for the Snowball Radius</h3>
+                <div class="code-block">radius = int(input("What is the radius of your snowball? "))</div>
+
+                <h3>Step 3: Compute the Volume</h3>
+                <div class="code-block">import math
+
+snowball_volume = (4 * math.pi * (radius**3)) / 3
+
+print(f'The volume is {snowball_volume} cubic length units.')</div>
+                <p>The result is in cubic length units since you can enter the radius in any unit!</p>
+
+                <h3>Step 4: How Much Paper to Wrap It?</h3>
+                <p>The box is a cube with sides of length 2r to fit the snowball perfectly.</p>
+                <div class="code-block">a = 2 * radius  # length of 1 side
+
+side_area = a * a  # area of 1 side
+
+cube_area = 6 * side_area  # a cube has 6 sides
+
+print(f"You'll need {cube_area} squared length units!")</div>
+                <p><strong>Question:</strong> Why isn't <code>cube_area</code> equal to a³? What would that expression describe?</p>
+
+                <h3>Step 5: Run It!</h3>
+                <p>Try different radii!</p>
+
+                <div class="info-box challenges">
+                    <h3>🎯 Challenges</h3>
+                    <ul>
+                        <li>Let the cube box have a margin</li>
+                        <li>How much would the snowball weigh? (water density is 1)</li>
+                        <li>How many snowballs with radius r/2 fit in a box for radius r?</li>
+                    </ul>
+                </div>
+
+                <div class="info-box advanced-tip">
+                    <h3>💡 Advanced Tip</h3>
+                    <p>How much paper does it take to wrap the snowball itself without a box? What uses more paper: sphere or cube?</p>
+                    <p>Can you compute the volume-to-surface-area ratio of different shapes?</p>
+                </div>
+
+                <div class="completion-message">
+                    <strong>🎊 Congratulations!</strong>
+                    <p>This is the end of the PYMAS series! I hope you enjoyed learning Python and had a wonderful holiday season.</p>
+                    <p><em>Wishing you a prosperous New Year and lots more coding! 🎉</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section, .guide-section, .hero').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 750, behavior: 'smooth' });
+        }
+
+        function showGuide(guideId) {
+            showSection(guideId);
+        }
+
+        // Snowflakes animation
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = ['❄', '❅', '❆'][Math.floor(Math.random() * 3)];
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+            snowflake.style.fontSize = (Math.random() * 10 + 15) + 'px';
+            document.body.appendChild(snowflake);
+            
+            setTimeout(() => snowflake.remove(), 5000);
+        }
+
+        // Create snowflakes periodically
+        setInterval(createSnowflake, 300);
+
+        // Smooth scroll for CTA button
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showSection('projects');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
