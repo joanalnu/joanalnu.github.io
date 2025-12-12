@@ -1,5 +1,5 @@
 // Modern DOM Elements and State Management
-class Gen11App {
+class Gen10App {
     constructor() {
         this.elements = {
             loadingScreen: document.getElementById('loadingScreen'),
@@ -411,7 +411,7 @@ class Gen11App {
     
     // Translation System
     async loadInitialLanguage() {
-        const savedLanguage = localStorage.getItem('gen11-language') || 'en';
+        const savedLanguage = localStorage.getItem('gen10-language') || 'en';
         this.elements.languageSelect.value = savedLanguage;
         await this.changeLanguage(savedLanguage);
     }
@@ -419,7 +419,7 @@ class Gen11App {
     async changeLanguage(lang) {
         try {
             this.state.currentLanguage = lang;
-            localStorage.setItem('gen11-language', lang);
+            localStorage.setItem('gen10-language', lang);
             
             const response = await fetch(`./translations/${lang}.json`);
             if (!response.ok) throw new Error('Failed to load translations');
@@ -568,7 +568,7 @@ const utils = {
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
-    window.gen11App = new Gen11App();
+    window.gen10App = new Gen10App();
 });
 
 // Performance monitoring
@@ -576,7 +576,7 @@ if ('performance' in window) {
     window.addEventListener('load', () => {
         setTimeout(() => {
             const perfData = performance.getEntriesByType('navigation')[0];
-            console.log(`Gen11 loaded in ${Math.round(perfData.loadEventEnd - perfData.loadEventStart)}ms`);
+            console.log(`Gen10 loaded in ${Math.round(perfData.loadEventEnd - perfData.loadEventStart)}ms`);
         }, 0);
     });
 }
@@ -590,4 +590,4 @@ if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
     });
 }
 
-export { Gen11App, utils };
+export { Gen10App, utils };
