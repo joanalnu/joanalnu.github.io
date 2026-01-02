@@ -1,694 +1,165 @@
-%
-%Academic CV LaTeX Template
-% Author: Dubasi Pavan Kumar
-% LinkedIn: https://www.linkedin.com/in/im-pavankumar/
-% License: MIT
-%
-% For errors, suggestions, or improvements, please contact:
-% Email: pavankumard.pg19.ma@nitp.ac.in
-%
+\documentclass[11pt,a4paper]{article}
 
-
-
-\documentclass[a4paper,11pt]{article}
-
-% Package imports
-\usepackage{latexsym}
-\usepackage{xcolor}
-\usepackage{float}
-\usepackage{ragged2e}
-\usepackage[empty]{fullpage}
-\usepackage{wrapfig}
-\usepackage{lipsum}
-\usepackage{tabularx}
-\usepackage{titlesec}
-\usepackage{geometry}
-\usepackage{marvosym}
-\usepackage{verbatim}
+% ----------- Packages -----------
+\usepackage[margin=1in]{geometry}
 \usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{multicol}
-\usepackage{graphicx}
-\usepackage{cfr-lm}
-\usepackage[T1]{fontenc}
-\usepackage{fontawesome5}
-
-% Color definitions
-\definecolor{darkblue}{RGB}{0,0,139}
-
-% Page layout
-\setlength{\multicolsep}{0pt} 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
-\setlength{\footskip}{5pt} % Addressing fancyhdr warning
-
-% Hyperlink setup (moved after fancyhdr to address warning)
-\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=darkblue,
-    filecolor=darkblue,
-    urlcolor=darkblue,
-}
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\usepackage{titlesec}
+\usepackage{parskip} % cleaner paragraph spacing
 
-% Custom box settings
-\usepackage[most]{tcolorbox}
-\tcbset{
-    frame code={},
-    center title,
-    left=0pt,
-    right=0pt,
-    top=0pt,
-    bottom=0pt,
-    colback=gray!20,
-    colframe=white,
-    width=\dimexpr\textwidth\relax,
-    enlarge left by=-2mm,
-    boxsep=4pt,
-    arc=0pt,outer arc=0pt,
-}
+% ----------- Formatting -----------
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\bfseries}{}{0pt}{}
 
-% URL style
-\urlstyle{same}
+% Clean item spacing
+\setlist[itemize]{topsep=2pt,itemsep=2pt,parsep=0pt}
 
-% Text alignment
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Section formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
-
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item{
-    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
-  }
-}
-
-\newcommand{\resumePOR}[3]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
-    \end{tabular*}
-    \vspace{-2mm}
-}
-
-\newcommand{\resumeSubheading}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#4}} \\
-        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
-    \end{tabular*}
-    \vspace{-2.4mm}
-}
-
-\newcommand{\resumeProject}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#3}} \\
-        \footnotesize{\textit{#2}} & \footnotesize{#4}
-    \end{tabular*}
-    \vspace{-2.4mm}
-}
-
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-
-\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
-\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
-
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
-\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
-\newcommand{\cvsection}[1]{%
-\vspace{2mm}
-\begin{tcolorbox}
-    \textbf{\large #1}
-\end{tcolorbox}
-    \vspace{-4mm}
-}
-
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
-\newcolumntype{C}{>{\centering\arraybackslash}X}%
-
-% Commands for icon sizing and positioning
-\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
-\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
-
-% Font options
-\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
-\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
-\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
-\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
-\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
-\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
-\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
-\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
-\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
-\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
-
-\renewcommand{\baselinestretch}{1.05}
-\usepackage{helvet}
+% ----------- Document Begins -----------
 \begin{document}
-\headerfontiii
 
-% Header
-\begin{center}
-    {\Huge\textbf{Joan Alcaide-Núñez}}
-\end{center}
-\vspace{-4mm}
-
-\begin{center}
-    \small{
-    \faIcon{phone} +34 641 20 21 45 | \faIcon{envelope} \href{mailto:joanalnu@outlook.com}{joanalnu@outlook.com} | \faIcon{globe} \href{https://joanalnu.github.io}{joanalnu.github.io}
-    }
-\end{center}
-\vspace{-6mm}
-
-\begin{center}
-    \small{
-    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/joan-alcaide-núñez}{joan-alcaide-núñez} | 
-    \socialicon{\faGithub} \href{https://github.com/joanalnu}{joanalnu}% | 
-    % \faOrcid \href{https://orcid.org/0009-0009-2859-0974}{0009-0009-2859-0974}
-    
-    }
-\end{center}
-\vspace{-6mm}
-\begin{center}
-    \small{08960 Sant Just Desvern, Barcelona, Spain}\\
-    \small{Last review: July 2025}
-\end{center}
-
-\vspace{-4mm}
-
-\section{\textbf{Overview}}
-\vspace{1mm}
-\small{
-I am Joan Alcaide Núñez (he/him), a Physics BSc student at LMU Munich and a curious, passionate student researcher. My main interests lie in multi-messenger astronomy—combining data from telescopes, gravitational-wave detectors, and other channels—to deepen our understanding of cosmology, the study of the Universe’s origin, evolution, and fate. In particular, I am drawn to questions surrounding dark energy and the ultimate destiny of the cosmos.
-\vspace{2.5mm}
-Between 2023 and 2025, I pursued a series of summer research projects, beginning with recalculating the Hubble constant using Cepheids and later Type Ia supernovae. More recently, I have explored how gamma-ray bursts and gravitational waves can help constrain cosmological parameters and models. These projects not only introduced me to cosmology but also strengthened my skills in mathematics, programming, and data analysis.
-\vspace{2.5mm}
-For me, cosmology is not about immediate applications in our daily lives, but about the ultimate pursuit of truth. Who are we? Why are we here? Where are we at all? – Humankind has asked these questions since its beginnings, and I too continue to wonder about our place and purpose in the cosmos.
-\vspace{-2mm}
-
-
-
-\section{\textbf{Research Experience}}
-\vspace{-0.4mm}
-  \resumeSubHeadingListStart
-  \resumeSubheading
-      {{Research Stay [\href{https://github.com/joanalnu/OAB-INAF}{\faIcon{globe}}]}}{Place: Merate, Italy}
-      {\href{https://brera.inaf.it/en}{Osservatorio Astrofisico di Brera, Sede di Merate} (OAB-INAF)}{5 weeks in June-July 2025}
-      \resumeItemListStart
-        \item Focus: Multi-Messenger Cosmology: combining Gamma-Ray Burst (GRB) data from $E_\text{peak}-E_\text{iso}$ relation (Amati relation) and a simulated population of binary neutron star (BNS) mergers detectable by Einstein Telescope
-        \item Research stay at an research institute for 5 weeks during summer 2025.
-        \item Skills: Gamma-Ray Bursts, relativity with photons, and relativistic plasma physics, working in logarithmic scales (leveraged), statistical methods ($\chi^2$, reduced $\chi^2$, partial differentiation, and more)
-        \item Other: Engaging in journal clubs, night sky observations at the observatory, discussing research, collaboration with visiting and resident scientists (supervisors \& Ricardo Spinelli and Alberto Colombo)
-        \item Supervised by Dr. Giancarlo Ghirlanda and Dr. Om Sharan Salafia (\href{https://sites.google.com/inaf.it/hea-merate/gamma-ray-bursts}{High-Energy Astrophysics Group})
-      \resumeItemListEnd
-
-  \resumeSubheading
-      {{Researcher [\href{https://capibara3.github.io}{\faIcon{globe}}]}}{online}
-      {Collaboration for the Analysis of Photonic and Ionic Bursts and Radiation from Barcelona (CAPIBARA) \& PLD Space}{July 2024 - present}
-      \resumeItemListStart
-        \item CAPIBARA is a group of high-school and university students aiming to research the high-energy cosmos. It comprehends two missions (short therm pathfinder, long-term transient observatory) focusing on both engineering and scientific research.
-        \item Established strategical partnerships with \href{https://pldspace.com/en}{PLD Space} \& \href{https://oba.space}{OBA Space} among others.
-        \item Leading one of the research initiatives to use Gamma-Ray Burst data from the CAPIGX mission to constrain cosmological parameters and study the Universe at high redshift.
-        \item CAPIGX also should be a useful resource for electromagnetic counterpart follow-ups in the multi-messenger era (2030s)
-        \item Status: \href{https://capibara3.github.io/updates/y1_report_published.html}{Year 1 Collaboration Status Report} on July 2025
-      \resumeItemListEnd
-
-  \resumeSubheading
-      {{Student Internship [\href{https://github.com/joanalnu/thermal_analysis}{\faIcon{globe}}]}}{Oberpfaffenhofen airport complex, Weßling, Germany}
-      {\href{https://www.dlr.de/de/eoc/ueber-uns/institut-fuer-methodik-der-fernerkundung}{Institute for Remote Sensing} - \href{https://dlr.de}{German Aerospace Center} (IMF-DLR)}{2 weeks in September 2024}
-      \resumeItemListStart
-        \item First Week Activities: Worked with the Experimental Methods Department, learned about hyperspectral imaging, conducted outdoor field measurements, and participated in a drone-boat measuring experiments. Visited the \href{https://www.dlr.de/en/rb}{German Space Operation Center} (GSOC), where both satellite and human spaceflight are guided; the \href{https://www.dlr.de/en/eoc}{Earth Observation Center} (EOC).
-        \item Second Week Activities: Worked the Photogrammetry and Image Processing Department, analyzed data using QGIS software and GDAL Python library, and studied temperature variations using Landsat 8 satellite thermal imaging. And visited the \href{https://www.dlr.de/en/gk}{Galileo Competence Center} (GK).
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {{Research Stay [\href{https://drive.google.com/file/d/1j1Xh8nlbmBBZQ0Rd3fO6y1ergb93tsNu/view?usp=share_link}{\faIcon{globe}}]}}{Universitat Autònoma de Barcelona, Bellaterra, Spain}
-      {\href{https://ice.csic.es}{Institute of Space Sciences} (ICE-CSIC-IEEC)}{8 weeks in June - July 2024}
-      \resumeItemListStart
-        \item Focus: Utilizing Type Ia Supernovae in the infrared range as cosmological distance indicators. Analyzed data from ESO observatories (SOFI) and optical data from ATLAS and ZTF surveys to compute supernova distances, and fitted cosmological parameters such as the Hubble constant $H_0$ and dark energy density parameter $\Omega_\Lambda$.
-        \item Skills: Supernova Ia, Python, Object-Oriented Programming (OOP), Paper Reading, Networking Aperture photometry, Data Analysis.
-        \item Other: Engaging in journal clubs, seminars of visiting scientists, research discussions, and collaborating with scientists in astrophysics.
-        \item Supervised by Dr. Lluís Galbany, principal researcher of the \href{https://www.ice.csic.es/about-us/organisation?view=article&id=208&catid=2}{Supernova and Stellar Transients Group}.
-      \resumeItemListEnd
-
-\resumeSubheading
-      {{Scientific Paper Writing [\href{https://github.com/joanalnu/article_hubble_jic}{\faIcon{globe}}]}}{online}
-      {Youth and Science - Fundació Catalunya la Pedrera}{August 2023 - December 2023}
-      \resumeItemListStart
-        \item Writing of a scientific paper: Recomputing the Hubble constant. I became interested in cosmology and Hubble tension, addressing this problem by employed the same methods as 100 years ago with modern data from the NASA-IPAC NED Database and the Konkoly Observatory.
-        \item Supervised by Dr. Ignasi Pérez-Ràfols and Dra. Laia Casamiquela.
-      \resumeItemListEnd
-
-  \resumeSubheading
-      {{Research Stay [\href{https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science}{\faIcon{globe}}]}}{MonNatura Pirineus, Spain}
-      {Fundació Catalunya la Pedrera}{2 weeks in June 2023}
-      \resumeItemListStart
-        \item Research stay in astronomy and astrophysics at MonNatura Pirineus, where 4 researchers introduced us (10-body student group) on astronomical observations, astrophysical phenomena from star evolution to black holes and relativity. Accompanied by data collection and analysis, as well as practical demonstrations.
-        \item Night \& Day observations with three 10" Schmidt-Cassegrain telescopes and one 16" Schmidt-Cassegrain telescope.
-      \resumeItemListEnd
-
-
-  % experience template
-  % \resumeSubheading
-  %     {{Title [\href{https://www.companya.com}{\faIcon{globe}}]}}{City, Country}
-  %     {Institution}{Month Year - Month Year}
-  %     \resumeItemListStart
-  %       \item Developed [specific achievement] achieving [specific metric] in [specific area]
-  %       \item Implemented [technology/method], enhancing [specific aspect] by [specific percentage]
-  %       \item Conducted analysis on [specific data], identifying [key findings]
-  %       \item Presented findings at [specific event], receiving [specific recognition]
-  %     \resumeItemListEnd
-  \resumeItemListEnd
-  
-\vspace{-4mm}
-
-\section{\textbf{Volunteer Experience}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-\resumeProject
-  {Volunteer}
-  {En Bici Sense Edat (Cycling Without Age) NGO}
-  {April 2024 - Present}
-  {{}[\href{https://www.google.com/search?client=safari&rls=en&q=bici+sense+edat+sant+just&ie=UTF-8&oe=UTF-8}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item Offering tricycle rides for the elderly and people with functional diversity.
-  \item Accompanying and providing support tricycle rides to combat solitude.
-  \item Skills: active hearing and conversational skills, making users have fun and feel valued.
-\resumeItemListEnd
-
-\resumeProject
-    {Student Tutor}
-    {German School of Barcelona}
-    {November 2023 - Present}
-    {{}}
-\resumeItemListStart
-  \item Academic tutoring for students in grades 5 to 11 focusing on mathematics, physics, chemistry, and biology among others.
-  \item Skills: identifying the students needs and providing support and guidance throughout the learning process.
-\resumeItemListEnd
-
-\resumeProject
-  {Explainer Volunteer}
-  {CosmoCaixa Barcelona's Science Museum}
-  {September 2022 - Present}
-  {{}[\href{https://explainerscosmocaixa.com}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item Program to teach scientific knowledge and soft and communication skills to high school students.
-  \item Explaining science modules to the Museum's visitors, regardless of age; developing activities for the museum's community. I also attended other science fairs and events like \textit{La Festa de la Ciència} divulging science on behalf of the program.
-  \item Skills: talking in public and engaging people with scientific content. Deal with unexpected situations such as broken experiments, teamworking with fellow explainers.
-\resumeItemListEnd
-
-\resumeSubHeadingListEnd
-\vspace{-6mm}
-
-\section{\textbf{Leadership Experience}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-\resumeProject
-  {Group Leader}
-  {Collaboration for the Analysis of Photonic and Ionic Bursts and Radiation from Barcelona (CAPIBARA)}
-  {July 2024 - Present}
-  {{}[\href{https://capibara3.github.io}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item CAPIBARA is a group of 8 high-school students and faculty advisors working together in 1 goal: exploring the high-energy Cosmos, comprehending 2 scheduled missions and related research initiatives (both in engineering and science).
-  \item Leading project planning, monitoring progress, managing relationships with partners and collaboration members.
-  \item Creating a collaborative environment for advanced research, facilitating effective communication and providing mentorship to support team members in achieving research objectives.
-\resumeItemListEnd
-
-\resumeSubHeadingListEnd
-\vspace{-6mm}
-
-\section{\textbf{Education}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-\resumeSubheading{Ludwig-Maximilians Universität München}{München, Germany}{Physics Bachelor of Science}{2025-2028}
-% \resumeItemListStart
-%     \item 
-% \resumeItemListEnd
-
-\resumeSubheading{Perimeter Institute}{Online (Ontario, Canada)}{GoPhysics! Course for High-School Students}{July 2025}
-\resumeItemListStart
-    \item Course with asynchronous and synchronous materials on Gravity and Black Holes
-\resumeItemListEnd
-
-\resumeSubheading
-{German School of Barcelona}{Esplugues de Llobregat, Spain}
-{Secondary Education (5-12 grades)}{2007 - 2025}
-\resumeItemListStart
-    \item Abitur: 1.0/1.0, Bachillerato: 13.338/14.0 (equivalent to 4.0/4.0 GPA)
-    \item Thesis: "Kosmologische Entfernungsberechnungen mit Distance-Ladder-Methoden unter Berücksichtigung der aktuellen Krise in der Kosmologie"
-\resumeItemListEnd
-
-\resumeSubheading
-{Harbour Space}{online}
-{League of Codes}{October 2022 - May 2023}
-\resumeItemListStart
-  \item C++ coding course combining lectures by Informatics Olympiad winners and practical exercises.
-  \item Successful completion of practical exercises required to continue each week.
-\resumeItemListEnd
-
-\resumeSubheading
-{Universitat Politècnica de Catalunya}{Mathematics and Statistics Department, Barcelona, Spain}
-{University Courses for High-School Students}{July 2022}
-\resumeItemListStart
-  \item ALGOPROG Course (C++ coding).
-\resumeItemListEnd
-
-\resumeSubheading
-{Universitat Autònoma de Barcelona}{Science Department, Bellaterra, Spain}
-{University Courses for High-School Students}{June 2022}
-\resumeItemListStart
-  \item Mathematics, Statistics, and Data Science.
-  \item Adapt: Our evolutionary history read in the genome.
-\resumeItemListEnd
-
-\resumeSubheading
-{Escola Canigó}{Sant Just Desvern, Spain}
-{Primary Education (1-4 grades)}{2012 - 2017}
-
-\resumeSubHeadingListEnd
-\vspace{-6mm}
-
-\section{\textbf{Minor Coding Projects}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-
-\resumeProject
-  {ZTF-API: An API to facilitate access to the ZTF Photometry Service}
-  {Tools: Python: requests, subprocess, os, pandas, astropy, Licensing, NumPy, Zenodo}
-  {June 2024 - November 2024}
-  {{}[\href{https://github.com/joanalnu/ztf_api}{\textcolor{darkblue}{\faGithub}}]}
-\resumeItemListStart
-  \item Focus: Providing easier access to the Zwicky Transient Facility (ZTF) photometry database for retrieving large datasets.
-  \item API Advantages: Faster and avoids typing errors.
-  \item Skills: Python programming, automation, Python package, online requests, data fetching.
-\resumeItemListEnd
-
-\resumeProject
-  {GEN-API / Genetics10: Education tools to learn about genomics}
-  {Tools: Python, Python Notebooks, API building}
-  {March 2023 - Present}
-  {{}[\href{https://joanalnu.github.io/genetics10.html}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item Focus: Educational software for teaching biology and genetics to high-school students, enabling first-hand experience with data.
-  \item Genetics10: Python notebook (web-based) with pre-established functions for easy code exploration, allowing for both simple and scalable coding.
-  \item GEN-API: Open-source python module for genetic data analysis, enabling system-wide use of genetics10 functions, and integration with other tools.  
-  \item Skills: Python programming, package, continuous integration (CI) and automated testing, genetics.
-\resumeItemListEnd
-
-\resumeProject
-  {TdM: A game to practice mental calculations}
-  {Tools: JavaScript, HTML, CSS, Python, GitHub Pages}
-  {May 2023 Year - December 2024}
-  {{}[\href{https://joanalnu.github.io/tdm/index.html}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item Focus: helping everyone, young and adult, to improve their mental calculation skills.
-  \item In the latest version of the program (4th), I migrated from Python to JavaScript, allowing for integration into my website and therefore an enhanced user interface, accessibility, and experience.
-  \item Features: Different modes to tailor your practicing needs, and availability in 10 languages.
-  \item Origin: Started as a local program for my younger brother to practice math.
-  \item Skills: Python, JavaScript, HTML and CSS website design, GitHub Pages for deployment.
-\resumeItemListEnd
-
-\resumeProject
-  {Integral Calculus for Summation of Arithmetic Series}
-  {Tools: calculus: integration and derivation}
-  {December 2023 - February 2024}
-  {{}[\href{https://1drv.ms/w/c/3f20be7bd62b5968/IQRoWSvWe74gIIA_hw4AAAAAARmWxJtEzmu_-EA_D4_Qq-0}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item Developed a written paper explaining how to implement simple integral calculus to compute the summation of arithmetic series
-  \item Expanded my knowledge from calculus class (which I was taking at the moment)
-\resumeItemListEnd
-
-\resumeProject
-  {28M: A program for the Spanish local elections of 2022}
-  {Tools: Python, HTML, CSS, Cloud Storage, xlwings, matplotlib}
-  {April 2022 - May 2022}
-  {{}[\href{https://github.com/joanalnu/28M}{\textcolor{darkblue}{\faGithub}}]}
-\resumeItemListStart
-  \item Focus: Develop a system to count votes for the 10 electoral schools in Sant Just Desvern (Spain), which I implemented for the local elections on May 28, 2022.
-  \item Skills: Python programming, xlwings and MS Excel, cloud data storage, path management, chart generation, live results display in website.
-\resumeItemListEnd
-
-% Project template
-% \resumeProject
-%   {Project A: [Brief Description]}
-%   {Tools: [List of tools and technologies used]}
-%   {Month Year - Month Year}
-%   {{}[\href{https://github.com/your-username/project-a}{\textcolor{darkblue}{\faGithub}}]}
-% \resumeItemListStart
-%   \item Developed [specific feature/system] for [specific purpose]
-%   \item Implemented [specific technology] for [specific goal], achieving [specific result]
-%   \item Created [specific component], ensuring [specific benefit]
-%   \item Applied [specific method] to analyze [specific aspect]
-% \resumeItemListEnd
-
-
-% \section{\textbf{Publications}}
-% \small{
-% \begin{itemize}[leftmargin=*, labelsep=0.5em, align=left]
-
-% % \item \textbf{Alcaide-Núñez, J.} (2024). \textit{Ia SNe as Cosmological Distance Indicator}. %\textit{arXiv}, \href{https://doi.org/XX.XXXX/XXXXX.XXXX.XXXXXXX}{DOI: XX.XXXX/XXXXX.XXXX.XXXXXXX}.
-
-% % \item \textbf{Alcaide-Núñez, J.} (2024). \textit{REVIEW: Theoretical Foundations of a $\Lambda$CDM Universe}. %\textit{arXiv}, \href{https://doi.org/XX.XXXX/XXXXX.XXXX.XXXXXXX}{DOI: XX.XXXX/XXXXX.XXXX.XXXXXXX}.
-
-% \item \textbf{Alcaide-Núñez, J.} (December, 2024). \textbf{Tablas de Multiplicar}. \textit{Zenodo} %, \href{https://doi.org/XX.XXXX}{https://doi.org/XX.XXXX}.
-
-% \item \textbf{Alcaide-Núñez, J.} (December, 2024). \textbf{GEN-API}. \textit{Zenodo}, \href{https://zenodo.org/records/14312241}{https://zenodo.org/records/14312241}.
-
-% \item \textbf{Alcaide-Núñez. J. et al.} (November 2024). \textbf{CAPIBARA Preliminar Report for Spark Program}.
-
-% \item \textbf{Alcaide-Núñez, J.} (November, 2024). \textbf{ZTF-API}. \textit{Zenodo}, \href{https://zenodo.org/records/14059448}{https://zenodo.org/records/14059448}.
-
-% \item \textbf{Alcaide-Núñez, J.} (October, 2024). \textbf{Genetics10}. \textit{GitHub}, \href{https://github.com/joanalnu/Genetics10/blob/main/Notes_on_the_Release_of_the_Genetics10_educational_software_v2_0.pdf}{Release Notes}.
-
-% \item \textbf{Alcaide-Núñez, J.} (December, 2023). \textit{Recomputing the Hubble constant}. \href{https://github.com/joanalnu/article_hubble_jic}{paper}%\textit{arXiv}, \href{https://doi.org/XX.XXXX/XXXXX.XXXX.XXXXXXX}{DOI: XX.XXXX/XXXXX.XXXX.XXXXXXX}.
-
-% \end{itemize}
-
-% }
-
-
-\section{\textbf{Computer Skills}}
-% \vspace{-0.4mm}
- \resumeHeadingSkillStart
-  \resumeSubItem{Programming Languages:}
-    {Python, HTML, CSS, Javascript, C++}
-  \resumeSubItem{Frequent Python Libraries:}
-    {matplotlib, numpy, pandas, scipy, astropy, requests, subprocess, xlwings}
-  \resumeSubItem{Web Technologies:}
-    {Developed various websites using GitHub Pages: \href{https://joanalnu.github.io}{personal website}, \href{https://capibara3.github.io}{website for CAPIBARA project} (which I coded entirely).}
-  \resumeSubItem{DevOps \& Version Control:}
-    {Git, GitHub, YAML}
-  \resumeSubItem{Specialized Area:}
-    {Due to the nature of my projects specialized in big datasets, data retrieval, mathematical computation, curve fitting, physical modeling, and diagram creation.}
-  \resumeSubItem{Other Tools \& Technologies:}
-    {\LaTeX, Markdown, MS Word, MS PowerPoint, KeyNote}
- \resumeHeadingSkillEnd
-
-\section{\textbf{Talks}}
-\vspace{-0.4mm}
-\resumeProject
-  {De l'aula a l'espai: joves, ions i fotons per entendre l'univers d'altes energies}
-  {CosmoCaixa Science Museum, Barcelona}
-  {March 2025}
-  {{}[\href{}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item CosmoXarxa is an initiative create by and for Explainesr of the science museum. I presented the CAPIBARA project, its objectives and status, both technical, scientific and educative; inviting public to join the efforts.
-\resumeItemListEnd
-\resumeProject
-  {Clase Universo PU}
-  {Deutsche Schule Barcelona, Esplugues de Llobregat}
-  {June 2024}
-  {{}[\href{}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item For my Physics University Preparation class, I gave two talks (1.5h each) about the foundations of astrophysics, covering the topics of: big bang model and cosmology, CMB, stellar evolution, galaxies and our place in the universe, neutron stars & black holes. The opportunity was great to channel and reflect on what I'd been learning for the past years, as well as to share my curiosity and excitement with fellow classmates.
-\resumeItemListEnd
-\resumeProject
-  {L'Exploració Espacial}
-  {Escola Canigó, Sant Just Desvern}
-  {October 2023}
-  {{}[\href{}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item I conducted a 1.5h activity with 4th grade students at a local school in which I explained space exploration from the beginning (apollo and space shuttle) to today (day in the life onboard the ISS and solar system exploration). With model rockets and modules I brought I managed to engage the children and create an inspiring ambience.
-\resumeItemListEnd
-
-\section{\textbf{Language Skills}}
-\vspace{-0.4mm}
-\resumeItemListStart
-  \item \textbf{English:}  proficiency level (TOEFL: 103)
-  \item \textbf{Spanish:}  native
-  \item \textbf{German:} proficiency level (C1)
-  \item \textbf{Catalan:}  native
-\resumeItemListEnd
-\vspace{-4mm}
-
-\section{\textbf{Music}}
-\vspace{-0.4mm}
-\resumeItemListStart
-  \item Playing the piano since I was 5 years old, engaging in school concerts and community events such as a volunteer Christmas concert at Barcelona's Sant Joan de Dèu Children's Hospital.
-  \item Participated in 3 different bands across my education at the German School of Barcelona, playing chamber, concert, and modern music.
-  \item Participated in the "Jugend Musiziert" competition:
-  \resumeItemListStart
-    \item 2021: Achieved 1. Prize in Barcelona's Regional round and 3. Prize in National round.
-    \item 2020: Achieved 2. Prize in Barcelona's Regional round.
-  \resumeItemListEnd
-\resumeItemListEnd
-\resumeItemListEnd
-
-\section{\textbf{Other Honors and Awards}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-
-\resumeProject
-    {Abiturpreis und Buchpreis zum erfolgreichen Physikabitur}
-    {Deutsche Physikalische Gesellschaft - DPG}
-    {April 2025}
-    {{}[\href{https://www.dpg-physik.de/auszeichnungen/dpg-preise/abiturpreis}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-    \item Prize awarded.
-\resumeItemListEnd
-
-\resumeProject
-    {First prize and Special Award in Jugend Forscht Landeswettbewerb Nordrhein-Westfalen}
-    {Jugend Forscht Stiftung - STERN - DGPH}
-    {April 2025}
-    {{}[\href{https://www.jugend-forscht.de/presse/pressemitteilungen/archiv/mit-schutzweste-exoplanet-und-schachcomputer-zum-erfolg.html}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-    \item First Place and Special Award of "Scientific Photography" in the "Jugend Forscht" science fair competition at the state level of Nordrhein-Westfalen (NWR) in the category of \textit{Geo- und Raumwissenschaften} (Geo- and Space Sciences). With the project "Kosmologische Entfernungsberechnung mit Supernovae" I earned the forwarding to the final round (Bundeswettbewerb).
-\resumeItemListEnd
-
-\resumeProject
-  {First Prize in Jugend Forscht Iberia 2025}
-  {Jugend Forscht Stiftung - STERN}
-  {February 2025}
-  {{}[\href{https://jugend-forscht.de}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item First place in the "Jugend Forscht" science fair competition at a regional level (Spain+Portugal) in the area of astronomy. The project I presented was title "Kosmologische Entfernungsberechnung mit Supernovae".
-\resumeItemListEnd
-
-\resumeProject
-  {Silver Honour in Final Round of IAAC 2024}
-  {International Astronomy and Astrophysics Competition}
-  {July 2024}
-  {{}[\href{https://iaac.space/en/}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-\item Silver honour presented for participating in the final round of the International Astronomy and Astrophysics Competition of 2024. The final round was a supervised exam of twenty questions which required comprehensive astronomy and astrophysics knowledge. The participant scored 18 point and was placed among the top 7\% of all participants.
-\resumeItemListEnd
-
-\resumeProject
-  {Awarding of internships in the DLR at the NWR Youth Research State Competition}
-  {Jugend Forscht Stiftung}
-  {March 2024}
-  {{}[\href{https://jugend-forscht.de}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item Prize at Nordrhein-Westfalen "Jugend Forscht" Landeswettbewerb (Düsseldorf) for the presented project "(Neu-) Berechnung der Hubble Konstante (Recomputing the Hubble constant).
-\resumeItemListEnd
-
-\resumeProject
-  {First Prize in Jugend Forscht Iberia}
-  {Jugend Forscht Stiftung - STERN}
-  {February 2024}
-  {{}[\href{https://jugend-forscht.de}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item First place in the "Jugend Forscht" science fair competition at a regional level (Spain+Portugal) in the area of astronomy. The project I presented was titled "(Neu-) Berechnung der Hubble Konstante" (Recomputing the Hubble constant).
-\resumeItemListEnd
-
-\resumeProject
-  {Bronze Honour in Final Round of IAAC 2023}
-  {International Astronomy and Astrophysics Competition}
-  {June 2023}
-  {{}[\href{https://iaac.space}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item Bronze honour presented for participating in the final round of the International Astronomy and Astrophysics Competition of 2023. The final round was a supervised exam of twenty questions which required comprehensive astronomy and astrophysics knowledge. The participant scored 12 points and was place among the top 20\% of all participants.
-\resumeItemListEnd
-
-\resumeProject
-  {National Award of Spain in IAAC 2023}
-  {International Astronomy and Astrophysics Competition}
-  {June 2023}
-  {{}[\href{https://iaac.space}{\textcolor{darkblue}{\faIcon{globe}}}]}
-\resumeItemListStart
-  \item National Award Spain presented for achieving the nationwide highest score in the final round of the International Astronomy and Astrophysics Competition 2023. The final round was a supervised exam of twenty questions which required comprehensive astronomy and astrophysics knowledge.
-\resumeItemListEnd
-
-
-% % template for honor
-% \resumeProject
-%   {Award Name}
-%   {Awarding Institution/Organization}
-%   {Month Year}
-%   {{}[\href{https://award-link-a.com}{\textcolor{darkblue}{\faIcon{globe}}}]}
-% \resumeItemListStart
-%   \item Brief description of the award and its significance
-%   \item Impact or recognition associated with the award
-% \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-
-% \vspace{-6mm}
-
-% \section{\textbf{Certifications}}
-% \vspace{-0.2mm}
-% \resumeSubHeadingListStart
-% \resumePOR{}{\href{https://certification-link-a.com}{
-% \textbf{Certification A}
-% }}{Month Year}
-% \resumePOR{}{
-% \textbf{Certifying Body:} {{\href{https://certification-link-b.com}{Certification B}}}}{Month Year}
-% \resumePOR{}{
-% \textbf{Certifying Body:} {{\href{https://certification-link-c.com}{Certification C}}}}{Month Year}
-% \resumePOR{}{\href{https://certification-link-d.com}{
-% \textbf{Certification D}
-% }}{Month Year}
-
-% \resumeSubHeadingListEnd
-
-
-
-% \section{\textbf{References}}
-% \vspace{-0.2mm}
-% \small{
-% \begin{enumerate}[leftmargin=*,labelsep=2mm]
-% \item \textbf{Susana de Mesa Sterthoff}\\
-%    Talent Development Coordinator, Mathematics Department\\
-%    German School of Barcelona\\
-%    Email: susana.demesa@dsbarcelona.com\\
-%    \textit{Relationship: Advisor}
-
-% \item \textbf{Lluís Galbany}\\
-%    Investigating Professor, Lead of Extragalactic Astrophysics and Cosmology Department, Extragalactic Astrophysics and Cosmology\\
-%    Institute of Space Sciences (ICE-CSIC-IEEC)\\
-%    Email: lgalbany@ice.csic.es\\
-%    \textit{Relationship: Project Supervisor}
-
-% \item \textbf{Ania Alvarez Kornek}\\
-%    Jugend Forscht Advisor, Science Department\\
-%    German School of Barcelona\\
-%    Email: ania.alvarez@dsbarcelona.com\\
-%    \textit{Relationship: Advisor}
-
-% % \item \textbf{Reference Person 2}\\
-% %    Job Title, Department\\
-% %    Organization/Institution Name\\
-% %    Email: email2@example.com\\
-% %    Phone: +X-XXX-XXX-XXXX\\
-% %    \textit{Relationship: [e.g., Project Supervisor, Colleague, etc.]}
-% \end{enumerate}
-% }
-
+% ----------------- NAME + CONTACT -----------------
+{\LARGE \textbf{Joan Alcaide-Núñez}} \\
+\vspace{4pt}
+\href{mailto:joan.alcaide@campus.lmu.de}{joan.alcaide@campus.lmu.de} 
+\quad | \quad 641 20 21 45 (Spain), 1522 14492 40 (Germany) \\
+Website: \href{https://joanalnu.github.io}{joanalnu.github.io} \\
+LinkedIn: \href{https://www.linkedin.com/in/joan-alcaide-núñez}{linkedin.com/joan-alcaide-núñez} \\
+GitHub: \href{https://github.com/joanalnu}{github.com/joanalnu} \\
+Languages: English, German, Spanish, Catalan (basic Italian)
+
+\vspace{1em}
+
+% ----------------- PERSONAL STATEMENT -----------------
+\section*{Personal Statement}
+I am Joan Alcaide Núñez (he/him), a Physics BSc student at LMU Munich and a curious, passionate student researcher. My main interests lie in multi-messenger astronomy, that means combining data from telescopes, gravitational wave detectors, and other channels, to deepen our understanding of cosmology, the study of the Universe’s origin, evolution, and fate. In particular, I am drawn to questions surrounding dark energy and the ultimate destiny of the cosmos.
+
+Between 2023 and 2025, I pursued a series of summer research projects, beginning with recomputing the Hubble constant using Cepheids and later Type Ia supernovae. More recently, I have explored how together gamma-ray bursts and gravitational waves can help constrain cosmological parameters and models. These projects not only introduced me to cosmology but also strengthened my skills in mathematics, programming, and data analysis.
+
+For me, cosmology is not about immediate application in our daily lives, but about the ultimate pursuit of truth. Who are we? What is our place in the Universe? What is our destiny? Humankind has asked these questions since its beginnings, and I too continue to wonder about them.
+
+% ----------------- RESEARCH EXPERIENCE -----------------
+\section*{Research Experience}
+\textbf{GRB cosmography with empirical energy relations} \hfill June - July 2025 \\
+\textit{\href{https://brera.inaf.it/en}{Osservatorio Astronomico di Brera (OAB-INAF)}} \hfill \textit{5 weeks} \\
+\textit{Supervisor: Dr. Giancarlo Ghirlanda, Dr. Om Sharan Salafia} \\
+• Focus: Multi-Messenger Cosmology: combining Gamma-Ray Burst (GRB) data from $E_\text{\rm peak}-E_\text{\rm iso}$ relation (Amati relation) and a simulated population of binary neutron star (BNS) mergers detectable by Einstein Telescope \\
+• Research stay at an research institute for 5 weeks during summer 2025.\\
+• Skills: Gamma-Ray Bursts, relativity with photons, and relativistic plasma physics, working in logarithmic scales (leveraged), statistical methods ($\chi^2$, reduced $\chi^2$, partial differentiation, and more)\\
+• Other: Engaging in journal clubs, night sky observations at the observatory, discussing research, collaboration with visiting and resident scientists (supervisors \& Ricardo Spinelli and Alberto Colombo)\\
+• Supervised by Dr. Giancarlo Ghirlanda and Dr. Om Sharan Salafia (\href{https://sites.google.com/inaf.it/hea-merate/gamma-ray-bursts}{High-Energy Astrophysics Group})\\
+• \href{https://github.com/joanalnu/OAB-INAF}{Repository}
+
+\textbf{CAPIBARA Collaboration lead} \hfill 2024-present \\
+\textit{\href{https://capibara3.github.io/}{CAPIBARA Collaboration}}\\
+• CAPIBARA is a group of high-school and university students aiming to research the high-energy cosmos. It comprehends two missions (short-term pathfinder, long-term transient observatory) focusing on both engineering and scientific research.\\
+• Established strategical partnerships with \href{https://pldspace.com/en}{PLD Space} \& \href{https://oba.space}{OBA Space} among others.\\
+• Leading one of the research initiatives to use Gamma-Ray Burst data from the CAPIGX mission to constrain cosmological parameters and study the Universe at high redshift.\\
+• CAPIGX also should be a useful resource for electromagnetic counterpart follow-ups in the multi-messenger era (2030s)\\
+• Status: \href{https://capibara3.github.io/updates/y1_report_published.html}{Year 1 Collaboration Status Report} on July 2025
+
+\textbf{Student Internship at German Space Agency} \hfill September 2024 \\
+\textit{\href{https://www.dlr.de/de/eoc/ueber-uns/institut-fuer-methodik-der-fernerkundung}{Institute for Remote Sensing} - \href{https://dlr.de}{German Aerospace Center} (IMF-DLR)} \hfill 2 weeks
+
+• First Week Activities: Worked with the Experimental Methods Department, learned about hyperspectral imaging, conducted outdoor field measurements, and participated in a drone-boat measuring experiments. Visited the \href{https://www.dlr.de/en/rb}{German Space Operation Center} (GSOC), where both satellite and human spaceflight are guided; the \href{https://www.dlr.de/en/eoc}{Earth Observation Center} (EOC).\\
+• Second Week Activities: Worked the Photogrammetry and Image Processing Department, analyzed data using QGIS software and GDAL Python library, and studied temperature variations using Landsat 8 satellite thermal imaging. And visited the \href{https://www.dlr.de/en/gk}{Galileo Competence Center} (GK).
+
+\textbf{Research Stay} \hfill June-July 2024 \\
+\textit{\href{https://ice.csic.es}{Institute of Space Sciences (ICE-CSIC-IEEC)}} \hfill 2 months
+
+• Focus: Utilizing Type Ia Supernovae in the infrared range as cosmological distance indicators. Analyzed data from ESO observatories (SOFI) and optical data from ATLAS and ZTF surveys to compute supernova distances, and fitted cosmological parameters such as the Hubble constant $H_0$ and dark energy density parameter $\Omega_\Lambda$. \\
+• Skills: Supernova Ia, Python, Object-Oriented Programming (OOP), Paper Reading, Networking Aperture photometry, Data Analysis. \\
+• Other: Engaging in journal clubs, seminars of visiting scientists, research discussions, and collaborating with scientists in astrophysics. \\
+• Supervised by Dr. Lluís Galbany, principal researcher of the \href{https://www.ice.csic.es/about-us/organisation?view=article&id=208&catid=2}{Supernova and Stellar Transients Group}.
+
+\textbf{Scientific Paper Writing} \hfill August - December 2023 \\
+\textit{\href{https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science}{Youth and Science Programme}}
+
+• Writing of a scientific paper: Recomputing the Hubble constant. I became interested in cosmology and Hubble tension, addressing this problem by employed the same methods as 100 years ago with modern data from the NASA-IPAC NED Database and the Konkoly Observatory. \\
+• Supervised by Dr. Ignasi Pérez-Ràfols and Dr. Laia Casamiquela. \\
+• \href{https://github.com/joanalnu/article_hubble_jic}{Repository} \\
+• Previously: Research stay in astronomy and astrophysics at MonNatura Pirineus, 10-body student group and 4 researchers; introduction to astronomical observations (16" Schmidt-Cassegrain telescope) and following data collection and analysis, astrophysics from star evolution to gravitational waves; practical demonstrations.
+
+
+% ----------------- EDUCATION -----------------
+\section*{Education}
+\textbf{Ludwig-Maximilians-Universität (LMU) Munich} \hfill September 2025 -- Present \\
+B.Sc. in Physics \\
+
+\textbf{German School of Barcelona} \hfill September 2017 - May 2025 \\
+Dual High School Diploma (Germany + Spain), GPA: 1.0/1.0
+
+\subsection*{Extracurricular Courses}
+\textbf{GoPhysics! "Gravity and Black Holes"} synchronous course by Perimeter Institute \hfill 2025 \\
+\textbf{League of Codes:} C++ coding course by Harbour Space \hfill 2022/23 \\
+\textbf{ALGOPROG:} C++ coding course by Universitat Politècnica de Catalunya (UPC) \hfill 2022 \\
+\textbf{Mathematics, Statistics, and Data Science} summer course by Universitat Autònoma de Barcelona (UAB) \hfill 2022 \\
+\textbf{Adapt: our evolutionary history read in the genome} summer course by Universitat Autònoma de Barcelona (UAB) \hfill 2022
+
+% ----------------- WORK / PROJECT OUTPUTS -----------------
+\section*{Work (Projects \& Reports)}
+
+\textbf{Gen10: Education tool for genomics}
+\href{https://joanalnu.github.io/gen10}{Gen10 website} \hfill 2023-2025 \\
+Package + tutorials for students to tinker with simple commands and apply their genomics knowledge. \textit{Python, Package building, Tests, Python Notebooks}
+
+\textbf{28M: live local elections statistics}
+\href{https://github.com/joanalnu/28M}{joanalnu/28M} \hfill April/May 2022 \\
+A tool to track and visualise the results of the elections during the night, collaboration with local radio. \textit{Python, HTML, CSS, xlwings, numpy}
+
+% ----------------- AWARDS -----------------
+\section*{Awards}
+
+• \textbf{Silver Honour and National Award Spain International Astronomy \& Astrophysics Competition (IAAC) 2025}, presented for the student with most points in the country, reaching the 7\% of $\sim$12300 students participating worldwide. \\
+• \textbf{Physics Distinction for extraordinary grades by the German Physical Society (DPG)} \\
+• \textbf{First Prize and Special Award in Scientific Photography in Jugend Forscht Nordrhein-Westfalen 2025}, forwarding to Final round \\
+• \textbf{First Prize in Jugend Forscht Iberia 2025}, project title: "Cosmological distance measurements with Type Ia Supernovae" \\
+• \textbf{Silver Honour Final Round of the International Astronomy \& Astrophysics Competition (IAAC) 2024} \\
+• \textbf{Awarding of internship at German Space Agency (DLR) in Jugend Forscht Nordrhein-Westfalen 2024} \\
+• \textbf{First Prize in Jugend Forscht Iberia 2024}, Spain + Portugal level, project title: "Recomputing the Hubble constant" \\
+• \textbf{Bronze Honour in Final Round and National Award Spain in the International Astronomy \& Astrophysics Competition (IAAC) 2023}, presented for achieving the highest nation-wide score in the final round.
+
+% ----------------- TALKS -----------------
+\section*{Talks}
+\textbf{De l'aula a l'espai: joves, ions i fotons per entendre l'univers d'altes energies (Contributed)} \hfill March 2025 \\
+\textit{CosmoXarxa, CosmoCaixa Barcelona's Science Museum} \\
+CosmoXarxa is an initiative create by and for Explainers of the science museum (outreach volunteers). I presented the CAPIBARA project, its objectives and status, both technical, scientific and educative, inviting the public to join the efforts. \href{https://capibara3.github.io/publications/CosmoXarxa_presentation.pdf}{slides}
+
+\textbf{Introduction to Astrophysics (Invited)} \hfill May/June 2024 \\
+\textit{German School of Barcelona} \\
+Double session (3h) about an naive introduction to astronomy and astrophysics for 11th graders, covered some cosmology (Big Bang theory), star evolution, galaxy morphology and massive bodies (neutron stars and black holes as extreme cases of star evolution). \href{https://joanalnu.github.io/documents/presentations/ClaseUniversoPu.pdf}{slides}
+
+\textbf{L'Exploració Espacial (Invited)} \hfill October 2023 \\
+\textit{Escola Canigó} \\
+Presentation to pre-school students about human space travel and solar system exploration. Focused on hands-on learning with models and didactic, entertaining content. \href{https://joanalnu.github.io/documents/presentations/ExploracioEspacial.pdf}{slides}
+
+% ----------------- CODING / CS SKILLS -----------------
+\section*{Summary of Coding \& CS Skills}
+\textbf{Languages:} Python, C++, HTML/CSS/JS suite\\
+\textbf{Tools/Frameworks:} Git, GitHub, \LaTeX{}, Markdown \\
+\textbf{Libraries:} matplotlib, numpy, pandas, scipy, astropy \\
+\textbf{Core Skills:} data analysis, parameter estimation and model fitting, bayesian inference, mathematical \& cosmological functions \\
+\textbf{Coming:} emcee, gwtc \& gwcosmos, pytorch
+
+% ----------------- VOLUNTEERING & SOCIALS -----------------
+\section*{Volunteering \& Socials}
+\textbf{Cycling Without Age} \hfill 2024-2025 \\
+Accompanying cycling "walks" around the village and enjoying sharing time with elderly.
+
+\textbf{Explainers at CosmoCaixa Museum} \hfill 2022-2023 \\
+Volunteered as Explainer at Barcelona's Science Museum explaining demonstrations to visitors on weekends. Participated in events such as Explainers during Winter, Explainers at Barcelona's City Science Fair and CosmoXarxa.
+
+\textbf{Music Band} \hfill 2021-2024 \\
+Playing piano in different groups, school events, competitions, and for charity at local children's hospital. Continue playing as hobby.
+
+% ----------------- END -----------------
 \end{document}
