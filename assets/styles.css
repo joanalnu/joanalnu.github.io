@@ -41,6 +41,7 @@
     --radius-sm: 0.5rem;
     --radius-md: 0.75rem;
     --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
     
     /* Transitions */
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -397,7 +398,6 @@ iframe {
 
 .hero-badge i {
     color: var(--accent-primary);
-}
     background-clip: text;
 }
 
@@ -1034,7 +1034,7 @@ iframe {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--gradient-cosmic);
+    background: var(--gradient-primary);
     border-radius: var(--radius-xl);
     padding: var(--space-2xl);
     text-align: center;
