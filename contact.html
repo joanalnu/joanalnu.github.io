@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Joan Alcaide-Núñez - Contact & Inquiry Form">
+    <meta name="keywords" content="contact, inquiry, research, collaboration, physics">
+    <title>Joan Alcaide-Núñez | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1rem;
+            border: 1px solid var(--text-tertiary);
+            border-radius: 4px;
+            background-color: #fafafa;
+            color: var(--text-primary);
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-submit {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .form-submit:hover {
+            background-color: #1e4073;
+            transform: translateY(-1px);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--text-tertiary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <section id="contact-form-section">
+                <h1 style="font-size: 2.5rem; font-weight: 500; margin-bottom: 0.5rem;">Contact</h1>
+                <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem;">For research correspondence, project inquireies or general outreach:</p>
+
+                <form class="contact-form" action="https://formspree.io/f/mnnzddzy" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send Message</button>
+
+                    <p class="form-note">
+                        I aim to respond to all inquiries within 5-7 business days. For time-sensitive matters, please note the urgency in your message. This site contains no analytics or tracking.
+                    </p>
+                </form>
+            </section>
+
+            <section id="correspondence-guidelines" style="margin-top: 3rem;">
+                <span class="section-label">CORRESPONDENCE GUIDELINES</span>
+                <h3>Correspondence Guidelines</h3>
+
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <span class="contact-label">Response Protocols</span>
+                        <span class="contact-value">All correspondence is optimally reviewed within 5-7 business days. Complex inquiries requireing extensive review or preparation may take longer. Expect delayed response during special holidays or exam periods. Automated responses are not used, every reply is personally written.</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Appropriate Inquiries</span>
+                        <span class="contact-value">Research questions, collaborations, data requests, replication inquiries and substantive critique are welcomed. Clear, direct correspondence is appreciated. If you have a question, ask it; if you have a critique, state it. Intellectual disagreement is valued; personal discourtesy is not.</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Working Conditions</span>
+                        <span class="contact-value">I politely decline to respond to requests with arbitrary deadlines imposed by external parties. Research takes the time it takes. Urgent timelines and strict metrics are generally incompatible with thoughtful work.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="alternative-contact" style="margin-top: 3rem;">
+                <span class="section-label">ALTERNATIVE CONTACT</span>
+                <h2>Other Ways to Reach Me</h2>
+
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <span class="contact-label">GITHUB</span>
+                        <span class="contact-value"><a href="https://github.com/joanalnu" target="_blank">github.com/joanalnu</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">LINKEDIN</span>
+                        <span class="contact-value"><a href="https://www.linkedin.com/in/joan-alcaide-núñez" target="_blank">Joan Alcaide Núñez</a></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="/index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; color: var(--accent-color); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--accent-color); border-radius: 4px; display: inline-block; transition: background-color 0.3s, color 0.3s;">← Back to Portfolio</a>
+            </div>
+            <div class="footer-note">
+                This site contains no analytics or third-party tracking. Designed for legibility and accessibility across devices. Last updated January 2026.
+            </div>
+        </footer>
+    </div>
+
+    <script src="/assets/scripts.js" defer></script>
+</body>
+</html>
