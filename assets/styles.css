@@ -56,6 +56,14 @@ body {
     padding: 0 40px;
 }
 
+/* @media (min-width: 1024px) {
+    .container {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+} */
+
 /* Header */
 header {
     padding: 120px 0 80px;
@@ -84,6 +92,7 @@ header {
     font-family: 'IBM Plex Mono', monospace;
 }
 
+.researcher-name,
 .principal-investigator {
     font-size: 38px;
     font-weight: 400;

@@ -86,6 +86,20 @@
             padding-top: 2rem;
             border-top: 1px solid var(--text-tertiary);
         }
+
+        .form-status {
+            margin-top: 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .form-status.is-success {
+            color: #1f7a3a;
+        }
+
+        .form-status.is-error {
+            color: #b00020;
+        }
     </style>
 </head>
 <body>
@@ -93,9 +107,9 @@
         <main>
             <section id="contact-form-section">
                 <h1 style="font-size: 2.5rem; font-weight: 500; margin-bottom: 0.5rem;">Contact</h1>
-                <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem;">For research correspondence, project inquireies or general outreach:</p>
+                <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem;">For research correspondence, project inquiries or general outreach:</p>
 
-                <form class="contact-form" action="https://formspree.io/f/mnnzddzy" method="POST">
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mnnzddzy" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -118,6 +132,8 @@
 
                     <button type="submit" class="form-submit">Send Message</button>
 
+                    <div class="form-status" id="form-status" aria-live="polite"></div>
+
                     <p class="form-note">
                         I aim to respond to all inquiries within 5-7 business days. For time-sensitive matters, please note the urgency in your message. This site contains no analytics or tracking.
                     </p>
@@ -131,7 +147,7 @@
                 <div class="contact-methods">
                     <div class="contact-item">
                         <span class="contact-label">Response Protocols</span>
-                        <span class="contact-value">All correspondence is optimally reviewed within 5-7 business days. Complex inquiries requireing extensive review or preparation may take longer. Expect delayed response during special holidays or exam periods. Automated responses are not used, every reply is personally written.</span>
+                        <span class="contact-value">All correspondence is optimally reviewed within 5-7 business days. Complex inquiries requiring extensive review or preparation may take longer. Expect delayed response during special holidays or exam periods. Automated responses are not used, every reply is personally written.</span>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">Appropriate Inquiries</span>
@@ -172,5 +188,46 @@
     </div>
 
     <script src="/assets/scripts.js" defer></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        if (form && status) {
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                status.textContent = 'Sending...';
+                status.classList.remove('is-success', 'is-error');
+
+                const formData = new FormData(form);
+                const payload = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        status.textContent = 'Thank you — your message has been sent.';
+                        status.classList.add('is-success');
+                        form.reset();
+                    } else {
+                        const data = await response.json().catch(() => null);
+                        const errorMessage = data?.errors?.[0]?.message || 'Sorry, something went wrong. Please try again later.';
+                        status.textContent = errorMessage;
+                        status.classList.add('is-error');
+                    }
+                } catch (error) {
+                    status.textContent = 'Network error. Please check your connection and try again.';
+                    status.classList.add('is-error');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
