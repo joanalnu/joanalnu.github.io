@@ -36,9 +36,9 @@
             padding: 0.75rem;
             font-family: 'Crimson Pro', Georgia, serif;
             font-size: 1rem;
-            border: 1px solid var(--text-tertiary);
+            border: 1px solid var(--border);
             border-radius: 4px;
-            background-color: #fafafa;
+            background-color: var(--bg-secondary);
             color: var(--text-primary);
             transition: border-color 0.3s, background-color 0.3s;
         }
@@ -46,8 +46,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-color);
-            background-color: #fff;
+            border-color: var(--accent);
+            background-color: var(--bg-primary);
         }
 
         .form-group textarea {
@@ -62,16 +62,16 @@
             font-size: 0.85rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            background-color: var(--accent-color);
-            color: white;
+            background-color: var(--accent);
+            color: var(--bg-primary);
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
         }
 
         .form-submit:hover {
-            background-color: #1e4073;
+            opacity: 0.85;
             transform: translateY(-1px);
         }
 
@@ -100,6 +100,47 @@
         .form-status.is-error {
             color: #b00020;
         }
+
+        .guidelines-toggle {
+            background: none;
+            border: none;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            cursor: pointer;
+            padding: 0;
+            margin-top: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s;
+        }
+
+        .guidelines-toggle:hover {
+            opacity: 0.7;
+        }
+
+        .guidelines-toggle::before {
+            content: '▼';
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .guidelines-toggle.is-collapsed::before {
+            transform: rotate(-90deg);
+        }
+
+        .guidelines-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .guidelines-content.is-collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -107,7 +148,7 @@
         <main>
             <section id="contact-form-section">
                 <h1 style="font-size: 2.5rem; font-weight: 500; margin-bottom: 0.5rem;">Contact</h1>
-                <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem;">For research correspondence, project inquiries or general outreach:</p>
+                <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem;">For research collaboration, project inquiries or general correspondence:</p>
 
                 <form class="contact-form" id="contact-form" action="https://formspree.io/f/mnnzddzy" method="POST">
                     <div class="form-group">
@@ -133,29 +174,30 @@
                     <button type="submit" class="form-submit">Send Message</button>
 
                     <div class="form-status" id="form-status" aria-live="polite"></div>
-
-                    <p class="form-note">
-                        I aim to respond to all inquiries within 5-7 business days. For time-sensitive matters, please note the urgency in your message. This site contains no analytics or tracking.
-                    </p>
                 </form>
             </section>
 
             <section id="correspondence-guidelines" style="margin-top: 3rem;">
                 <span class="section-label">CORRESPONDENCE GUIDELINES</span>
                 <h3>Correspondence Guidelines</h3>
+                <button class="guidelines-toggle" id="guidelines-toggle" aria-expanded="true" aria-controls="guidelines-content">
+                    Show Details
+                </button>
 
-                <div class="contact-methods">
-                    <div class="contact-item">
-                        <span class="contact-label">Response Protocols</span>
-                        <span class="contact-value">All correspondence is optimally reviewed within 5-7 business days. Complex inquiries requiring extensive review or preparation may take longer. Expect delayed response during special holidays or exam periods. Automated responses are not used, every reply is personally written.</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Appropriate Inquiries</span>
-                        <span class="contact-value">Research questions, collaborations, data requests, replication inquiries and substantive critique are welcomed. Clear, direct correspondence is appreciated. If you have a question, ask it; if you have a critique, state it. Intellectual disagreement is valued; personal discourtesy is not.</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Working Conditions</span>
-                        <span class="contact-value">I politely decline to respond to requests with arbitrary deadlines imposed by external parties. Research takes the time it takes. Urgent timelines and strict metrics are generally incompatible with thoughtful work.</span>
+                <div class="guidelines-content" id="guidelines-content">
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                        I aim to respond to all inquiries within 5-7 business days. For time-sensitive matters, please note the urgency in your message.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <span class="contact-label">Response Protocols</span>
+                            <span class="contact-value">All correspondence is optimally reviewed within 5-7 business days. Complex inquiries requiring extensive review or preparation may take longer. Expect delayed response during special holidays or exam periods. Automated responses are not used, every reply is personally written.</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Appropriate Inquiries</span>
+                            <span class="contact-value">Research questions, collaborations, data requests, replication inquiries and substantive critique are welcomed. Clear, direct correspondence is appreciated. If you have a question, ask it; if you have a critique, state it. Intellectual disagreement is valued; personal discourtesy is not.</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -179,16 +221,30 @@
 
         <footer>
             <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="/index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; color: var(--accent-color); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--accent-color); border-radius: 4px; display: inline-block; transition: background-color 0.3s, color 0.3s;">← Back to Portfolio</a>
+                <a href="/index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; color: var(--accent); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--accent); border-radius: 4px; display: inline-block; transition: background-color 0.3s, color 0.3s;">← Back to Portfolio</a>
             </div>
             <div class="footer-note">
-                This site contains no analytics or third-party tracking. Designed for legibility and accessibility across devices. Last updated January 2026.
+                This site contains no analytics or third-party tracking. Last updated January 2026. View source code on <a href="https://github.com/joanalnu/joanalnu.github.io" target="_blank">GitHub</a>.
             </div>
         </footer>
     </div>
 
     <script src="/assets/scripts.js" defer></script>
     <script>
+        // Collapsible guidelines
+        const guidelinesToggle = document.getElementById('guidelines-toggle');
+        const guidelinesContent = document.getElementById('guidelines-content');
+
+        if (guidelinesToggle && guidelinesContent) {
+            guidelinesToggle.addEventListener('click', () => {
+                const isCollapsed = guidelinesContent.classList.toggle('is-collapsed');
+                guidelinesToggle.classList.toggle('is-collapsed', isCollapsed);
+                guidelinesToggle.setAttribute('aria-expanded', !isCollapsed);
+                guidelinesToggle.textContent = isCollapsed ? 'Show Details' : 'Hide Details';
+            });
+        }
+
+        // Form handling
         const form = document.getElementById('contact-form');
         const status = document.getElementById('form-status');
 
@@ -213,7 +269,7 @@
                     });
 
                     if (response.ok) {
-                        status.textContent = 'Thank you — your message has been sent.';
+                        status.textContent = 'Thank you, your message has been sent.';
                         status.classList.add('is-success');
                         form.reset();
                     } else {
