@@ -1,5 +1,2 @@
 .DS_Store
 deprecated/
-cv/*aux
-cv/*log
-cv/*out
