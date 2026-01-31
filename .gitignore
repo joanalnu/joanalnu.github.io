@@ -1,11 +1,5 @@
-# essentials
 .DS_Store
-images/.DS_Store
-.idea/
-
 deprecated/
-dev/
-
 cv/*aux
 cv/*log
 cv/*out

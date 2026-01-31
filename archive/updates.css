@@ -1,0 +1,297 @@
+/* Archive Updates Styles */
+
+:root {
+    --primary-text: #1a1a1a;
+    --secondary-text: #666;
+    --accent-color: #2c5aa0;
+    --border-color: #e0e0e0;
+    --bg-light: #fafafa;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    line-height: 1.7;
+    color: var(--primary-text);
+    background: #fff;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--secondary-text);
+    margin-bottom: 1rem;
+}
+
+.principal-investigator {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+}
+
+.affiliation {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.affiliation a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.affiliation a:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--secondary-text);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    color: var(--primary-text);
+}
+
+/* Update Item Styles */
+.update-item {
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.update-item:last-child {
+    border-bottom: none;
+}
+
+.upd-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.upd-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-text);
+    flex: 1;
+}
+
+.upd-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    white-space: nowrap;
+}
+
+.upd-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+.upd-desc a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.upd-desc a:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+/* Image Styles */
+.update-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-light), 0 2px 4px var(--shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    background-color: var(--bg-light);
+}
+
+.update-item img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow-medium), 0 4px 8px var(--shadow-light);
+}
+
+/* Archive Note Section */
+.archive-text {
+    max-width: 700px;
+}
+
+.archive-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--secondary-text);
+    margin-bottom: 1rem;
+}
+
+/* Back Link */
+#back-to-main {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.back-link a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
+
+.footer-note a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.footer-note a:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .principal-investigator {
+        font-size: 2rem;
+    }
+
+    .affiliation {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .upd-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .upd-title {
+        font-size: 1.15rem;
+    }
+
+    .upd-date {
+        font-size: 0.8rem;
+    }
+
+    .upd-desc {
+        font-size: 1rem;
+    }
+
+    .update-item img {
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .principal-investigator {
+        font-size: 1.75rem;
+    }
+
+    .upd-title {
+        font-size: 1.05rem;
+    }
+
+    .update-item {
+        margin-bottom: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        padding: 0;
+    }
+
+    .update-item img {
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    .back-link {
+        display: none;
+    }
+}
