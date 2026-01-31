@@ -218,7 +218,8 @@ p {
     border-bottom: none;
 }
 
-.research-item:hover {
+.research-item:hover,
+.research-item.expanded {
     padding-left: 16px;
     background: var(--accent-faded);
     margin-left: -16px;
@@ -266,7 +267,8 @@ p {
     transition: all var(--transition-slow) ease;
 }
 
-.research-item:hover .research-abstract {
+.research-item:hover .research-abstract,
+.research-item.expanded .research-abstract {
     max-height: 400px;
     opacity: 1;
     margin-top: 16px;
@@ -285,7 +287,8 @@ p {
     transition: all var(--transition-medium) ease;
 }
 
-.research-item:hover .research-link {
+.research-item:hover .research-link,
+.research-item.expanded .research-link {
     opacity: 1;
     transform: translateY(0);
 }
@@ -312,7 +315,8 @@ p {
     border-bottom: none;
 }
 
-.publication-item:hover {
+.publication-item:hover,
+.publication-item.expanded {
     padding-left: 16px;
     background: var(--accent-faded);
     margin-left: -16px;
@@ -382,7 +386,8 @@ p {
     border-bottom: none;
 }
 
-.education-item:hover {
+.education-item:hover,
+.education-item.expanded {
     padding-left: 16px;
     background: var(--accent-faded);
     margin-left: -16px;
@@ -438,7 +443,8 @@ p {
     border-bottom: none;
 }
 
-.recognition-item:hover {
+.recognition-item:hover,
+.recognition-item.expanded {
     padding-left: 12px;
     background: var(--accent-faded);
     margin-left: -12px;
@@ -488,7 +494,8 @@ p {
     border-bottom: none;
 }
 
-.activity-item:hover {
+.activity-item:hover,
+.activity-item.expanded {
     padding-left: 12px;
     background: var(--accent-faded);
     margin-left: -12px;
@@ -538,7 +545,8 @@ p {
     border-bottom: none;
 }
 
-.update-item:hover {
+.update-item:hover,
+.update-item.expanded {
     padding-left: 12px;
     background: var(--accent-faded);
     margin-left: -12px;
