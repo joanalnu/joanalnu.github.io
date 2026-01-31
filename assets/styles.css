@@ -39,7 +39,7 @@ body {
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.7;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 300;
     overflow-x: hidden;
     opacity: 0;
@@ -100,7 +100,7 @@ header {
 }
 
 .site-title {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.05em;
     color: var(--text-secondary);
@@ -110,7 +110,7 @@ header {
 
 .researcher-name,
 .principal-investigator {
-    font-size: 38px;
+    font-size: 40px;
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 24px;
@@ -118,7 +118,7 @@ header {
 }
 
 .affiliation {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.6;
     max-width: 600px;
@@ -140,7 +140,7 @@ nav ul {
 
 nav a {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-secondary);
     text-decoration: none;
     letter-spacing: 0.03em;
@@ -195,7 +195,7 @@ section:nth-of-type(6) { animation-delay: 3400ms; }
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 29px;
     font-weight: 400;
     margin-bottom: 24px;
     letter-spacing: -0.01em;
@@ -236,7 +236,7 @@ p {
 }
 
 .research-title {
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 400;
     color: var(--text-primary);
     flex: 1;
@@ -245,20 +245,20 @@ p {
 
 .research-year {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-tertiary);
     white-space: nowrap;
 }
 
 .research-venue {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-tertiary);
     font-style: italic;
     margin-bottom: 12px;
 }
 
 .research-abstract {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
     color: var(--text-secondary);
     max-height: 0;
@@ -333,7 +333,7 @@ p {
 }
 
 .pub-title {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 400;
     color: var(--text-primary);
     flex: 1;
@@ -348,7 +348,7 @@ p {
 }
 
 .pub-venue {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-tertiary);
     font-style: italic;
     margin-bottom: 12px;
@@ -404,7 +404,7 @@ p {
 }
 
 .edu-title {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 400;
     color: var(--text-primary);
     flex: 1;
@@ -419,14 +419,14 @@ p {
 }
 
 .edu-institution {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-tertiary);
     font-style: italic;
     margin-bottom: 8px;
 }
 
 .edu-description {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.7;
 }
@@ -461,7 +461,7 @@ p {
 }
 
 .rec-title {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--text-primary);
     flex: 1;
@@ -476,7 +476,7 @@ p {
 }
 
 .rec-desc {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 0;
@@ -512,7 +512,7 @@ p {
 }
 
 .act-title {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--text-primary);
     flex: 1;
@@ -527,7 +527,7 @@ p {
 }
 
 .act-desc {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 0;
@@ -563,7 +563,7 @@ p {
 }
 
 .upd-title {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--text-primary);
     flex: 1;
@@ -578,7 +578,7 @@ p {
 }
 
 .upd-desc {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 0;
@@ -587,7 +587,7 @@ p {
 /* Archive Text Section */
 .archive-text {
     max-width: 680px;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.8;
 }
 
@@ -619,7 +619,7 @@ p {
 /* Statement Section */
 .statement-text {
     max-width: 680px;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.8;
 }
 
@@ -639,7 +639,7 @@ p {
 }
 
 .ethics-block p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -659,14 +659,14 @@ p {
 
 .contact-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.05em;
     color: var(--text-tertiary);
     min-width: 100px;
 }
 
 .contact-value {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
 }
 
@@ -691,7 +691,7 @@ footer {
 
 .footer-note {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-tertiary);
     letter-spacing: 0.03em;
     line-height: 1.6;
