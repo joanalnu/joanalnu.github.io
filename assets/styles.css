@@ -1,5 +1,6 @@
 /* Research Portfolio Styles */
 
+
 :root {
     --bg-primary: #fafaf8;
     --bg-secondary: #f2f2ed;
@@ -838,3 +839,4 @@ footer {
         padding: 32px 24px;
     }
 }
+
