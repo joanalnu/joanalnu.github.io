@@ -203,3 +203,4 @@ function getWaveLineColor() {
         .trim();
     return value || 'rgba(139, 69, 19, 0.18)';
 }
+
