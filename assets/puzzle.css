@@ -1,0 +1,87 @@
+/* --- Problem-Specific Styles --- */
+.problem-container {
+    background: var(--bg-secondary);
+    border-left: 2px solid var(--accent);
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 0 var(--hover-radius) var(--hover-radius) 0;
+}
+
+.clues-list {
+    margin: 24px 0 32px 24px;
+    color: var(--text-secondary);
+}
+
+.clues-list li {
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.clues-list li::marker {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.interactive-solver {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px dashed var(--border);
+}
+
+.solver-form {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.solver-select {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.solver-select:focus {
+    border-color: var(--accent);
+}
+
+.solver-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--accent);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-fast);
+}
+
+.solver-btn:hover {
+    background: var(--accent-faded);
+}
+
+#feedback-message {
+    margin-top: 24px;
+    font-size: 18px;
+    font-style: italic;
+    transition: opacity var(--transition-fast) ease;
+}
+
+#solution-explanation {
+    display: none; /* Hidden by default */
+    margin-top: 32px;
+    padding: 32px;
+    background: var(--accent-faded);
+    border-radius: var(--hover-radius);
+    animation: fadeInUp 800ms ease-out forwards;
+}
