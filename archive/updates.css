@@ -20,7 +20,7 @@ body {
     font-family: 'Crimson Pro', Georgia, serif;
     line-height: 1.7;
     color: var(--primary-text);
-    background: #fff;
+    /* background: #fff; */
     padding: 2rem 1rem;
 }
 
