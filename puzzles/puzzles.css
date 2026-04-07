@@ -1,0 +1,92 @@
+/* =========================================
+   Logic Puzzles Sub-Site Styles
+   ========================================= */
+
+:root {
+    --bg-primary: #fafaf8;
+    --bg-secondary: #f2f2ed;
+    --text-primary: #2a2a2a;
+    --text-secondary: #4c4c4c;
+    --text-tertiary: #969696;
+    --accent: #8b4513;
+    --accent-faded: rgba(139, 69, 19, 0.08);
+    --border: #e0e0d8;
+    --hover-radius: 12px;
+    --transition-fast: 400ms;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1a1a18;
+        --bg-secondary: #242420;
+        --text-primary: #f5f5f2;
+        --text-secondary: #d4d4ce;
+        --text-tertiary: #808078;
+        --accent: #d4a574;
+        --accent-faded: rgba(212, 165, 116, 0.12);
+        --border: #3a3a36;
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Crimson Pro', serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 40px; }
+
+/* Navigation & Headers */
+header { padding: 80px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 60px; }
+.back-link { font-family: 'IBM Plex Mono', monospace; font-size: 13px; margin-bottom: 20px; color: var(--accent); }
+.a { color: var(--accent); }
+.section-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Grid for overview.html */
+.puzzle-grid { display: grid; gap: 32px; margin-top: 40px; }
+.puzzle-card {
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: var(--hover-radius);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    display: block;
+}
+.puzzle-card:hover { background: var(--bg-secondary); border-color: var(--accent); transform: translateY(-2px); }
+.puzzle-card h3 { color: var(--text-primary); margin-bottom: 8px; font-weight: 400; }
+.puzzle-card p { color: var(--text-secondary); font-size: 16px; margin-bottom: 0; }
+
+/* Puzzle Page specific */
+.clue-box {
+    background: var(--bg-secondary);
+    border-left: 2px solid var(--accent);
+    padding: 30px;
+    margin: 30px 0;
+}
+.clue-list { list-style: decimal-leading-zero; margin-left: 25px; color: var(--text-secondary); }
+.clue-list li { margin-bottom: 10px; padding-left: 10px; }
+
+/* Interactive Solver */
+.solver-section { margin-top: 60px; padding-top: 40px; border-top: 1px dashed var(--border); }
+.solver-input-group { display: flex; gap: 10px; margin-top: 20px; }
+select, button {
+    padding: 12px 20px;
+    font-family: inherit;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+select { background: var(--bg-primary); color: var(--text-primary); flex-grow: 1; }
+button { background: transparent; color: var(--accent); border-color: var(--accent); cursor: pointer; font-family: 'IBM Plex Mono', monospace; }
+button:hover { background: var(--accent-faded); }
+
+.feedback { margin-top: 20px; font-style: italic; min-height: 1.7em; }
+.solution-reveal { display: none; background: var(--accent-faded); padding: 30px; border-radius: 12px; margin-top: 20px; animation: fadeIn 0.5s; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+footer { margin-top: 100px; padding: 40px 0; border-top: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-tertiary); }
