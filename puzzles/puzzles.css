@@ -46,7 +46,7 @@ header { padding: 80px 0 40px; border-bottom: 1px solid var(--border); margin-bo
 .a { color: var(--accent); }
 .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; }
 
-/* Grid for overview.html */
+/* Grid for index.html */
 .puzzle-grid { display: grid; gap: 32px; margin-top: 40px; }
 .puzzle-card {
     padding: 32px;
