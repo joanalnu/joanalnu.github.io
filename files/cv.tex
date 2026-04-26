@@ -1,13 +1,10 @@
 \documentclass[11pt,a4paper]{article}
-
-% ----------- Packages -----------
 \usepackage[margin=0.75in]{geometry}
 \usepackage{enumitem}
 \usepackage{amsmath}
-\usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage{parskip}
-
+\usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -19,7 +16,6 @@
 \setlength{\parindent}{0pt}
 \titleformat{\section}{\Large\bfseries\uppercase}{}{0pt}{}[\titlerule]
 \titlespacing*{\section}{0pt}{12pt}{8pt}
-
 \titleformat{\subsection}{\large\bfseries}{}{0pt}{}
 \titlespacing*{\subsection}{0pt}{8pt}{4pt}
 
@@ -40,14 +36,13 @@
 
 % ----------------- EDUCATION -----------------
 \section*{Education}
-\textbf{Ludwig-Maximilians-Universitat (LMU) Munich} \hfill Sept 2025 -- Present \\
+\textbf{Ludwig-Maximilians-Universität (LMU) Munich} \hfill Oct 2025 -- Present \\
 B.Sc. in Physics
-%\textit{Key Focus:} Transitioning toward Theoretical Physics; establishing foundations in Hamiltonian mechanics and Lorentz Invariance Violation (LIV) probes.
 
 \textbf{German School of Barcelona} \hfill Sept 2017 -- May 2025 \\
 Dual High School Diploma (Germany + Spain), GPA: 1.0/1.0
 
-\textbf{Additional Theoretical Training:}
+\textbf{Additional Training:}
 \begin{itemize}
     \item \textit{Gravity and Black Holes} — Perimeter Institute (GoPhysics!), 2025
 		\item \textit{Mathematics, Statistics, and Data Science} — Autonomous University of Barcelona (UAB), 2022
@@ -55,58 +50,59 @@ Dual High School Diploma (Germany + Spain), GPA: 1.0/1.0
 		\item \text{League of Codes (C++)} - Harbour Space, 2022-2023
 \end{itemize}
 
-% ----------------- RESEARCH EXPERIENCE -----------------
+% ----------------- RESEARCH EXPERIENCE ----------------- 
 \section*{Research Experience}
 
-\textbf{Theoretical Probes of Spacetime (Independent Study)} \hfill \textit{Proposed July -- Sept 2026} \\
-\textit{Supervision: Independent Project}
+%\textbf{Theoretical Probes of Spacetime (Independent Study)} \hfill \textit{Proposed July -- Sept 2026} \\
+%\textit{Supervision: Independent Project}
+%\begin{itemize}
+%    \item \textbf{Objective:} Deriving Modified Dispersion Relations (MDR) for high-energy photons in non-standard cosmological backgrounds.
+%    \item \textbf{Formalism:} Applying Hamilton-Jacobi equations to determine cumulative time-of-flight delays ($\Delta t$) for gamma-rays under Quintessence-based FLRW metrics.
+%    \item \textbf{Innovation:} Investigating the analytical coupling between the dark energy equation of state ($w$) and Planck-scale energy-dependent velocities.
+%\end{itemize}
+
+\textbf{GRB Cosmography \& Relativistic Foundations} \hfill June -- July 2025\\
+\textit{Osservatorio Astronomico di Brera (OAB-INAF), Italy}
 \begin{itemize}
-    \item \textbf{Objective:} Deriving Modified Dispersion Relations (MDR) for high-energy photons in non-standard cosmological backgrounds.
-    \item \textbf{Formalism:} Applying Hamilton-Jacobi equations to determine cumulative time-of-flight delays ($\Delta t$) for gamma-rays under Quintessence-based FLRW metrics.
-    \item \textbf{Innovation:} Investigating the analytical coupling between the dark energy equation of state ($w$) and Planck-scale energy-dependent velocities.
+	\item \textbf{Project:} Constrained cosmological density parameters ($\Omega_m, \Omega_\Lambda$) via $\chi^2$ minimization of empirical $E_\text{peak}-E_\text{iso}$ relation and explored synergies with simulated binary neutron star merger populations from Einstein Telescope expectations. Link to the \href{https://github.com/joanalnu/oab-inaf}{repository}.
+	\item \textbf{Mentorship:} Received training by Dr. Gabriele Ghisellini about the physics of GRBs and special relativity effects.
+	\item \textit{Supervisors: Dr. Giancarlo Ghirlanda, Dr. Om Sharan Salafia}
 \end{itemize}
 
-\textbf{GRB Cosmography \& Relativistic Foundations} \hfill June -- July 2025 [cite: 8, 10, 87] \\
-\textit{Osservatorio Astronomico di Brera (OAB-INAF), Italy} [cite: 9]
+\textbf{PI GAMMA Project (CAPIBARA Collaboration)} \hfill 2024 -- Present
 \begin{itemize}
-    \item \textbf{Mentorship:} Received training on relativistic fireball effects and the theoretical foundations of Gamma-Ray Bursts (GRBs)[cite: 13, 89].
-    \item \textbf{Parameterization:} Constrained cosmological density parameters ($\Omega_m, \Omega_\Lambda$) via $\chi^2$ minimization of empirical energy relations[cite: 11, 87].
-    \item \textbf{Synthesis:} Integrated GRB results with simulated populations from Einstein Telescope binary neutron star expectations[cite: 12, 88].
-    \item \textit{Supervisors: Dr. Giancarlo Ghirlanda, Dr. Om Sharan Salafia} [cite: 14]
+	\item Leading a team of students (\href{https://capibara3.github.io/gamma/}{GAMMA}) at the \href{https://capibara3.github.io}{CAPIBARA Collaboration} currently studying the scientific motivation and requirements for a student-led $\gamma$-ray transient observing CubeSat mission.
+	\item I founded the CAPIBARA Collaboration in 2024 with the aim of forming a group of science enthusiastic high school students (some are already in university) for sharing our little knowledge and interests, get to know each other and learn together.
 \end{itemize}
 
-\textbf{CAPIBARA Collaboration (Founder \& PI)} \hfill 2024 -- Present [cite: 15, 17, 90]
+\textbf{Type Ia Supernovae: Mapping the Expansion History} \hfill June -- July 2024 \\
+\textit{Institute of Space Sciences (ICE-CSIC-IEEC), Spain}
 \begin{itemize}
-    \item Leading student collaboration in developing instrumentation and mission concepts for high-energy astronomy CubeSat missions[cite: 18, 19, 90].
+	\item \textbf{Project:} Computed luminosity distances for Type Ia SNe using infrared open imagery from ESO (SOFI) and photometry data form ZTF and ATLAS using the \verb|sncosmo| library.
+	\item \textbf{Formalism:} Learn about cosmological modeling beyond the linear redshift-distance relation, including the Friedmann Equations and fitting density parameters.
+	\item \textit{Supervisor: Dr. Lluís Galbany}
 \end{itemize}
 
-\textbf{Type Ia Supernovae: Mapping the Expansion History} \hfill June -- July 2024 [cite: 25, 27, 93] \\
-\textit{Institute of Space Sciences (ICE-CSIC-IEEC), Spain} [cite: 26]
+\textbf{Cepheid Variable Stars Research} \hfill Aug -- Dec 2023 \\
+\textit{Youth \& Science Program}
 \begin{itemize}
-    \item \textbf{Metric Fitting:} Benchmarked the empirical consistency of the local expansion history using SNe Ia light-curve fitting from ESO, ATLAS, and ZTF[cite: 28, 93].
-    \item \textbf{Formalism:} Explored statistical foundations of the Hubble-Lemaitre Law through standardizable candle analysis[cite: 29, 94].
-    \item \textit{Supervisor: Dr. Lluis Galbany} [cite: 30, 95]
+	\item \textbf{Project:} Compute the Hubble constant ($H_0 = 70.26 \pm 7.1 \mathrm{kms^{-1}Mpc^{-1}}$) replicating Hubble's and Lemaître's methods with modern Cepheid (Konkoly Observatory) and redshift data (NASA-IPAC NED). Link to \href{https://joanalnu.github.io/files/Paper2023_RecomputingTheHubbleConstant.pdf}{report}.
+	\item \textbf{First time:} First exposure to rigorous scientific research and writing within the first year of the Youth and Science fellowship.
+	\item \textit{Supervisors: Dr. Ignasi Pérez-Ràfols, Dr. Laia Casamiquela}
 \end{itemize}
 
-\textbf{Cepheid Variable Stars Research} \hfill Aug -- Dec 2023 [cite: 31, 33, 95] \\
-\textit{Youth \& Science Program} [cite: 32]
+\textbf{Student Internship at German Space Agency (DLR)} \hfill Oct 2024 \\
+\textit{Institute for Remote Sensing (DLR-IMF), Germany}
 \begin{itemize}
-    \item \textbf{Analytical Foundations:} Reconstructed the cosmic distance ladder by deriving the Period-Luminosity relationship from NASA-IPAC NED data[cite: 34, 95].
-    \item \textbf{Methodology:} First exposure to rigorous scientific writing and the peer-review process ($H_0 = 70.26 \pm 7.1 \mathrm{\ km\ s^{-1}\ Mpc^{-1}}$)[cite: 34, 35, 96].
-\end{itemize}
-
-\textbf{Student Internship at German Space Agency (DLR)} \hfill Oct 2024 [cite: 20, 22, 91] \\
-\textit{Institute for Remote Sensing (DLR-IMF), Germany} [cite: 21]
-\begin{itemize}
-    \item Worked with photogrammetry departments on hyperspectral imaging and LandSat thermal analysis[cite: 23, 91].
+    \item Worked with photogrammetry departments on hyperspectral imaging and LandSat thermal analysis.
 \end{itemize}
 
 % ----------------- AWARDS -----------------
 \section*{Awards \& Honors}
-\textbf{Youth \& Science Fellowship:} 3-year funded fellowship for research stays internationally. \\
+\textbf{\href{https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science}{Youth \& Science Fellowship}:} 3-year funded fellowship for research stays internationally. \\
 \textbf{Abiturpreis German Physical Society (DPG):} Physics Distinction for Academic Achievement in high school. \\
-\textbf{IAAC:} Silver Honour and National Award for Spain (2025), top 7\% of >12,000 students. Similar awards in 2023 and 2024. \\
-\textbf{Jugend Forscht:} First Prize Iberia (2024/2025), First prizes in regional and national rounds, Special Award in Scientific Photography (NRW 2025).
+\textbf{\href{https://iaac.space}{IAAC}:} Silver Honour and National Award for Spain (2025), top 7\% of >12,000 students. Similar awards in 2023 and 2024. \\
+\textbf{\href{https://www.jugend-forscht.de/information-in-english.html}{Jugend Forscht}:} First Prize Iberia (2024/2025), First prizes in regional and national rounds, Special Award in Scientific Photography (NRW 2025).
 
 % ----------------- TALKS -----------------
 \section*{Talks \& Outreach}
@@ -114,12 +110,16 @@ Dual High School Diploma (Germany + Spain), GPA: 1.0/1.0
 \textbf{CosmoXarxa:} High-energy astrophysics presentation at Barcelona Science Museum, March 2025. \\
 \textbf{Invited Talk:} Intro to Astrophysics for 11th graders, German School Barcelona, 2024. \\
 \textbf{Outreach:} Space Exploration Activity for 3rd grades, Escola Canigó Public School, 2023. \\
-\textbf{Explainers (Volunteer):} Science outreach at CosmoCaixa Museum, 2022--2023.
+\textbf{Explainers (Volunteer):} Science outreach at CosmoCaixa Museum, 2022--2023. \\
 Slides of most talks can be found on my website.
+
+% ----------------- WORK ------------------
+\section*{Work Experience}
+\textbf{Ludwig-Maximilians-Universität (LMU) Munich:} Student job at central diversity management and research funding unit.
 
 % ----------------- SKILLS -----------------
 \section*{Skills}
-\textbf{Programming:} Python (\textit{numpy, scipy, pandas, matplotlib, astropy}), C++, LaTeX, Markdown. \\
+\textbf{Programming:} Python (\textit{numpy, scipy, pandas, matplotlib, astropy}), LaTeX, Markdown. \\
 \textbf{Tools:} Git/GitHub, Visual Studio Code, NeoVim, Linux environment.
 
 \end{document}
