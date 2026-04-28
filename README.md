@@ -1,6 +1,6 @@
 # joanalnu.github.io
 
-Personal portfolio website: https://joanalnu.github.io
+Personal portfolio website: [joanalnu.github.io](https://joanalnu.github.io).
 
 ---
 
