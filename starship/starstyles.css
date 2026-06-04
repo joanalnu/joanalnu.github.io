@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(
+        to bottom,
+        #050816,
+        #091c38,
+        #000000
+    );
+    overflow-x: hidden;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.week-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.week-card {
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #4fc3ff;
+    transition: 0.3s;
+}
+
+.week-card:hover {
+    transform: translateY(-5px);
+    background: rgba(79,195,255,0.2);
+}
+
+/* Presentation style */
+
+.slide-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.slide {
+    scroll-snap-align: start;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.problem-box {
+    max-width: 700px;
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid #4fc3ff;
+    border-radius: 15px;
+
+    padding: 30px;
+}
+
+.answer-row {
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.correct {
+    color: #6eff6e;
+}
+
+.wrong {
+    color: #ff6666;
+}
