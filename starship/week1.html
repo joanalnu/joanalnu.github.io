@@ -1,126 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Mission - Arithmetic & Equations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starstyles.css">
 
-<title>Week 1 Mission</title>
-
-<link rel="stylesheet" href="starstyles.css">
-
-<script>
-window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$']]
-    }
-};
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-<script src="js/quiz.js"></script>
-
+    <!-- MathJax Setup -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <script src="js/quiz.js"></script>
 </head>
+<body class="problem-page">
 
-<body>
+    <!-- Top sticky navigation bar -->
+    <header class="slide-header-bar">
+        <h2>🛰️ Week 1: Arithmetic & Equations</h2>
+        <a href="index.html" class="back-link">⬅️ Back to Mission Overview</a>
+    </header>
 
-<div class="slide-container">
+    <!-- Slides snap container -->
+    <div class="slide-container">
 
-    <!-- Slide 1 -->
-
-    <section class="slide">
-
-        <div class="problem-box"
-             data-answer="7">
-
-            <h2>🛰️ Problem 1</h2>
-
-            <p>
-                The spaceship collected
-                $3$ energy crystals and then
-                found $4$ more.
-
-                How many crystals total?
-            </p>
-
-            <div class="answer-row">
-                <input class="answer">
-
-                <button
-                    onclick="checkAnswer(this)">
-                    Check
-                </button>
-
-                <div class="result"></div>
+        <!-- Slide 1 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="7">
+                <h3>PROBLEM 1</h3>
+                <p>
+                    The spaceship collected $3$ energy crystals in sector alpha, and then found $4$ more in sector beta.
+                    <br><br>
+                    How many energy crystals does the ship have in total?
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
             </div>
+            <div class="scroll-hint">Scroll down for Problem 2 ⬇️</div>
+        </section>
 
-        </div>
-
-    </section>
-
-    <!-- Slide 2 -->
-
-    <section class="slide">
-
-        <div class="problem-box"
-             data-answer="25">
-
-            <h2>🌌 Problem 2</h2>
-
-            <p>
-                Compute
-
-                $$5^2$$
-            </p>
-
-            <div class="answer-row">
-
-                <input class="answer">
-
-                <button
-                    onclick="checkAnswer(this)">
-                    Check
-                </button>
-
-                <div class="result"></div>
-
+        <!-- Slide 2 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="25">
+                <h3>PROBLEM 2</h3>
+                <p>
+                    Compute the warp engine energy yield factor:
+                    $$5^2$$
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
             </div>
+            <div class="scroll-hint">Scroll down for Problem 3 ⬇️</div>
+        </section>
 
-        </div>
-
-    </section>
-
-    <!-- Slide 3 -->
-
-    <section class="slide">
-
-        <div class="problem-box"
-             data-answer="4">
-
-            <h2>🚀 Problem 3</h2>
-
-            <p>
-                Solve
-
-                $$x + 3 = 7$$
-            </p>
-
-            <div class="answer-row">
-
-                <input class="answer">
-
-                <button
-                    onclick="checkAnswer(this)">
-                    Check
-                </button>
-
-                <div class="result"></div>
-
+        <!-- Slide 3 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="4">
+                <h3>PROBLEM 3</h3>
+                <p>
+                    Calibrate the warp field stability. Solve for $x$:
+                    $$x + 3 = 7$$
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
             </div>
+            <div class="scroll-hint">Mission Complete! Scroll up to review.</div>
+        </section>
 
-        </div>
-
-    </section>
-
-</div>
+    </div>
 
 </body>
 </html>

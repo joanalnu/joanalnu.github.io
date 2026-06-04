@@ -1,22 +1,26 @@
+/**
+ * Space Math Academy - Simple Answer Verification
+ * (Static-site friendly, zero-state telemetry)
+ */
 function checkAnswer(button) {
-
+    // Find parent problem container
     const container = button.closest(".problem-box");
+    if (!container) return;
 
-    const answer =
-        container.querySelector(".answer").value.trim();
+    // Get input and target answer values
+    const inputElement = container.querySelector(".answer");
+    const resultElement = container.querySelector(".result");
+    if (!inputElement || !resultElement) return;
 
-    const expected =
-        container.dataset.answer.trim();
+    const studentAnswer = inputElement.value.trim().toLowerCase();
+    const correctAnswer = container.dataset.answer.trim().toLowerCase();
 
-    const result =
-        container.querySelector(".result");
-
-    if (answer === expected) {
-        result.textContent = "✅ Correct!";
-        result.className = "result correct";
-    }
-    else {
-        result.textContent = "❌ Try again";
-        result.className = "result wrong";
+    // Verify match
+    if (studentAnswer === correctAnswer) {
+        resultElement.textContent = "✅ Correct!";
+        resultElement.className = "result correct";
+    } else {
+        resultElement.textContent = "❌ Try again";
+        resultElement.className = "result wrong";
     }
 }

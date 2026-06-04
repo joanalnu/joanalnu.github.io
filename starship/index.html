@@ -1,36 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mission Control</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Math Academy - Mission Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="starstyles.css">
-
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            }
-        };
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
 <body>
-    <div class="stars"></div>
+    <!-- Monochrome Star/Hyperspace Background Canvas -->
+    <canvas id="hyperspace-canvas"></canvas>
 
-    <main class="home">
-        <h1>🚀 Space Math Academy</h1>
-        <p>Weekly missions for Cadet Alex</p>
+    <main class="home-container">
+        <header class="home-header">
+            <span class="academy-tag">ACADEMY DIRECTORY</span>
+            <h1>🚀 SPACE MATH ACADEMY</h1>
+            <p>Select a mission to begin cadet telemetry training</p>
+        </header>
 
-        <div class="week-list">
+        <nav class="week-list">
             <a href="week1.html" class="week-card">
-                Week 1 Mission
+                <span class="week-num">WEEK 1</span>
+                <span class="week-title">Arithmetic & Equations</span>
             </a>
 
             <a href="week2.html" class="week-card">
-                Week 2 Mission
+                <span class="week-num">WEEK 2</span>
+                <span class="week-title">Core Power Calibration</span>
             </a>
-        </div>
+
+            <a href="week3.html" class="week-card">
+                <span class="week-num">WEEK 3</span>
+                <span class="week-title">Astro Navigation Math</span>
+            </a>
+
+            <a href="week4.html" class="week-card">
+                <span class="week-num">WEEK 4</span>
+                <span class="week-title">Quantum Slingshot Physics</span>
+            </a>
+        </nav>
     </main>
+
+    <!-- Starfield/Hyperspace Animation Script -->
+    <script>
+        const canvas = document.getElementById("hyperspace-canvas");
+        if (canvas) {
+            const ctx = canvas.getContext("2d");
+            let stars = [];
+            const numStars = 150;
+            const maxZ = 1000;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener("resize", resize);
+            resize();
+
+            // Initialize stars
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: (Math.random() - 0.5) * 1000,
+                    y: (Math.random() - 0.5) * 1000,
+                    z: Math.random() * maxZ
+                });
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                const w = canvas.width;
+                const h = canvas.height;
+                const cx = w / 2;
+                const cy = h / 2;
+
+                // Monochrome fading trail background
+                ctx.fillStyle = "rgba(5, 5, 8, 0.25)";
+                ctx.fillRect(0, 0, w, h);
+
+                stars.forEach(star => {
+                    // Constant speed forward motion
+                    star.z -= 3;
+
+                    if (star.z <= 0) {
+                        star.z = maxZ;
+                        star.x = (Math.random() - 0.5) * 1000;
+                        star.y = (Math.random() - 0.5) * 1000;
+                    }
+
+                    const k = 120 / star.z;
+                    const px = star.x * k + cx;
+                    const py = star.y * k + cy;
+
+                    if (px >= 0 && px < w && py >= 0 && py < h) {
+                        const size = (1 - star.z / maxZ) * 2.5 + 0.3;
+                        
+                        // Drawing monochrome white stars with light tail
+                        const prevK = 120 / (star.z + 3);
+                        const prevPx = star.x * prevK + cx;
+                        const prevPy = star.y * prevK + cy;
+
+                        ctx.strokeStyle = "rgba(255, 255, 255, " + (1 - star.z / maxZ) * 0.5 + ")";
+                        ctx.lineWidth = size * 0.7;
+                        ctx.beginPath();
+                        ctx.moveTo(prevPx, prevPy);
+                        ctx.lineTo(px, py);
+                        ctx.stroke();
+                    }
+                });
+            }
+            animate();
+        }
+    </script>
 </body>
 </html>
