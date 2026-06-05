@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Mission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starstyles.css">
+
+    <!-- MathJax Setup -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <script src="js/quiz.js"></script>
+</head>
+<body class="problem-page">
+
+    <!-- Top sticky navigation bar -->
+    <header class="slide-header-bar">
+        <h2>🛰️ Week 1: Cálculos Básicos</h2>
+        <a href="index.html" class="back-link">⬅️ Back to Mission Overview</a>
+    </header>
+
+    <!-- Slides snap container -->
+    <div class="slide-container">
+
+        <!-- Slide 1 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="150">
+                <h3>PROBLEM 1</h3>
+                <p>Nuestra nave starship ha visitado 54 estrellas, 78 planetas y 17 asteroides. <br><br>¿Cuántos objectos celestes ha visitado en total?
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
+            </div>
+            <div class="scroll-hint">Scroll down for Problem 2 ⬇️</div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="5">
+                <h3>PROBLEM 2</h3>
+                <p>En la starship hay 927 paquetes de comida deshidratada. Teniendo en cuenta que hay una tripulación de 55 personas que comen 3 veces al día.<br><br>¿Para cuantos días hay comida?
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
+            </div>
+            <div class="scroll-hint">Scroll down for Problem 3 ⬇️</div>
+        </section>
+
+        <!-- Slide 3 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="32">
+                <h3>PROBLEM 3</h3>
+                <p>Para calibrar el hypermotor de la starship tenemos que calcular a que velocidad iremos. La velocidad máxima es $$2^5$$.
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
+            </div>
+            <div class="scroll-hint">Mission Complete! Scroll up to review.</div>
+        </section>
+
+        <!-- Slidde 4 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="2105">
+                <h3>PROBLEM 4</h3>
+                <p>La contraseña para abrir una puerta es la siguiente suma $$246+945+9+24+856+25.$$ ¿Cuál es la contraseña?
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="12544">
+                <p>El hyperteclado del puente de la starship tiene 196 teclas, cada una con 64 funciones. ¿Cuántas funciones hay en total?
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+</body>
+</html>
