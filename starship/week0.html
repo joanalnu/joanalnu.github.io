@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 0 - introduction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starstyles.css">
+
+    <!-- MathJax Setup -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <script src="js/quiz.js"></script>
+</head>
+<body class="problem-page">
+
+    <!-- Top sticky navigation bar -->
+    <header class="slide-header-bar">
+        <h2>🛰️ Week 1: Cálculos Básicos</h2>
+        <a href="index.html" class="back-link">⬅️ Back to Mission Overview</a>
+    </header>
+
+    <!-- Slides snap container -->
+    <div class="slide-container">
+
+        <!-- Slide 1 -->
+        <section class="slide">
+            <div class="problem-box" data-answer="yes">
+                <h3>Normas de uso</h3>
+                <p>Bienvenido/a a Starship!
+                <br><br> Are you ready?
+                </p>
+                <div class="answer-row">
+                    <input class="answer" placeholder="Result">
+                    <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+                    <span class="result"></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
