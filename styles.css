@@ -1,0 +1,32 @@
+:root {
+    --title: #ff00ff;
+    --sub-title: #ff0f00;
+    --background: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --title: #ff00ff;
+        --sub-title: #00ff00;
+        --background: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --title: #00ffff;
+        --background: #000000;
+    }
+}
+
+h1 {
+    color: var(--title);
+}
+
+h2 {
+    color: var(--sub-title);
+}
+
+body {
+    background-color: var(--background);
+}
