@@ -92,9 +92,12 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-
 .header-layout {
     grid-template-columns: 1fr 4fr;
+}
+
+.title-only-header-layout {
+    grid-template-columns: 1fr;
 }
 
 .projects-layout {
