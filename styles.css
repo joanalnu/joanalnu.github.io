@@ -82,6 +82,10 @@ a:hover {
   margin-bottom: 40px; 
 }
 
+.navigation {
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+}
 .header-layout {
     grid-template-columns: 1fr 4fr;
 }

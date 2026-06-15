@@ -7,20 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-
-    <h3>This is where new content is being build...</h3>
+    <div class="navigation" data-include="header.html"></div>
 
     <header class="row header-layout">
-        <div class="logo"><img src="/assets/logo.png" width="80%" height="90%" style="border-radius: 256px"></div>
-        <div class="nav">Navigation links here<div>
+        <img src="assets/logo.png" width="80%" height="80%">
+        <div>
+            <h3>Hello World!</h3>
+            <p>This is some nice introduction!</p>
+        </div>
     </header>
 
-    <section class="row projects-layout">
-        <div class="card">Analysing the Stability of DDE Potentials</div>
-        <div class="card">GRB</div>
-        <div class="card">SNe</div>
-        <div class="card">Cepheids</div>
-    </section>
+    <main>
+        <h3>This is where new content is being build...</h3>
+
+        <section class="row projects-layout">
+            <div class="card">Analysing the Stability of DDE Potentials</div>
+            <div class="card">GRB</div>
+            <div class="card">SNe</div>
+            <div class="card">Cepheids</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
