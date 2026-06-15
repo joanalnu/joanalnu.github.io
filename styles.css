@@ -41,6 +41,7 @@ body {
     color: var(--std-text);
     font-family: Inter, system-ui, sans-serif;
     line-height: 1.7;
+    padding: 10%;
 }
 
 h1 {
