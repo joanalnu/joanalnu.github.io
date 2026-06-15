@@ -83,10 +83,18 @@ a:hover {
   margin-bottom: 40px; 
 }
 
-.navigation {
-    justify-content: center; /* horizontal */
-    align-items: center;     /* vertical */
+.nav-links {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem; /* spacing between links */
+  border-bottom: 1px solid var(--muted-text);
+  margin-bottom: 2rem;
 }
+
+
 .header-layout {
     grid-template-columns: 1fr 4fr;
 }
