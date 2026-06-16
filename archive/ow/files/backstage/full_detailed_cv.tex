@@ -1,0 +1,189 @@
+\documentclass[11pt,a4paper]{article}
+
+% ----------- Packages -----------
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\usepackage{titlesec}
+\usepackage{parskip} % cleaner paragraph spacing
+
+% ----------- Formatting -----------
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\bfseries}{}{0pt}{}
+
+% Clean item spacing
+\setlist[itemize]{topsep=2pt,itemsep=2pt,parsep=0pt}
+
+% ----------- Document Begins -----------
+\begin{document}
+
+% ----------------- NAME + CONTACT -----------------
+{\LARGE \textbf{Joan Alcaide-Núñez}} \\
+\vspace{4pt}
+\href{mailto:joan.alcaide@campus.lmu.de}{joan.alcaide@campus.lmu.de} \\
+\href{https://joanalnu.github.io}{Website} \quad | \quad \href{https://www.linkedin.com/in/joan-alcaide-núñez}{LinkedIn} \quad | \quad \href{https://github.com/joanalnu}{GitHub} \\
+Languages: English, German, Spanish, Catalan (basic Italian) \\
+Last updated: January 2026
+
+\vspace{1em}
+
+
+% ----------------- PERSONAL STATEMENT -----------------
+\section*{Personal Statement}
+
+Joan Alcaide-Núñez is a BSc physics student at LMU Munich with a strong interest in multi-messenger cosmology, which consist of combining electromagnetic and gravitational-wave astronomical observation to test our understanding of the universe. He is particularly interested in the Hubble tension and probing the physical nature of dark energy.
+
+Between 2023 and 2025 (last years of high school), Joan pursued  series of summer research projects centered on the cosmic distance ladder, recomputing the Hubble constant using Cepheids and then Type Ia Supernovae. Building on this foundation, he began to learn about multi-messenger approaches by exploring how gamma-ray bursts (GRBs) and gravitational-wave observations can be jointly used to constrain cosmological parameters, independetly of and complementary to standard probes. These projects introduced him early to research-level data analysis and stregthened his mathematical, programming and statistical skills beyond the high school curriculum.
+
+After the Youth \& Science fellowship, Joan has continued to develop his research interests in multi-messenger cosmology and dark energy, extending previous work in free time. In particular, he has been lately focusing in understanding the data ..... and bayesian inference with Monte carlo (extending from chi2 to more parameters) also with the intention to test other models such as w0wa
+
+
+After the Youth \& Science fellowship, I have continued to develop my research interests in dark energy and multi-messenger cosmology, extending my previous work and deepening my training. In particular, I have focused on applying Bayesian inference with Monte Carlo (extending from $\chi^2$ minimization), while learning about the theoretical foundations of dark energy models and alternatives to $\Lambda$CDM. I am now seeking opportunities to further develop these skills collaboratively within an active research environment.
+
+
+% ----------------- RESEARCH EXPERIENCE -----------------
+\section*{Research Experience}
+\textbf{GRB cosmography with empirical energy relations} \hfill June-July 2025 \\
+\textit{\href{https://brera.inaf.it/en}{Osservatorio Astronomico di Brera (OAB-INAF)}} \hfill 5 weeks \\
+\textit{Supervisor: Dr. Giancarlo Ghirlanda, Dr. Om Sharan Salafia (\href{https://sites.google.com/inaf.it/hea-merate/gamma-ray-bursts}{High-Energy Astrophysics Group})}
+
+• Applied GRB empirical relations to constrain cosmological parameters $(\Omega_m, \Omega_\Lambda)$ via chi-squared minimization. \\
+• Combined GRB results with binary neutron star (BNS) simulated population (Einstein Telescope). \\
+• Received one-to-one mentoring on relativistic effects and high-energy astrophysics, including theoretical foundations relevant to GRB cosmology. \\
+• Engaged in weekly journal clubs, discussions, and visiting researchers talks, gaining early experience and exposure to other aspects of astrophysics. \\
+• Project's \href{https://github.com/joanalnu/OAB-INAF}{code repository}
+
+\textbf{CAPIBARA Collaboration lead} \hfill 2024-present \\
+\textit{\href{https://capibara3.github.io/}{CAPIBARA Collaboration}}\\
+• CAPIBARA is a group of high-school and university students aiming to research the high-energy cosmos. It comprehends two missions (short-term pathfinder, long-term transient observatory) focusing on both engineering and scientific research.\\
+• Established strategical partnerships with \href{https://pldspace.com/en}{PLD Space} \& \href{https://oba.space}{OBA Space} among others.\\
+• Leading one of the research initiatives to use Gamma-Ray Burst data from the CAPIGX mission to constrain cosmological parameters and study the Universe at high redshift.\\
+• CAPIGX also should be a useful resource for electromagnetic counterpart follow-ups in the multi-messenger era (2030s)\\
+• Status: \href{https://capibara3.github.io/updates/y1_report_published.html}{Year 1 Collaboration Status Report} on July 2025
+
+\textbf{Student Internship at German Space Agency} \hfill September 2024 \\
+\textit{\href{https://www.dlr.de/de/eoc/ueber-uns/institut-fuer-methodik-der-fernerkundung}{Institute for Remote Sensing} - \href{https://dlr.de}{German Aerospace Center} (IMF-DLR)} \hfill 2 weeks
+
+• Week 1: Worked with the Experimental Methods Department (hyperspectral imaging), outdoor field measurements, drone-boat experiment. Visited the \href{https://www.dlr.de/en/rb}{German Space Operation Center} (GSOC), where both satellite and human spaceflight are guided; the \href{https://www.dlr.de/en/eoc}{Earth Observation Center} (EOC).\\
+• Week 2: Worked with the Photogrammetry and Image Processsing Department, analyzed data using QGIS software and GDAL Python library using Landsat 8 satellite thermal imaging data. Visited the \href{https://www.dlr.de/en/gk}{Galileo Competence Center} (GK).
+
+\textbf{Supernova Distance Ladder} \hfill June-July 2024 \\
+\textit{\href{https://ice.csic.es}{Institute of Space Sciences (ICE-CSIC-IEEC)}} \hfill 2 months \\
+\textit{Supervisor: Dr. Lluís Galbany (\href{https://www.ice.csic.es/about-us/organisation?view=article&id=208&catid=2}{Supernova and Stellar Transients Group})}
+
+• Computed Type Ia SNe distances using infrared and optical photometry data from ESO (SOFI instrument), ATLAS and ZTF. \\
+• Fitted cosmological parameters to the distance results, including the Hubble constant. \\
+• Leveraged skills on object-oriented programming and astronomy related Python libraries, data analysis, aperture photometry. \\
+• Engaged in journal clubs, weekly seminars, group meetings.
+
+\textbf{Scientific Paper Writing} \hfill August-December 2023 \\
+\textit{\href{https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science}{Youth and Science Programme}} \\
+\textit{Supervisor: Dr. Ignasi Pérez-Ràfols, Dr. Laia Casamiquela (\href{https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science}{Youth \& Science})}
+
+• Computed the Hubble constant employing Hubble's method with modern Cepheid data from the NASA-IPAC NED Database and he Konkoly Observatory. \\
+• First experience with paper reading, astronomical data analysis, paper writing, and the field of cosmology. \\
+• Project's \href{https://github.com/joanalnu/article_hubble_jic}{code repository} \\
+• Previously: Research stay in astronomy and astrophysics at MonNatura Pirineus, 10-body student group and 4 researchers; introduction to astronomical observations (16" Schmidt-Cassegrain telescope) and following data collection and analysis, astrophysics from star evolution to gravitational waves; practical demonstrations.
+
+
+% ----------------- EDUCATION -----------------
+\section*{Education}
+\textbf{Ludwig-Maximilians-Universität (LMU) Munich} \hfill September 2025 -- Present \\
+B.Sc. in Physics \\
+
+\textbf{German School of Barcelona} \hfill September 2017 - May 2025 \\
+Dual High School Diploma (Germany + Spain), GPA: 1.0/1.0
+
+
+% ----------------- AWARDS -----------------
+\section*{Awards}
+
+• \textbf{Silver Honour and National Award Spain International Astronomy \& Astrophysics Competition (IAAC) 2025}, presented for the student with most points in the country, reaching the 7\% of $\sim$12300 students participating worldwide. \\
+• \textbf{Physics Distinction for extraordinary grades by the German Physical Society (DPG)} \\
+• \textbf{First Prize and Special Award in Scientific Photography in Jugend Forscht Nordrhein-Westfalen 2025}, forwarding to Final round \\
+• \textbf{First Prize in Jugend Forscht Iberia 2025}, project title: "Cosmological distance measurements with Type Ia Supernovae" \\
+• \textbf{Silver Honour Final Round of the International Astronomy \& Astrophysics Competition (IAAC) 2024} \\
+• \textbf{Awarding of internship at German Space Agency (DLR) in Jugend Forscht Nordrhein-Westfalen 2024} \\
+• \textbf{First Prize in Jugend Forscht Iberia 2024}, Spain + Portugal level, project title: "Recomputing the Hubble constant" \\
+• \textbf{Bronze Honour in Final Round and National Award Spain in the International Astronomy \& Astrophysics Competition (IAAC) 2023}, presented for achieving the highest nation-wide score in the final round.
+
+
+% ----------------- TECHNICAL SKILLS -----------------
+\section*{Technical Skills}
+
+\textbf{Programming Languages:} Python, C++, HTML/CSS/JavaScript \\
+\textbf{Scientific Libraries:} numpy, scipy, pandas, matplotlib, astropy \\
+\textbf{Tools:} Git, GitHub, \LaTeX{}, Markdown \\
+\textbf{Methods:} data analysis, parameter estimation and model fitting, Bayesian inference, mathematical and cosmological functions \\
+
+\textbf{Formal Training:}
+\begin{itemize}[leftmargin=*]
+    \item \textit{Gravity and Black Holes} — Perimeter Institute (GoPhysics!), 2025
+    \item Mathematics, Statistics, and Data Science — Universitat Autònoma de Barcelona (UAB), 2022
+    \item Algorithms and Programming (C++) — Universitat Politècnica de Catalunya (UPC), 2022
+    \item League of Codes (C++) — Harbour Space, 2022--2023
+\end{itemize}
+
+\textbf{Currently Expanding:} emcee, GWTC \& gwcosmos, PyTorch
+
+
+% ----------------- Selected Projects \& Outputs -----------------
+\section*{Selected Projects \& Outputs}
+
+\textbf{Gen10: Education Tool for Genomics} 
+\href{https://joanalnu.github.io/gen10}{(website)} \hfill 2023--2025 \\
+Developed a Python package and tutorials enabling students to explore basic genomics concepts through hands-on experimentation. 
+\textit{Python, package development, testing, Jupyter notebooks}
+
+\vspace{0.5em}
+
+\textbf{28M: Live Local Elections Statistics}
+\href{https://github.com/joanalnu/28M}{(GitHub)} \hfill Apr--May 2022 \\
+Built a real-time data collection and visualization tool for local election results in collaboration with a regional radio station. 
+\textit{Python, HTML/CSS, NumPy, xlwings}
+
+
+% ----------------- TALKS -----------------
+\section*{Outreach}
+
+% \textbf{Symposium for Space Education Activities (SSEA, contributed)} \hfill April 2026 \\
+% \textit{Technical University of Munich, TUM} \\
+% Description.
+
+\textbf{De l'aula a l'espai: joves, ions i fotons per entendre l'univers d'altes energies (Contributed)} \hfill March 2025 \\
+\textit{CosmoXarxa, CosmoCaixa Barcelona's Science Museum} \\
+CosmoXarxa is an initiative create by and for Explainers of the science museum (outreach volunteers). I presented the CAPIBARA project, its objectives and status, both technical, scientific and educative, inviting the public to join the efforts. \href{https://capibara3.github.io/publications/CosmoXarxa_presentation.pdf}{slides}
+
+\textbf{Introduction to Astrophysics (Invited)} \hfill May/June 2024 \\
+\textit{German School of Barcelona} \\
+Double session (3h) about an naive introduction to astronomy and astrophysics for 11th graders, covered some cosmology (Big Bang theory), star evolution, galaxy morphology and massive bodies (neutron stars and black holes as extreme cases of star evolution). \href{https://joanalnu.github.io/documents/presentations/ClaseUniversoPu.pdf}{slides}
+
+\textbf{L'Exploració Espacial (Invited)} \hfill October 2023 \\
+\textit{Escola Canigó} \\
+Presentation to pre-school students about human space travel and solar system exploration. Focused on hands-on learning with models and didactic, entertaining content. \href{https://joanalnu.github.io/documents/presentations/ExploracioEspacial.pdf}{slides}
+
+\textbf{Explainers at CosmoCaixa Museum} \hfill 2022-2023 \\
+Volunteered as Explainer at Barcelona's Science Museum explaining demonstrations to visitors on weekends. Participated in events such as Explainers during Winter, Explainers at Barcelona's City Science Fair and CosmoXarxa.
+
+
+% ----------------- VOLUNTEERING & SOCIALS -----------------
+\section*{Volunteering \& Socials}
+\textbf{Cycling Without Age} \hfill 2024-2025 \\
+Accompanying cycling "walks" around the village and enjoying sharing time with elderly.
+
+\textbf{Music Band} \hfill 2021-2024 \\
+Playing piano in different groups, school events, competitions, and for charity at local children's hospital. Continue playing
+
+
+% ----------------- END -----------------
+\end{document}

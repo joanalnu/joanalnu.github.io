@@ -3,263 +3,176 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Joan Alcaide - Music Portfolio and Compositions">
-    <meta name="author" content="Joan Alcaide">
-    <meta property="og:site_name" content="joanalnu - Music">
-    <meta property="og:title" content="Joan Alcaide | Music">
-    <meta property="og:url" content="https://joanalnu.com/music.html"/>
-    <link rel="canonical" href="https://joanalnu.com/music.html"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <link href="music.css" rel="stylesheet" type="text/css" />
     <title>Joan Alcaide | Music Portfolio</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: #f0f0f0;
+        }
+
+        h1 {
+            color: gold;
+        }
+
+        h2 {
+            color: #f0f0f0;
+        }
+
+        .track {
+            background: var(--surface);
+            border: 1px solid gold;
+            border-radius: 24px;
+            padding-top: 0.5rem;
+            padding-bottom: 0.3rem;
+            padding-left: 2rem;
+            padding-right: 2.5rem;
+            margin: 1.5rem;
+        }
+
+        audio, video {
+            height: 80%;
+            width: 90%;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <header>
-        <div class="site-title">MUSIC PORTFOLIO</div>
-        <h1 class="principal-investigator">Joan Alcaide</h1>
-        <p class="affiliation">Piano compositions and arrangements. Performed on Yamaha Digital Piano P-45, recorded with GarageBand. Eclectic repertoire spanning classical, jazz, contemporary, and film scores.</p>
+    <div data-include="/header.html"></div>
+
+    <header class="row header-layout">
+        <img src="/assets/music-2.png" width="80%" height="80%">
+        <div>
+            <p>Collection of audio and video recordings of piano playing, composition and arrangements across diverse styles from jazz standard to classical and contemporary, film scores.</p>
+            <p>Recordings performed on Yamaha Digital Piano P-45. Videos recorded at Deutsche Schule Barcelona</p>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">ABOUT</a></li>
-						<li><a href="#tracks">RECORDINGS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-						<li><a href="../index.html">MAIN PAGE</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section id="about">
-            <span class="section-label">PERFORMANCE NOTES</span>
-            <h2>Setup & Recording</h2>
-            <p>
-                Performances recorded on a 
-                <a href="https://es.yamaha.com/es/products/musical_instruments/pianos/p_series/p-45/index.html" target="_blank" rel="noopener">Yamaha Digital Piano P-45</a>
-                and produced with 
-                <a href="https://www.apple.com/mac/garageband/" target="_blank" rel="noopener">GarageBand</a>.
-                Video recordings made at the Colegio Alemán de Barcelona.
-            </p>
-            <p>
-                This collection reflects my exploration of diverse musical traditions—from jazz standards and classical arrangements to contemporary film scores.
-            </p>
-        </section>
 
-        <section id="tracks">
-            <span class="section-label">COMPOSITIONS & RECORDINGS</span>
-            <h2>Works</h2>
-        <!-- Track Start -->
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Girl of Ipanema</h3>
-                <span class="track-year">Jobim · 1964 · 09/2024</span>
-            </div>
-            <div class="track-content">
-                <video controls>
-                    <source src="Ipanema_JAN_05112024.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Girl of Ipanema</h2>
+            <p>Jobim - 1964 - 09/2024</p>
+            <video controls>
+                <source src="Ipanema_JAN_05112024.mp4" type="video/mp4">
+            </video>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Hit the Road Jack</h3>
-                <span class="track-year">Ray Charles · 1961 · 09/2023</span>
-            </div>
-            <div class="track-content">
-                <video controls>
-                    <source src="HitTheRoad_JAN_05112024.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Hit the Road Jack</h2>
+            <p>Ray Charles - 1961 - 09/2023</p>
+            <video controls>
+                <source src="HitTheRoad_JAN_05112024.mp4" type="video/mp4">
+            </video>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Take Five</h3>
-                <span class="track-year">Dave Brubeck Quartet · 1959 · 09/2023</span>
-            </div>
-            <div class="track-content">
-                <video controls>
-                    <source src="TakeFive_JAN_05112024.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Take Five</h2>
+            <p>Dave Brubeck Quartet - 1959 - 09/2023</p>
+            <video controls>
+                <source src="TakeFive_JAN_05112024.mp4" type="video/mp4">
+            </video>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Fly (Arrangement)</h3>
-                <span class="track-year">Ludovico Einaudi · 2006 · 05/2023</span>
-            </div>
-            <div class="track-content">
-                <video controls>
-                    <source src="Fly_JAN_05112024.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Creative Arrangement of Fly</h2>
+            <p>Ludovico Einaudi - 2006 - 05/2023</p>
+            <video controls>
+                <source src="Fly_JAN_05112024.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Dune Part One</h3>
-                <span class="track-year">Hans Zimmer · 2021 · 07/2024</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="Dune%20-%2031-7-24.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <p class="track-description"><small>Recorded with <a href="https://www.akaipro.com/mpk-mini-mk3" target="_blank" rel="noopener">Akai MPK mini</a> and GarageBand.</small></p>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Dune Part One</h2>
+            <p>Hans Zimmer - 2021 - 07/2024</p>
+            <audio controls>
+                <source src="Dune%20-%2031-7-24.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Can You Hear the Music?</h3>
-                <span class="track-year">Oppenheimer · Ludwig Göransson · 2023 · 05/2024</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-Version2CanYouHearTheMusic_Oppenheimer-5-2024.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Can You Hear The Music?</h2>
+            <p>Oppenheimer - Ludwig Göransson - 2023 - 05/2024</p>
+            <audio controls>
+                <source src="JAN-Version2CanYouHearTheMusic_Oppenheimer-5-2024.mp3" type="audio/mpeg">
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Just The Two Of Us</h3>
-                <span class="track-year">Bill Withers & Grover Washington Jr. · 1980 · 05/2024</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-Version2JustTheTwoOfUs-5-2024.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Just The Two Of Us</h2>
+            <p>Bill Withers & Grovers Washington JR. - 1980 - 05/2024</p>
+            <audio controls>
+                <source src="JAN-Version2JustTheTwoOfUs-5-2024.mp3" type="audio/mpeg">
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Mia & Sebastian's Theme</h3>
-                <span class="track-year">Justin Hurwitz · 2016 · 05/2024</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-Version2MiaSebastiansTheme-5-2024.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Mia & Sebastian's Theme</h2>
+            <p>Justin Hurwitz - 2016- 05/2024</p>
+            <audio controls>
+                <source src="JAN-Version2MiaSebastiansTheme-5-2024.mp3" type="audio/mpeg">
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Golden Hour at Firenze</h3>
-                <span class="track-year">JVKE · 2022 · 04/2024</span>
-            </div>
-            <div class="track-content">
-                <video controls>
-                    <source src="GoldenHourFirenze.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Golden Hour at Firenze</h2>
+            <p>JVKE - 2022 - 04/2024</p>
+            <video controls>
+                <source src="GoldenHourFirenze.mp4" type="video/mp4">
+            </video>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Mamma Mia</h3>
-                <span class="track-year">ABBA · 1975 · 07/2023</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-MammaMia-7-2023.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Mamma Mia</h2>
+            <p>ABBA - 1975 - 07/2023</p>
+            <audio controls>
+                <source src="JAN-MammaMia-7-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Take the "A" Train</h3>
-                <span class="track-year">Duke Ellington · 1939 · 05/2023</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-TakeTheATrain-5-2023.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Take the "A" Train"</h2>
+            <p>Duke Ellington - 1939 - 05/2023</p>
+            <audio controls>
+                <source src="JAN-TakeTheATrain-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Havana</h3>
-                <span class="track-year">Camila Cabello · 2018 · 05/2023</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-Habana-5-2023.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
+        <div class="track">
+            <h2>Havana</h2>
+            <p>Camila Cabello - 2018 - 05/2023</p>
+            <audio controls>
+                <source src="JAN-Habana-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">La La Land Medley</h3>
-                <span class="track-year">Justin Hurwitz · 2016 · 05/2023</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-LaLaLand-5-2023.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
+        <div class="track">
+            <h2>La La Land Medley</h2>
+            <p>Justin Hurwitz - 2016 - 05/2023</p>
+            <audio controls>
+                <source src="JAN-LaLaLand-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
-        <article class="track-item">
-            <div class="track-meta">
-                <h3 class="track-title">Interstellar (Arrangement)</h3>
-                <span class="track-year">Hans Zimmer · 2014 · 05/2023</span>
-            </div>
-            <div class="track-content">
-                <audio controls>
-                    <source src="JAN-Interstellar-5-2023.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </article>
-        </section>
+        <div class="track">
+            <h2>Inerstellar (Arrangement)</h2>
+            <p>Hans Zimmer - 2014 - 05/2023</p>
+            <audio controls>
+                <source src="JAN-Interstellar-5-2023.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
-        <section id="contact">
-            <span class="section-label">CONTACT</span>
-            <h2>Get in Touch</h2>
-            <p>For inquiries about musical collaborations or performances, feel free to reach out:</p>
-            
-            <div class="contact-methods">
-                <div class="contact-item">
-                    <span class="contact-label">CONTACT</span>
-										<span class="contact-value"><a href="../contact.html">Email</a></span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">BACK TO</span>
-                    <span class="contact-value"><a href="../index.html">Research Portfolio</a></span>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer>
-        <div class="footer-note">
-            © 2023–2026 Joan Alcaide. Music as exploration and expression.
-        </div>
-    </footer>
-</div>
+    <p>The sole intention of this page is to showcase and share private recordings. No commercial or financial profit is being pursued. Credit to the original authors and publication dates is properly provided for each piece.</p>
 
+    <div data-include="/footer.html"></div>
+    <script src="/script.js"></script>
 </body>
 </html>

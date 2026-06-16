@@ -1,0 +1,68 @@
+{
+  "title": "Genetics10",
+  "subtitle": "L'<b>Eina Interactiva</b> i <b>Llesta per Utilitzar de Biologia</b> per a <b>Estudiants i Professors</b>",
+  "nav": {
+    "overview": "Visió General",
+    "features": "Característiques",
+    "languages": "Altres idiomes",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "english": "English",
+    "projects": "Altres Projectes",
+    "contact": "Contacte"
+  },
+  "overview": {
+    "title": "Sobre Genetics10",
+    "paragraph1": "<b>Gen10</b> és un paquet de Python dissenyat per a que els estudiants explorin conceptes de genètica i biologia. Aquest paquet proporciona funcions útils llestes per utilitzar perquè els estudiants es puguin centrar en l'aprenentatge.",
+    "paragraph2": "No requereix cap instal·lació de programari o aplicacions, fent-la accessible i amigable per a l'aula, perfecta per a dispositius gestionats per l'escola.",
+    "paragraph3": "<b>En resum, Gen10 proporciona les funcions genòmiques que necessites a l'abast de la teva mà.</b>",
+    "cta": "Explora Gen10 a GitHub"
+  },
+  "features": {
+    "title": "Característiques Clau",
+    "dna": "Transcripció ADN/ARN",
+    "dna_desc": "Conversió entre ADN i ARN amb seqüenciació d'aminoàcids",
+    "mutations": "Mutacions Genètiques",
+    "mutations_desc": "Simula mutacions aleatòries o en llocs específics",
+    "compare": "Comparació de Seqüències",
+    "compare_desc": "Compara seqüències d'ADN i troba complementaris",
+    "gc": "Contingut de GC",
+    "gc_desc": "Calcula el contingut de GC i temperatures de fusió",
+    "visualize": "Visualització de Proteïnes",
+    "visualize_desc": "Visualitza estructures de proteïnes amb AlphaFold",
+    "crispr": "Simulació CRISPR",
+    "crispr_desc": "Simula edició gènica amb CRISPR-Cas9",
+    "cta": "Llegeix el README"
+  },
+  "audience": {
+    "students": {
+      "title": "Per a Estudiants",
+      "desc": "Nou en Python? Comença amb la nostra Guia per a Principiants dissenyada específicament per a estudiants.",
+      "cta": "Notebook d'Estudiant"
+    },
+    "teachers": {
+      "title": "Per a Educadors",
+      "desc": "Eina perfecta per a l'aula per ensenyar genètica de manera interactiva amb recursos alineats amb el currículum.",
+      "cta": "Recursos per a Educadors"
+    }
+  },
+  "contact": {
+    "title": "Contacte",
+    "name": "Nom",
+    "email": "Correu electrònic",
+    "message": "Missatge",
+    "submit": "Envia el Missatge"
+  },
+  "footer": {
+    "overview": "Visió General",
+    "features": "Característiques",
+    "contact": "Contacte",
+    "copyright": "© 2024 <b>Projecte Genetics10</b> | Creat per Joanalnu"
+  },
+  "language_names": {
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "ca": "Català"
+  }
+}
