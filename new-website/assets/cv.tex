@@ -1,0 +1,167 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+
+% Professional Links Color
+\usepackage{xcolor}
+\definecolor{darkblue}{RGB}{2, 132, 199}
+\hypersetup{colorlinks=true, linkcolor=darkblue, urlcolor=darkblue}
+
+% Disable paragraph indentation and page numbers for a clean look
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+% Easy-to-maintain custom section command
+\newcommand{\cvsection}[1]{%
+    \vspace{14pt}
+    {\large\bfseries\MakeUppercase{#1}}
+    \vspace{2pt}\hrule\vspace{6pt}
+}
+
+\begin{document}
+
+% ==========================================
+% HEADER
+% ==========================================
+\begin{center}
+    {\LARGE \bfseries Joan Alcaide-Núñez} \\[4pt]
+    \small
+    Email: \href{mailto:joan.alcaide@campus.lmu.de}{joan.alcaide@campus.lmu.de} $\cdot$
+    Website: \href{https://joanalnu.github.io}{joanalnu.github.io} $\cdot$
+    GitHub: \href{https://github.com/joanalnu}{github.com/joanalnu}
+\end{center}
+
+% ==========================================
+% EDUCATION
+% ==========================================
+\cvsection{Education}
+
+\textbf{Ludwig-Maximilians-Universität (LMU) Munich} \hfill Munich, Germany \\
+B.Sc. in Physics \hfill Oct 2025 -- Present \\
+\textit{Core concentration in foundational and mathematical physics pathways.}
+
+\vspace{6pt}
+
+\textbf{German School of Barcelona} \hfill Barcelona, Spain \\
+Dual High School Diploma (Germany + Spain) \hfill Sept 2017 -- May 2025 \\
+\textit{Academic Achievement Award with a perfect Grade Point Average of 1.0 / 1.0.}
+
+\vspace{6pt}
+
+\textbf{Additional Specialised Training:}
+\begin{itemize}
+    \itemsep0em \topsep0pt \parsep2pt \partopsep0pt
+    \item \textit{Gravity and Black Holes} -- Perimeter Institute for Theoretical Physics (GoPhysics!), 2025
+    \item \textit{Mathematics, Statistics, and Data Science} -- Autonomous University of Barcelona (UAB), 2022
+    \item \textit{Algorithms and Programming (C++)} -- Polytechnic University of Catalonia (UPC), 2022
+    \item \textit{League of Codes (C++ Masterclass)} -- Harbour Space University, 2022 -- 2023
+\end{itemize}
+
+% ==========================================
+% RESEARCH EXPERIENCE
+% ==========================================
+\cvsection{Research Experience}
+
+\textbf{GRB Cosmography \& Relativistic Foundations} \hfill Merate, Italy \\
+Osservatorio Astronomico di Brera (OAB-INAF) \hfill June -- July 2025
+\begin{itemize}
+    \itemsep0em \topsep2pt
+    \item Constrained global cosmological parameters ($\Omega_m, \Omega_\Lambda$) via $\chi^2$ minimisation profiles using the empirical $E_{\text{peak}}-E_{\text{iso}}$ relation of Gamma-Ray Bursts.
+    \item Modeled detection synergies with mock binary neutron star populations matching Einstein Telescope specifications.
+    \item Received foundational technical training on relativistic jet kinematics from Dr. Gabriele Ghisellini.
+    \item \textit{Supervisors:} Dr. Giancarlo Ghirlanda, Dr. Om Sharan Salafia $\cdot$ \href{https://github.com/joanalnu/oab-inaf}{Repository Link}.
+\end{itemize}
+
+\textbf{CAPIBARA Project} \hfill International \\
+Founder \& Project Lead -- CAPIBARA Collaboration \hfill 2024 -- 2026
+\begin{itemize}
+    \itemsep0em \topsep2pt
+    \item Established the CAPIBARA Collaboration to connect science-driven international students across secondary and university levels to coordinate collaborative learning frameworks.
+    \item Leading the \href{https://capibara3.github.io/gamma/}{GAMMA Team} evaluating the technical feasibility, instrumentation parameters, and mission profiles for a student-designed gamma-ray transient observing CubeSat.
+\end{itemize}
+
+\textbf{Type Ia Supernovae: Mapping Expansion History} \hfill Barcelona, Spain \\
+Institute of Space Sciences (ICE-CSIC-IEEC) \hfill June -- July 2024
+\begin{itemize}
+    \itemsep0em \topsep2pt
+    \item Extracted infrared imaging data from ESO (SOFI) and cross-matched optical photometry from ZTF and ATLAS using the \texttt{sncosmo} Python suite to map luminosity distances.
+    \item Explored non-linear expansion, solving the Friedmann acceleration equations to fit cosmic density parameters via light-curve parameterisation.
+    \item \textit{Supervisor:} Dr. Lluís Galbany.
+\end{itemize}
+
+\textbf{Cepheid Variable Stars Research} \hfill Budapest, Hungary \\
+Research Fellow -- Youth \& Science Program \hfill Aug -- Dec 2023
+\begin{itemize}
+    \itemsep0em \topsep2pt
+    \item Reconstructed classical Hubble-Lemaître expansion constraints, deriving an empirical value of $H_0 = 70.26 \pm 7.1 \, \text{km} \, \text{s}^{-1} \text{Mpc}^{-1}$ using modern Cepheid observations from the Konkoly Observatory.
+    \item Selected for a selective 3-year funded research track, marking first formal exposure to academic data review $\cdot$ \href{https://joanalnu.github.io/files/Paper2023_RecomputingTheHubbleConstant.pdf}{Technical Report}.
+    \item \textit{Supervisors:} Dr. Ignasi Pérez-Ràfols, Dr. Laia Casamiquela.
+\end{itemize}
+
+\textbf{German Aerospace Center (DLR)} \hfill Oberpfaffenhofen, Germany \\
+Research Intern -- Institute for Remote Sensing (DLR-IMF) \hfill Oct 2024
+\begin{itemize}
+    \itemsep0em \topsep2pt
+    \item 2-week internship at the photogrammetry (hyperspectral imaging) and satellite observations (thermal LandSat-8 imaging python-based analysis) teams
+\end{itemize}
+
+% ==========================================
+% AWARDS & HONORS
+% ==========================================
+\cvsection{Awards \& Honors}
+
+\textbf{Youth \& Science Fellowship} $\cdot$ \textit{Fundació Catalunya La Pedrera} \hfill 2023 -- 2026 \\
+Fully funded 3-year international research fellowship supporting consecutive competitive summer research placements.
+
+\vspace{4pt}
+
+\textbf{Abiturpreis (Physics Distinction)} $\cdot$ \textit{German Physical Society (DPG)} \hfill 2025 \\
+National prize awarded for outstanding academic excellence and foundational focus in physics during high school.
+
+\vspace{4pt}
+
+\textbf{International Astronomy and Astrophysics Competition (IAAC)} \hfill 2023 -- 2025 \\
+Awarded the \textbf{Silver Honour} and the \textbf{National Award for Spain} (2025), ranking in the top 7\% globally out of more than 12,000 international participants.
+
+\vspace{4pt}
+
+\textbf{Jugend Forscht (Youth Research Competition)} \hfill 2024 -- 2025 \\
+Awarded \textbf{First Prize Iberia} across regional and national tiers; received the Special Award in Scientific Photography (NRW, 2025).
+
+\textbf{High School Competitions} \hfill
+
+participation in a lsit of of mathematics, coding and physics competitions
+
+% ==========================================
+% OUTREACH & TALKS
+% ==========================================
+\cvsection{Talks \& Science Outreach}
+
+\begin{itemize}
+    \itemsep0em \topsep0pt
+    \item \textbf{SSEA Symposium (April 2026):} Presented \textit{``The CRD Instrument and the COSMOS Program.''}
+    \item \textbf{CosmoXarxa (March 2025):} Delivered an invited presentation on high-energy astrophysics metrics at the Barcelona Science Museum.
+    \item \textbf{Academic Workshops (2023 -- 2024):} Designed introductory astrophysics workshops for 11th graders at the German School Barcelona and organized planetary space exploration seminars for elementary tracks.
+    \item \textbf{Museum Explainer (2022 -- 2023):} Content volunteer conducting interactive public physics experiments at the CosmoCaixa Science Museum.
+\end{itemize}
+
+% ==========================================
+% WORK EXPERIENCE
+% ==========================================
+\cvsection{Work Experience}
+
+\textbf{Ludwig-Maximilians-Universität (LMU) Munich} \hfill Munich, Germany \\
+Student Assistant -- Central Diversity Management \& Research Funding Unit \hfill Oct 2025 -- Present
+
+% ==========================================
+% TECHNICAL SKILLS
+% ==========================================
+\cvsection{Technical Skills}
+
+\textbf{Programming \& Core Frameworks:} Python (\textit{NumPy, SciPy, Pandas, Matplotlib, Astropy}), \texttt{sncosmo}, C++, \LaTeX, Markdown. \\
+\textbf{Tools \& Environments:} Git, GitHub, Visual Studio Code, NeoVim, Unix/Linux command-line environments.
+
+\end{document}

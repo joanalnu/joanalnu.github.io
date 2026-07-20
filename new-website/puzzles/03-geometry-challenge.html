@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>The Geometry Challenge | Joanalnu</title>
+    <link rel="stylesheet" href="puzzles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="back-link"><a href="index.html">← Go back</a></div>
+        <span class="section-label">Problema 02</span>
+        <h1>The Geometry Challenge</h1>
+    </header>
+    <main>
+        <p>You are a detective on the case of a missing architect. The only clue left is a single piece of paper. On one side there is a drawing of a house like below (not to scale), </p>
+        <pre>
+   /\ 
+  /  \ 
+ /____\ 
+ |\  /| 
+ | \/ | 
+ | /\ | 
+ |/__\| 
+        </pre>
+        <p>on the reverse there is a note</p>
+        <div class="clue-box">
+            <i>"The key to my disappearing is saved in a Swiss bank. Understand the geometry of this house to obtain the id number and the password of this safe."</i>
+        </div>
+        <p>Let the side of the square be $a = 6\text{ cm}$. To obtain the password, compute the following and stack them one after each other (e.g., if the results are $1$, $32$, $5$; the password would be 1325):</p>
+        <div class="clue-box">
+            <ol>
+                <li>Perimeter of the square</li>
+                <li>Perimeter of the hat triangle (Assume height $= 4\text{ cm}$)</li>
+                <li>Perimeter of the house</li>
+                <li>Area of the square</li>
+                <li>Area of 1 of the 4 triangles inside the square</li>
+                <li>Area of the house</li>
+                <li>Volume of the cube with the same side ($6\text{ cm}$)</li>
+            </ol>
+        </div>
+        <p>To obtain the safe number, you need to compute 2 numbers. Imagine that the square part of the house is enclosed by a circle, each of the 4 vertices of the square touching the circle (the diameter is equivalent to the diagonal length). Compute, rounding to the nearest whole integer: </p>
+        <div class="clue-box">
+            <li>Perimeter (Circumference) of the circle</li>
+            <li>Area of the circle</li>
+        </div>
+        <section class="solver-section">
+            <h3>What are the password and id number?</h3>
+            <div class="solver-input-group">
+                <select id="guess">
+                    <option value="" disabled selected>Select your answer...</option>
+                    <option value="correct">View solution</option>
+                    <option value="wrong">Hide solution</option>
+                </select>
+                <button onclick="checkPuzzle()">Verify</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+            
+            <div id="solution" class="solution-reveal" style="display: none; margin-top: 20px;">
+                <span class="section-label">Solution Key</span>
+                <p style="margin-top:15px;"><strong>1. Password Calculation:</strong></p>
+                <ul>
+                    <li>Perimeter of the square: $P_{\text{square}} = 4 \times 6 = 24\text{ cm}$</li>
+                    <li>Perimeter of the hat triangle: The base is $6\text{ cm}$. With a height of $4\text{ cm}$, the two roof sides form $3\text{-}4\text{-}5$ right triangles. Slant sides $= \sqrt{3^2 + 4^2} = 5\text{ cm}$. $P_{\text{triangle}} = 6 + 5 + 5 = 16\text{ cm}$.</li>
+                    <li>Perimeter of the house: 3 sides of the square + 2 slant sides of the roof $= (3 \times 6) + (2 \times 5) = 28\text{ cm}$.</li>
+                    <li>Area of the square: $A_{\text{square}} = 6^2 = 36\text{ cm}^2$.</li>
+                    <li>Area of 1 inner triangle: The square is divided evenly into 4 triangles by its diagonals. $A_{\text{inner}} = \frac{36}{4} = 9\text{ cm}^2$.</li>
+                    <li>Area of the house: Area of the square + Area of the roof triangle $= 36 + (\frac{1}{2} \times 6 \times 4) = 36 + 12 = 48\text{ cm}^2$.</li>
+                    <li>Volume of the cube: $V = 6^3 = 216\text{ cm}^3$.</li>
+                </ul>
+                <p><strong>Password String:</strong> <code>24162836948216</code></p>
+                
+                <p style="margin-top:15px;"><strong>2. Safe ID Number Calculation:</strong></p>
+                <p>The diagonal of the square is $d = 6\sqrt{2}\text{ cm}$, which acts as the diameter of the circumscribed circle. Thus, the radius is $r = 3\sqrt{2}\text{ cm}$.</p>
+                <ul>
+                    <li>Perimeter of the circle: $C = 2\pi r = 2 \times \pi \times 3\sqrt{2} = 6\sqrt{2}\pi \approx 26.66 \rightarrow \mathbf{27}$</li>
+                    <li>Area of the circle: $A = \pi r^2 = \pi \times (3\sqrt{2})^2 = 18\pi \approx 56.55 \rightarrow \mathbf{57}$</li>
+                </ul>
+                <p><strong>Safe ID Number:</strong> <code>2757</code></p>
+            </div>
+        </section>
+    </main>
+    <footer> Joan Alcaide-Núñez &copy; 2026. Problem posted 03 July 2026. </footer>
+</div>
+<script src="solver.js"></script>
+<div data-include="/footer.html"></div>
+<script src="/script.js"></script>
+</body>
+</html>
