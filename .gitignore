@@ -3,3 +3,10 @@
 old-website/files/archived
 old-website/files/Abitur
 old-website/files/diplomas
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
