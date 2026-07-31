@@ -3,54 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms | Joanalnu</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div data-include="header.html"></div>
-
-    <header class="row title-only-header-layout">
-        <h1>Terms of the Website</h1>
-    </header>
+    <title>Terms & Conditions | Joan Alcaide-Núñez</title>
     
-    <main>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-base-path="">
 
-        <h3>Definitions</h3>
-        <p>Content: This page covers all the content including text, code, images, videos, audios, PDFs, and all files that fall within the `joanalnu.github.io` domain.</p>
-        <p>The user are you, and anyone who visits the site</p>
+    <div data-include="header"></div>
 
-        <h3>Ownership & Copyright</h3>
-        <p>Joan Alcaide Núñez (@joanalnu) is the sole owner of the site's original content, text, and ideas. Unless otherwise explicitly indicated.</p>
-        <p>&copy; 2023-2026 Joan Alcaide Núñez</p>
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Last Updated</h3>
+                <p>July 2026</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Contact</h3>
+                <p><a href="mailto:joan.alcaide@campus.lmu.de">Email me</a></p>
+            </div>
+        </aside>
 
-        <h3>License</h3>
-        <p>All the contents, text, and ideas are licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> license, including the website and all sub-pages under <i>joanalnu.github.io</i> and/or <i>joanalnu.pages.dev</i> as well as the source repositories.</p>
-        <p>This is a Creative Commons license that:</p>
-        <ul>
-            <li><b>Attributtion (BY):</b> Allows visitors to share the contents if they give clear credit and link back to the website.</li>
-            <li><b>Non-Commercial (NC):</b> Does not allow individuals or corporations to use the contents, text, and ideas for financial gain.</li>
-            <li><b>No Derivatives (ND):</b> Does not allow individuals or corporations to alter, remix, or build upon the contents</li>
-        </ul>
+        <article class="main-content">
+            <section class="content-section first-section">
+                <h1 class="entry-title" style="font-size: 2.2rem; margin-bottom: 3rem;">Terms of the Website</h1>
 
-        <h3>Scraping</h3>
-        <p>I explicitly prohibit the use of data mining, web scraping, caching, and unauthorized automated crawling. As well as the use of any site content (text, images, structure, or ideas) for machine learning, artificial intelligence training, or large language model (LLM) fine-tuning without prior written consent.</p>
-        <p>All automated bots are legally required to respect the <i>robots.txt</i> directives.</p>
+                <div class="prose" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-main);">
+                    
+                    <h3 style="font-family: var(--font-sans); margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--text-meta);">Definitions</h3>
+                    <p style="margin-bottom: 1.5rem;"><strong>Content:</strong> This page covers all the content including text, code, images, videos, audios, PDFs, and all files that fall within the <code>joanalnu.pages.dev</code> domain (or any associated custom domains).<br>
+                    <strong>The user:</strong> You, and anyone who visits the site.</p>
 
-        <h3>Privacy Statement</h3>
-        <p>The site does not use tracking cookies, analytics pixels or collect personally identifiable data.</p>
-        <p>Note that the site is hosted via <a href="https://docs.github.com/en/pages">GitHub Pages</a> and uses <a href="https://formspree.io/">formspree</a> form and spam filtering services for the contact form. Their respective privacy policies apply.</p>
+                    <h3 style="font-family: var(--font-sans); margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--text-meta);">Ownership & Copyright</h3>
+                    <p style="margin-bottom: 1.5rem;">Joan Alcaide-Núñez (@joanalnu) is the sole owner of the site's original content, text, and ideas, unless otherwise explicitly indicated. &copy; 2023-2026 Joan Alcaide-Núñez.</p>
 
-        <h3>Jurisdiction & Details</h3>
-        <p><b>Effective Date</b> This specific terms went into effect on June 15th, 2026</p>
-        <p><b>Governing Law:</b>The site is under the jurisdiction of the European Union (EU).</p>
+                    <h3 style="font-family: var(--font-sans); margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--text-meta);">License</h3>
+                    <p>All the contents, text, and ideas are licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color: var(--accent-color);" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a> license, including the live website hosted at <code>joanalnu.pages.dev</code> and its underlying public source code repositories, regardless of where they are hosted.</p>
+                    <p style="margin-bottom: 0.5rem;">This is a Creative Commons license that:</p>
+                    <ul style="margin-bottom: 1.5rem; margin-left: 1.5rem;">
+                        <li><strong>Attribution (BY):</strong> Allows visitors to share the contents if they give clear credit and link back to the website.</li>
+                        <li><strong>Non-Commercial (NC):</strong> Does not allow individuals or corporations to use the contents, text, and ideas for financial gain.</li>
+                        <li><strong>No Derivatives (ND):</strong> Does not allow individuals or corporations to alter, remix, or build upon the contents.</li>
+                    </ul>
 
-        <h3>Contact</h3>
-        <p>For anyone requesting explicit permission to use the site's content in a way that falls outside the mentioned CC license or for any other issues, please contact me <a href="">here</a>.</p>
+                    <h3 style="font-family: var(--font-sans); margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--text-meta);">Scraping</h3>
+                    <p style="margin-bottom: 1.5rem;">I explicitly prohibit the use of data mining, web scraping, caching, and unauthorized automated crawling, as well as the use of any site content (text, images, structure, or ideas) for machine learning, artificial intelligence training, or large language model (LLM) fine-tuning without prior written consent. All automated bots are legally required to respect the site's <code>robots.txt</code> directives.</p>
+
+                    <h3 style="font-family: var(--font-sans); margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--text-meta);">Privacy Statement</h3>
+                    <p style="margin-bottom: 1.5rem;">The site does not use tracking cookies, analytics pixels, or collect personally identifiable data. Note that the site is hosted via <a href="https://pages.cloudflare.com/" style="color: var(--accent-color);" target="_blank" rel="noopener">Cloudflare Pages</a> and uses <a href="https://formspree.io/" style="color: var(--accent-color);" target="_blank" rel="noopener">Formspree</a> form and spam filtering services for the contact form. Their respective privacy policies apply.</p>
+
+                    <h3 style="font-family: var(--font-sans); margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--text-meta);">Jurisdiction & Details</h3>
+                    <p style="margin-bottom: 1.5rem;"><strong>Effective Date:</strong> These specific terms went into effect on July 31, 2026.<br>
+                    <strong>Governing Law:</strong> The site is under the jurisdiction of the European Union (EU).</p>
+
+                    <h3 style="font-family: var(--font-sans); margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--text-meta);">Contact</h3>
+                    <p style="margin-bottom: 1.5rem;">For anyone requesting explicit permission to use the site's content in a way that falls outside the mentioned CC license or for any other issues, please contact me via my provided email address.</p>
+
+                </div>
+            </section>
+        </article>
     </main>
 
-    <div data-include="footer.html"></div>
+    <div data-include="footer"></div>
+
+    <script src="assets/js/script.js"></script>
 </body>
-
-<script src="script.js"></script>
-
 </html>
