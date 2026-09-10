@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joan Alcaide-Núñez</title>
+    <style>
+        :root {
+            /* Warm, comforting paper/academic tones */
+            --bg-color: #faf8f5; 
+            --text-color: #2e2a24;
+            --text-muted: #706a60;
+            --accent-color: #c25e14; /* Soft terracotta amber */
+            --border-color: #e6dfd3;
+            --section-spacing: 2.5rem;
+            
+            /* Clean Editorial Typography */
+            --font-serif: "Times New Roman", Times, Georgia, serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Deep midnight amber dark mode */
+                --bg-color: #12110f;
+                --text-color: #f2ede4;
+                --text-muted: #9c9384;
+                --accent-color: #fca662;
+                --border-color: #292622;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+            line-height: 1.65;
+        }
+
+        header {
+            margin-bottom: var(--section-spacing);
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2.75rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.4rem;
+        }
+
+        h2 {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: lowercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-top: calc(var(--section-spacing) * 1.2);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.4rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .subtitle {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .links a:hover {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-text a {
+            color: var(--text-color);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .about-text a:hover {
+            color: var(--accent-color);
+            text-decoration-color: var(--accent-color);
+        }
+
+        .item {
+            margin-bottom: 1.75rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.3rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .item-org {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .item-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            max-width: 640px;
+        }
+
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+            background: rgba(0, 0, 0, 0.03);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            code {
+                background: rgba(255, 255, 255, 0.06);
+            }
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skills-category strong {
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .skills-category span {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: calc(var(--section-spacing) * 1.5);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Joan Alcaide-Núñez</h1>
+        <div class="subtitle">physics / computing / music</div>
+        <div class="links">
+            <a href="mailto:joan.alcaide@campus.lmu.de">Email</a>
+            <a href="https://github.com/joanalnu" target="_blank">GitHub</a>
+            <a href="/ideas">Ideas</a>
+            <a href="/music">Music</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="about-text">
+                <p>I am a B.Sc. Physics student at LMU Munich working at the intersections of high-energy astrophysics, cosmology, and relativistic foundations[cite: 7, 17, 18]. I lean towards building things openly—whether analyzing transient fields with code or establishing student networks like the CAPIBARA Collaboration[cite: 20, 26, 27, 30]. When away from an editor, I am typically mapping out thoughts in my <a href="/ideas">ideas directory</a> or making <a href="/music">music</a>.</p>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>// research & projects</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">GRB Cosmography & Relativistic Foundations</span>
+                        <span class="item-org">— Osservatorio Astronomico di Brera (OAB-INAF), Italy</span>
+                    </div>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-description">
+                    Constrained cosmological density parameters (&Omega;<sub>m</sub>, &Omega;<sub>&Lambda;</sub>) via &chi;<sup>2</sup> minimization of empirical E<sub>peak</sub>–E<sub>iso</sub> relations[cite: 20]. Explored synergies with simulated binary neutron star merger populations from Einstein Telescope expectations[cite: 20].
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">PI GAMMA Project</span>
+                        <span class="item-org">— CAPIBARA Collaboration</span>
+                    </div>
+                    <span class="item-date">2024 — Present</span>
+                </div>
+                <div class="item-description">
+                    Leading a student team studying scientific motivations and requirements for a student-led &gamma;-ray transient observing CubeSat mission[cite: 26]. Founded the collaborative network in 2024 to pool knowledge and learn together[cite: 27].
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">Type Ia Supernovae: Mapping the Expansion History</span>
+                        <span class="item-org">— Institute of Space Sciences (ICE-CSIC-IEEC), Spain</span>
+                    </div>
+                    <span class="item-date">2024</span>
+                </div>
+                <div class="item-description">
+                    Computed optical/infrared luminosity distances using ESO (SOFI), ZTF, and ATLAS photometry via the <code>sncosmo</code> data pipeline framework[cite: 30].
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>// education & honors</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">Ludwig-Maximilians-Universität München</span>
+                        <span class="item-org">— B.Sc. in Physics</span>
+                    </div>
+                    <span class="item-date">2025 — Present</span>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">Selected Honors & Fellowships</span>
+                        <span class="item-org">— International & National Recognition</span>
+                    </div>
+                    <span class="item-date"></span>
+                </div>
+                <div class="item-description">
+                    Recipient of the 3-Year funded Youth & Science Fellowship[cite: 45]. Awarded Silver Honour & National Award for Spain at the International Astronomy and Astrophysics Competition (IAAC 2025) [cite: 47], and First Prize Iberia at Jugend Forscht[cite: 48].
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>// toolkit</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <strong>Computation</strong>
+                    <span>Python (NumPy, SciPy, Pandas, Matplotlib, Astropy), LaTeX, Markdown [cite: 56]</span>
+                </div>
+                <div class="skills-category">
+                    <strong>Environments</strong>
+                    <span>Git, GitHub, VS Code, NeoVim, Linux [cite: 56]</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Joan Alcaide-Núñez &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

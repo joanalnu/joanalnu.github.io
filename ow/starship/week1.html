@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión Semana 1 - Space Math Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starstyles.css">
+
+    <!-- MathJax Setup -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body class="practice-page">
+
+    <!-- App container for practice sheet -->
+    <div id="practice-app"></div>
+
+    <!-- Define the week data -->
+    <script>
+        const WEEK_DATA = {
+            id: "week1",
+            title: "Semana 1: Cálculos Básicos",
+            layout: "grid", // Grid of dense cards
+            problems: [
+                {
+                    id: 1,
+                    question: "Nuestra nave starship ha visitado 54 estrellas, 78 planetas y 17 asteroides. ¿Cuántos objetos celestes ha visitado en total?",
+                    answer: "150",
+                    placeholder: "Ej: 150",
+                    hint: "Realiza una suma de los tres elementos: $54 + 78 + 17$."
+                },
+                {
+                    id: 2,
+                    question: "En la starship hay 927 paquetes de comida deshidratada. Teniendo en cuenta que hay una tripulación de 55 personas que comen 3 veces al día. ¿Para cuántos días completos hay comida?",
+                    answer: "5",
+                    placeholder: "Ej: 5",
+                    hint: "Calcula el consumo diario de comida (55 personas $\\times$ 3 comidas al día) y luego divide el total de paquetes entre ese consumo."
+                },
+                {
+                    id: 3,
+                    question: "Para calibrar el hypermotor de la starship tenemos que calcular a qué velocidad iremos. La velocidad máxima es $$2^5.$$",
+                    answer: "32",
+                    placeholder: "Ej: 32",
+                    hint: "Calcula la potencia de 2 elevado a 5 ($2 \\times 2 \\times 2 \\times 2 \\times 2$)."
+                },
+                {
+                    id: 4,
+                    question: "La contraseña para abrir la compuerta del hangar es el resultado de la siguiente suma: $$246+945+9+24+856+25.$$ ¿Cuál es la contraseña?",
+                    answer: "2105",
+                    placeholder: "Ej: 2105",
+                    hint: "Suma con cuidado todos los números."
+                },
+                {
+                    id: 5,
+                    question: "El hyperteclado del puente de la starship tiene 196 teclas, cada una con 64 funciones. ¿Cuántas funciones hay en total?",
+                    answer: "12544",
+                    placeholder: "Ej: 12544",
+                    hint: "Multiplica el número total de teclas por la cantidad de funciones de cada una ($196 \\times 64$)."
+                },
+                {
+                    id: 6,
+                    question: "La starship consume 45 litros de combustible por año luz. Si tenemos que hacer un viaje de 180 años luz, ¿cuántos litros de combustible necesitaremos?",
+                    answer: "8100",
+                    placeholder: "Ej: 8100",
+                    hint: "Multiplica los litros consumidos por año luz por la distancia total del viaje ($45 \\times 180$)."
+                },
+                {
+                    id: 7,
+                    question: "Tenemos 1040 cartuchos de plasma que debemos repartir por igual entre las 8 torretas de defensa periféricas. ¿Cuántos cartuchos recibirá cada torreta?",
+                    answer: "130",
+                    placeholder: "Ej: 130",
+                    hint: "Divide el número total de cartuchos de plasma entre el número de torretas ($1040 \\div 8$)."
+                },
+                {
+                    id: 8,
+                    question: "Para cruzar un cinturón de asteroides, el escudo térmico debe resistir una temperatura calculada por la ecuación $$3^4 + 19.$$ ¿Cuántos grados centígrados debe soportar?",
+                    answer: "100",
+                    placeholder: "Ej: 100",
+                    hint: "Primero calcula $3^4$ ($3 \\times 3 \\times 3 \\times 3$) y luego súmale $19$."
+                },
+                {
+                    id: 9,
+                    type: "choice",
+                    question: "Si la gravedad medida en el planeta Kepler-186f es de $9.8\\text{ m/s}^2$, ¿cuál de las siguientes opciones describe mejor la gravedad en comparación con la de la Tierra ($9.8\\text{ m/s}^2$)?",
+                    options: [
+                        "Es mucho mayor",
+                        "Es igual",
+                        "Es mucho menor",
+                        "Es cero"
+                    ],
+                    answer: "Es igual",
+                    hint: "Compara el valor medido en Kepler-186f ($9.8$) con el de la Tierra ($9.8$)."
+                },
+                {
+                    id: 10,
+                    question: "Un año luz equivale aproximadamente a $9.46 \\times 10^{12}$ kilómetros. Si un caza estelar se encuentra a exactamente $0.5$ años luz de la estación base, ¿a cuántos billones de kilómetros está? (1 billón = $10^{12}$)",
+                    answer: "4.73",
+                    placeholder: "Ej: 4.73",
+                    hint: "Multiplica $9.46$ por $0.5$ para obtener la distancia correspondiente a la mitad de un año luz."
+                },
+                {
+                    id: 11,
+                    type: "choice",
+                    question: "El ordenador de a bordo está realizando operaciones lógicas. Si la proposición $A$ es verdadera y la proposición $B$ es falsa, ¿cuál es el valor de verdad de la conjunción $$A \\land B$$?",
+                    options: [
+                        "Verdadero",
+                        "Falso"
+                    ],
+                    answer: "Falso",
+                    hint: "Recuerda que para que la conjunción $A \\land B$ sea verdadera, ambas proposiciones deben ser verdaderas."
+                },
+                {
+                    id: 12,
+                    question: "Un sensor de radiación en el casco exterior detecta una lectura de $$2^3 \\times 5^2$$ milisieverts. ¿Cuál es el valor absoluto de la radiación medida?",
+                    answer: "200",
+                    placeholder: "Ej: 200",
+                    hint: "Calcula $2^3$ ($2 \\times 2 \\times 2$) y $5^2$ ($5 \\times 5$), y luego multiplica ambos resultados."
+                }
+            ]
+        };
+    </script>
+    <script src="js/practice.js"></script>
+</body>
+</html>

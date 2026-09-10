@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión Semana 0 - Space Math Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starstyles.css">
+
+    <!-- MathJax Setup -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body class="practice-page">
+
+    <!-- App container for practice sheet -->
+    <div id="practice-app"></div>
+
+    <!-- Define the week data -->
+    <script>
+        const WEEK_DATA = {
+            id: "week0",
+            title: "Semana 0: Inducción Rápida",
+            layout: "drills", // Drills template
+            instruction: "Resuelve las siguientes operaciones de cálculo mental rápido lo antes posible para calibrar los sensores básicos de tu cabina:",
+            problems: [
+                { id: 1, label: "a)", question: "$$5 + 3$$", answer: "8" },
+                { id: 2, label: "b)", question: "$$12 - 4$$", answer: "8" },
+                { id: 3, label: "c)", question: "$$7 \\times 3$$", answer: "21" },
+                { id: 4, label: "d)", question: "$$20 \\div 4$$", answer: "5" },
+                { id: 5, label: "e)", question: "$$9 + 6$$", answer: "15" },
+                { id: 6, label: "f)", question: "$$15 - 8$$", answer: "7" },
+                { id: 7, label: "g)", question: "$$8 \\times 4$$", answer: "32" },
+                { id: 8, label: "h)", question: "$$30 \\div 6$$", answer: "5" },
+                { id: 9, label: "i)", question: "$$2^3$$", answer: "8" },
+                { id: 10, label: "j)", question: "$$5^2 - 10$$", answer: "15" }
+            ]
+        };
+    </script>
+    <script src="js/practice.js"></script>
+</body>
+</html>
