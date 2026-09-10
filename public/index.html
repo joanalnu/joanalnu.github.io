@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joan Alcaide-Núñez</title>
+    <meta name="description" content="Academic website of Joan Alcaide-Núñez — Physics student at LMU Munich.">
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+            }
+        };
+    </script>
+    <script defer src="assets/vendor/mathjax/tex-mml-chtml.js"></script>
+</head>
+<body data-base-path="">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Contact</h3>
+                <p><a href="mailto:joan.alcaide@campus.lmu.de">joan.alcaide@campus.lmu.de</a></p>
+                <p>
+                    <a href="https://github.com/joanalnu" target="_blank" rel="noopener">GitHub</a><br>
+                    <a href="https://www.linkedin.com/in/joan-alcaide-núñez" target="_blank" rel="noopener">LinkedIn</a>
+                </p>
+            </div>
+            
+            <div class="sidebar-block">
+                <h3>Current Courses</h3>
+                <ul>
+                    <li>Quantum Mechanics</li>
+                    <li>Optics & Waves</li>
+                    <li>Analysis II</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-block">
+                <h3>Education</h3>
+                <p><strong>BSc. Physics</strong><br>Ludwig-Maximilians-Universität München (2025–2028)</p>
+            </div>
+
+            <div class="sidebar-block">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="ideas/index.html">Essays and notes</a></li>
+                    <li><a href="puzzles/index.html">Puzzle archive</a></li>
+                    <li><a href="music/index.html">Music recordings</a></li>
+                    <li><a href="contact.html">Contact page</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            
+            <section id="about" class="content-section first-section">
+                <h2 class="section-title">Overview</h2>
+                <p class="lead-text">
+                I am an undergraduate physics student at <a href="https://www.physik.lmu.de/en/">Ludwig-Maximilians-Universität (LMU) Munich</a>. I am currently in my third semester, taking Quantum Mechanics, Optics & Waves, and Analysis II. In high school, I completed three research projects in observational cosmology, focusing on cosmological parameter inference $(H_0, \Omega_m, \Omega_\Lambda)$ from different standard candles (Cepheids, Type Ia SNe, and GRBs). Through the <a href="https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science">Youth & Science fellowship</a>, I visited research institutes abroad during summer programs. After first-year university physics, my interests shifted toward theoretical physics, especially classical mechanics.
+                </p>
+            </section>
+
+            <section id="research" class="content-section">
+                <h2 class="section-title">Selected Research</h2>
+                
+                <div class="entry-list">
+                    <article class="entry">
+                        <div class="entry-meta">2025 • Osservatorio Astronomico di Brera (OAB-INAF)</div>
+                        <h3 class="entry-title">GRB Cosmography & Relativistic Foundations</h3>
+                        <p class="entry-body">
+                        Constrained cosmological parameters ($\Omega_m$, $\Omega_\Lambda$) via $\chi^2$ minimization of empirical $E_{peak}$–$E_{iso}$ relations in Gamma-Ray Bursts. Analyzed potential synergies with simulated binary neutron star merger populations for future detectors like the Einstein Telescope. <a href="https://github.com/joanalnu/oab-inaf">Repository</a>
+                        </p>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-meta">2024–2026 • CAPIBARA Collaboration</div>
+                        <h3 class="entry-title">The GAMMA Initiative</h3>
+                        <p class="entry-body">
+                            Serving as project coordinator for team GAMMA. Defined the scientific requirements and payload concepts for a student-led $\gamma$-ray transient observing CubeSat mission.
+                        </p>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-meta">2024 • Institute of Space Sciences (ICE-CSIC-IEEC)</div>
+                        <h3 class="entry-title">Type Ia Supernovae as Cosmological Distance Indicators</h3>
+                        <p class="entry-body">
+                            Derived luminosity distances using ESO (SOFI) infrared imaging alongside ZTF and ATLAS photometry using the SALT2-NIR model. Modeled non-linear cosmic expansion utilizing the Friedmann Equations.
+                        </p>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-meta">2023 • Fundació Catalunya La Pedrera (Youth & Science)</div>
+                        <h3 class="entry-title">Cepheid Variable Stars & The Distance Scale</h3>
+                        <p class="entry-body">
+                        Replicated modern Cepheid distance ladder methods using Konkoly Observatory photometry. Computed a Hubble constant value of approximately $H_0 = 70.26 \pm 7.1 \mathrm{\ km\ s^{-1}\ Mpc^{-1}}$, consistent with contemporary measurements. <a href="https://github.com/joanalnu/article_hubble_Jic">Repository</a>
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="awards" class="content-section">
+                <h2 class="section-title">Honours & Awards</h2>
+                <div class="entry-list compact">
+                    <div class="simple-entry">
+                        <span class="entry-meta">2023–2025</span>
+                        <p><a href="https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science"><strong>Youth & Science Fellowship</strong></a> — Fully-funded 3-year research fellowship for high school students.</p>
+                    </div>
+                    <div class="simple-entry">
+                        <span class="entry-meta">2025</span>
+                        <p><a href="https://www.dpg-physik.de/" target="_blank" rel="noopener"><strong>Abiturpreis German Physical Society (DPG)</strong></a> — Distinction for extraordinary performance in high school physics.</p>
+                    </div>
+                    <div class="simple-entry">
+                        <span class="entry-meta">2024–2025</span>
+                        <p><a href="https://www.jugend-forscht.de/information-in-english.html"><strong>Jugend Forscht</strong></a> — 1st Prize Regional Level (Spain/Portugal) & NRW round; Special Scientific Photography Award.</p>
+                    </div>
+                    <div class="simple-entry">
+                        <span class="entry-meta">2025</span>
+                        <p><a href="https://iaac.space"><strong>IAAC</strong></a> — Silver Honour with National Award (Top 7% globally of $>$ 12000 students), similar results in 2023 and 2024.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

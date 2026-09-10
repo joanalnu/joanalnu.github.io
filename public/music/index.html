@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Joan Alcaide-Núñez</title>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <style>
+        /* Specific overrides for audio player aesthetics */
+        audio {
+            width: 100%;
+            margin-top: 1rem;
+            outline: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+
+      <aside class="sidebar">
+        <div class="sidebar-block">
+            <h3>Archive</h3>
+            <p><a href="https://codeberg.org/joanalnu/music-portfolio" target="_blank" rel="noopener">External music portfolio</a></p>
+        </div>
+      </aside>
+        
+        <div class="main-content">
+            <section class="content-section first-section">
+                <p class="lead-text">
+                    Below is a collection of casual and hobbyist recordings that I have collected over the last years.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Selected Recordings</h2>
+                
+                <p>Coming soon...</p>
+                <!--<div class="entry-list">
+                    <article class="entry">
+                        <div class="entry-meta">Recorded May 2026 • Studio</div>
+                        <h3 class="entry-title">Chopin: Nocturne in C-sharp minor, Op. posth.</h3>
+                        <audio controls>
+                            <source src="../assets/audio/chopin-nocturne.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                         </audio>
+                    </article>
+                </div>
+                -->
+
+                <div class="entry-list">
+                  <article class="entry">
+                    <div class="entry-meta">Recorded 11-2024</div>
+                    <h3 class="entry-title">Girl of Ipanema • Jobim, 1964</h3>
+                    <video controls>
+                      <source src="https://codeberg.org/joanalnu/music-portfolio/raw/branch/main/Ipanema_JAN_05112024.mp4" type="video/mp4">
+                      Your browser does not support the audio element.
+                    </video>
+                  </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

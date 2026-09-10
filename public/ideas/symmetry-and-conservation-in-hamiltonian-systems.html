@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symmetry and Conservation in Hamiltonian Systems | Joan Alcaide-Núñez</title>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                macros: {
+                    // Sets & Fields
+                    R: "\\mathbb{R}",
+                    C: "\\mathbb{C}",
+                    N: "\\mathbb{N}",
+                    Z: "\\mathbb{Z}",
+    
+                    // Quantum Mechanics & Dirac Notation
+                    bra: ["\\left\\langle #1 \\right|", 1],
+                    ket: ["\\left| #1 \\right\\rangle", 1],
+                    braket: ["\\left\\langle #1 \\mid #2 \\right\\rangle", 2],
+                    mel: ["\\left\\langle #1 \\mid #2 \\mid #3 \\right\\rangle", 3],
+    
+                    // Calculus & Differential Geometry
+                    pd: ["\\frac{\\partial #1}{\\partial #2}", 2],
+                    dd: ["\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}", 2],
+                    Lie: "\\mathcal{L}",
+                    grad: "\\boldsymbol{\\nabla}",
+    
+                    // Operators
+                    Tr: "\\operatorname{Tr}",
+                    id: "\\operatorname{id}"
+                }
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Published</h3>
+                <p>July 15, 2026</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Category</h3>
+                <p>Classical Mechanics</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a class="tag-link" data-tag="mechanics" href="index.html?tag=mechanics">#mechanics</a></li>
+                    <li><a class="tag-link" data-tag="symmetries" href="index.html?tag=symmetries">#symmetries</a></li>
+                    <li><a class="tag-link" data-tag="noether" href="index.html?tag=noether">#noether</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <header class="content-section first-section" style="margin-bottom: 2rem;">
+                <h1 class="entry-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Symmetry and Conservation in Hamiltonian Systems</h1>
+                <p class="lead-text">Exploring how continuous symmetries in the Lagrangian formulation elegantly map to the geometry of phase space via the Poisson bracket.</p>
+            </header>
+
+            <div class="prose" style="font-size: 1.15rem; line-height: 1.8; color: var(--text-main);">
+                <p>In analytical mechanics, the transition from configuration space to phase space involves the Legendre transformation. Given a Lagrangian $L(q, \dot{q}, t)$, we define the conjugate momenta as:</p>
+                
+                $$p_i = \frac{\partial L}{\partial \dot{q}_i}$$
+
+                <p>The Hamiltonian is then constructed as the Legendre transform of the Lagrangian with respect to the generalized velocities:</p>
+
+                $$H(q, p, t) = \sum_{i} p_i \dot{q}_i - L(q, \dot{q}, t)$$
+
+                <h3 style="font-family: var(--font-sans); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.2rem;">The Poisson Bracket and Conservation</h3>
+                
+                <p>The true power of the Hamiltonian formalism reveals itself when considering the time evolution of an arbitrary observable $f(q, p, t)$. Using Hamilton's equations, $\dot{q}_i = \frac{\partial H}{\partial p_i}$ and $\dot{p}_i = -\frac{\partial H}{\partial q_i}$, the total time derivative of $f$ is given by:</p>
+
+                $$\frac{df}{dt} = \{f, H\} + \frac{\partial f}{\partial t}$$
+
+                <p>Where the Poisson bracket $\{f, g\}$ is defined as:</p>
+
+                $$\{f, g\} = \sum_i \left( \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i} \right)$$
+
+                <p>This immediately implies a profound consequence: if an observable does not depend explicitly on time ($\frac{\partial f}{\partial t} = 0$) and it commutes with the Hamiltonian under the Poisson bracket ($\{f, H\} = 0$), then $\frac{df}{dt} = 0$, meaning $f$ is a conserved quantity. This is the Hamiltonian manifestation of Noether's Theorem.</p>
+            </div>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

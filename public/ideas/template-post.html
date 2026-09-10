@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formal Structures & Physics Post Template | Joan Alcaide-Núñez</title>
+    
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                macros: {
+                    R: "\\mathbb{R}",
+                    C: "\\mathbb{C}",
+                    N: "\\mathbb{N}",
+                    Z: "\\mathbb{Z}",
+                    bra: ["\\left\\langle #1 \\right|", 1],
+                    ket: ["\\left| #1 \\right\\rangle", 1],
+                    braket: ["\\left\\langle #1 \\mid #2 \\right\\rangle", 2],
+                    mel: ["\\left\\langle #1 \\mid #2 \\mid #3 \\right\\rangle", 3],
+                    pd: ["\\frac{\\partial #1}{\\partial #2}", 2],
+                    dd: ["\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}", 2],
+                    Lie: "\\mathcal{L}",
+                    Tr: "\\operatorname{Tr}"
+                }
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Published</h3>
+                <p>July 2026</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Field</h3>
+                <p>Computational Physics</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a class="tag-link" data-tag="quantum" href="index.html?tag=quantum">#quantum</a></li>
+                    <li><a class="tag-link" data-tag="code" href="index.html?tag=code">#code</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <header class="content-section first-section" style="margin-bottom: 2rem;">
+                <h1 class="entry-title" style="font-size: 2.2rem; margin-bottom: 1rem;">State Spaces and Observables</h1>
+                <p class="lead-text">A formal comparison of quantum Hilbert spaces and classical symplectic manifolds using custom TeX macros and environment blocks.</p>
+            </header>
+
+            <div class="prose" style="font-size: 1.15rem; line-height: 1.8; color: var(--text-main);">
+                
+                <p>In quantum mechanics, physical states are represented by rays in a complex Hilbert space $\mathcal{H}$ over $\C$. The dynamic evolution and measurement outcomes rely on self-adjoint operators acting on this space.</p>
+
+                <div class="math-block postulate">
+                    <div class="math-title">
+                        Postulate 1 <span class="math-name">Quantum State Space</span>
+                    </div>
+                    <div class="math-body">
+                        To every isolated physical system there corresponds a complex Hilbert space $\mathcal{H}$. The state of the system is completely described by a unit vector $\ket{\psi} \in \mathcal{H}$.
+                    </div>
+                </div>
+
+                <h3 style="font-family: var(--font-sans); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem;">Computational Implementation</h3>
+                
+                <blockquote>
+                    "The underlying physical laws necessary for the mathematical theory of a large part of physics and the whole of chemistry are thus completely known." <br>— P.A.M. Dirac (1929)
+                </blockquote>
+
+                <p>To simulate this, we can define a basic state vector array using <code>numpy.array()</code> in Python. The transition probabilities between states $\ket{\psi}$ and $\ket{\phi}$ are calculated accordingly.</p>
+
+                <pre><code class="language-python">import numpy as np
+
+def compute_probability(phi, psi):
+    """
+    Computes the transition probability |<phi|psi>|^2
+    """
+    inner_product = np.vdot(phi, psi)
+    probability = np.abs(inner_product)**2
+    return probability
+
+# Define two quantum states
+psi = np.array([1, 0])
+phi = np.array([1/np.sqrt(2), 1/np.sqrt(2)])
+
+print(f"Probability: {compute_probability(phi, psi):.3f}")</code></pre>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formalism</th>
+                            <th>State Space</th>
+                            <th>Observables</th>
+                            <th>Evolution Equation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Classical Mechanics</td>
+                            <td>Symplectic Manifold</td>
+                            <td>Smooth Functions</td>
+                            <td>Hamilton's Equations</td>
+                        </tr>
+                        <tr>
+                            <td>Quantum Mechanics</td>
+                            <td>Hilbert Space $\mathcal{H}$</td>
+                            <td>Self-Adjoint Operators</td>
+                            <td>Schrödinger Equation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

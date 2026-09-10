@@ -1,0 +1,209 @@
+\documentclass[11pt, letterpaper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% --- Colors ---
+\definecolor{primary}{RGB}{30, 64, 120} % Classic Academic Navy
+\definecolor{textdark}{RGB}{40, 40, 40}
+
+% --- Global Styling ---
+\color{textdark}
+\pagestyle{plain}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% --- Section Heading Formatting ---
+\titleformat{\section}
+  {\large\bfseries\color{primary}\scshape}
+  {}{0em}{}
+  [\titlerule]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+\titleformat{\subsection}
+  {\bfseries}
+  {}{0em}{}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+
+% --- Custom Entry Formatting Commands ---
+\newcommand{\cvheading}[4]{
+  \noindent
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} lr}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\cvsubheading}[2]{
+  \noindent
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} lr}
+    \textbf{#1} & \textit{#2} \\
+  \end{tabular*}\vspace{-2pt}
+}
+
+\begin{document}
+
+% ==========================================
+% HEADER / CONTACT INFORMATION
+% ==========================================
+\begin{center}
+    {\Huge \bfseries \color{primary} Joan Alcaide Núñez} \\[6pt]
+    Fakultät für Physik, Ludwig-Maximilians-Universität München (LMU Munich) \\
+    \href{mailto:joan.alcaide@campus.lmu.de}{joan.alcaide@campus.lmu.de} $\cdot$ 
+    \href{https://joanalnu.pages.dev}{joanalnu.pages.dev} $\cdot$ 
+\end{center}
+
+\vspace{-6pt}
+
+% ==========================================
+% RESEARCH INTERESTS
+% ==========================================
+\section{Research Interests}
+Theoretical Cosmology, Dynamical Dark Energy, Fundamental Physics
+
+% ==========================================
+% EDUCATION
+% ==========================================
+\section{Education}
+
+\cvheading
+  {B.Sc. Physics} {2025 -- present}
+  {Ludwig-Maximilians-Universität München (LMU Munich)} {München, Germany}
+  \begin{itemize}[noitemsep, topsep=1pt, leftmargin=1.5em]
+      \item Status: Semester 3
+  \end{itemize}
+
+\vspace{4pt}
+
+\cvheading
+  {Dual German-Spanish High School} {2017 -- 2025}
+  {German School of Barcelona} {Barcelona, Spain}
+  \begin{itemize}[noitemsep, topsep=1pt, leftmargin=1.5em]
+      \item Final Abitur GPA: 1.0/1.0
+      \item Thesis: Recomputations of the Hubble-Lemaître Constant with Distance Ladder Methods in Consideration of the Current Crisis in Cosmology \href{https://joanlanu.pages.dev/todo}{PDF (in German)}
+  \end{itemize}
+
+% ==========================================
+% ACADEMIC APPOINTMENTS
+% ==========================================
+\section{Research Experience}
+
+\cvheading
+  {Research Stay - GRB Cosmology} {Summer 2025}
+  {Osservatorio Astronomico di Brera (OAB-INAF)} {Brera, Italy}
+  \begin{itemize}
+    \item Cosmological parameter inference ($\Omega_m, \Omega_\Lambda, H_0$) with $\chi^2$ statistics of GRB Amati relation
+  \end{itemize}
+
+\cvheading
+  {Founder and Member of GAMMA Team} {2024 -- 2026}
+  {CAPIBARA Collaboration} {International}
+  \begin{itemize}
+    \item Developing $\gamma$-ray transient monitoring CubeSat mission architecture and proposal, presented at 5th SSEA
+    \item Founding and administrating the collaboration of high school students learning about the high-energy multi-messenger universe
+  \end{itemize}
+  
+\cvheading
+  {2-week Internship - Earth Observation} {Autumn 2024}
+  {Earth Observation Center (EOC-DLR)} {Munich, Germany}
+  \begin{itemize}
+    \item Analyzed thermal images of LandSat-8 with GDAL
+    \item Intership awarded in the Jugend Forscht competition}
+  \end{itemize}
+
+\cvheading
+  {Research Stay - Infrared Ia Supernova Photometry} {Summer 2024}
+  {Institute of Space Sciences (ICE-CSIC-IEEC)} {Barcelona, Spain}
+  \begin{itemize}
+    \item Measuring distances with SNe photometry using SOFI (ESO) data and the ZTF and ATLAS light curves
+    \item Scientific programming in Python (numpy, pandas scipy, astropy, ...) and $\LaTeX$
+  \end{itemize}
+
+\cvheading
+  {Research Project - Cepheid Cosmology} {Winter 2023}
+  {} {}
+  \begin{itemize}
+    \item Recomputed the Hubble-Lemaître Constant using modern Cepheid and redshift data ($H_0 = 70.26 \pm 7.1 \mathrm{km s^{-1} Mpc^{-1}}$)
+    \item This project was part of the first phase of the Youth and Science fellowship
+  \end{itemize}
+
+% ==========================================
+% PUBLICATIONS
+% ==========================================
+%\section{References}
+
+% \subsection{Peer-Reviewed Journal Articles}
+% \begin{enumerate}[label={[\arabic*]}, leftmargin=2em, itemsep=4pt, topsep=2pt]
+%     \item \textbf{Doe, J.}, Smith, A., \& Johnson, R. (2025). Interpretable Deep Learning Models for Complex Systems. \textit{Journal of Machine Learning Research}, 26(4), 101--125.
+%     \item \textbf{Doe, J.}, \& Lee, K. (2023). Robust Frameworks in Distributed Optimization. \textit{IEEE Transactions on Pattern Analysis and Machine Intelligence}, 45(2), 512--524.
+% \end{enumerate}
+% 
+% \subsection{Conference Proceedings}
+% \begin{enumerate}[label={[\arabic*]}, leftmargin=2em, itemsep=4pt, topsep=2pt]
+%     \item \textbf{Doe, J.}, \& Davis, M. (2024). Attention Mechanisms in Resource-Constrained Environments. In \textit{Proceedings of NeurIPS 2024} (pp. 1420--1432).
+% \end{enumerate}
+% 
+% \subsection{Preprints \& Working Papers}
+% \begin{enumerate}[label={[\arabic*]}, leftmargin=2em, itemsep=4pt, topsep=2pt]
+%     \item \textbf{Doe, J.} (2026). Modular Neural Architectures for Lifelong Learning. \textit{arXiv preprint arXiv:2601.00000}.
+% \end{enumerate}
+
+% ==========================================
+% GRANTS, HONORS, & AWARDS
+% ==========================================
+\section{Awards}
+
+\cvsubheading{\href{https://www.fundaciocatalunya-lapedrera.com/en/youth-and-science}{Youth \& Science Fellowship}}{2023 -- 2025}
+3-year funded fellowship for research stays internationally for selected high school students
+\cvsubheading{\href{}{DFG Abiturpreis}}}{2025}
+Distinction for extraordinary performance in high school physics
+\cvsubheading{\href{https://iaac.space}{IAAC}}{2025}
+Silver Honour and National Award (Spain) (top 7\% of $>$ 12000 students worldwide), similar results in 2023 and 2024
+\cvsubheading{\href{https://jugend-forscht.de}{Jugend Forscht}}{2025}
+First Prize Iberia Competition (2024 \& 2025), First prizes in regional and national rounds, Special Award in Scientific Photography
+
+% ==========================================
+% TALKS & PRESENTATIONS
+% ==========================================
+\section{Outreach \& Teaching}
+
+\cvsubheading{Poster Talk}{Munich, Germany, 2026}
+Symposium on Space Educational Activities
+\cvsubheading{Talk CAPIBARA Collaboration}{Barcelona, Spain, 2025}
+CosmoXarxa Event at Barcelona's Science Museum
+\cvsubheading{2-session Introduction to Astrophysics}{Barcelona, Spain, 2025}
+11th graders at German School of Barcelona
+\cvsubheading{Private Tutor}{Barcelona, Spain, 2024-2025}
+Mathematics, Physics, German, English
+\cvsubheading{Outreach Activity on Space Exploration}{Spain, 2023}
+4th graders at public school
+\cvsubheading{Explainer Volunteer}{Barcelona, Spain, 2022-2023}
+Barcelona's Science Museum CosmoCaixa
+
+% ==========================================
+% SKILLS & LANGUAGES
+% ==========================================
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Programming}: Python, Julia, C++, Shell Scripting (basic).
+    \item \textbf{Frameworks}: Git, LaTeX, Markdown, HTML/CSS, Linux, NeoVim, VSCode.
+    \item \textbf{Languages}: English (fluent), German (fluent), Spanish (native), Catalan (native).
+\end{itemize}
+
+% ==========================================
+% WORK EXPERIENCE
+% ==========================================
+\section{Work Experience}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+  \item \textbf{HiWi Job (Statistics, forms, data analysis)}: LMU Munich Research Funding Unit \& Central Diversity Management
+\end{itemize}
+
+\end{document}

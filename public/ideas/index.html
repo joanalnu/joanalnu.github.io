@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideas | Joan Alcaide-Núñez</title>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar" data-sidebar-mode="tag-index">
+        </aside>
+
+        <div class="main-content">
+
+            <section class="content-section first-section">
+                <h2 class="section-title">Overview</h2>
+                <p class="lead-text">
+                Essays and technical notes on theoretical physics and scientific computing, written for clarity and curiosity.
+                </p>
+            </section>
+
+            <section id="latest-writing" class="content-section">
+                <h2 class="section-title">Latest Writing</h2>
+
+
+                <div class="entry-list">
+                  <article class="entry" data-tags="mathematics, code, computer science, python, cpp, julia">
+                    <div class="entry-meta">August 2026 • MC π</div>
+                    <h3 class="entry-title"><a href="benchmarking-languages-with-monte-carlo-pi-approximations.html">Benchmarking Languages with Monte Carlo π (Pi) Approximations</a></h3>
+                    <p class="entry-body">
+                    Comparing the speeds of Python, C++ and Julia.
+                    </p>
+                    <p class="entry-tags">
+                      <a class="tag-link" data-tag="mathematics" href="?tag=mathematics">#mathematics</a>
+                      <a class="tag-link" data-tag="code" href="?tag=code">#code</a>
+                    </p>
+                  </article>
+                
+                  <article class="entry" data-tags="mechanics, symmetries, noether, hamiltonian">
+                    <div class="entry-meta">July 2026 • Mechanics (Test)</div>
+                    <h3 class="entry-title"><a href="symmetry-and-conservation-in-hamiltonian-systems.html">Symmetry and Conservation in Hamiltonian Systems</a></h3>
+                    <p class="entry-body">
+                        A short note on how continuous symmetries map to conserved quantities in Hamiltonian mechanics.
+                    </p>
+                    <p class="entry-tags">
+                      <a class="tag-link" data-tag="mechanics" href="?tag=mechanics">#mechanics</a>
+                      <a class="tag-link" data-tag="symmetries" href="?tag=symmetries">#symmetries</a>
+                      <a class="tag-link" data-tag="noether" href="?tag=noether">#noether</a>
+                    </p>
+                  </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmarking Languages with Monte Carlo π Approximations | Joan Alcaide-Núñez</title>
+    
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                macros: {
+                    R: "\\mathbb{R}",
+                    C: "\\mathbb{C}",
+                    N: "\\mathbb{N}",
+                    Z: "\\mathbb{Z}",
+                    bra: ["\\left\\langle #1 \\right|", 1],
+                    ket: ["\\left| #1 \\right\\rangle", 1],
+                    braket: ["\\left\\langle #1 \\mid #2 \\right\\rangle", 2],
+                    mel: ["\\left\\langle #1 \\mid #2 \\mid #3 \\right\\rangle", 3],
+                    pd: ["\\frac{\\partial #1}{\\partial #2}", 2],
+                    dd: ["\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}", 2],
+                    Lie: "\\mathcal{L}",
+                    Tr: "\\operatorname{Tr}"
+                }
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Published</h3>
+                <p>July 2026</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Field</h3>
+                <p>Computer Science</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a class="tag-link" data-tag="code" href="index.html?tag=code">#code</a></li>
+                    <li><a class="tag-link" data-tag="mathematics" href="index.html?tag=mathematics">#mathematics</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <header class="content-section first-section" style="margin-bottom: 2rem;">
+                <h1 class="entry-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Benchmarking Languages with Monte Carlo (MC) π Approximations</h1>
+                <p class="lead-text">Comparing the run speeds among Python, Julia and C++ by running equivalent code to compute an approximation of π through Monte Carlo algorithm.</p>
+            </header>
+
+            <div class="prose" style="font-size: 1.15rem; line-height: 1.8; color: var(--text-main);">
+
+              <p>My background in coding is starting with <a href="https://isocpp.org/">C++</a> in competitive programming courses in middle school, and then switching to <a href="https://www.python.org/">Python</a> when I started using code for cosmology projects due to its ease of use and widely used and documented libraries such as numpy, pandas, matplotlib, scipy and astropy. However, this summer, since I have been hearing more and more about this 'new' language called <a href="https://julialang.org/">Julia</a>, I decided to also refresh my C++ knowledge. One of the things that I wanted to do is to test the speed of these languages against the same code. Using a Monte Carlo algorithm to estimate the value of $\pi$ is a common test in computer science, since it's easy to code and to scale (<a href="https://github.com/niklas-heer/speed-comparison">example</a>).</p>
+
+              <h3 style="font-family: var(--font-sans); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem;">Setup</h3>
+
+              <p>The setup is really simple. Basically, <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo (MC)</a> algorithms are those processes by which something is computed parting from random values. In this case, the setup is a unit square with a unit circle centered around the centroid of the square. Darts are thrown randomly to this plane (square & circle) and the ratio of darts inside the circle area and the total number of darts (inside the square) is proportional to $\pi$.</p>
+
+              $$A_\circ = \frac{1}{4} \pi d^2 = d^2 = A_\square \implies \pi = 4 \frac{A_\circ}{A_\square}$$
+
+              <div> 
+                <img src="../assets/images/monte-carlo-pi-approximation.gif" height="75%" width="75%">
+              </div>
+
+              <p>The implementation of the code can be accessed in this <a href="https://codeberg.org/joanalnu/playground/src/branch/main/monte-carlo-pi-approximation">repository</a>. For the random value generation (coordinates $(x,y)$), the following libraries were used in each language:
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Language</th>
+                    <th>Python (3.14.6)</th>
+                    <th>C++ (clang++ 21.0.0)</th>
+                    <th>Julia (1.12.6)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Random Point Generator</td>
+                    <td>random</td>
+                    <td>random</td>
+                    <td>rand()</td>
+                  </tr>
+                  <tr>
+                    <td>Time keeping</td>
+                    <td>time</td>
+                    <td>std::chrono::high_resolution_clock</td>
+                    <td>Benchmarktools @btime</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 style="font-family: var(--font-sans); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem;">Implementation</h3>
+              <p>All scripts across languages were written following the same structure. After importing the required packages, a function receives $n$ (the number of points to evaluate) as input and outputs the approximation of $\pi$. Then the function is timed using each language's standard tooling.</p>
+
+              <p>In the <a href="https://codeberg.org/joanalnu/playground/src/branch/main/monte-carlo-pi-approximation">repository</a>, the following files can be found:
+              <div class="clue-box">
+                <ul class="clue-list">
+                  <li>python_mc_pi.py</li>
+                  <li>julia_mc_pi.jl</li>
+                  <li>cpp_mc_pi.cpp</li>
+                  <li>&lt;lang&gt;_log.txt</li>
+                  <li>execution</li>
+                  <li>README.md</li>
+                </ul>
+              </div>
+
+              <p>A script for every language, all following the discussed implementation, and a log file for each language (where the results are saved). The execution file is a shell script used for automatically running all scripts with different inputs.</p>
+
+              <p>Before benchmarking, the Python script was run with a virtual environment (uv generated) and with a system-wide Python installation. Both results showed similar execution times, and the differences where negligible considering the absolute values.</p>
+
+              <p>Note that for the C++ compilation the `g++ -O3` tag was used for the maximum level of optimisation. For the Julia execution, the script actually runs the function first without the benchmarking to fully compile the function (Julia has just-in-time (JIT) compilation) and then again with the benchmarking tools. These are common practices in these programming languages.</p>
+
+              <h3 style="font-family: var(--font-sans); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem;">Results</h3>
+
+              <img src="../assets/images/execution_time.png" height="75%" width="75%" >
+
+              <p>You can see the exact numerical execution times, as well as details of the exact version of each install in the log files available in the <a href="https://codeberg.org/joanalnu/playground/monte-carlo-pi-approximation/">repository</a>.</p>
+
+              <h3 style="font-family: var(--font-sans); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem;">Conclusions</h3>
+
+              <p>As expected, Python is by far the slower programming language. Apparently, this is due to its compilation strategy. The Python compiler reads and runs the script line by line, these makes it easier to use. While compiled languages like C++ are more 'difficult' to set up and/or use, but are in turn more efficient and faster.</p>
+
+              <p>Surprisingly, Julia scored faster execution times than C++ in this benchmark. Both remain in the same order of magnitude, especially compared with Python. For the largest run ($n=10^9$), Julia and C++ took around $3$ and $10$ seconds respectively, while Python took more than 3 minutes ($\sim 190$ seconds).</p>
+
+              <h3 style="font-family: var(--font-sans); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem;">Bonus: Accuracy</h3>
+              <p>Overall, all languages were similarly accurate for the same sample size, although for the largest $n$ the C++ result was slightly farther from $\pi$ than Julia and Python.</p>
+
+              <img src="../assets/images/accuracy.png" width="75%">
+
+              <p>You can consult all mentioned files in this <a href="https://codeberg.org/joanalnu/playground/src/branch/main/monte-carlo-pi-approximation">repository</a>. This is my first attempt to a blog-style post on my website. If you have feedback, suggestions or any comments (constructive please), I encourage you to <a href="../contact.html">contact me</a>!
+            </div>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

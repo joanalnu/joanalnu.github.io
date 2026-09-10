@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 005: The Broken Toaster | Joan Alcaide-Núñez</title>
+    
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Problem Number</h3>
+                <p>005</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Field</h3>
+                <p>Logic / Everyday Reasoning</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Difficulty</h3>
+                <p>Easy</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a class="tag-link" data-tag="logic" href="index.html?tag=logic">#logic</a></li>
+                    <li><a class="tag-link" data-tag="household" href="index.html?tag=household">#household</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <section class="content-section first-section">
+                <h2 class="section-title">The Broken Toaster</h2>
+                
+                <div class="prose" style="font-size: 1.15rem; line-height: 1.8;">
+                    <p>Three siblings try to make breakfast, but the toaster suddenly stops working. They report the following facts:</p>
+
+                    <div class="clue-box">
+                        <ul class="clue-list">
+                          <li>If the toaster is plugged in, the red light turns on.</li>
+                          <li>The red light is off.</li>
+                          <li>Either the outlet has power, or the toaster fuse is broken.</li>
+                          <li>The outlet has no power only if the kitchen breaker is down.</li>
+                          <li>The kitchen breaker is up.</li>
+                        </ul>
+                    </div>
+                    <p>What is the most likely direct cause of the toaster not working?</p>
+                </div>
+            </section>
+
+            <section class="solver-section">
+                <h3>The question</h3>
+                <div class="solver-input-group">
+                    <select id="guess">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="fuse">The toaster fuse is broken</option>
+                        <option value="breaker">The kitchen breaker is down</option>
+                    </select>
+                    <button onclick="checkPuzzle('fuse', 'Correct answer!', 'Not quite right, think again.')">Verify</button>
+                </div>
+                <div id="feedback" class="feedback"></div>
+
+                <div id="solution" class="solution-reveal">
+                    <h3 class="section-title" style="margin-bottom: 1rem; border: none; padding: 0;">Solution</h3>
+                    <div class="prose">
+                        <p>The most consistent explanation is a broken toaster fuse.</p>
+                        <p>Since the breaker is up, the outlet should still have power. That rules out a power outage at the outlet and leaves an internal toaster failure as the best conclusion.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/solver.js"></script>
+</body>
+</html>

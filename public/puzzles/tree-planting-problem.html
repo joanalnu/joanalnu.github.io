@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 003: Tree Planting Problem | Joan Alcaide-Núñez</title>
+    
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Problem Number</h3>
+                <p>003</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Field</h3>
+                <p>Mathematics / Geometry</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Difficulty</h3>
+                <p>Medium</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a class="tag-link" data-tag="mathematics" href="index.html?tag=mathematics">#mathematics</a></li>
+                    <li><a class="tag-link" data-tag="geometry" href="index.html?tag=geometry">#geometry</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <section class="content-section first-section">
+                <h2 class="section-title">Tree Planting Problem</h2>
+                
+                <div class="prose" style="font-size: 1.15rem; line-height: 1.8;">
+                    <p>Tienes 7 árboles que plantar. Encuentra una configuración en un plano para formar la mayor cantidad posible de hileras de árboles. Cada hilera debe cumplir lo siguiente:</p>
+
+                    <div class="clue-box">
+                        <ul class="clue-list">
+                          <li>3 árboles forman una hilera</li>
+                          <li>tienen que estar conectados por una línea recta</li>
+                        </ul>
+                    </div>
+
+                    <p>-------</p>
+
+                    <p>You have to plant 7 trees. Find a planar configuration that produces as many rows as possible. Each row must satisfy:</p>
+
+                    <div class="clue-box">
+                      <ul class="clue-list">
+                        <li>3 trees form a row</li>
+                        <li>a straight line must connect them</li>
+                      </ul>
+                    </div>
+
+                    <p>This puzzle is a special case of the <a href="https://en.wikipedia.org/wiki/Orchard-planting_problem">Orchard-planting problem</a>.</p>
+                </div>
+            </section>
+
+            <section class="solver-section">
+                <h3>The question</h3>
+                <div class="solver-input-group">
+                    <select id="guess">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="sol">Ver solución</option>
+                        <option value="sol">See solution</option>
+                    </select>
+                    <button onclick="checkPuzzle('sol', 'Correct answer!.', 'Not quite right, think again.')">Verify</button>
+                </div>
+                <div id="feedback" class="feedback"></div>
+
+                <div id="solution" class="solution-reveal">
+                    <h3 class="section-title" style="margin-bottom: 1rem; border: none; padding: 0;">Solution</h3>
+                    <div class="prose">
+                        <p>The solution (as displayed below) is to place 3 points at the vertices of an equilateral triangle, 3 at the mid-points of its sides, and 1 in the centre.</p>
+                        <img src="../assets/7-point-problem.svg" height="50%" width="50%">
+                        <p>Try doing the problem with different number of trees. Get more information in <a href="https://en.wikipedia.org/wiki/Orchard-planting_problem" >this Wikipedia page</a>.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/solver.js"></script>
+</body>
+</html>

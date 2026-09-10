@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 004: River Crossing Problem | Joan Alcaide-Núñez</title>
+    
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Problem Number</h3>
+                <p>004</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Field</h3>
+                <p>Optimización / Lógica</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Difficulty</h3>
+                <p>Medium</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a class="tag-link" data-tag="mathematics" href="index.html?tag=mathematics">#mathematics</a></li>
+                    <li><a class="tag-link" data-tag="optimization" href="index.html?tag=optimization">#optimization</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <section class="content-section first-section">
+                <h2 class="section-title">River Crossing Problem</h2>
+                
+                <div class="prose" style="font-size: 1.15rem; line-height: 1.8;">
+                  <p>Alice, Bob, Carla y David acaban de recuperar un artefacto antiguo de las profundidades de un templo <a href="https://es.wikipedia.org/wiki/Babilonia_(reino)">babilónico</a>, pero al hacerlo han activado una trampa mortal y no pueden volver por donde han venido.</p>
+                  <p>En su huida llegan a la orilla de un río de lava subterráneo. Un puente colgante es su única salida, pero no lo pueden cruzar tan fácilmente...</p>
+                  <div class="clue-box">
+                    <ul class="clue-list">
+                      <li>solo un máximo de 2 personas pueden cruzar a la vez</li>
+                      <li>solo tienen 1 linterna, nadie puede cruzar el puente sin la linterna</li>
+                      <li>cuando dos compañeros cruzan el río, avanzan a la velocidad del más lento</li>
+                    </ul>
+                  </div>
+
+                  <p>Los tiempos que necesitan para cruzar difieren entre los amigos:</p>
+                  <div class="clue-box">
+                    <ul class="clue-list">
+                      <li><b>Alice</b>: 1 minuto</li>
+                      <li><b>Bob</b>: 2 minutos</li>
+                      <li><b>Carla</b>: 7 minutos</li>
+                      <li><b>David</b>: 11 minutos</li>
+                    </ul>
+                  </div>
+
+
+                  <p>Tienen menos de 20 minutos para cruzar el puente antes de que el río de lava devore el puente de cuerdas. ¿En qué orden deben cruzar los amigos para conseguirlo?</p>
+                </div>
+            </section>
+
+            <section class="solver-section">
+                <h3>The question</h3>
+                <div class="solver-input-group">
+                    <select id="guess">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="ANS1">Ver el tiempo total</option>
+                        <option value="ANS2">No lo sé</option>
+                    </select>
+                    <button onclick="checkPuzzle('ANS1', 'Correct answer!', 'Not quite right, think again.')">Verify</button>
+                </div>
+                <div id="feedback" class="feedback"></div>
+
+                <div id="solution" class="solution-reveal">
+                    <h3 class="section-title" style="margin-bottom: 1rem; border: none; padding: 0;">Solution</h3>
+                    <div class="prose">
+                        <p>El tiempo total para el caso con el mínimo tiempo es: 18 minutos.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/solver.js"></script>
+</body>
+</html>

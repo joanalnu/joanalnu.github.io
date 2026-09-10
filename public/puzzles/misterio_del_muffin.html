@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 001: El Misterio del Muffin | Joan Alcaide-Núñez</title>
+    
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Problem Number</h3>
+                <p>001</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Field</h3>
+                <p>Detective / Lógica</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Difficulty</h3>
+                <p>Fácil</p>
+            </div>
+            <div class="sidebar-block">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a class="tag-link" data-tag="detective" href="index.html?tag=detective">#detective</a></li>
+                    <li><a class="tag-link" data-tag="logic" href="index.html?tag=logic">#logic</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <section class="content-section first-section">
+                <h2 class="section-title">El Misterio del Muffin</h2>
+                
+                <div class="prose" style="font-size: 1.15rem; line-height: 1.8;">
+                    <p>Era una tarde calurosa y el aroma a chocolate recién horneado llenaba la casa. Sin embargo, la paz se rompió cuando Lucía llegó a la cocina y descubrió que su muffin de arándanos, el más grande de todos, había sido robado de la bandeja.</p>
+                    
+                    <p>Solo tres amigos estaban en la casa en ese momento: Alex, Pepa y Carlos. Lucía los reunió en el pasillo para escuchar sus versiones y tomó las siguientes notas:</p>
+
+                    <div class="clue-box">
+                        <ul class="clue-list">
+                            <li>Alguien con una sudadera roja estaba jugando.</li>
+                            <li>Carlos no estaba en el salón.</li>
+                            <li>Quién lleva una camiseta verde estaba en el jardín.</li>
+                            <li>Pepa lleva un vestido azul.</li>
+                            <li>Quién estaba dibujando no lleva una camiseta verde.</li>
+                            <li>Alex no estaba en el jardín.</li>
+                            <li>Pepa no estaba viendo la tele.</li>
+                        </ul>
+                    </div>
+
+                    <p><strong>El Reto:</strong> El ladrón ha mentido. Su coartada no tiene sentido. Debes encontrar al ladrón.</p>
+                </div>
+            </section>
+
+            <section class="solver-section">
+                <h3>¿Quién es el culpable?</h3>
+                <div class="solver-input-group">
+                    <select id="guess">
+                        <option value="" disabled selected>Selecciona un sospechoso...</option>
+                        <option value="Alex">Alex</option>
+                        <option value="Pepa">Pepa</option>
+                        <option value="Carlos">Carlos</option>
+                    </select>
+                    <button onclick="checkPuzzle('Carlos', 'Lógica impecable.', 'Hay una falla en tu razonamiento. Inténtalo de nuevo.')">Verificar</button>
+                </div>
+                <div id="feedback" class="feedback"></div>
+
+                <div id="solution" class="solution-reveal">
+                    <h3 class="section-title" style="margin-bottom: 1rem; border: none; padding: 0;">Deducción Formal</h3>
+                    <div class="prose">
+                        <p>Correcto. El culpable es <strong>Carlos</strong>.</p>
+                        <p>Carlos no puede estar viendo la tele en el jardín porque no hay un televisor en el jardín. <em>(Se deduce al cruzar las ubicaciones y las actividades con la ropa que cada uno llevaba).</em></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/solver.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Joan Alcaide-Núñez</title>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body data-base-path="">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3>Privacy Notice</h3>
+                <p>Contact details are protected behind a non-intrusive human verification check to prevent automated scraping.</p>
+            </div>
+        </aside>
+
+        <article class="main-content">
+            <section class="content-section first-section">
+                <h1 class="entry-title" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Contact Information</h1>
+                
+                <div class="prose">
+                    <p>Please verify you are human to reveal my academic email address:</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <div class="cf-turnstile" 
+                             data-sitekey="0x4AAAAAAEDBAuflBcQGtooJ"
+                             data-callback="onTurnstileSuccess">
+                        </div>
+                    </div>
+
+                    <div id="contact-details" style="display: none; margin-top: 2rem; padding: 1.5rem; background: var(--border-color); border-radius: 4px;">
+                        <h3 style="margin-bottom: 0.5rem; font-family: var(--font-sans);">Direct Email</h3>
+                        <p id="email-output" style="font-size: 1.1rem; margin: 0;"></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Obfuscated string payload (Not plain text in source code)
+        const encUser = [106, 111, 97, 110, 46, 97, 108, 99, 97, 105, 100, 101]; // "joan.alcaide"
+        const encDomain = [99, 97, 109, 112, 117, 115, 46, 108, 109, 117, 46, 100, 101]; // "campus.lmu.de"
+
+        function onTurnstileSuccess(token) {
+            // Reconstruct email only after Turnstile token passes
+            const user = String.fromCharCode(...encUser);
+            const domain = String.fromCharCode(...encDomain);
+            const email = `${user}@${domain}`;
+
+            const container = document.getElementById('contact-details');
+            const output = document.getElementById('email-output');
+
+            output.innerHTML = `<a href="mailto:${email}" style="color: var(--accent-color); font-weight: 500;">${email}</a>`;
+            container.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

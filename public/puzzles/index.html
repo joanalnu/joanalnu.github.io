@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzles | Joan Alcaide-Núñez</title>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            if (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                theme = "dark";
+            }
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+            }
+        };
+    </script>
+    <script defer src="../assets/vendor/mathjax/tex-mml-chtml.js"></script>
+</head>
+<body data-base-path="../">
+
+    <div data-include="header"></div>
+
+    <main class="container page-grid">
+        
+        <aside class="sidebar" data-sidebar-mode="tag-index">
+        </aside>
+
+        <div class="main-content">
+            <section class="content-section first-section">
+              <h2 class="section-title">Overview</h2>
+              <p class="lead-text">
+              A curated puzzle archive focused on logic and mathematics, designed to be short, clear, and family-friendly.
+              </p>
+            </section>
+
+            <section id="problem-archive" class="content-section">
+                <h2 class="section-title">Problem Archive</h2>
+
+                <div class="entry-list">
+                  <article class="entry" data-tags="logic, household">
+                    <div class="entry-meta">Problem 005</div>
+                    <h3 class="entry-title"><a href="broken-toaster.html">The Broken Toaster</a></h3>
+                    <p class="entry-body">
+                    A short deductive puzzle based on everyday cause-and-effect reasoning.
+                    </p>
+                    <p class="entry-tags">
+                    <a class="tag-link" data-tag="logic" href="?tag=logic">#logic</a>
+                    <a class="tag-link" data-tag="household" href="?tag=household">#household</a>
+                    </p>
+                  </article>
+
+                  <article class="entry" data-tags="river crossing problem, mathematics, optimization">
+                    <div class="entry-meta">Problem 004</div>
+                    <h3 class="entry-title"><a href="river-crossing-problem.html">River Crossing Problem</a></h3>
+                    <p class="entry-body">
+                    Can they cross the bridge in time?
+                    </p>
+                    <p class="entry-tags">
+                    <a class="tag-link" data-tag="mathematics" href="?tag=mathematics">#mathematics</a>
+                    <a class="tag-link" data-tag="optimization" href="?tag=optimization">#optimization</a>
+                    </p>
+                  </article>
+
+                  <article class="entry" data-tags="tree planting problem, mathematics, geometry, discrete geometry">
+                    <div class="entry-meta">Problem 003</div>
+                    <h3 class="entry-title"><a href="tree-planting-problem.html">Tree Planting Problem</a></h3>
+                    <p class="entry-body">
+                    Can you find the optimal configuration?
+                    </p>
+                    <p class="entry-tags">
+                    <a class="tag-link" data-tag="mathematics" href="?tag=mathematics">#mathematics</a>
+                    <a class="tag-link" data-tag="geometry" href="?tag=geometry">#geometry</a>
+                    </p>
+                  </article>
+
+                  <article class="entry" data-tags="mathematics, ages, equations">
+                    <div class="entry-meta">Problem 002</div>
+                    <h3 class="entry-title"><a href="puzzle-competition.html">The Puzzle Competition</a></h3>
+                    <p class="entry-body">
+                    Can these friends enter the competition?
+                    </p>
+                    <p class="entry-tags">
+                    <a class="tag-link" data-tag="mathematics" href="?tag=mathematics">#mathematics</a>
+                    <a class="tag-link" data-tag="ages" href="?tag=ages">#ages</a>
+                    </p>
+                  </article>
+
+                  <article class="entry" data-tags="logic, detective">
+                    <div class="entry-meta">Problem 001</div>
+                    <h3 class="entry-title"><a href="misterio_del_muffin.html">El Misterio del Muffin</a></h3>
+                    <p class="entry-body">
+                    Tres amigos, tres coartadas, y un muffin desaparecido. Encuentra la inconsistencia lógica.
+                    </p>
+                    <p class="entry-tags">
+                    <a class="tag-link" data-tag="detective" href="?tag=detective">#detective</a>
+                    <a class="tag-link" data-tag="logic" href="?tag=logic">#logic</a>
+                    </p>
+                  </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

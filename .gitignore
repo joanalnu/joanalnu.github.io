@@ -1,5 +1,4 @@
-.DS_Store
-
-old-website/files/archived
-old-website/files/Abitur
-old-website/files/diplomas
+*.DS_Store
+*aux
+*log
+*out
